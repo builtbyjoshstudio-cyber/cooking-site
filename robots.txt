@@ -1,0 +1,9 @@
+# cooking.builtbyjoshstudio.com — robots.txt
+#
+# Josh & Jordan's Kitchen: cooking videos, the cookbook, the kitchen blog and the
+# free kitchen tools. All content is public and meant to be indexed and cited.
+
+User-agent: *
+Allow: /
+
+Sitemap: https://cooking.builtbyjoshstudio.com/sitemap.xml

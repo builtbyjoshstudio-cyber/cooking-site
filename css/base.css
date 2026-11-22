@@ -1,0 +1,227 @@
+/* ==========================================================================
+   Josh & Jordan's Kitchen — base styles + brand components
+   Requires: tokens.css (before this) and fonts/fonts.css
+   Everything here reads SEMANTIC tokens only, so it re-skins per theme.
+   ========================================================================== */
+
+/* ---------- reset-lite ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 400 var(--text-base)/var(--leading-body) var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  transition: background-color var(--dur-theme) var(--ease-out), color var(--dur-theme) var(--ease-out);
+}
+img, svg, video { display: block; max-width: 100%; }
+[hidden] { display: none !important; }
+button, input, select, textarea { font: inherit; color: inherit; }
+a { color: var(--primary); text-decoration-thickness: 1px; text-underline-offset: .18em; }
+a:hover { color: var(--primary-hover); }
+/* v2.4 cast iron: --primary-hover as link text is 3.94:1 on the page and 3.58:1 on --surface.
+   Links keep --primary (5.38:1) and the underline thickens. :where() keeps this at the weight
+   of a:hover, so buttons, cards and other classed links keep their own hover rules. */
+:where([data-theme="cast-iron"]) a:hover { color: var(--primary); text-decoration-thickness: 2px; }
+::selection { background: var(--selection); }
+:focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; border-radius: 2px; }
+
+/* ---------- typography ---------- */
+h1, h2, h3, .display {
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--text);
+  margin: 0;
+  text-wrap: balance;
+}
+h1 { font-size: var(--text-3xl); }
+h2 { font-size: var(--text-2xl); }
+h3 { font-size: var(--text-xl); }
+.display-hero { font-size: var(--text-hero); }
+
+/* body copy in Lora, not the sans */
+.prose, .lede, .tagline, blockquote { font-family: var(--font-serif); color: var(--text-serif); }
+.prose { font-size: var(--text-base); line-height: var(--leading-body); max-width: 68ch; }
+.prose p { margin: 0 0 1em; }
+.lede { font-size: var(--text-lg); line-height: var(--leading-snug); }
+
+/* the italic Lora tagline under every title */
+.tagline {
+  font-style: italic;
+  font-size: var(--text-xl);
+  line-height: var(--leading-snug);
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* uppercase, letter-spaced Be Vietnam Pro kicker ("Jordan Bakes", "Coming this week") */
+.eyebrow {
+  font: 700 var(--text-xs)/1 var(--font-sans);
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--primary);
+  /* optical centering: letter-spacing adds trailing space */
+  padding-left: var(--tracking-eyebrow);
+  margin: 0;
+}
+.eyebrow--accent { color: var(--accent); }     /* DECORATIVE ONLY on cream (2.3:1); fine on rust ≥18px, mint ≥18px, cast-iron any size */
+.eyebrow--muted  { color: var(--text-muted); }
+
+/* ---------- ornaments ---------- */
+
+/* J&J monogram — Playfair 700 with the italic & in the accent */
+.mark {
+  font: 700 1em/1 var(--font-display);
+  color: var(--mark);
+  letter-spacing: -.02em;
+  display: inline-flex; align-items: baseline;
+}
+.mark .amp {
+  font-style: italic; font-weight: 500;
+  font-size: .69em; color: var(--mark-amp);
+  margin: 0 .06em;
+}
+
+/* rule — diamond — rule divider */
+.divider {
+  display: flex; align-items: center; justify-content: center; gap: var(--space-5);
+  color: var(--accent);
+  margin: 0;
+}
+.divider::before, .divider::after {
+  content: ""; width: clamp(60px, 8vw, 120px); height: 2px; background: currentColor;
+}
+.divider > .diamond, .diamond {
+  width: 10px; height: 10px; transform: rotate(45deg); background: currentColor; flex: none;
+}
+.divider--inline { gap: var(--space-4); }
+.divider--inline::before, .divider--inline::after { width: 56px; }
+
+/* the double rule frame around cards and hero panels
+   One pseudo-element: border = outer 2px rule, inset outline = inner 1px rule.
+   (Single pseudo so .frame can share an element with .bloom / .card.) */
+.frame { position: relative; isolation: isolate; }
+.frame::before {
+  content: ""; position: absolute; inset: var(--frame-outer); pointer-events: none; z-index: 0;
+  border: 2px solid var(--border);
+  outline: 1px solid var(--border-soft);
+  outline-offset: calc(-1 * var(--frame-gap));
+}
+.frame > * { position: relative; z-index: 1; }
+
+/* theme gradient + two soft radial blooms (the banner/cover background).
+   Layered on the element's own background — no pseudo-elements used. */
+.bloom {
+  position: relative; overflow: hidden;
+  background:
+    radial-gradient(60vmax 60vmax at 8% 0%,    var(--bg-glow-1) 0%, transparent 68%),
+    radial-gradient(60vmax 60vmax at 95% 100%, var(--bg-glow-2) 0%, transparent 68%),
+    var(--bg-gradient);
+  transition: background-color var(--dur-theme) var(--ease-out);
+}
+
+/* ---------- components ---------- */
+
+.container { width: min(100% - 2rem, var(--container)); margin-inline: auto; }
+
+/* pill button — the only button shape in the brand */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: .6em;
+  padding: .85em 1.9em;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--primary);
+  background: var(--primary);
+  color: var(--text-on-primary);
+  font: 600 var(--text-sm)/1 var(--font-sans);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background-color var(--dur-fast) var(--ease-out), border-color var(--dur-fast) var(--ease-out), color var(--dur-fast) var(--ease-out), transform var(--dur-fast) var(--ease-out);
+}
+.btn:hover { background: var(--primary-hover); border-color: var(--primary-hover); color: var(--text-on-primary); }
+/* Cast iron: on-primary text on --primary-hover is 3.94:1, so filled buttons keep
+   --primary (5.38:1) on hover and lift 1px instead of changing colour. */
+[data-theme="cast-iron"] .btn:not(.btn--ghost, .btn--soft, .btn--danger):hover { background: var(--primary); border-color: var(--primary); transform: translateY(-1px); }
+.btn:active { transform: translateY(1px); }
+.btn--ghost { background: transparent; color: var(--text); border-color: var(--text); }
+.btn--ghost:hover { background: var(--text); color: var(--bg); border-color: var(--text); }
+.btn--soft { background: var(--accent-soft); color: var(--text-on-soft); border-color: var(--accent-soft); }
+.btn--soft:hover { background: var(--primary); border-color: var(--primary); color: var(--text-on-primary); }
+.btn--sm { padding: .65em 1.3em; font-size: var(--text-xs); }
+
+/* badge / pill label (the "SIMPLY DELICIOUS" tag) */
+.badge {
+  display: inline-block;
+  padding: .55em 1.1em;
+  border-radius: var(--radius-pill);
+  background: var(--accent-soft);
+  color: var(--text-on-soft);
+  font: 700 var(--text-xs)/1 var(--font-sans);
+  letter-spacing: .14em; text-transform: uppercase;
+}
+
+/* card */
+.card {
+  background: var(--surface);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+  color: var(--text);
+  transition: background-color var(--dur-theme) var(--ease-out), box-shadow var(--dur-theme) var(--ease-out);
+}
+.card__media { aspect-ratio: 16 / 9; overflow: hidden; }
+.card__media img { width: 100%; height: 100%; object-fit: cover; }
+.card__body { padding: var(--space-6); display: grid; gap: var(--space-3); }
+
+/* "pop" card — thumbnail-generator style: hard black offset shadow */
+.card--pop { border: 1px solid var(--text); box-shadow: var(--shadow-pop); border-radius: var(--radius-md); }
+
+/* hairline list rows / tables */
+.hairline { border-color: var(--hairline); }
+hr { border: 0; border-top: 1px solid var(--hairline); margin: var(--space-8) 0; }
+
+/* wordmark footer line */
+.wordmark {
+  font: 600 var(--text-xs)/1 var(--font-sans);
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--text-muted);
+  padding-left: var(--tracking-eyebrow);
+  text-align: center;
+}
+
+/* ---------- theme switcher UI ---------- */
+.theme-switch {
+  display: inline-flex; gap: 4px; padding: 3px;
+  border: 1px solid var(--text); border-radius: var(--radius-pill);
+  background: transparent;
+}
+.theme-switch button {
+  appearance: none; border: 0; cursor: pointer;
+  padding: 7px 12px; border-radius: var(--radius-pill);
+  background: transparent; color: var(--text);
+  font: 600 var(--text-xs)/1 var(--font-sans); letter-spacing: .04em; white-space: nowrap;
+  display: inline-flex; align-items: center; gap: 8px;
+  transition: background-color var(--dur-fast) var(--ease-out), color var(--dur-fast) var(--ease-out);
+}
+.theme-switch button[aria-pressed="true"] { background: var(--text); color: var(--bg); }
+.theme-switch .swatch {
+  width: 12px; height: 12px; border-radius: 50%;
+  border: 1px solid rgba(0,0,0,.25);
+  background: var(--swatch);
+}
+/* swatch colors are fixed per theme regardless of the active theme */
+.theme-switch [data-theme-set="cream"]     .swatch { --swatch: var(--swatch-cream); }
+.theme-switch [data-theme-set="mint"]      .swatch { --swatch: var(--swatch-mint); }
+.theme-switch [data-theme-set="rust"]      .swatch { --swatch: var(--swatch-rust); }
+.theme-switch [data-theme-set="cast-iron"] .swatch { --swatch: var(--swatch-cast-iron); }
+
+/* compact variant: icon-only on small screens */
+@media (max-width: 640px) {
+  .theme-switch--compact button span.label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+}

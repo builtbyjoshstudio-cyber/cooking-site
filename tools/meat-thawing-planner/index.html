@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <script>if(location.protocol.indexOf("http")===0&&/\/index\.html$/i.test(location.pathname))location.replace(location.pathname.slice(0,-10)+location.search+location.hash);</script>
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QDSPBB7S9J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      var gaKeep = new URLSearchParams(); new URLSearchParams(location.search).forEach(function (v, k) { if (k.indexOf('utm_') === 0) gaKeep.append(k, v); });
+      gtag('config', 'G-QDSPBB7S9J', { page_location: location.origin + location.pathname + (gaKeep.toString() ? '?' + gaKeep.toString() : ''), page_referrer: document.referrer.split(/[?#]/)[0] });
+    </script>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Turkey &amp; Meat Thawing Time Calculator | Fridge or Cold Water</title>
+    <meta name="description" content="How long to thaw a turkey, chicken, roast, or steaks: enter the weight and get safe fridge and cold-water thawing times from USDA guidance. Free, no ads.">
+    <meta name="robots" content="max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <link rel="canonical" href="https://cooking.builtbyjoshstudio.com/tools/meat-thawing-planner/">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Meat Thawing Planner",
+      "url": "https://cooking.builtbyjoshstudio.com/tools/meat-thawing-planner/",
+      "description": "How long to thaw a turkey, chicken, roast, or steaks: enter the weight and get safe fridge and cold-water thawing times from USDA guidance. Free, no ads.",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any (web browser)",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "publisher": {
+        "@type": "Organization",
+        "@id": "https://builtbyjoshstudio.com/#organization",
+        "name": "Built by Josh Studio LLC",
+        "legalName": "Built by Josh Studio LLC",
+        "alternateName": [
+          "BBJ Studio",
+          "Built by Josh Studio"
+        ],
+        "url": "https://builtbyjoshstudio.com",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://builtbyjoshstudio.com/images/logo/logo.webp",
+          "width": 512,
+          "height": 512
+        },
+        "image": "https://builtbyjoshstudio.com/images/logo/logo.webp",
+        "sameAs": [
+          "https://linktr.ee/builtbyjoshstudio",
+          "https://www.youtube.com/@TalesofInkShadowsStudio",
+          "https://www.youtube.com/@joshandjordanskitchen",
+          "https://tynkrtoolsandco.etsy.com",
+          "https://www.etsy.com/shop/BuiltByJoshStudio",
+          "https://www.redbubble.com/people/BBJStudio/shop"
+        ],
+        "identifier": [
+          {
+            "@type": "PropertyValue",
+            "propertyID": "Kansas Business ID",
+            "value": "10076138"
+          }
+        ]
+      }
+    }
+    </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Josh & Jordan\'s Kitchen", "item": "https://cooking.builtbyjoshstudio.com/"},
+    {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://cooking.builtbyjoshstudio.com/tools/"},
+    {"@type": "ListItem", "position": 3, "name": "Meat Thawing Planner", "item": "https://cooking.builtbyjoshstudio.com/tools/meat-thawing-planner/"}
+  ]
+}
+</script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How long does it take to thaw meat in the refrigerator?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Roughly 24 hours per 4–5 pounds for whole cuts and birds, though it varies by density and shape. Even a pound of ground meat or boneless chicken breasts needs a full day. Refrigerator thawing is the safest method because the meat stays at a safe temperature the whole time."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is cold-water thawing safe?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, if done correctly — submerged in cold water that's changed regularly, and cooked immediately after. For large cuts that would sit in water too long, refrigerator thawing is the safer choice."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I thaw meat on the counter?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Leaving meat at room temperature lets the outer surface enter the bacterial danger zone of 40–140°F while the inside is still frozen. Always thaw in the refrigerator, in cold water, or in the microwave if cooking immediately."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I know thawing times for my specific cut?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Enter the weight and protein type and the tool estimates both refrigerator and cold-water times, adjusting for how different proteins thaw — fish and seafood thaw faster than dense whole birds."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does cold-water thawing take?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "About 30 minutes per pound in cold tap water changed every 30 minutes, so a 1-pound package thaws in roughly half an hour and a 3–4 pound roast in about two hours. The calculator estimates this from the weight and flags anything that would sit in water beyond about 6 hours, where refrigerator thawing becomes the safer choice."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can you refreeze meat after thawing?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Meat thawed in the refrigerator can be refrozen without cooking first, though the texture may suffer a little. Meat thawed in cold water or the microwave should be cooked before it goes back in the freezer, because those methods can let the surface warm up. This follows the USDA's Big Thaw guidance."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the danger zone for thawing meat?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "40°F to 140°F — the temperature range where bacteria multiply fastest. Meat should never sit in that range while thawing, which is why counter thawing isn't safe and cold water has to stay cold and be changed regularly. Refrigerator thawing keeps the meat below it the whole time."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does it take to thaw a turkey?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "About one day in the refrigerator for every 4 pounds, so 3 days for a 12-pound turkey, 4 days for 16 pounds, and 5 days for 20 pounds. In cold water changed every 30 minutes it takes about 36 minutes per pound, but past 6 hours the refrigerator is the safer choice."
+          }
+        }
+      ]
+    }
+    </script>
+    
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://cooking.builtbyjoshstudio.com/tools/meat-thawing-planner/">
+    <meta property="og:title" content="Turkey &amp; Meat Thawing Time Calculator | Fridge or Cold Water">
+    <meta property="og:description" content="How long to thaw a turkey, chicken, roast, or steaks: enter the weight and get safe fridge and cold-water thawing times from USDA guidance. Free, no ads.">
+    <meta property="og:image" content="https://cooking.builtbyjoshstudio.com/icons/og-image.png">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://cooking.builtbyjoshstudio.com/tools/meat-thawing-planner/">
+    <meta name="twitter:title" content="Turkey &amp; Meat Thawing Time Calculator | Fridge or Cold Water">
+    <meta name="twitter:description" content="How long to thaw a turkey, chicken, roast, or steaks: enter the weight and get safe fridge and cold-water thawing times from USDA guidance. Free, no ads.">
+    <meta name="twitter:image" content="https://cooking.builtbyjoshstudio.com/icons/og-image.png">
+
+<link rel="preload" href="/fonts/playfair-display-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/be-vietnam-pro-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/fonts/fonts.css?v=ac58de8e6c">
+<link rel="stylesheet" href="/fonts/fonts-vietnamese.css?v=96e6ae2194">
+<link rel="stylesheet" href="/css/studio/tokens.css?v=f58e0d92c0">
+<link rel="stylesheet" href="/css/studio/components.css?v=09a4d9f402">
+<link rel="stylesheet" href="/css/studio/tools.css?v=76acb59400">
+<link rel="stylesheet" href="styles.css?v=16b9158a18">
+<link rel="stylesheet" href="/css/tokens.css?v=e6976ee263">
+<link rel="stylesheet" href="/css/chrome.css?v=04f9a9fc23">
+<link rel="stylesheet" href="/css/tool-bridge.css?v=6bfe8d2938">
+<link rel="stylesheet" href="/css/tool-parts.css?v=ba7a255de3">
+<script src="/js/theme.js?v=dc84991f4a"></script>
+<script src="/js/nav.js?v=a16bc0e1ce" defer></script>
+
+<link rel="icon" href="/icons/favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="icon" href="/icons/icon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header" id="site-header">
+  <div class="container site-header__inner">
+    <a class="brand" href="/" aria-label="Josh and Jordan's Kitchen — home">
+      <span class="mark" aria-hidden="true">J<span class="amp">&amp;</span>J</span>
+      <span class="brand__name">Josh &amp; Jordan's Kitchen</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="site-nav" id="site-nav" aria-label="Primary">
+      <ul class="site-nav__list">
+        <li><a href="/videos/">Videos</a></li>
+        <li><a href="/tools/">Tools</a></li>
+        <li><a href="/cookbook/">Cookbook</a></li>
+        <li><a href="/blog/">Blog</a></li>
+      </ul>
+      <div class="theme-switch theme-switch--compact" role="group" aria-label="Color theme">
+        <button type="button" data-theme-set="cream"><span class="swatch" aria-hidden="true"></span><span class="label">Cream</span></button>
+        <button type="button" data-theme-set="mint"><span class="swatch" aria-hidden="true"></span><span class="label">Mint</span></button>
+        <button type="button" data-theme-set="rust"><span class="swatch" aria-hidden="true"></span><span class="label">Rust</span></button>
+        <button type="button" data-theme-set="cast-iron"><span class="swatch" aria-hidden="true"></span><span class="label">Cast iron</span></button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<div class="studio-tool">
+<main class="page tool-shell" id="main" tabindex="-1">
+
+  <header class="hero glass">
+    <div style="flex:1; min-width: 0">
+      <div class="meta">
+        <span class="pill live">&#9679; Utilities</span>
+        <span>USDA thawing times</span>
+        <span class="updated-date">Updated November 2026</span>
+      </div>
+      <h1>Meat Thawing Planner</h1>
+      <p>Calculate safe refrigerator and cold water thawing times for your turkey, chicken, beef, or pork. Avoid the bacterial danger zone with built-in safety alerts.</p>
+    </div>
+  </header>
+
+  <div class="tool-controls">
+    <div class="segmented">
+      <button type="button" id="unit-imperial" class="active">Imperial (lbs)</button>
+      <button type="button" id="unit-metric">Metric (kg)</button>
+    </div>
+  </div>
+
+  <div class="glass type-card" style="margin-bottom: 24px;">
+    <div class="role">Calculator Inputs</div>
+
+    <div style="display: flex; flex-direction: column; gap: 16px;">
+      <div class="field">
+        <label class="field__label" for="protein-type">Protein Type</label>
+        <select id="protein-type" name="proteinType" class="select">
+          <optgroup label="Poultry">
+            <option value="turkey">Turkey (Whole or Breast)</option>
+            <option value="chicken">Chicken (Whole or Pieces)</option>
+            <option value="duck-goose">Duck &amp; Goose</option>
+          </optgroup>
+          <optgroup label="Beef">
+            <option value="beef-roast">Beef Roasts (Prime Rib/Tri-Tip)</option>
+            <option value="beef-brisket">Beef Brisket (Low &amp; Slow)</option>
+            <option value="beef-steak">Steaks &amp; Chops (Individual)</option>
+          </optgroup>
+          <optgroup label="Pork &amp; Lamb">
+            <option value="pork-shoulder">Pork Shoulder &amp; Hams</option>
+            <option value="lamb">Lamb Leg or Rack</option>
+          </optgroup>
+          <optgroup label="Ground, Game &amp; Seafood">
+            <option value="ground-meat">Ground Beef, Pork &amp; Lamb</option>
+            <option value="ground-poultry">Ground Turkey &amp; Chicken</option>
+            <option value="game-meat">Venison &amp; Bison (Lean Game)</option>
+            <option value="seafood">Fish &amp; Seafood</option>
+          </optgroup>
+        </select>
+      </div>
+
+      <div class="field">
+        <label class="field__label" id="weight-label" for="meat-weight">Weight (lbs)</label>
+        <input type="number" id="meat-weight" class="input" placeholder="Enter weight" min="0" step="0.1" value="12">
+      </div>
+    </div>
+
+    <div style="margin-top: 24px;">
+      <button id="calculate-btn" class="btn" style="width: 100%;">Calculate Thawing Times</button>
+    </div>
+  </div>
+
+  <div class="results compare" style="margin-bottom: 24px;">
+    <div class="col yes">
+      <h2>Refrigerator Thawing</h2>
+      <p style="font-size: 13px; color: var(--muted); margin-bottom: 20px;">The safest thawing method. Keeps protein out of the bacterial danger zone.</p>
+      <div class="results__hero" style="justify-items: center; text-align: center; margin-bottom: 20px;">
+        <div class="lbl" style="margin-bottom: 4px;">Estimated Time</div>
+        <div id="fridge-time-output" class="num">--</div>
+      </div>
+      <ul style="font-size: 13px; line-height: 1.6; color: var(--muted);">
+        <li>Store on the bottom shelf in a tray to catch drips.</li>
+        <li>Allows thawed meat to remain safely in fridge for 1-2 days before cooking.</li>
+        <li>USDA recommended method for all weights.</li>
+      </ul>
+    </div>
+
+    <div class="col no" id="water-card">
+      <h2>Cold Water Thawing</h2>
+      <p style="font-size: 13px; color: var(--muted); margin-bottom: 20px;">Faster thawing. Requires active water management and immediate cooking.</p>
+      <div class="results__hero" style="justify-items: center; text-align: center; margin-bottom: 20px;">
+        <div class="lbl" style="margin-bottom: 4px;">Estimated Time</div>
+        <div id="water-time-output" class="num">--</div>
+      </div>
+      <ul style="font-size: 13px; line-height: 1.6; color: var(--muted); margin-bottom: 16px;">
+        <li>Submerge in a sealed leak-proof bag.</li>
+        <li>Change cold tap water every 30 minutes.</li>
+        <li><strong>Must cook immediately</strong> after thawing is complete.</li>
+      </ul>
+
+      <div id="safety-warning-container" class="alert alert--error" style="display: none; margin-top: 16px;">
+      </div>
+    </div>
+
+    <div id="seafood-warning-container" class="alert alert--error" style="display: none; grid-column: 1 / -1;">
+      &#9888; Critical Seafood Safety: If your seafood is vacuum-sealed, you MUST puncture or remove the packaging completely before thawing in the refrigerator or cold water to eliminate the risk of lethal anaerobic botulism bacteria growth.
+    </div>
+
+    <div class="form-actions" style="grid-column: 1 / -1; justify-content: center;">
+      <button type="button" id="copy-link-btn" class="btn btn--ghost" aria-label="Copy link to these numbers">Copy link</button>
+      <span id="copy-link-status" role="status" style="font-size: var(--text-xs); color: var(--text-muted); align-self: center;"></span>
+    </div>
+  </div>
+
+  <div class="glass" style="margin-bottom: 24px; padding: 24px; text-align: left;">
+    <h2 style="font-family: var(--font-display); font-weight: 800; font-size: 20px; letter-spacing: -0.02em; margin-top: 0; margin-bottom: 12px;">When to start thawing</h2>
+    <div class="field">
+      <label class="field__label" for="cook-time">Cooking on</label>
+      <input type="datetime-local" id="cook-time" class="input">
+    </div>
+    <ul style="font-size: 14px; line-height: 1.6; color: var(--ink); margin: 16px 0 0; padding-left: 20px;">
+      <li>Move to fridge by: <strong id="fridge-start-output" class="num">--</strong></li>
+      <li>Start cold-water thaw by: <strong id="water-start-output" class="num">--</strong> <span id="water-start-note" style="color: var(--muted);">(cook immediately after)</span></li>
+    </ul>
+    <div id="schedule-warning-container" class="alert alert--error" style="display: none; margin-top: 16px;">
+    </div>
+  </div>
+
+  <div class="glass" style="margin-bottom: 24px; padding: 24px; text-align: center;">
+    <h2 style="font-family: var(--font-ui); font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: var(--tracking-label); color: var(--muted); margin: 0 0 14px;">Next Steps for Your Cook</h2>
+    <div style="display: flex; flex-direction: column; gap: 10px; font-size: 14px;">
+      <a id="pipeline-link-brine" href="../brine-calculator/" style="color: var(--accent); text-decoration: none; font-weight: 600;">Thaw complete? Calculate your salt ratio with the Brine Calculator &rarr;</a>
+      <a id="pipeline-link-reverse" href="../reverse-roasting-calculator/" style="color: var(--accent); text-decoration: none; font-weight: 600;">Ready to schedule? Plan your cooking timeline backward with the Cooking Timeline Calculator &rarr;</a>
+    </div>
+  </div>
+
+  <!-- AT A GLANCE (P2-c) -->
+  <div class="glass glance glance--flush">
+    <h2>At a glance</h2>
+    <div class="table-wrap">
+    <table class="table">
+      <tbody>
+        <tr><th>What it does</th><td>Backward-schedules food-safe thawing for frozen meat using the USDA refrigerator and cold-water methods.</td></tr>
+        <tr><th>Inputs</th><td>Protein type (turkey, chicken, beef, pork and more), weight in pounds, and the day and time you plan to cook.</td></tr>
+        <tr><th>Outputs</th><td>Fridge and cold-water thawing time windows, when to start, and food-safety warnings about the bacterial danger zone.</td></tr>
+        <tr><th>Cost &amp; privacy</th><td>Free, ad-free, no signup. Runs entirely in your browser — nothing is uploaded.</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+
+  <!-- Explanatory Prose & FAQ Section -->
+  <div class="glass" style="margin-bottom: 24px; padding: 24px; text-align: left;">
+    <h2 style="font-family: var(--font-display); font-weight: 800; font-size: 20px; letter-spacing: -0.02em; margin-top: 0; margin-bottom: 12px;">How thawing time is calculated</h2>
+    <p style="margin-bottom: 12px; line-height: 1.6; color: var(--ink);">Thawing time comes down to two safe methods, and they work at very different speeds. Refrigerator thawing is the slowest but safest — the meat stays below 40°F the entire time, so it never enters the bacterial "danger zone." As a rule of thumb it takes about 24 hours for every 5 pounds, though dense whole birds like turkey run a little slower and lean fish a little faster. Small packages still take a minimum: a full day for poultry, roasts, game, and ground meat, and overnight (12 hours) for steaks, chops, and fish. Cold-water thawing is much quicker — roughly 30 minutes per pound — but the meat must be in a leak-proof bag, fully submerged, with the water changed every 30 minutes to keep it cold. This calculator gives you both estimates side by side, adjusted for the specific protein you choose, so you can pick the method that fits your timeline.</p>
+    <p style="margin-bottom: 24px; line-height: 1.6; color: var(--ink);">Speed isn't the only factor — safety sets the real limits. Cold-water thawing demands attention, and for large cuts it can run long enough that the surface drifts into unsafe temperatures before the center is done, which is why the tool steers you back to the refrigerator past a certain size. Vacuum-sealed fish and seafood carry a separate risk: the packaging must be opened before thawing to avoid anaerobic bacteria. Whichever method you use, the food should be cooked promptly once thawed, and counter thawing is never safe. For the full official guidance, see the USDA's <a href="https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/big-thaw-safe-defrosting-methods" target="_blank" rel="noopener" style="color: var(--accent); text-decoration: none; font-weight: 600;">Big Thaw — Safe Defrosting Methods</a>.</p>
+
+    <h2 style="font-family: var(--font-display); font-weight: 800; font-size: 20px; letter-spacing: -0.02em; margin-top: 0; margin-bottom: 12px; padding-top: 16px; border-top: 1px solid var(--line-2);">Turkey thawing time by weight</h2>
+
+    <p style="margin-bottom: 12px; line-height: 1.6; color: var(--ink);">A whole turkey thaws at about 4 pounds per day in the refrigerator, or about 36 minutes per pound in cold water changed every 30 minutes:</p>
+
+    <div class="table-wrap" style="margin-bottom: 14px;">
+    <table class="table">
+      <thead><tr><th class="num">Turkey</th><th class="num">Refrigerator</th><th class="num">Cold water</th></tr></thead>
+      <tbody>
+        <tr><td class="num">8&nbsp;lb</td><td class="num">2&nbsp;days</td><td class="num">4&nbsp;hrs, 48&nbsp;mins</td></tr>
+        <tr><td class="num">12&nbsp;lb</td><td class="num">3&nbsp;days</td><td class="num">7&nbsp;hrs, 12&nbsp;mins *</td></tr>
+        <tr><td class="num">16&nbsp;lb</td><td class="num">4&nbsp;days</td><td class="num">9&nbsp;hrs, 36&nbsp;mins *</td></tr>
+        <tr><td class="num">20&nbsp;lb</td><td class="num">5&nbsp;days</td><td class="num">12&nbsp;hrs *</td></tr>
+        <tr><td class="num">24&nbsp;lb</td><td class="num">6&nbsp;days</td><td class="num">14&nbsp;hrs, 24&nbsp;mins *</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <p style="margin-bottom: 12px; line-height: 1.6; color: var(--ink);">* Past 6 hours in cold water the calculator recommends the refrigerator instead, because the surface of a large bird can warm up before the center thaws. Count back from the day you cook: a 16-pound turkey for Thursday goes into the refrigerator on Sunday.</p>
+
+    <p style="margin-bottom: 12px; line-height: 1.6; color: var(--ink);">Roasts and whole chickens move faster, at about 5 pounds per day in the refrigerator (never less than a full day) or 30 minutes per pound in cold water:</p>
+
+    <div class="table-wrap" style="margin-bottom: 14px;">
+    <table class="table">
+      <thead><tr><th class="num">Roast or chicken</th><th class="num">Refrigerator</th><th class="num">Cold water</th></tr></thead>
+      <tbody>
+        <tr><td class="num">2&nbsp;lb</td><td class="num">1&nbsp;day</td><td class="num">1&nbsp;hr</td></tr>
+        <tr><td class="num">3&nbsp;lb</td><td class="num">1&nbsp;day</td><td class="num">1&nbsp;hr, 30&nbsp;mins</td></tr>
+        <tr><td class="num">5&nbsp;lb</td><td class="num">1&nbsp;day</td><td class="num">2&nbsp;hrs, 30&nbsp;mins</td></tr>
+        <tr><td class="num">8&nbsp;lb</td><td class="num">1&nbsp;day, 15&nbsp;hrs</td><td class="num">4&nbsp;hrs</td></tr>
+        <tr><td class="num">10&nbsp;lb</td><td class="num">2&nbsp;days</td><td class="num">5&nbsp;hrs</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <p style="margin-bottom: 24px; line-height: 1.6; color: var(--ink);">Meat thawed in the refrigerator keeps for another day or two before cooking. Meat thawed in cold water should be cooked right away.</p>
+
+    <h2 style="font-family: var(--font-display); font-weight: 800; font-size: 20px; letter-spacing: -0.02em; margin-top: 0; margin-bottom: 16px; padding-top: 16px; border-top: 1px solid var(--line-2);">Frequently Asked Questions</h2>
+    <div style="display: flex; flex-direction: column; gap: 18px;">
+      <div>
+        <h3 style="font-family: var(--font-ui); font-weight: 700; font-size: 14px; margin: 0 0 6px; color: var(--ink);">How long does it take to thaw meat in the refrigerator?</h3>
+        <p style="margin: 0; line-height: 1.5; font-size: 13px; color: var(--muted);">Roughly 24 hours per 4–5 pounds for whole cuts and birds, though it varies by density and shape. Even a pound of ground meat or boneless chicken breasts needs a full day. Refrigerator thawing is the safest method because the meat stays at a safe temperature the whole time.</p>
+      </div>
+      <div>
+        <h3 style="font-family: var(--font-ui); font-weight: 700; font-size: 14px; margin: 0 0 6px; color: var(--ink);">Is cold-water thawing safe?</h3>
+        <p style="margin: 0; line-height: 1.5; font-size: 13px; color: var(--muted);">Yes, if done correctly — submerged in cold water that's changed regularly, and cooked immediately after. For large cuts that would sit in water too long, refrigerator thawing is the safer choice.</p>
+      </div>
+      <div>
+        <h3 style="font-family: var(--font-ui); font-weight: 700; font-size: 14px; margin: 0 0 6px; color: var(--ink);">Can I thaw meat on the counter?</h3>
+        <p style="margin: 0; line-height: 1.5; font-size: 13px; color: var(--muted);">No. Leaving meat at room temperature lets the outer surface enter the bacterial danger zone of 40–140°F while the inside is still frozen. Always thaw in the refrigerator, in cold water, or in the microwave if cooking immediately.</p>
+      </div>
+      <div>
+        <h3 style="font-family: var(--font-ui); font-weight: 700; font-size: 14px; margin: 0 0 6px; color: var(--ink);">How do I know thawing times for my specific cut?</h3>
+        <p style="margin: 0; line-height: 1.5; font-size: 13px; color: var(--muted);">Enter the weight and protein type and the tool estimates both refrigerator and cold-water times, adjusting for how different proteins thaw — fish and seafood thaw faster than dense whole birds.</p>
+      </div>
+      <div>
+        <h3 style="font-family: var(--font-ui); font-weight: 700; font-size: 14px; margin: 0 0 6px; color: var(--ink);">How long does cold-water thawing take?</h3>
+        <p style="margin: 0; line-height: 1.5; font-size: 13px; color: var(--muted);">About 30 minutes per pound in cold tap water changed every 30 minutes, so a 1-pound package thaws in roughly half an hour and a 3–4 pound roast in about two hours. The calculator estimates this from the weight and flags anything that would sit in water beyond about 6 hours, where refrigerator thawing becomes the safer choice.</p>
+      </div>
+      <div>
+        <h3 style="font-family: var(--font-ui); font-weight: 700; font-size: 14px; margin: 0 0 6px; color: var(--ink);">Can you refreeze meat after thawing?</h3>
+        <p style="margin: 0; line-height: 1.5; font-size: 13px; color: var(--muted);">Meat thawed in the refrigerator can be refrozen without cooking first, though the texture may suffer a little. Meat thawed in cold water or the microwave should be cooked before it goes back in the freezer, because those methods can let the surface warm up. This follows the USDA's Big Thaw guidance.</p>
+      </div>
+      <div>
+        <h3 style="font-family: var(--font-ui); font-weight: 700; font-size: 14px; margin: 0 0 6px; color: var(--ink);">What is the danger zone for thawing meat?</h3>
+        <p style="margin: 0; line-height: 1.5; font-size: 13px; color: var(--muted);">40°F to 140°F — the temperature range where bacteria multiply fastest. Meat should never sit in that range while thawing, which is why counter thawing isn't safe and cold water has to stay cold and be changed regularly. Refrigerator thawing keeps the meat below it the whole time.</p>
+      </div>
+      <div>
+        <h3 style="font-family: var(--font-ui); font-weight: 700; font-size: 14px; margin: 0 0 6px; color: var(--ink);">How long does it take to thaw a turkey?</h3>
+        <p style="margin: 0; line-height: 1.5; font-size: 13px; color: var(--muted);">About one day in the refrigerator for every 4 pounds, so 3 days for a 12-pound turkey, 4 days for 16 pounds, and 5 days for 20 pounds. In cold water changed every 30 minutes it takes about 36 minutes per pound, but past 6 hours the refrigerator is the safer choice.</p>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<section class="net-band">
+  <h2><span class="lbl">Network</span> More from the studio</h2>
+  <div class="net-grid">
+    <a href="/cookbook/" class="gear-item">
+      <div class="gear-img-wrapper"><img src="/nuoc-mam-link.webp" alt="Nước Mắm — A Vietnamese Family Cookbook by Josh Tran" width="600" height="600" loading="lazy"></div>
+      <div class="gear-info">
+        <h3>Nước Mắm — the Cookbook</h3>
+        <p>A Vietnamese family cookbook by the cook behind these tools — 56 pages, balanced by tasting.</p>
+        <button class="affiliate-btn">Get the Cookbook — $3.99</button>
+      </div>
+    </a>
+    <a href="/videos/" class="gear-item">
+      <div class="gear-img-wrapper"><img src="/kitchen-videos-link.webp" alt="Cook-along videos from Josh &amp; Jordan's Kitchen" width="600" height="299" loading="lazy"></div>
+      <div class="gear-info">
+        <h3>Watch the Cooks</h3>
+        <p>The same kitchen, on video — a short cut of each cook plus the full real-time version, nothing sped up.</p>
+        <button class="affiliate-btn">Watch the Videos</button>
+      </div>
+    </a>
+    <a href="https://builtbyjoshstudio.com/" target="_blank" rel="noopener" class="gear-item">
+      <div class="gear-img-wrapper"><img src="/studio-link.webp" alt="Built by Josh Studio" width="600" height="299" loading="lazy"></div>
+      <div class="gear-info">
+        <h3>Built by Josh Studio</h3>
+        <p>Local-first software, CRM solutions, and technical projects.</p>
+        <button class="affiliate-btn">Visit Website</button>
+      </div>
+    </a>
+    <a href="https://www.youtube.com/@TalesofInkShadowsStudio" target="_blank" rel="noopener" class="gear-item">
+      <div class="gear-img-wrapper"><img src="/tales-link.webp" alt="Tales of Ink &amp; Shadows" width="600" height="299" loading="lazy"></div>
+      <div class="gear-info">
+        <h3>Tales of Ink &amp; Shadows</h3>
+        <p>Historical noir documentaries and immersive storytelling.</p>
+        <button class="affiliate-btn">Watch on YouTube</button>
+      </div>
+    </a>
+  </div>
+</section>
+
+<footer class="footer" style="text-align: center; font-size: 11px; color: var(--muted); padding: 32px 20px; margin-top: 40px; line-height: 1.6; max-width: 640px; margin-left: auto; margin-right: auto;">
+  <p style="margin-bottom: 8px;"><strong>Disclaimer:</strong> Thawing times are estimations. Always ensure the internal temperature of the meat remains below 40&deg;F during thawing to prevent bacterial growth. Use a food thermometer to verify that the protein has reached safe internal cooking temperatures before consumption.</p>
+  <p style="margin-bottom: 12px;">These tools provide estimates for planning purposes. Always use a food thermometer to confirm doneness, and follow current USDA food-safety guidance for cooking, thawing, and storing food.</p>
+</footer>
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="site-footer__grid">
+      <div class="site-footer__brand">
+        <span class="mark" aria-hidden="true">J<span class="amp">&amp;</span>J</span>
+        <p class="tagline" style="font-size:var(--text-base)">real home cooking &amp; baking</p>
+        <div class="divider divider--inline" style="justify-content:flex-start" aria-hidden="true"><span class="diamond"></span></div>
+      </div>
+      <div>
+        <h2>Kitchen</h2>
+        <ul>
+          <li><a href="/videos/">Videos</a></li>
+          <li><a href="/tools/">Tools</a></li>
+          <li><a href="/cookbook/">Cookbook</a></li>
+          <li><a href="/blog/">Blog</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>More from the studio</h2>
+        <ul>
+          <li><a href="https://builtbyjoshstudio.com/">Built by Josh Studio</a></li>
+          <li><a href="https://tynkr.builtbyjoshstudio.com/">Tynkr apps</a></li>
+          <li><a href="https://tools.builtbyjoshstudio.com/money/">Money tools</a></li>
+          <li><a href="https://writing.builtbyjoshstudio.com/">J.S. Warden — books</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Contact</h2>
+        <address>
+          <a href="mailto:support@builtbyjoshstudio.com">support@builtbyjoshstudio.com</a>
+        </address>
+        <ul style="margin-top:var(--space-4)">
+          <li><a href="https://www.youtube.com/@joshandjordanskitchen" rel="noopener">YouTube</a></li>
+          <li><a href="https://www.tiktok.com/@JOSHANDJORDANSKITCHEN" rel="noopener">TikTok</a></li>
+          <li><a href="https://www.instagram.com/JOSHANDJORDANSKITCHEN" rel="noopener">Instagram</a></li>
+          <li><a href="https://www.facebook.com/joshandjordanskitchen/" rel="noopener">Facebook</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="site-footer__legal">
+      <ul>
+        <li><a href="/privacy/">Privacy</a></li>
+        <li><a href="https://builtbyjoshstudio.com/terms.html">Terms</a></li>
+        <li><a href="https://builtbyjoshstudio.com/refunds.html">Refunds</a></li>
+      </ul>
+      <p class="wordmark" style="padding-left:0;text-align:left;margin:0">&copy; <span class="tabular">2026</span> Built by Josh Studio LLC. All rights reserved.</p>
+    </div>
+    <p class="site-footer__brands">Tynkr Tools &amp; Co and <a href="https://littleacrelearning.com" rel="noopener">Little Acre Learning</a> are brands of Built by Josh Studio LLC.</p>
+  </div>
+</footer>
+
+<script src="script.js?v=ebd5844d62" defer></script>
+<script src="../kinetic.js?v=f935f39fab" defer></script>
+</body>
+</html>

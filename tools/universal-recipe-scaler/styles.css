@@ -1,0 +1,56 @@
+/* universal-recipe-scaler - page styles. Loads after /css/tokens.css, /css/components.css and /css/tools.css.
+   Moved here from the page's <style> block with values converted to Ledger tokens. */
+
+#recipe-input {
+  min-height: 400px;
+  height: auto;
+  overflow-y: hidden;
+  resize: vertical;
+}
+
+.page.tool-shell { max-width: 1100px; padding-top: 28px; }
+.net-band { max-width: 1100px; margin: 56px auto 0; padding: 0 28px; }
+.net-band h2 { font-family: var(--font-display); font-weight: 800; font-size: 20px; letter-spacing: -0.02em; margin: 0 0 18px; padding-bottom: 12px; border-bottom: 1px solid var(--line-2); display: flex; align-items: baseline; gap: 12px; }
+.net-band h2 .lbl { font-family: var(--font-ui); font-size: 11px; font-weight: 600; letter-spacing: var(--tracking-label); text-transform: uppercase; color: var(--accent); }
+.net-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.net-grid .gear-img-wrapper { height: 120px; }
+@media (max-width: 760px) { .net-grid { grid-template-columns: 1fr; } }
+
+/* ---- Step 2 restyle: the kit tool parts (css/tool-parts.css), kit tokens only ---- */
+/* the two serving counts stay short, centred number boxes (tools.css gave the studio inputs 90px) */
+.studio-tool .custom-scale .input { width: 5.75rem; text-align: center; }
+/* the kit button is wider than the studio's, so on a phone the Scale button drops under the two counts */
+.studio-tool .custom-scale { flex-wrap: wrap; }
+/* the multiplier control keeps its own width when the controls card stacks (tools.css, below 961px) */
+.studio-tool .controls-card > .segmented { align-self: flex-start; }
+/* the multiplier buttons keep .scale-btn (script.js finds them by it); inside the segmented control they do not lift */
+.studio-tool .segmented > .scale-btn:hover { transform: none; }
+/* Copy / Print share the row and wrap at phone width; the panel's grid gap spaces the row */
+.studio-tool .action-buttons { flex-wrap: wrap; margin-top: 0; }
+.studio-tool .action-buttons .btn { flex: 1 1 auto; padding-inline: 1.1em; }
+/* the tool section and the Next Steps card below it were flush; the page's other cards sit 24px apart */
+.studio-tool .scaler-section { margin-bottom: 24px; }
+/* the scaled amounts use the kit's numeric face */
+.studio-tool .scaled-results .highlight { font-family: var(--font-numeric); font-variant-numeric: var(--numeric-features); }
+/* the tick-off boxes script.js puts on each recipe line, drawn as the kit checkbox (.choice) */
+.studio-tool .recipe-line input[type="checkbox"] {
+  appearance: none; -webkit-appearance: none; flex: none;
+  width: 1.15em; height: 1.15em; margin: .22em 0 0;
+  border: 2px solid var(--field-border-hover); border-radius: 4px; background: var(--field-bg);
+  cursor: pointer; display: grid; place-content: center;
+  transition: border-color var(--dur-fast), background-color var(--dur-fast);
+}
+.studio-tool .recipe-line input[type="checkbox"]::before {
+  content: ""; width: .32em; height: .6em; margin-top: -.15em;
+  border: solid var(--text-on-primary); border-width: 0 2px 2px 0;
+  transform: scale(0) rotate(45deg); transition: transform var(--dur-fast) var(--ease-out);
+}
+.studio-tool .recipe-line input[type="checkbox"]:checked { background: var(--primary); border-color: var(--primary); }
+.studio-tool .recipe-line input[type="checkbox"]:checked::before { transform: scale(1) rotate(45deg); }
+.studio-tool .recipe-line input[type="checkbox"]:focus-visible { outline: 2px solid var(--field-ring); outline-offset: 2px; }
+/* kit parts inside a tool panel: the "on" text of the segmented control and the ghost button's
+   hover text use the panel ground, not the page ground --bg (they differ in rust) */
+.studio-tool :is(.glass-panel, .results) .segmented > button.active,
+.studio-tool :is(.glass-panel, .results) .btn--ghost:hover { color: var(--surface); }
+/* a ticked-off line keeps its strike-through but stays readable (the studio's 50% opacity fell below 4.5:1) */
+.studio-tool .recipe-line input[type="checkbox"]:checked + .recipe-text { opacity: 1; color: var(--text-muted); }

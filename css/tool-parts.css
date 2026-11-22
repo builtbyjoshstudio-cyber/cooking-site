@@ -1,0 +1,195 @@
+/* ==========================================================================
+   tool-parts.css: the cooking kit's tool parts (buttons, fields, results
+   panel, tables, messages) for a RESTYLED tool page (the Step 2 pilot).
+
+   Copied from jjk-theme-kit v2.1 (base.css .btn, components.css FORMS,
+   RESULTS PANEL, DATA TABLE, ALERTS / STATUS) with every selector scoped to
+   .studio-tool, so the rules beat the studio's own .btn, .input and .label
+   and reach nothing outside the tool. A few lines reset studio properties
+   the kit rules do not set (marked "studio reset").
+
+   Loads after css/tool-bridge.css, only on pages whose markup uses these
+   classes. Bridged tools that keep their studio markup do not load it.
+   ========================================================================== */
+
+/* ---------- buttons (kit base.css) ---------- */
+.studio-tool .btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: .6em;
+  padding: .85em 1.9em;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--primary);
+  background: var(--primary);
+  color: var(--text-on-primary);
+  font: 600 var(--text-sm)/1 var(--font-sans);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  white-space: nowrap;
+  box-shadow: none;                                   /* studio reset */
+  transition: background-color var(--dur-fast) var(--ease-out), border-color var(--dur-fast) var(--ease-out), color var(--dur-fast) var(--ease-out), transform var(--dur-fast) var(--ease-out);
+}
+.studio-tool .btn:hover { background: var(--primary-hover); border-color: var(--primary-hover); color: var(--text-on-primary); transform: none; box-shadow: none; }
+.studio-tool .btn:active { transform: translateY(1px); }
+/* kit v2.2: in cast iron, filled buttons keep --primary on hover and lift 1px (3.94:1 on --primary-hover) */
+[data-theme="cast-iron"] .studio-tool .btn:not(.btn--ghost, .btn--soft, .btn--danger):hover { background: var(--primary); border-color: var(--primary); transform: translateY(-1px); }
+.studio-tool .btn--ghost { background: transparent; color: var(--text); border-color: var(--text); }
+.studio-tool .btn--ghost:hover { background: var(--text); color: var(--bg); border-color: var(--text); }
+.studio-tool .btn--sm { padding: .65em 1.3em; font-size: var(--text-xs); }
+.studio-tool .btn:disabled, .studio-tool .btn[aria-disabled="true"] { opacity: .55; cursor: not-allowed; transform: none; }
+.studio-tool .btn--danger { background: var(--error); border-color: var(--error); color: var(--surface); }
+.studio-tool .btn--danger:hover { filter: brightness(.9); background: var(--error); border-color: var(--error); color: var(--surface); }
+
+/* ---------- forms (kit components.css) ---------- */
+.studio-tool .form { display: grid; gap: var(--space-6); }
+.studio-tool .form-row { display: grid; gap: var(--space-5); grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); }
+.studio-tool .field { display: grid; gap: var(--space-2); min-width: 0; }
+/* the tools' scripts show a hidden field with style.display = 'flex'; keep it a column */
+.studio-tool .field { flex-direction: column; }
+.studio-tool .field__label { font: 600 var(--text-sm)/1.3 var(--font-sans); color: var(--text); }
+.studio-tool .field__hint { font: 400 var(--text-xs)/1.5 var(--font-sans); color: var(--text-muted); margin: 0; }
+
+.studio-tool :is(.input, .select, .textarea) {
+  width: 100%; min-height: var(--field-height);
+  padding: .55em .9em;
+  font: 400 var(--text-base)/1.4 var(--font-sans);
+  color: var(--field-text); background: var(--field-bg);
+  border: 1px solid var(--field-border); border-radius: var(--radius-field);
+  box-shadow: none;                                   /* studio reset */
+  transition: border-color var(--dur-fast) var(--ease-out), box-shadow var(--dur-fast) var(--ease-out), background-color var(--dur-theme) var(--ease-out);
+}
+.studio-tool :is(.input, .textarea)::placeholder { color: var(--field-placeholder); opacity: 1; }
+.studio-tool :is(.input, .select, .textarea):hover { border-color: var(--field-border-hover); }
+.studio-tool :is(.input, .select, .textarea):focus { outline: none; }                         /* studio reset */
+.studio-tool :is(.input, .select, .textarea):focus-visible { outline: none; border-color: var(--field-ring); box-shadow: 0 0 0 3px color-mix(in srgb, var(--field-ring) 35%, transparent); }
+.studio-tool :is(.input, .select, .textarea):disabled { background: var(--field-disabled-bg); color: var(--field-disabled-text); cursor: not-allowed; }
+.studio-tool .input[type="number"] { font-family: var(--font-numeric); font-variant-numeric: var(--numeric-features); }
+.studio-tool .input[type="number"]::-webkit-outer-spin-button, .studio-tool .input[type="number"]::-webkit-inner-spin-button { height: 1.6em; }
+.studio-tool .select {
+  appearance: none; -webkit-appearance: none;
+  padding-right: 2.6em; cursor: pointer;
+  background-image: linear-gradient(45deg, transparent 50%, currentColor 50%), linear-gradient(135deg, currentColor 50%, transparent 50%);
+  background-position: calc(100% - 1.15em) 50%, calc(100% - .75em) 50%;
+  background-size: .4em .4em, .4em .4em;
+  background-repeat: no-repeat;
+}
+.studio-tool .select :is(option, optgroup) { background-color: var(--field-bg); color: var(--field-text); }
+/* fields are light wells in every theme but cast iron, so their native parts draw to match */
+.studio-tool :is(.input, .select, .textarea) { color-scheme: light; }
+[data-theme="cast-iron"] .studio-tool :is(.input, .select, .textarea) { color-scheme: dark; }
+
+/* radio & checkbox (kit .choice) */
+.studio-tool .choice { display: inline-flex; align-items: flex-start; gap: .65em; cursor: pointer; font: 400 var(--text-base)/1.4 var(--font-sans); color: var(--text); }
+.studio-tool .choice input { appearance: none; -webkit-appearance: none; flex: none; width: 1.25em; height: 1.25em; margin: .1em 0 0; border: 2px solid var(--field-border-hover); background: var(--field-bg); cursor: pointer; display: grid; place-content: center; transition: border-color var(--dur-fast), background-color var(--dur-fast); }
+.studio-tool .choice input[type="checkbox"] { border-radius: 4px; }
+.studio-tool .choice input::before { content: ""; width: .6em; height: .6em; transform: scale(0); transition: transform var(--dur-fast) var(--ease-out); }
+.studio-tool .choice input[type="checkbox"]::before { width: .35em; height: .65em; border: solid var(--text-on-primary); border-width: 0 2px 2px 0; transform: scale(0) rotate(45deg); margin-top: -.15em; }
+.studio-tool .choice input:checked { background: var(--primary); border-color: var(--primary); }
+.studio-tool .choice input[type="checkbox"]:checked::before { transform: scale(1) rotate(45deg); }
+.studio-tool .choice input:focus-visible { outline: 2px solid var(--field-ring); outline-offset: 2px; }
+.studio-tool .choice label { cursor: pointer; }
+
+/* segmented control. The kit's version is radios; the tools use buttons with
+   an .active class set by their scripts, so the same look is drawn on those. */
+.studio-tool .segmented { display: inline-flex; padding: 3px; border: 1px solid var(--text); border-radius: var(--radius-pill); gap: 2px; background: transparent; }
+.studio-tool .segmented > button {
+  appearance: none; border: 0; cursor: pointer; box-shadow: none;
+  display: inline-block; padding: .5em 1em; border-radius: var(--radius-pill);
+  background: transparent; color: var(--text);
+  font: 600 var(--text-xs)/1 var(--font-sans); letter-spacing: .06em; text-transform: uppercase;
+}
+.studio-tool .segmented > button.active { background: var(--text); color: var(--bg); }
+.studio-tool .segmented > button:focus-visible { outline: 2px solid var(--field-ring); outline-offset: 2px; }
+
+.studio-tool .form-actions { display: flex; flex-wrap: wrap; gap: var(--space-3); align-items: center; }
+
+/* ---------- results panel (kit components.css) ---------- */
+.studio-tool .results {
+  background: var(--surface); border-radius: var(--radius-lg); box-shadow: var(--shadow-card);
+  padding: var(--space-6); display: grid; gap: var(--space-5);
+  transition: background-color var(--dur-theme) var(--ease-out);
+}
+.studio-tool .results__head { display: flex; align-items: baseline; justify-content: space-between; gap: var(--space-4); flex-wrap: wrap; }
+.studio-tool .results__title { font: 600 var(--text-xl)/1.1 var(--font-display); letter-spacing: var(--tracking-tight); margin: 0; }
+.studio-tool .results__hero { display: grid; gap: var(--space-1); }
+/* a long result line must wrap, not widen the panel past a 320px screen */
+.studio-tool :is(.results, .results__hero) { grid-template-columns: minmax(0, 1fr); }
+.studio-tool .results__hero .num { font-size: var(--text-3xl); line-height: 1; }
+.studio-tool .results__list { list-style: none; margin: 0; padding: 0; display: grid; }
+.studio-tool .results__list > li { display: flex; justify-content: space-between; gap: var(--space-4); padding: .65em 0; border-bottom: 1px solid var(--hairline); }
+.studio-tool .results__list > li:last-child { border-bottom: 0; }
+.studio-tool .results__list .lbl, .studio-tool .results .lbl { font: 500 var(--text-sm)/1.4 var(--font-sans); color: var(--text-muted); }
+
+.studio-tool .num {
+  font-family: var(--font-numeric); font-variant-numeric: var(--numeric-features);
+  font-weight: 600; color: var(--text); letter-spacing: 0;
+}
+.studio-tool .num small, .studio-tool .num .unit { font: 500 .55em/1 var(--font-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--text-muted); margin-left: .35em; }
+.studio-tool .tabular { font-variant-numeric: var(--numeric-features); }
+
+/* ---------- data table (kit components.css) ---------- */
+.studio-tool .table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; border-radius: var(--radius-md); }
+.studio-tool .table { width: 100%; border-collapse: collapse; font: 400 var(--text-sm)/1.4 var(--font-sans); color: var(--text); }
+/* studio reset: the studio's .table is a boxed card with shaded headers */
+.studio-tool .table { border-spacing: 0; border: 0; border-radius: 0; overflow: visible; background: transparent; }
+.studio-tool .table th { background: transparent; }
+.studio-tool .table tr:last-child :is(th, td) { border-bottom: 1px solid var(--hairline); }   /* the studio's .glance rule drops the th border */
+.studio-tool .table tbody tr:hover td { background: transparent; }
+.studio-tool .table caption { text-align: left; padding: 0 0 var(--space-3); font: italic 400 var(--text-sm)/1.4 var(--font-serif); color: var(--text-muted); }
+.studio-tool .table :is(th, td) { padding: .75em .9em; border-bottom: 1px solid var(--hairline); text-align: left; vertical-align: top; color: var(--text); }
+.studio-tool .table thead th { font: 700 var(--text-xs)/1.3 var(--font-sans); letter-spacing: .1em; text-transform: uppercase; color: var(--text-muted); border-bottom: 2px solid var(--border); white-space: nowrap; }
+.studio-tool .table tbody th { font: 700 var(--text-xs)/1.5 var(--font-sans); letter-spacing: .1em; text-transform: uppercase; color: var(--text-muted); white-space: nowrap; }
+.studio-tool .table :is(.num, td.num, th.num) { text-align: right; font-weight: 500; }
+.studio-tool .table tbody tr:hover { background: color-mix(in srgb, var(--surface-2) 60%, transparent); }
+
+/* ---------- alerts / status (kit components.css) ---------- */
+.studio-tool .alert {
+  display: flex; gap: var(--space-3); align-items: flex-start;
+  padding: var(--space-4) var(--space-5);
+  border-radius: var(--radius-md);
+  border: 1px solid; border-left-width: 4px;
+  font: 400 var(--text-sm)/1.5 var(--font-sans);
+  color: var(--text);
+}
+.studio-tool .alert__title { display: block; font-weight: 700; margin-bottom: .15em; }
+.studio-tool .alert--success { background: var(--success-bg); border-color: var(--success-border); }
+.studio-tool .alert--warning { background: var(--warning-bg); border-color: var(--warning-border); }
+.studio-tool .alert--error   { background: var(--error-bg);   border-color: var(--error-border); }
+.studio-tool .alert--info    { background: var(--info-bg);    border-color: var(--info-border); }
+.studio-tool .alert--success .alert__title { color: var(--success); }
+.studio-tool .alert--warning .alert__title { color: var(--warning); }
+.studio-tool .alert--error   .alert__title { color: var(--error); }
+.studio-tool .alert--info    .alert__title { color: var(--info); }
+.studio-tool .alert :is(h2, h3) { font: 700 var(--text-sm)/1.4 var(--font-sans); margin: 0 0 .15em; letter-spacing: 0; }
+.studio-tool .alert p { margin: 0; color: var(--text); max-width: none; }
+
+.studio-tool .status { display: inline-flex; align-items: center; gap: .45em; font: 600 var(--text-xs)/1 var(--font-sans); letter-spacing: .06em; text-transform: uppercase; }
+.studio-tool .status::before { content: ""; width: .6em; height: .6em; border-radius: 50%; background: currentColor; }
+.studio-tool .status--success { color: var(--success); }
+.studio-tool .status--warning { color: var(--warning); }
+.studio-tool .status--error   { color: var(--error); }
+.studio-tool .status--info    { color: var(--info); }
+
+/* ---------- parts the kit example draws inline, as classes ---------- */
+/* the small uppercase label over a result (kit tools/example-calculator.html, .results__hero .lbl) */
+.studio-tool .results__hero .lbl { font: 600 var(--text-xs)/1 var(--font-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--text-muted); }
+/* the studio's one-glyph icon in a message keeps its place at the start of the alert */
+.studio-tool .alert .ix { flex: none; width: 1.5em; font: 600 var(--text-base)/1.4 var(--font-numeric); color: var(--text-muted); text-align: center; }
+
+/* ---------- shared fixes found while restyling the 12 tools ---------- */
+/* a results panel under a positioned studio .glass panel must not sit under its card shadow */
+.studio-tool .results { position: relative; }
+/* the kit's rounded .table-wrap clips the ends of the last row's hairline; tool tables sit square */
+.studio-tool .table-wrap { border-radius: 0; }
+/* a field never grows past its column (a datetime input is ~290px wide on its own) */
+.studio-tool .field { grid-template-columns: minmax(0, 1fr); }
+
+/* phones: the kit's one-line table headers and roomy cells pushed the narrow reference tables
+   wider than their panel (they scrolled sideways where the originals fit). Below 560px the
+   headers wrap and the cells tighten, so every tool table fits as it did on the tools site. */
+@media (max-width: 560px) {
+  .studio-tool .table :is(thead th, tbody th) { white-space: normal; letter-spacing: .02em; }
+  .studio-tool .table thead th { font-size: .6875rem; }   /* 11px, the originals' header size on phones */
+  .studio-tool .table :is(th, td) { padding: .6em .5em .6em 0; }   /* none left, 7px right: with numbers and units kept together (&nbsp;) the originals' 12px no longer fit */
+  .studio-tool .table :is(th, td):last-child { padding-right: 0; }
+}

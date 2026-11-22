@@ -1,0 +1,15 @@
+{
+  "name": "Josh & Jordan's Kitchen",
+  "short_name": "J&J Kitchen",
+  "description": "Free, ad-free, local-first kitchen calculators. Works offline once installed.",
+  "start_url": "/tools/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#FBF4E5",
+  "theme_color": "#FBF4E5",
+  "icons": [
+    { "src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/icons/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "/icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

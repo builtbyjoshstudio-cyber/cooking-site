@@ -1,0 +1,316 @@
+/* ==========================================================================
+   site.css: cooking.builtbyjoshstudio.com additions to the kit, for content
+   pages. Loads after the kit's tokens.css, base.css and components.css.
+   Kit semantic tokens only; no colour literals. Class names are the ones the
+   moved pages already use, so their markup did not have to change.
+   ========================================================================== */
+
+/* ---------- footer: the studio brands line under the legal row ---------- */
+.site-footer__brands { margin: var(--space-4) 0 0; font-size: var(--text-xs); line-height: 1.5; color: var(--text-muted); }
+
+/* ---------- shared helpers ---------- */
+.btn--block { width: 100%; }
+.hi { color: var(--primary); }
+
+/* ==========================================================================
+   BLOG POST (moved from builtbyjoshstudio.com/blog/)
+   ========================================================================== */
+.post .breadcrumb { justify-content: center; margin-bottom: 0; }
+.post .article__head h1 { font-size: clamp(2rem, 5vw, var(--text-3xl)); }
+.article .prose :is(a.related-post-card, a.btn, .btn) { text-decoration: none; }
+/* a long URL written as link text (the recipe-scaler post) could not wrap and pushed the page sideways on phones */
+.article .prose { overflow-wrap: break-word; }
+
+/* "The Short Version" */
+.post-summary {
+  margin: 0 0 2em; padding: var(--space-5) var(--space-6);
+  border: 1px solid var(--border); border-left: 4px solid var(--primary); border-radius: var(--radius-md);
+  background: var(--surface);
+}
+.post-summary .short__label {
+  display: block; margin-bottom: var(--space-3);
+  font: 700 var(--text-xs)/1 var(--font-sans); letter-spacing: var(--tracking-eyebrow); text-transform: uppercase; color: var(--primary);
+}
+.article .prose .post-summary p { margin: 0; font-size: var(--text-base); }
+
+/* inline "Try it yourself" box */
+.inline-cta {
+  margin: 2em 0; padding: var(--space-6);
+  border-radius: var(--radius-lg); background: var(--surface); box-shadow: var(--shadow-card);
+}
+.article .prose .inline-cta h3 { margin: .5em 0 .3em; }
+.article .prose .inline-cta p { font-size: var(--text-base); }
+
+/* schedule block (a blockquote of labelled lines) */
+.article .prose blockquote.schedule { font-style: normal; color: var(--text); line-height: 1.8; }
+
+/* related reading */
+.related-posts { margin: 3em 0 2em; }
+.article .prose .related-posts-label { font-size: var(--text-xl); margin: 0 0 var(--space-5); }
+.related-posts-grid { display: grid; gap: var(--space-4); grid-template-columns: repeat(auto-fill, minmax(min(100%, 220px), 1fr)); }
+.related-post-card { display: grid; gap: var(--space-2); align-content: start; padding: var(--space-5); color: var(--text); }
+.related-post-card:hover { color: var(--text); box-shadow: var(--shadow-card), 0 0 0 1px var(--border); }
+.article .prose .related-post-card h3 { margin: 0; font-size: var(--text-lg); }
+.article .prose .related-post-card p { margin: 0; font: 400 var(--text-sm)/1.5 var(--font-serif); color: var(--text-serif); }
+.related-link { font: 600 var(--text-xs)/1 var(--font-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--primary); }
+
+/* about the author */
+.author-bio { margin-top: 2em; padding-top: var(--space-5); border-top: 1px solid var(--hairline); font: 400 var(--text-sm)/1.6 var(--font-sans); color: var(--text-muted); }
+.author-bio strong { color: var(--text); }
+.article .prose .author-bio p { margin: .4em 0; font-size: var(--text-sm); }
+
+/* the old sidebar cards, now under the post */
+.post-aside { display: grid; gap: var(--space-6); grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); margin-top: var(--space-12); }
+.article-sidebar-sticky {
+  display: grid; gap: var(--space-3); align-content: start; padding: var(--space-6);
+  background: var(--surface); border-radius: var(--radius-md); box-shadow: var(--shadow-card); color: var(--text);
+}
+.sidebar-thumb { width: 100%; height: auto; border-radius: var(--radius-md); }
+.sidebar-kicker { font: 700 var(--text-xs)/1 var(--font-sans); letter-spacing: var(--tracking-eyebrow); text-transform: uppercase; color: var(--primary); }
+.sidebar-name { margin: 0; font: 600 var(--text-xl)/1.15 var(--font-display); color: var(--text); }
+.sidebar-price-block { font: 600 var(--text-lg)/1 var(--font-numeric); font-variant-numeric: var(--numeric-features); }
+.sidebar-checklist { margin: 0; padding-left: 1.2em; font: 400 var(--text-sm)/1.5 var(--font-sans); color: var(--text-serif); }
+.article-sidebar-sticky .note { margin: 0; font: 400 var(--text-sm)/1.5 var(--font-sans); color: var(--text-muted); }
+
+/* closing band */
+.cta-band {
+  margin-top: var(--space-12); padding: clamp(2rem, 5vw, 3rem) clamp(1.25rem, 4vw, 2.5rem);
+  display: grid; gap: var(--space-4); justify-items: center; text-align: center;
+  border-radius: var(--radius-lg); background: var(--surface); box-shadow: var(--shadow-card);
+}
+/* surface, not surface-2: primary text on surface-2 is 4.30:1 in cast iron */
+.cta-band h2 { font-size: var(--text-2xl); }
+.cta-band .cta-sub { margin: 0; max-width: 60ch; font: 400 var(--text-base)/1.6 var(--font-serif); color: var(--text-serif); }
+.cta-band .cta-buttons { display: flex; flex-wrap: wrap; gap: var(--space-3); justify-content: center; }
+.cta-band .btn { white-space: normal; text-align: center; }
+.cta-band .btn-secondary { background: transparent; color: var(--text); border-color: var(--text); }
+.cta-band .btn-secondary:hover { background: var(--text); color: var(--bg); border-color: var(--text); }
+.cta-band .contact { font: 400 var(--text-sm)/1.5 var(--font-sans); color: var(--text-muted); }
+[data-theme="cast-iron"] .cta-band .btn-secondary:hover { background: var(--text); border-color: var(--text); transform: none; }
+
+/* ==========================================================================
+   BLOG INDEX
+   ========================================================================== */
+.blog-nav { justify-content: center; margin-bottom: var(--space-4); }
+.blog-nav a { font: 600 var(--text-xs)/1 var(--font-sans); letter-spacing: .1em; text-transform: uppercase; color: var(--text); text-decoration: none; padding: .6em 1em; border: 1px solid var(--hairline); border-radius: var(--radius-pill); }
+.blog-nav a:hover { border-color: var(--text); color: var(--text); }
+.blog-section { padding-block: clamp(1.5rem, 4vw, 3rem); }
+.blog-section__title { font-size: var(--text-2xl); margin-bottom: var(--space-6); }
+.post-card h3 a { color: var(--text); text-decoration: none; }
+.post-card h3 a:hover { color: var(--primary); }
+
+/* ==========================================================================
+   VIDEOS (moved from builtbyjoshstudio.com/kitchen-videos.html)
+   The entries keep lite-yt.js markup (.yt-facade[data-ytid] > .yt-facade-btn)
+   and get the kit's .video look. Nothing is requested from YouTube until play.
+   ========================================================================== */
+.videos-page .breadcrumb { justify-content: center; margin-bottom: 0; }
+.videos-page .vid-intro, .videos-page .vid-intro-sub { max-width: 70ch; margin: 0; }
+.vid-intro-sub { font: 400 var(--text-base)/1.6 var(--font-serif); color: var(--text-muted); }
+.vid-section { margin-top: clamp(2rem, 5vw, 4rem); }
+.vid-section .section-head { margin-bottom: var(--space-8); }
+.vid-section--jordan { border-radius: var(--radius-lg); padding-inline: calc(var(--frame-outer) + var(--frame-gap) + 1rem); color: var(--text); background-color: var(--bg); }
+.vid-list { display: grid; gap: clamp(2.5rem, 6vw, 4rem); }
+.vid-item { display: grid; gap: var(--space-5) clamp(1.5rem, 4vw, 2.5rem); grid-template-columns: minmax(0, 1fr); scroll-margin-top: 5rem; }
+@media (min-width: 900px) {
+  .vid-item { grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); align-items: start; }
+  .vid-item .vid-chapters { grid-column: 1 / -1; }
+}
+.vid-body h3 { font-size: var(--text-2xl); margin-bottom: var(--space-2); }
+.vid-meta { font: 600 var(--text-xs)/1.4 var(--font-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--text-muted); margin-bottom: var(--space-4); }
+.vid-meta .dot { margin: 0 .5em; }
+.vid-body p { margin: 0 0 1em; font: 400 var(--text-base)/1.65 var(--font-serif); color: var(--text-serif); max-width: 62ch; }
+.vid-actions { display: flex; flex-wrap: wrap; gap: var(--space-3); margin-top: var(--space-4); }
+.vid-btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: .6em; padding: .85em 1.4em;
+  border-radius: var(--radius-pill); border: 1px solid var(--primary); background: var(--primary); color: var(--text-on-primary);
+  font: 600 var(--text-xs)/1.2 var(--font-sans); letter-spacing: .08em; text-transform: uppercase; text-decoration: none; text-align: center;
+}
+.vid-btn:hover { background: var(--primary-hover); border-color: var(--primary-hover); color: var(--text-on-primary); }
+[data-theme="cast-iron"] .vid-btn:not(.ghost):hover { background: var(--primary); border-color: var(--primary); transform: translateY(-1px); }
+.vid-btn.ghost { background: transparent; color: var(--text); border-color: var(--text); }
+.vid-btn.ghost:hover { background: var(--text); color: var(--bg); border-color: var(--text); }
+.vid-chapters { display: flex; flex-wrap: wrap; gap: var(--space-2); align-items: center; }
+.vid-chapters-label { font: 700 var(--text-xs)/1 var(--font-sans); letter-spacing: .1em; text-transform: uppercase; color: var(--text-muted); margin-right: var(--space-2); }
+.vid-chapters a { padding: .45em .8em; border: 1px solid var(--hairline); border-radius: var(--radius-pill); font: 400 var(--text-xs)/1.3 var(--font-sans); color: var(--text); text-decoration: none; }
+.vid-chapters a:hover { border-color: var(--text); color: var(--text); }
+.vid-chapters a b { font-family: var(--font-numeric); font-variant-numeric: var(--numeric-features); font-weight: 600; margin-right: .3em; }
+
+/* the click-to-load player, drawn like the kit's .video */
+.yt-facade { position: relative; display: block; width: 100%; aspect-ratio: 16 / 9; border-radius: var(--radius-md); overflow: hidden; background: var(--surface-2); }
+.yt-facade-btn { position: absolute; inset: 0; display: block; width: 100%; padding: 0; border: 0; background: none; cursor: pointer; color: var(--text); }
+.yt-facade-poster, .yt-facade iframe { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; border: 0; }
+.yt-facade-play {
+  position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+  width: 4.25rem; height: 4.25rem; border-radius: 50%;
+  background: var(--primary); color: var(--text-on-primary);
+  display: grid; place-items: center; box-shadow: var(--shadow-card);
+  transition: transform var(--dur-fast) var(--ease-out), background-color var(--dur-fast) var(--ease-out);
+}
+.yt-facade-play::before { content: ""; width: 0; height: 0; border-style: solid; border-width: .7rem 0 .7rem 1.2rem; border-color: transparent transparent transparent currentColor; margin-left: .25rem; }
+.yt-facade-btn:hover .yt-facade-play, .yt-facade-btn:focus-visible .yt-facade-play { transform: translate(-50%, -50%) scale(1.06); background: var(--primary-hover); }
+/* kit v2.4: badge text on a thumbnail reads --on-overlay on an opaque ground, whatever the image (review finding 4) */
+.yt-facade-dur { position: absolute; right: .6rem; bottom: .6rem; padding: .3em .55em; border-radius: 4px; background: linear-gradient(var(--overlay), var(--overlay)), var(--overlay-ground); color: var(--on-overlay); font: 600 var(--text-xs)/1 var(--font-numeric); font-variant-numeric: var(--numeric-features); }
+
+/* "From the same kitchen" */
+.series { margin-top: clamp(3rem, 8vw, 5rem); padding: clamp(2rem, 5vw, 3rem); display: grid; gap: var(--space-4); justify-items: center; text-align: center; border-radius: var(--radius-lg); background: var(--surface); box-shadow: var(--shadow-card); }
+.series .accent-rule { width: 56px; height: 2px; background: var(--accent); }
+.series h2 { font-size: var(--text-2xl); }
+.series p { margin: 0; max-width: 62ch; font: 400 var(--text-base)/1.65 var(--font-serif); color: var(--text-serif); }
+.series-btn { display: inline-flex; padding: .85em 1.4em; border-radius: var(--radius-pill); border: 1px solid var(--text); color: var(--text); text-decoration: none; font: 600 var(--text-xs)/1.2 var(--font-sans); letter-spacing: .08em; text-transform: uppercase; }
+.series-btn:hover { background: var(--text); color: var(--bg); }
+
+/* ==========================================================================
+   COOKBOOK (moved from builtbyjoshstudio.com/nuoc-mam-cookbook.html)
+   ========================================================================== */
+.cookbook-page .page-head { padding-bottom: var(--space-6); }
+.cookbook-page .breadcrumb { margin-bottom: 0; }
+.cookbook-page .page-head h1 { font-size: clamp(2.2rem, 6vw, var(--text-hero)); }
+.cookbook-page .page-head .lede { max-width: 66ch; margin: 0; }
+.chips { list-style: none; margin: var(--space-2) 0 0; padding: 0; }
+.chips .badge strong { font-family: var(--font-numeric); }
+.cover-frame img { width: 100%; height: auto; display: block; }
+.buy-card .price { font: 600 var(--text-3xl)/1 var(--font-numeric); font-variant-numeric: var(--numeric-features); color: var(--text); }
+.buy-card .price small { font: 500 var(--text-sm)/1 var(--font-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--text-muted); margin-left: .4em; }
+.buy-card .btn-buy { width: 100%; white-space: normal; text-align: center; }
+.buy-note { margin: 0; font: 400 var(--text-sm)/1.5 var(--font-sans); color: var(--text-muted); }
+.buy-alts { display: grid; gap: var(--space-2); padding: var(--space-4) 0 var(--space-2); border-top: 1px solid var(--hairline); }
+.buy-alts .btn-kindle { font: 600 var(--text-sm)/1.4 var(--font-sans); color: var(--primary); text-decoration: underline; text-underline-offset: .2em; }
+.buy-alts .btn-kindle:hover { color: var(--primary-hover); }
+/* kit v2.4: in cast iron, links keep --primary on hover and the underline thickens */
+[data-theme="cast-iron"] .buy-alts .btn-kindle:hover { color: var(--primary); text-decoration-thickness: 2px; }
+.buy-card .spec-list .lbl { color: var(--text-muted); }
+.buy-card .spec-list li > span:last-child { text-align: right; }
+.cookbook-page .section-eyebrow { font: 700 var(--text-xs)/1 var(--font-sans); letter-spacing: var(--tracking-eyebrow); text-transform: uppercase; color: var(--primary); margin-bottom: var(--space-3); }
+.cookbook-page .section h2 { margin-bottom: var(--space-4); }
+.cookbook-page .section .lede { max-width: 68ch; margin: 0 0 var(--space-8); }
+.peek-grid { display: grid; gap: var(--space-5); grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); }
+.peek-grid img { width: 100%; height: auto; border-radius: var(--radius-md); box-shadow: var(--shadow-card); }
+.parts-grid { display: grid; gap: var(--space-4); grid-template-columns: repeat(auto-fill, minmax(min(100%, 240px), 1fr)); }
+.part-card { padding: var(--space-5); background: var(--surface); border-radius: var(--radius-md); box-shadow: var(--shadow-card); display: grid; gap: var(--space-2); align-content: start; }
+.part-num { font: 600 var(--text-xl)/1 var(--font-numeric); font-variant-numeric: var(--numeric-features); color: var(--primary); }
+.part-card h3 { font-size: var(--text-lg); }
+.part-card p { margin: 0; font: 400 var(--text-sm)/1.55 var(--font-serif); color: var(--text-serif); }
+.highlights { margin-top: var(--space-8); padding: var(--space-6); border: 1px solid var(--border); border-radius: var(--radius-lg); }
+.highlights h3 { margin-bottom: var(--space-3); }
+.highlights ul { margin: 0; padding-left: 1.2em; display: grid; gap: .4em; font: 400 var(--text-base)/1.55 var(--font-serif); color: var(--text-serif); }
+.series .yt-facade { max-width: 720px; }
+.series .cut-caption { font-size: var(--text-sm); color: var(--text-muted); }
+
+/* ==========================================================================
+   HOMEPAGE (replaces builtbyjoshstudio.com/cooking/)
+   ========================================================================== */
+.home-hero { padding: clamp(4rem, 10vw, 7rem) 0 clamp(3rem, 8vw, 5rem); text-align: center; }
+.home-hero__inner { display: grid; justify-items: center; gap: var(--space-6); }
+.home-hero__mark { display: grid; justify-items: center; gap: var(--space-5); }
+.home-hero__mark .mark { font-size: clamp(3rem, 6vw, 5.5rem); }
+.home-hero .display-hero { font-size: clamp(2.6rem, 7vw, var(--text-hero)); }
+.home-hero .lede { max-width: 62ch; margin: 0; }
+.home-hero__sub { max-width: 62ch; margin: 0; font: 400 var(--text-base)/1.6 var(--font-serif); color: var(--text-muted); }
+.home-hero__actions { justify-content: center; }
+.section-intro { max-width: 62ch; margin: 0; font: 400 var(--text-base)/1.6 var(--font-serif); color: var(--text-serif); }
+.home-more { justify-content: center; margin-top: var(--space-8); }
+.video-link { display: grid; color: var(--text); text-decoration: none; }
+.video-link img { width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; }
+.video-link h3 { font-size: var(--text-lg); }
+.video-link:hover { color: var(--text); box-shadow: var(--shadow-card), 0 0 0 1px var(--border); }
+.home-jordan { color: var(--text); background-color: var(--bg); }
+.home-jordan .container { padding-inline: calc(var(--frame-outer) + var(--frame-gap)); }
+.home-book { padding: clamp(2.5rem, 7vw, 5rem) clamp(1.5rem, 5vw, 4rem); border-radius: var(--radius-lg); color: var(--text); background-color: var(--bg); }
+/* framed sections: the content stays inside the frame's inner rule at every width (review finding 5).
+   The inner rule sits --frame-outer + --frame-gap in from the edge; on a phone the old padding was less. */
+.home-book { padding-inline: max(clamp(1.5rem, 5vw, 4rem), calc(var(--frame-outer) + var(--frame-gap) + var(--space-4))); }
+.home-hero .container { width: min(100% - 2 * (var(--frame-outer) + var(--frame-gap) + var(--space-3)), var(--container)); }
+/* below about 420px a one-line kit button ("All kitchen videos →", "Open the kitchen tools →") can be wider
+   than its column: inside a frame it pushed the text over the rules, and at 320px the homepage scrolled
+   sideways (independent review). On small phones, buttons may wrap onto a second line. */
+@media (max-width: 420px) {
+  .btn { white-space: normal; text-wrap: balance; line-height: 1.3; text-align: center; max-width: 100%; }
+}
+.home-book__inner { position: relative; display: grid; gap: clamp(1.5rem, 5vw, 3.5rem); align-items: center; grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 760px) { .home-book__inner { grid-template-columns: minmax(0, 220px) minmax(0, 1fr); } }
+.home-book__inner img { width: 100%; max-width: 220px; height: auto; border-radius: var(--radius-sm); box-shadow: var(--shadow-card); justify-self: center; }
+.home-book__text { display: grid; gap: var(--space-4); justify-items: start; }
+.home-book__text p:not(.eyebrow) { margin: 0; font: 400 var(--text-base)/1.65 var(--font-serif); color: var(--text-serif); max-width: 62ch; }
+/* the kit template colours this eyebrow with --accent (ornament): 3.96:1 on rust, so it keeps the normal eyebrow colour */
+.ck-cols { display: grid; gap: var(--space-8); grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); }
+.ck-sublabel { margin: 0 0 var(--space-3); font: 700 var(--text-xs)/1 var(--font-sans); letter-spacing: var(--tracking-eyebrow); text-transform: uppercase; color: var(--primary); }
+.ck-list { list-style: none; margin: 0; padding: 0; display: grid; }
+.ck-list li { border-bottom: 1px solid var(--hairline); }
+.ck-list a { display: block; padding: .8em 0; font: 400 var(--text-base)/1.45 var(--font-serif); color: var(--text); text-decoration: none; }
+.ck-list a:hover { color: var(--primary); }
+.ck-tools { display: flex; flex-wrap: wrap; gap: var(--space-2); justify-content: center; }
+.ck-tools a { padding: .6em 1.1em; border: 1px solid var(--border); border-radius: var(--radius-pill); background: var(--surface); font: 600 var(--text-sm)/1.2 var(--font-sans); color: var(--text); text-decoration: none; }
+.ck-tools a:hover { border-color: var(--text); color: var(--text); }
+
+/* ==========================================================================
+   TOOLS HUB
+   ========================================================================== */
+.tools-hub .breadcrumb { justify-content: center; margin-bottom: 0; }
+.tools-hub .lede { max-width: 62ch; margin: 0; }
+.tools-hub .chips { justify-content: center; }
+.hub-stats { justify-content: center; gap: var(--space-8); margin-top: var(--space-2); }
+.hub-stats .stat { display: grid; justify-items: center; gap: var(--space-1); }
+.hub-stats .num { font-size: var(--text-2xl); line-height: 1; }
+.hub-stats span:not(.num) { font: 600 var(--text-xs)/1 var(--font-sans); letter-spacing: .1em; text-transform: uppercase; color: var(--text-muted); }
+.tool-card__icon svg { width: 1.35rem; height: 1.35rem; }
+
+/* ==========================================================================
+   PRIVACY (the shared policy block) and 404
+   ========================================================================== */
+.policy-page .article__head { margin-bottom: var(--space-8); }
+.policy-body section { margin-bottom: var(--space-8); }
+.policy-body .meta { font: 500 var(--text-sm)/1.5 var(--font-sans); color: var(--text-muted); }
+.policy-body .lead { font-size: var(--text-lg); }
+.article .prose.policy-body { font-size: var(--text-base); }
+.nf-list { width: min(100%, 22rem); text-align: left; }
+
+/* long post button labels wrap instead of pushing past a phone screen (kit .btn is nowrap) */
+.post :is(.prose, .post-aside, .cta-band) .btn { white-space: normal; text-align: center; max-width: 100%; }
+.post-aside > * { min-width: 0; }
+
+/* ==========================================================================
+   PANELS (kit v2.3) — the site's own cards and panels read the --panel-*
+   tokens like the kit's .card / .results / .buy-box. Only rust differs.
+   ========================================================================== */
+:is(.article-sidebar-sticky, .inline-cta, .cta-band, .series, .part-card) {
+  --bg: var(--panel-bg);
+  --surface: var(--panel-surface);
+  --surface-2: var(--panel-surface-2);
+  --text: var(--panel-text);
+  --text-serif: var(--panel-text-serif);
+  --text-muted: var(--panel-text-muted);
+  --text-on-primary: var(--panel-text-on-primary);
+  --primary: var(--panel-primary);
+  --primary-hover: var(--panel-primary-hover);
+  --accent: var(--panel-accent);
+  --accent-soft: var(--panel-accent-soft);
+  --text-on-soft: var(--panel-text-on-soft);
+  --border: var(--panel-border);
+  --border-soft: var(--panel-border-soft);
+  --hairline: var(--panel-hairline);
+  --focus: var(--panel-focus);
+  --selection: var(--panel-selection);
+  --field-bg: var(--panel-field-bg);
+  --field-text: var(--panel-field-text);
+  --field-placeholder: var(--panel-field-placeholder);
+  --field-border: var(--panel-field-border);
+  --field-border-hover: var(--panel-field-border-hover);
+  --field-ring: var(--panel-field-ring);
+  --field-disabled-bg: var(--panel-field-disabled-bg);
+  --field-disabled-text: var(--panel-field-disabled-text);
+  --success: var(--panel-success);
+  --success-bg: var(--panel-success-bg);
+  --success-border: var(--panel-success-border);
+  --warning: var(--panel-warning);
+  --warning-bg: var(--panel-warning-bg);
+  --warning-border: var(--panel-warning-border);
+  --error: var(--panel-error);
+  --error-bg: var(--panel-error-bg);
+  --error-border: var(--panel-error-border);
+  --info: var(--panel-info);
+  --info-bg: var(--panel-info-bg);
+  --info-border: var(--panel-info-border);
+  background-color: var(--surface);
+  color: var(--text);
+}

@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script>if(location.protocol.indexOf("http")===0&&/\/index\.html$/i.test(location.pathname))location.replace(location.pathname.slice(0,-10)+location.search+location.hash);</script>
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QDSPBB7S9J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      var gaKeep = new URLSearchParams(); new URLSearchParams(location.search).forEach(function (v, k) { if (k.indexOf('utm_') === 0) gaKeep.append(k, v); });
+      gtag('config', 'G-QDSPBB7S9J', { page_location: location.origin + location.pathname + (gaKeep.toString() ? '?' + gaKeep.toString() : ''), page_referrer: document.referrer.split(/[?#]/)[0] });
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Universal Recipe Scaler | Ad-Free Ingredient Converter</title>
+    <meta name="description" content="Instantly scale, multiply, or divide cooking and baking recipes. A free, local-first utility to convert portions and metric measurements with zero ads.">
+    <meta name="robots" content="max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <link rel="canonical" href="https://cooking.builtbyjoshstudio.com/tools/universal-recipe-scaler/" />
+
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Universal Recipe Scaler | Ad-Free Ingredient Converter">
+    <meta property="og:description" content="Instantly scale, multiply, or divide cooking and baking recipes. A free, local-first utility to convert portions and metric measurements with zero ads.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://cooking.builtbyjoshstudio.com/tools/universal-recipe-scaler/">
+    <meta property="og:image" content="https://cooking.builtbyjoshstudio.com/icons/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://cooking.builtbyjoshstudio.com/tools/universal-recipe-scaler/">
+    <meta name="twitter:title" content="Universal Recipe Scaler | Ad-Free Ingredient Converter">
+    <meta name="twitter:description" content="Instantly scale, multiply, or divide cooking and baking recipes. A free, local-first utility to convert portions and metric measurements with zero ads.">
+    <meta name="twitter:image" content="https://cooking.builtbyjoshstudio.com/icons/og-image.png">
+
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Universal Recipe Scaler",
+      "url": "https://cooking.builtbyjoshstudio.com/tools/universal-recipe-scaler/",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any",
+      "isAccessibleForFree": true,
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "description": "Automatically scales recipe ingredients and seamlessly converts between Metric and Imperial units for precise cooking.",
+      "publisher": {
+        "@type": "Organization",
+        "@id": "https://builtbyjoshstudio.com/#organization",
+        "name": "Built by Josh Studio LLC",
+        "legalName": "Built by Josh Studio LLC",
+        "alternateName": [
+          "BBJ Studio",
+          "Built by Josh Studio"
+        ],
+        "url": "https://builtbyjoshstudio.com",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://builtbyjoshstudio.com/images/logo/logo.webp",
+          "width": 512,
+          "height": 512
+        },
+        "image": "https://builtbyjoshstudio.com/images/logo/logo.webp",
+        "sameAs": [
+          "https://linktr.ee/builtbyjoshstudio",
+          "https://www.youtube.com/@TalesofInkShadowsStudio",
+          "https://www.youtube.com/@joshandjordanskitchen",
+          "https://tynkrtoolsandco.etsy.com",
+          "https://www.etsy.com/shop/BuiltByJoshStudio",
+          "https://www.redbubble.com/people/BBJStudio/shop"
+        ],
+        "identifier": [
+          {
+            "@type": "PropertyValue",
+            "propertyID": "Kansas Business ID",
+            "value": "10076138"
+          }
+        ]
+      }
+    }
+    </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Josh & Jordan\'s Kitchen", "item": "https://cooking.builtbyjoshstudio.com/"},
+    {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://cooking.builtbyjoshstudio.com/tools/"},
+    {"@type": "ListItem", "position": 3, "name": "Universal Recipe Scaler", "item": "https://cooking.builtbyjoshstudio.com/tools/universal-recipe-scaler/"}
+  ]
+}
+</script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do you scale a recipe up or down?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Multiply every ingredient quantity by the same factor — doubling a recipe means multiplying each amount by two. The tricky part is keeping the ratios consistent and rounding to amounts you can actually measure, which this tool handles automatically."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I convert a recipe between metric and imperial?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Paste a recipe in either system and switch the output toggle — the tool converts weights, volumes, temperatures, and lengths between metric and US customary units as it scales."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Should I scale spices and salt at the same rate as everything else?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Not always. Strong seasonings, salt, garlic, and leavening often don't scale linearly — doubling a recipe rarely needs exactly double the cayenne. Scale them, then taste and adjust toward the lower end."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does scaling change cooking times?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Usually yes for volume-dependent steps but not always proportionally. A doubled cake batter in a bigger pan bakes longer; a doubled sauce may simmer about the same. Use times as a starting point and judge by doneness."
+          }
+        }
+      ]
+    }
+    </script>
+
+<link rel="preload" href="/fonts/playfair-display-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/be-vietnam-pro-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/fonts/fonts.css?v=ac58de8e6c">
+<link rel="stylesheet" href="/fonts/fonts-vietnamese.css?v=96e6ae2194">
+<link rel="stylesheet" href="/css/studio/tokens.css?v=f58e0d92c0">
+<link rel="stylesheet" href="/css/studio/components.css?v=09a4d9f402">
+<link rel="stylesheet" href="/css/studio/tools.css?v=76acb59400">
+<link rel="stylesheet" href="styles.css?v=50dcb7a287">
+<link rel="stylesheet" href="/css/tokens.css?v=e6976ee263">
+<link rel="stylesheet" href="/css/chrome.css?v=04f9a9fc23">
+<link rel="stylesheet" href="/css/tool-bridge.css?v=6bfe8d2938">
+<link rel="stylesheet" href="/css/tool-parts.css?v=ba7a255de3">
+<script src="/js/theme.js?v=dc84991f4a"></script>
+<script src="/js/nav.js?v=a16bc0e1ce" defer></script>
+
+<link rel="icon" href="/icons/favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="icon" href="/icons/icon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header" id="site-header">
+  <div class="container site-header__inner">
+    <a class="brand" href="/" aria-label="Josh and Jordan's Kitchen — home">
+      <span class="mark" aria-hidden="true">J<span class="amp">&amp;</span>J</span>
+      <span class="brand__name">Josh &amp; Jordan's Kitchen</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="site-nav" id="site-nav" aria-label="Primary">
+      <ul class="site-nav__list">
+        <li><a href="/videos/">Videos</a></li>
+        <li><a href="/tools/">Tools</a></li>
+        <li><a href="/cookbook/">Cookbook</a></li>
+        <li><a href="/blog/">Blog</a></li>
+      </ul>
+      <div class="theme-switch theme-switch--compact" role="group" aria-label="Color theme">
+        <button type="button" data-theme-set="cream"><span class="swatch" aria-hidden="true"></span><span class="label">Cream</span></button>
+        <button type="button" data-theme-set="mint"><span class="swatch" aria-hidden="true"></span><span class="label">Mint</span></button>
+        <button type="button" data-theme-set="rust"><span class="swatch" aria-hidden="true"></span><span class="label">Rust</span></button>
+        <button type="button" data-theme-set="cast-iron"><span class="swatch" aria-hidden="true"></span><span class="label">Cast iron</span></button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+    <div class="studio-tool">
+<main class="page tool-shell" id="main" tabindex="-1">
+        <header class="hero glass">
+            <div style="flex:1; min-width:0">
+                <div class="meta">
+                    <span class="pill live">&#9679; Utilities</span>
+                    <span>Metric &amp; imperial conversion</span>
+                  <span class="updated-date">Updated November 2026</span>
+                </div>
+                <h1>Universal Recipe Scaler</h1>
+                <p>Instantly scale, multiply, or divide cooking and baking recipes. A free, local-first utility to convert portions and metric measurements with zero ads.</p>
+            </div>
+        </header>
+
+        <section class="scaler-section">
+            <div class="controls-card glass-panel">
+                <div class="segmented">
+                    <button class="scale-btn" data-scale="0.5">0.5x</button>
+                    <button class="scale-btn" data-scale="1">1x</button>
+                    <button class="scale-btn" data-scale="2">2x</button>
+                    <button class="scale-btn" data-scale="3">3x</button>
+                </div>
+
+                <div class="custom-scale-wrapper" style="display: flex; gap: 2rem; align-items: center; flex-wrap: wrap;">
+                    <div class="custom-scale">
+                        <div class="field">
+                            <label for="original-servings" class="field__label">Original Servings</label>
+                            <input type="number" id="original-servings" class="input" value="4" min="1" step="1">
+                        </div>
+                        <div class="field">
+                            <label for="target-servings" class="field__label">Target Servings</label>
+                            <input type="number" id="target-servings" class="input" value="4" min="1" step="1">
+                        </div>
+                        <button id="apply-custom-scale" class="btn">Scale</button>
+                    </div>
+
+                    <div class="segmented">
+                        <button type="button" id="unit-imperial" class="active">US / Imperial</button>
+                        <button type="button" id="unit-metric">Metric</button>
+                    </div>
+
+                    <div class="choice">
+                        <input type="checkbox" id="use-density" checked>
+                        <label for="use-density">Smart Vol ⇋ Wt</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="recipe-workarea">
+                <div class="input-area">
+                    <label for="recipe-input" class="field__label">Paste Ingredients Here</label>
+                    <p id="example-note" class="field__hint" style="display: none;">Example loaded: meatloaf for four. Try 2x or Metric, or clear it and paste your own.</p>
+                    <textarea id="recipe-input" class="textarea" placeholder="Paste your ingredients here (one per line).&#10;&#10;Please omit cooking instructions to ensure accurate scaling."></textarea>
+                    <button type="button" id="clear-recipe-btn" class="btn btn--ghost" style="align-self: flex-start;">Clear recipe</button>
+                </div>
+
+                <div class="output-area results">
+                    <h2 class="results__title">Scaled Recipe (<span id="current-multiplier-display" class="num">1x</span>)</h2>
+                    <div id="recipe-output" class="scaled-results">
+                        <p class="placeholder-text">Your scaled ingredients will appear here...</p>
+                    </div>
+                    <div id="egg-tip-box" class="alert alert--info" style="display: none;">
+                        Chef's Tip for Fractional Eggs: If your scaled recipe calls for a fraction of an egg, whisk a whole egg in a small bowl. 1 whole egg equals roughly 3 Tablespoons (or 46g). For 0.5 eggs, use exactly 1.5 Tablespoons. For smaller fractions, use a single egg yolk or a splash of milk.
+                    </div>
+                    <div id="volumetric-warning-box" class="alert alert--warning" style="display: none;">
+                        Chef's Note: Volumetric baking measurements (cups) become highly inaccurate when scaled up massively due to compaction. For bulletproof professional results, consider converting your core ingredients to weight (grams).
+                    </div>
+                    <div class="action-buttons">
+                        <button id="copy-btn" class="btn btn--ghost">Copy to Clipboard</button>
+                        <button id="print-btn" class="btn btn--ghost">Print Recipe</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tips-section glass-panel">
+                <h2>A few things I've learned scaling recipes:</h2>
+                <p style="margin-bottom: 1rem; line-height: 1.6;">Scaling the numbers is the easy part &mdash; this tool handles that. What the math won't tell you is that some things don't scale 1:1. Salt and strong spices are the big ones: double a recipe and you usually want a little less than double the salt, then adjust at the end by tasting. Same with garlic and chili &mdash; they get louder in bulk.</p>
+                <p style="margin-bottom: 1rem; line-height: 1.6;">Liquids and reductions are the other trap. If you scale up a sauce, you've got more liquid to cook off, so go by how it looks and coats a spoon, not by the original time. A bigger batch almost always takes longer to reduce than you'd expect.</p>
+                <p style="margin-bottom: 0; line-height: 1.6;">And when in doubt, scale by weight instead of volume. Cups get unreliable fast when you're multiplying &mdash; a scale is the cheapest upgrade to your cooking I can think of.</p>
+            </div>
+        </section>
+
+        <div class="glass" style="margin-bottom: 24px; padding: 24px; text-align: center;">
+            <h3 style="font-family: var(--font-ui); font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: var(--tracking-label); color: var(--muted); margin: 0 0 14px;">Next Steps for Your Cook</h3>
+            <div style="display: flex; flex-direction: column; gap: 10px; font-size: 14px;">
+                <a id="pipeline-link-cost" href="../cost-per-serving-calculator/" style="color: var(--accent); text-decoration: none; font-weight: 600;">Scaled your recipe? See what it costs to make with the Cost Per Serving Calculator &rarr;</a>
+                <a href="../recipe-nutrition-calculator/" style="color: var(--accent); text-decoration: none; font-weight: 600;">Want the nutrition facts for the scaled recipe? Open the Recipe Nutrition Calculator &rarr;</a>
+                <a href="../yeast-converter/" style="color: var(--accent); text-decoration: none; font-weight: 600;">Scaling a bread recipe? Convert between yeast types with the Yeast Converter &rarr;</a>
+            </div>
+        </div>
+
+  <!-- AT A GLANCE (P2-c) -->
+  <div class="glass glance glance--flush">
+    <h2>At a glance</h2>
+    <div class="table-wrap">
+    <table class="table">
+      <tbody>
+        <tr><th>What it does</th><td>Scales any recipe up or down — by serving count or multiplier — and converts measurements as it goes.</td></tr>
+        <tr><th>Inputs</th><td>Original and target servings (or a multiplier), your pasted ingredient list, and an optional smart volume-to-weight toggle.</td></tr>
+        <tr><th>Outputs</th><td>The full ingredient list rescaled to the new yield, ready to copy.</td></tr>
+        <tr><th>Cost &amp; privacy</th><td>Free, ad-free, no signup. Runs entirely in your browser — nothing is uploaded.</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+
+        <!-- Explanatory Prose & FAQ Section -->
+        <div class="glass" style="margin-bottom: 24px; padding: 24px; text-align: left;">
+    <h2 style="font-family: var(--font-display); font-weight: 800; font-size: 20px; letter-spacing: -0.02em; margin-top: 0; margin-bottom: 12px;">A worked example: meatloaf for four, doubled</h2>
+    <p style="margin-bottom: 24px; line-height: 1.6; color: var(--ink);">The loaded example is meatloaf for four. At 2x, 1 1/2 lb of ground beef becomes 3 lb, 1/3 cup of milk becomes 2/3 cup and 2 eggs become 4, while the oven stays at 350&deg;F.</p>
+
+    <h2 style="font-family: var(--font-display); font-weight: 800; font-size: 20px; letter-spacing: -0.02em; margin-top: 0; margin-bottom: 16px;">Frequently Asked Questions</h2>
+    <div style="display: flex; flex-direction: column; gap: 18px;">
+      <div>
+        <h3 style="font-family: var(--font-ui); font-weight: 700; font-size: 14px; margin: 0 0 6px; color: var(--ink);">How do you scale a recipe up or down?</h3>
+        <p style="margin: 0; line-height: 1.5; font-size: 13px; color: var(--muted);">Multiply every ingredient quantity by the same factor — doubling a recipe means multiplying each amount by two. The tricky part is keeping the ratios consistent and rounding to amounts you can actually measure, which this tool handles automatically.</p>
+      </div>
+      <div>
+        <h3 style="font-family: var(--font-ui); font-weight: 700; font-size: 14px; margin: 0 0 6px; color: var(--ink);">Can I convert a recipe between metric and imperial?</h3>
+        <p style="margin: 0; line-height: 1.5; font-size: 13px; color: var(--muted);">Yes. Paste a recipe in either system and switch the output toggle — the tool converts weights, volumes, temperatures, and lengths between metric and US customary units as it scales.</p>
+      </div>
+      <div>
+        <h3 style="font-family: var(--font-ui); font-weight: 700; font-size: 14px; margin: 0 0 6px; color: var(--ink);">Should I scale spices and salt at the same rate as everything else?</h3>
+        <p style="margin: 0; line-height: 1.5; font-size: 13px; color: var(--muted);">Not always. Strong seasonings, salt, garlic, and leavening often don't scale linearly — doubling a recipe rarely needs exactly double the cayenne. Scale them, then taste and adjust toward the lower end.</p>
+      </div>
+      <div>
+        <h3 style="font-family: var(--font-ui); font-weight: 700; font-size: 14px; margin: 0 0 6px; color: var(--ink);">Does scaling change cooking times?</h3>
+        <p style="margin: 0; line-height: 1.5; font-size: 13px; color: var(--muted);">Usually yes for volume-dependent steps but not always proportionally. A doubled cake batter in a bigger pan bakes longer; a doubled sauce may simmer about the same. Use times as a starting point and judge by doneness.</p>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+    <section class="net-band">
+        <h2><span class="lbl">Network</span> More from the studio</h2>
+        <div class="net-grid">
+    <a href="/cookbook/" class="gear-item">
+      <div class="gear-img-wrapper"><img src="/nuoc-mam-link.webp" alt="Nước Mắm — A Vietnamese Family Cookbook by Josh Tran" width="600" height="600" loading="lazy"></div>
+      <div class="gear-info">
+        <h3>Nước Mắm — the Cookbook</h3>
+        <p>A Vietnamese family cookbook by the cook behind these tools — 56 pages, balanced by tasting.</p>
+        <button class="affiliate-btn">Get the Cookbook — $3.99</button>
+      </div>
+    </a>
+    <a href="/videos/" class="gear-item">
+      <div class="gear-img-wrapper"><img src="/kitchen-videos-link.webp" alt="Cook-along videos from Josh &amp; Jordan's Kitchen" width="600" height="299" loading="lazy"></div>
+      <div class="gear-info">
+        <h3>Watch the Cooks</h3>
+        <p>The same kitchen, on video — a short cut of each cook plus the full real-time version, nothing sped up.</p>
+        <button class="affiliate-btn">Watch the Videos</button>
+      </div>
+    </a>
+            <a href="https://builtbyjoshstudio.com/" target="_blank" rel="noopener" class="gear-item">
+                <div class="gear-img-wrapper"><img src="/studio-link.webp" alt="Built by Josh Studio" width="600" height="299" loading="lazy"></div>
+                <div class="gear-info">
+                    <h3>Built by Josh Studio</h3>
+                    <p>Local-first software, CRM solutions, and technical projects.</p>
+                    <button class="affiliate-btn">Visit Website</button>
+                </div>
+            </a>
+            <a href="https://www.youtube.com/@TalesofInkShadowsStudio" target="_blank" rel="noopener" class="gear-item">
+                <div class="gear-img-wrapper"><img src="/tales-link.webp" alt="Tales of Ink &amp; Shadows" width="600" height="299" loading="lazy"></div>
+                <div class="gear-info">
+                    <h3>Tales of Ink &amp; Shadows</h3>
+                    <p>Historical noir documentaries and immersive storytelling.</p>
+                    <button class="affiliate-btn">Watch on YouTube</button>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <footer class="footer" style="text-align: center; font-size: 11px; color: var(--muted); padding: 32px 20px; margin-top: 40px; line-height: 1.6;">
+        <p style="margin-bottom: 12px;">These tools provide estimates for planning purposes. Always use a food thermometer to confirm doneness, and follow current USDA food-safety guidance for cooking, thawing, and storing food.</p>
+</footer>
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="site-footer__grid">
+      <div class="site-footer__brand">
+        <span class="mark" aria-hidden="true">J<span class="amp">&amp;</span>J</span>
+        <p class="tagline" style="font-size:var(--text-base)">real home cooking &amp; baking</p>
+        <div class="divider divider--inline" style="justify-content:flex-start" aria-hidden="true"><span class="diamond"></span></div>
+      </div>
+      <div>
+        <h2>Kitchen</h2>
+        <ul>
+          <li><a href="/videos/">Videos</a></li>
+          <li><a href="/tools/">Tools</a></li>
+          <li><a href="/cookbook/">Cookbook</a></li>
+          <li><a href="/blog/">Blog</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>More from the studio</h2>
+        <ul>
+          <li><a href="https://builtbyjoshstudio.com/">Built by Josh Studio</a></li>
+          <li><a href="https://tynkr.builtbyjoshstudio.com/">Tynkr apps</a></li>
+          <li><a href="https://tools.builtbyjoshstudio.com/money/">Money tools</a></li>
+          <li><a href="https://writing.builtbyjoshstudio.com/">J.S. Warden — books</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Contact</h2>
+        <address>
+          <a href="mailto:support@builtbyjoshstudio.com">support@builtbyjoshstudio.com</a>
+        </address>
+        <ul style="margin-top:var(--space-4)">
+          <li><a href="https://www.youtube.com/@joshandjordanskitchen" rel="noopener">YouTube</a></li>
+          <li><a href="https://www.tiktok.com/@JOSHANDJORDANSKITCHEN" rel="noopener">TikTok</a></li>
+          <li><a href="https://www.instagram.com/JOSHANDJORDANSKITCHEN" rel="noopener">Instagram</a></li>
+          <li><a href="https://www.facebook.com/joshandjordanskitchen/" rel="noopener">Facebook</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="site-footer__legal">
+      <ul>
+        <li><a href="/privacy/">Privacy</a></li>
+        <li><a href="https://builtbyjoshstudio.com/terms.html">Terms</a></li>
+        <li><a href="https://builtbyjoshstudio.com/refunds.html">Refunds</a></li>
+      </ul>
+      <p class="wordmark" style="padding-left:0;text-align:left;margin:0">&copy; <span class="tabular">2026</span> Built by Josh Studio LLC. All rights reserved.</p>
+    </div>
+    <p class="site-footer__brands">Tynkr Tools &amp; Co and <a href="https://littleacrelearning.com" rel="noopener">Little Acre Learning</a> are brands of Built by Josh Studio LLC.</p>
+  </div>
+</footer>
+
+    <script src="../ingredients-db.js?v=dd06fee0fc"></script>
+    <script src="script.js?v=f57d681b77" defer></script>
+    <script src="../kinetic.js?v=f935f39fab" defer></script>
+</body>
+</html>

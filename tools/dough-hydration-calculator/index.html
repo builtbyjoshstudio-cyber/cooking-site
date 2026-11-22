@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <script>if(location.protocol.indexOf("http")===0&&/\/index\.html$/i.test(location.pathname))location.replace(location.pathname.slice(0,-10)+location.search+location.hash);</script>
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QDSPBB7S9J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      var gaKeep = new URLSearchParams(); new URLSearchParams(location.search).forEach(function (v, k) { if (k.indexOf('utm_') === 0) gaKeep.append(k, v); });
+      gtag('config', 'G-QDSPBB7S9J', { page_location: location.origin + location.pathname + (gaKeep.toString() ? '?' + gaKeep.toString() : ''), page_referrer: document.referrer.split(/[?#]/)[0] });
+    </script>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+            <title>Bread &amp; Dough Hydration Calculator | Pizza &amp; Pasta, Free</title>
+    <meta name="description" content="Bread hydration calculator for bread, pizza, and pasta dough. Enter your flour and get water, salt, and yeast by baker's percentage. Free, no ads, no signup.">
+    <meta name="robots" content="max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <link rel="canonical" href="https://cooking.builtbyjoshstudio.com/tools/dough-hydration-calculator/">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Dough Hydration Calculator",
+      "url": "https://cooking.builtbyjoshstudio.com/tools/dough-hydration-calculator/",
+      "description": "Bread hydration calculator for bread, pizza, and pasta dough. Enter your flour and get water, salt, and yeast by baker's percentage. Free, no ads, no signup.",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any (web browser)",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "publisher": {
+        "@type": "Organization",
+        "@id": "https://builtbyjoshstudio.com/#organization",
+        "name": "Built by Josh Studio LLC",
+        "legalName": "Built by Josh Studio LLC",
+        "alternateName": [
+          "BBJ Studio",
+          "Built by Josh Studio"
+        ],
+        "url": "https://builtbyjoshstudio.com",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://builtbyjoshstudio.com/images/logo/logo.webp",
+          "width": 512,
+          "height": 512
+        },
+        "image": "https://builtbyjoshstudio.com/images/logo/logo.webp",
+        "sameAs": [
+          "https://linktr.ee/builtbyjoshstudio",
+          "https://www.youtube.com/@TalesofInkShadowsStudio",
+          "https://www.youtube.com/@joshandjordanskitchen",
+          "https://tynkrtoolsandco.etsy.com",
+          "https://www.etsy.com/shop/BuiltByJoshStudio",
+          "https://www.redbubble.com/people/BBJStudio/shop"
+        ],
+        "identifier": [
+          {
+            "@type": "PropertyValue",
+            "propertyID": "Kansas Business ID",
+            "value": "10076138"
+          }
+        ]
+      }
+    }
+    </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Josh & Jordan\'s Kitchen", "item": "https://cooking.builtbyjoshstudio.com/"},
+    {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://cooking.builtbyjoshstudio.com/tools/"},
+    {"@type": "ListItem", "position": 3, "name": "Dough Hydration Calculator", "item": "https://cooking.builtbyjoshstudio.com/tools/dough-hydration-calculator/"}
+  ]
+}
+</script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is dough hydration?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Hydration is the weight of water in a dough expressed as a percentage of the flour weight. A 70% hydration dough has 700g of water for every 1000g of flour. Higher hydration generally means a more open, airy crumb."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is baker's percentage?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Baker's percentage expresses every ingredient as a percentage of the total flour weight, which is always 100%. It lets you scale a formula to any batch size while keeping the ratios identical."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much hydration does my bread need?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It depends on the style — pizza and bagels run lower, ciabatta and rustic sourdough run much higher. This tool includes presets for common styles, such as Neapolitan at 60%, baguette at 65%, sourdough at 72%, and ciabatta at 82%, as starting points."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why does my high-hydration dough feel too sticky?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Different flours absorb different amounts of water. If a dough is unmanageable, the flour may be near its absorption ceiling — the tool flags when your target exceeds what a given flour typically handles."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do you calculate dough hydration?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Divide the weight of the water by the weight of the flour and multiply by 100. A dough with 1,000 g of flour and 650 g of water is at 65% hydration. Count every flour in the recipe as flour, and weigh rather than measure by cup."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What hydration is pizza dough?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Neapolitan pizza dough sits around 60%, which is the calculator's Neapolitan preset. New York style usually runs a little higher, and pan or Roman styles higher still. Start at 60% with Tipo 00 flour and move up a few points at a time."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What hydration is fresh pasta dough?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Much lower than bread. The calculator sets semolina or egg pasta dough to 45% and leaves out the yeast, and it warns once you push past about 48%, where the dough turns too soft to roll thin and cut cleanly."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://cooking.builtbyjoshstudio.com/tools/dough-hydration-calculator/">
+    <meta property="og:title" content="Bread &amp; Dough Hydration Calculator | Pizza &amp; Pasta, Free">
+    <meta property="og:description" content="Bread hydration calculator for bread, pizza, and pasta dough. Enter your flour and get water, salt, and yeast by baker's percentage. Free, no ads, no signup.">
+    <meta property="og:image" content="https://cooking.builtbyjoshstudio.com/icons/og-image.png">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://cooking.builtbyjoshstudio.com/tools/dough-hydration-calculator/">
+    <meta name="twitter:title" content="Bread &amp; Dough Hydration Calculator | Pizza &amp; Pasta, Free">
+    <meta name="twitter:description" content="Bread hydration calculator for bread, pizza, and pasta dough. Enter your flour and get water, salt, and yeast by baker's percentage. Free, no ads, no signup.">
+    <meta name="twitter:image" content="https://cooking.builtbyjoshstudio.com/icons/og-image.png">
+
+<link rel="preload" href="/fonts/playfair-display-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/be-vietnam-pro-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/fonts/fonts.css?v=ac58de8e6c">
+<link rel="stylesheet" href="/fonts/fonts-vietnamese.css?v=96e6ae2194">
+<link rel="stylesheet" href="/css/studio/tokens.css?v=f58e0d92c0">
+<link rel="stylesheet" href="/css/studio/components.css?v=09a4d9f402">
+<link rel="stylesheet" href="/css/studio/tools.css?v=76acb59400">
+<link rel="stylesheet" href="styles.css?v=44957dba1d">
+<link rel="stylesheet" href="/css/tokens.css?v=e6976ee263">
+<link rel="stylesheet" href="/css/chrome.css?v=04f9a9fc23">
+<link rel="stylesheet" href="/css/tool-bridge.css?v=6bfe8d2938">
+<link rel="stylesheet" href="/css/tool-parts.css?v=ba7a255de3">
+<script src="/js/theme.js?v=dc84991f4a"></script>
+<script src="/js/nav.js?v=a16bc0e1ce" defer></script>
+
+<link rel="icon" href="/icons/favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="icon" href="/icons/icon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header" id="site-header">
+  <div class="container site-header__inner">
+    <a class="brand" href="/" aria-label="Josh and Jordan's Kitchen — home">
+      <span class="mark" aria-hidden="true">J<span class="amp">&amp;</span>J</span>
+      <span class="brand__name">Josh &amp; Jordan's Kitchen</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="site-nav" id="site-nav" aria-label="Primary">
+      <ul class="site-nav__list">
+        <li><a href="/videos/">Videos</a></li>
+        <li><a href="/tools/">Tools</a></li>
+        <li><a href="/cookbook/">Cookbook</a></li>
+        <li><a href="/blog/">Blog</a></li>
+      </ul>
+      <div class="theme-switch theme-switch--compact" role="group" aria-label="Color theme">
+        <button type="button" data-theme-set="cream"><span class="swatch" aria-hidden="true"></span><span class="label">Cream</span></button>
+        <button type="button" data-theme-set="mint"><span class="swatch" aria-hidden="true"></span><span class="label">Mint</span></button>
+        <button type="button" data-theme-set="rust"><span class="swatch" aria-hidden="true"></span><span class="label">Rust</span></button>
+        <button type="button" data-theme-set="cast-iron"><span class="swatch" aria-hidden="true"></span><span class="label">Cast iron</span></button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<div class="studio-tool">
+<main class="page tool-shell" id="main" tabindex="-1">
+
+  <header class="hero glass">
+    <div style="flex:1; min-width: 0">
+      <div class="meta">
+        <span class="pill live">&#9679; Utilities</span>
+        <span>Baker's percentages</span>
+        <span class="updated-date">Updated November 2026</span>
+      </div>
+      <h1>Dough Hydration Calculator</h1>
+      <p>Get flour, water, salt, and yeast by weight from a target hydration. Pick a flour or a style preset, enter the dough or flour weight, and the calculator does the baker&#39;s percentage math and warns when a flour cannot take that much water.</p>
+    </div>
+  </header>
+
+  <div class="tool-controls">
+    <div class="segmented">
+      <button type="button" id="unit-imperial" class="active">Imperial (oz)</button>
+      <button type="button" id="unit-metric">Metric (g)</button>
+    </div>
+  </div>
+
+  <div class="glass type-card" style="margin-bottom: 24px;">
+    <div class="role">1. Recipe Configuration</div>
+
+    <div class="form">
+      <div class="form-row">
+        <div class="field">
+          <label class="field__label" for="flour-type">Flour Type</label>
+          <select id="flour-type" name="flourType" class="select">
+            <optgroup label="Standard Wheat">
+              <option value="ap-flour">All-Purpose Flour</option>
+              <option value="bread-flour">Bread Flour</option>
+            </optgroup>
+            <optgroup label="Artisanal &amp; Whole Grains">
+              <option value="whole-wheat">Whole Wheat Flour</option>
+              <option value="rye-flour">Dark Rye Flour</option>
+              <option value="ancient-grain">Spelt / Einkorn</option>
+            </optgroup>
+            <optgroup label="Pizza Specialists">
+              <option value="tipo-00">Tipo 00 Flour (Neapolitan)</option>
+              <option value="high-gluten">High-Gluten / NY Style Flour</option>
+            </optgroup>
+            <optgroup label="Noodle &amp; Pasta Specialists">
+              <option value="buckwheat-soba">Buckwheat Flour (Soba)</option>
+              <option value="ramen-alkaline">Ramen / Alkaline Flour</option>
+              <option value="pasta-semolina">Semolina / Egg Pasta Flour</option>
+            </optgroup>
+            <optgroup label="Alternative Blends">
+              <option value="gluten-free">Gluten-Free Baking Blend</option>
+            </optgroup>
+          </select>
+        </div>
+        <div class="field">
+          <label class="field__label" for="baking-preset">Baking Style Preset</label>
+          <select id="baking-preset" class="select">
+            <option value="custom">Custom Configuration</option>
+            <option value="neapolitan">Neapolitan Pizza (60% Hydration)</option>
+            <option value="sourdough">Sourdough Boule (72% Hydration)</option>
+            <option value="baguette">French Baguette (65% Hydration)</option>
+            <option value="ciabatta">Italian Ciabatta (82% Hydration)</option>
+            <option value="tokyo-ramen">Tokyo Ramen (35% Hydration)</option>
+            <option value="soba">100% Soba Noodles (40% Hydration)</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="field">
+          <label class="field__label" for="calc-mode">Calculation Mode</label>
+          <select id="calc-mode" class="select">
+            <option value="total-dough">Target Total Dough Weight</option>
+            <option value="flour-mass">Target Flour Mass</option>
+          </select>
+        </div>
+        <div class="field">
+          <label class="field__label" id="target-label" for="target-value">Target Dough Weight</label>
+          <input type="number" id="target-value" class="input" value="35.3" min="0.1" step="0.1">
+        </div>
+      </div>
+
+      <div class="field">
+        <div style="display: flex; justify-content: space-between; align-items: baseline;">
+          <label class="field__label" for="hydration-slider">Hydration Percentage</label>
+          <span id="hydration-bubble" class="num" style="font-size: var(--text-sm); color: var(--primary);">72%</span>
+        </div>
+        <input type="range" id="hydration-slider" class="form-input-range" min="30" max="95" value="72">
+      </div>
+    </div>
+  </div>
+
+  <div class="results" style="margin-bottom: 24px;">
+    <div class="results__hero" style="justify-items: center; text-align: center;">
+      <div style="text-align: center;">
+        <div class="lbl" style="margin-bottom: 8px;">Total Yield</div>
+        <div id="total-yield-output" class="num">35.3 oz</div>
+      </div>
+    </div>
+
+    <div class="results__list">
+      <div class="anatomy-row">
+        <div class="ix"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 9h14M5 15h14M9 5v14M15 5v14"></path></svg></div>
+        <div>
+          <h2>Flour Mass</h2>
+          <p>100% base flour</p>
+        </div>
+        <code id="flour-output" class="num">20.4 oz</code>
+      </div>
+
+      <div class="anatomy-row">
+        <div class="ix"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5c2.8 3.6 5.2 6.5 5.2 9.3a5.2 5.2 0 1 1-10.4 0c0-2.8 2.4-5.7 5.2-9.3Z"></path></svg></div>
+        <div>
+          <h2>Water Mass</h2>
+          <p id="water-pct-label">72% hydration</p>
+        </div>
+        <code id="water-output" class="num">14.7 oz</code>
+      </div>
+
+      <div class="anatomy-row">
+        <div class="ix"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5 19 18H5Z"></path></svg></div>
+        <div>
+          <h2>Salt Mass</h2>
+          <p>2% base weight</p>
+        </div>
+        <code id="salt-output" class="num">0.4 oz</code>
+      </div>
+
+      <div class="anatomy-row">
+        <div class="ix" id="yeast-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 18a8 8 0 0 1 16 0Z"></path><path d="M3 18h18"></path></svg></div>
+        <div>
+          <h2 id="yeast-label">Yeast Mass</h2>
+          <p id="yeast-pct-label">1% base weight</p>
+        </div>
+        <code id="yeast-output" class="num">0.2 oz</code>
+      </div>
+    </div>
+
+    <div id="egg-note-container" class="alert alert--info" style="display: none;"></div>
+
+    <div id="absorbency-warning-container" class="alert alert--error" style="display: none;"></div>
+
+    <div class="form-actions">
+      <button type="button" id="copy-link-btn" class="btn btn--ghost" aria-label="Copy link to these numbers">Copy link</button>
+      <span id="copy-link-status" role="status" style="font-size: var(--text-xs); color: var(--text-muted);"></span>
+    </div>
+  </div>
+
+  <div class="glass" style="margin-bottom: 24px; padding: 24px; text-align: center;">
+    <h2 style="font-family: var(--font-ui); font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: var(--tracking-label); color: var(--muted); margin: 0 0 14px;">Next Steps for Your Cook</h2>
+    <div style="display: flex; flex-direction: column; gap: 10px; font-size: 14px;">
+      <a id="pipeline-link-pan" href="../pan-swap-calculator/" style="color: var(--accent); text-decoration: none; font-weight: 600;">Need to scale? Adjust your dough to a specific baking pan size with the Pan Swap Calculator &rarr;</a>
+      <a href="../yeast-converter/" style="color: var(--accent); text-decoration: none; font-weight: 600;">Swapping yeast types? Get the amount right with the Yeast Converter &rarr;</a>
+    </div>
+  </div>
+
+  <div class="glass" style="margin-bottom: 24px; padding: 24px;">
+    <h2 style="font-family: var(--font-ui); font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: var(--tracking-label); color: var(--accent); margin-top: 0; margin-bottom: 18px;">How to Build Your Dough</h2>
+    <div class="onboarding-steps">
+      <div class="step-col">
+        <h3>1. Choose Your Style</h3>
+        <p>Select a Flour Type or pick a Baking Style Preset (like Sourdough or Tokyo Ramen) to instantly snap the slider to its traditional water ratio.</p>
+      </div>
+      <div class="step-col">
+        <h3>2. Set Your Yield</h3>
+        <p>Type in the exact total weight of dough your recipe or pan demands in ounces or grams.</p>
+      </div>
+      <div class="step-col">
+        <h3>3. Weigh &amp; Bake</h3>
+        <p>Read your instant, zero-guesswork ingredient list above. No loose cups or spoons&mdash;just precise kitchen scale metrics.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- AT A GLANCE (P2-c) -->
+  <div class="glass glance glance--flush">
+    <h2>At a glance</h2>
+    <div class="table-wrap">
+    <table class="table">
+      <tbody>
+        <tr><th>What it does</th><td>Calculates bread, pizza, and pasta dough by baker's percentages, with flour-absorbency guardrails.</td></tr>
+        <tr><th>Inputs</th><td>Flour type (all-purpose to rye, spelt and more), a baking-style preset (Neapolitan pizza, sourdough boule, and others) or custom percentages, calculation mode (target dough weight or target flour mass), and the target weight.</td></tr>
+        <tr><th>Outputs</th><td>Flour, water, salt (and starter where relevant) by weight, the hydration percentage, and structural warnings when a combination will misbehave.</td></tr>
+        <tr><th>Cost &amp; privacy</th><td>Free, ad-free, no signup. Runs entirely in your browser — nothing is uploaded.</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+
+  <!-- Explanatory Prose & FAQ Section -->
+  <div class="glass" style="margin-bottom: 24px; padding: 24px; text-align: left;">
+    <h2 style="font-family: var(--font-display); font-weight: 800; font-size: 20px; letter-spacing: -0.02em; margin-top: 0; margin-bottom: 12px;">How dough hydration is calculated</h2>
+    <p style="margin-bottom: 12px; line-height: 1.6; color: var(--ink);">Dough hydration is the weight of water in a dough expressed as a percentage of the flour — not of the total dough. This is the heart of baker's percentages: flour is always the 100% baseline, and every other ingredient is measured against it. A dough with 1,000g of flour and 720g of water is at 72% hydration. Working this way means a recipe scales cleanly to any batch size and stays consistent regardless of the units you use, which is why bakers measure by weight rather than by cups.</p>
+    <p style="margin-bottom: 12px; line-height: 1.6; color: var(--ink);">This calculator works in that direction: set your target hydration and the batch size you want — either a total dough weight or a flour weight — and it returns the exact flour, water, salt, and yeast by weight. Salt and yeast are set as their own baker's percentages of the flour, the same way a written formula would express them. For alkaline noodle doughs it swaps yeast for kansui, and for egg pasta it offers an egg-for-water conversion, since those doughs are built differently from leavened bread.</p>
+    <p style="margin-bottom: 24px; line-height: 1.6; color: var(--ink);">Hydration isn't a free dial, though — every flour has a practical absorption range. A lean all-purpose flour turns slack and sticky pushed much past 65%, Tipo 00 has a lower ceiling than high-gluten bread flour, and noodle doughs stay deliberately stiff, often under 48%, so they can be rolled and cut. The calculator flags when your target falls outside the workable range for the flour you've chosen, so you can adjust before you mix rather than discovering it with your hands in the bowl.</p>
+
+    <h2 id="pasta-dough" style="font-family: var(--font-display); font-weight: 800; font-size: 20px; letter-spacing: -0.02em; margin-top: 0; margin-bottom: 12px; padding-top: 16px; border-top: 1px solid var(--line-2);">Pasta dough calculator</h2>
+    <p style="margin-bottom: 24px; line-height: 1.6; color: var(--ink);">Pasta dough runs much drier than bread. Pick &ldquo;Semolina / Egg Pasta Flour&rdquo; and the calculator snaps hydration to 45% — the low-water range fresh pasta needs to roll thin and cut into clean strands — and drops the yeast, since pasta is unleavened. Enter your target flour or total-dough weight and it returns the flour, water, and salt (2%) by baker's percentage. For traditional egg pasta it also shows an egg conversion: swap the water weight for whole eggs at about 50g (1.8 oz) each, so the recipe tells you roughly how many eggs to use. Push hydration past about 48% and it warns you — above that, the dough turns too soft to hold a noodle's bite.</p>
+
+    <h2 style="font-family: var(--font-display); font-weight: 800; font-size: 20px; letter-spacing: -0.02em; margin-top: 0; margin-bottom: 12px; padding-top: 16px; border-top: 1px solid var(--line-2);">Dough hydration chart by style</h2>
+
+    <p style="margin-bottom: 12px; line-height: 1.6; color: var(--ink);">These are the starting points behind the calculator&#39;s presets, shown for 1,000 g of flour. Salt is 2% of the flour in every case; leavened doughs add yeast at 1%.</p>
+
+    <div class="table-wrap" style="margin-bottom: 14px;">
+    <table class="table">
+      <thead><tr><th>Style</th><th class="num">Hydration</th><th class="num">Water per 1,000&nbsp;g flour</th><th class="num">Salt</th></tr></thead>
+      <tbody>
+        <tr><td>Tokyo ramen noodles</td><td class="num">35%</td><td class="num">350&nbsp;g</td><td class="num">20&nbsp;g</td></tr>
+        <tr><td>Soba noodles</td><td class="num">40%</td><td class="num">400&nbsp;g</td><td class="num">20&nbsp;g</td></tr>
+        <tr><td>Egg pasta (semolina)</td><td class="num">45%</td><td class="num">450&nbsp;g</td><td class="num">20&nbsp;g</td></tr>
+        <tr><td>Neapolitan pizza</td><td class="num">60%</td><td class="num">600&nbsp;g</td><td class="num">20&nbsp;g</td></tr>
+        <tr><td>French baguette</td><td class="num">65%</td><td class="num">650&nbsp;g</td><td class="num">20&nbsp;g</td></tr>
+        <tr><td>Sourdough boule</td><td class="num">72%</td><td class="num">720&nbsp;g</td><td class="num">20&nbsp;g</td></tr>
+        <tr><td>Italian ciabatta</td><td class="num">82%</td><td class="num">820&nbsp;g</td><td class="num">20&nbsp;g</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <p style="margin-bottom: 12px; line-height: 1.6; color: var(--ink);">To work it out by hand, hydration is water divided by flour:</p>
+
+    <p style="margin-bottom: 12px; line-height: 1.8; color: var(--ink); font-family: var(--font-mono); font-size: 13px;">Hydration % = water weight &divide; flour weight &times; 100<br>Flour = target dough weight &times; 100 &divide; (100 + hydration % + salt % + yeast %)</p>
+
+    <p style="margin-bottom: 24px; line-height: 1.6; color: var(--ink);">For 1,000 g of sourdough at 72%, the percentages add up to 175 (100 flour + 72 water + 2 salt + 1 yeast). That gives 571 g flour, 411 g water, 11 g salt, and 6 g yeast, which is exactly what the calculator returns in Target Total Dough Weight mode.</p>
+
+    <h2 style="font-family: var(--font-display); font-weight: 800; font-size: 20px; letter-spacing: -0.02em; margin-top: 0; margin-bottom: 12px;">A worked example: 72% hydration</h2>
+    <p style="margin-bottom: 24px; line-height: 1.6; color: var(--ink);">For 35.3 oz of dough at 72% hydration with 2% salt and 1% yeast: 20.2 oz of flour, 14.5 oz of water, 0.40 oz of salt and 0.20 oz of yeast.</p>
+
+    <h2 style="font-family: var(--font-display); font-weight: 800; font-size: 20px; letter-spacing: -0.02em; margin-top: 0; margin-bottom: 16px; padding-top: 16px; border-top: 1px solid var(--line-2);">Frequently Asked Questions</h2>
+    <div style="display: flex; flex-direction: column; gap: 18px;">
+      <div>
+        <h3 style="font-family: var(--font-ui); font-weight: 700; font-size: 14px; margin: 0 0 6px; color: var(--ink);">What is dough hydration?</h3>
+        <p style="margin: 0; line-height: 1.5; font-size: 13px; color: var(--muted);">Hydration is the weight of water in a dough expressed as a percentage of the flour weight. A 70% hydration dough has 700g of water for every 1000g of flour. Higher hydration generally means a more open, airy crumb.</p>
+      </div>
+      <div>
+        <h3 style="font-family: var(--font-ui); font-weight: 700; font-size: 14px; margin: 0 0 6px; color: var(--ink);">What is baker's percentage?</h3>
+        <p style="margin: 0; line-height: 1.5; font-size: 13px; color: var(--muted);">Baker's percentage expresses every ingredient as a percentage of the total flour weight, which is always 100%. It lets you scale a formula to any batch size while keeping the ratios identical.</p>
+      </div>
+      <div>
+        <h3 style="font-family: var(--font-ui); font-weight: 700; font-size: 14px; margin: 0 0 6px; color: var(--ink);">How much hydration does my bread need?</h3>
+        <p style="margin: 0; line-height: 1.5; font-size: 13px; color: var(--muted);">It depends on the style — pizza and bagels run lower, ciabatta and rustic sourdough run much higher. This tool includes presets for common styles, such as Neapolitan at 60%, baguette at 65%, sourdough at 72%, and ciabatta at 82%, as starting points.</p>
+      </div>
+      <div>
+        <h3 style="font-family: var(--font-ui); font-weight: 700; font-size: 14px; margin: 0 0 6px; color: var(--ink);">Why does my high-hydration dough feel too sticky?</h3>
+        <p style="margin: 0; line-height: 1.5; font-size: 13px; color: var(--muted);">Different flours absorb different amounts of water. If a dough is unmanageable, the flour may be near its absorption ceiling — the tool flags when your target exceeds what a given flour typically handles.</p>
+      </div>
+      <div>
+        <h3 style="font-family: var(--font-ui); font-weight: 700; font-size: 14px; margin: 0 0 6px; color: var(--ink);">How do you calculate dough hydration?</h3>
+        <p style="margin: 0; line-height: 1.5; font-size: 13px; color: var(--muted);">Divide the weight of the water by the weight of the flour and multiply by 100. A dough with 1,000 g of flour and 650 g of water is at 65% hydration. Count every flour in the recipe as flour, and weigh rather than measure by cup.</p>
+      </div>
+      <div>
+        <h3 style="font-family: var(--font-ui); font-weight: 700; font-size: 14px; margin: 0 0 6px; color: var(--ink);">What hydration is pizza dough?</h3>
+        <p style="margin: 0; line-height: 1.5; font-size: 13px; color: var(--muted);">Neapolitan pizza dough sits around 60%, which is the calculator&#39;s Neapolitan preset. New York style usually runs a little higher, and pan or Roman styles higher still. Start at 60% with Tipo 00 flour and move up a few points at a time.</p>
+      </div>
+      <div>
+        <h3 style="font-family: var(--font-ui); font-weight: 700; font-size: 14px; margin: 0 0 6px; color: var(--ink);">What hydration is fresh pasta dough?</h3>
+        <p style="margin: 0; line-height: 1.5; font-size: 13px; color: var(--muted);">Much lower than bread. The calculator sets semolina or egg pasta dough to 45% and leaves out the yeast, and it warns once you push past about 48%, where the dough turns too soft to roll thin and cut cleanly.</p>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<section class="net-band">
+  <h2><span class="lbl">Network</span> More from the studio</h2>
+  <div class="net-grid">
+    <a href="/cookbook/" class="gear-item">
+      <div class="gear-img-wrapper"><img src="/nuoc-mam-link.webp" alt="Nước Mắm — A Vietnamese Family Cookbook by Josh Tran" width="600" height="600" loading="lazy"></div>
+      <div class="gear-info">
+        <h3>Nước Mắm — the Cookbook</h3>
+        <p>A Vietnamese family cookbook by the cook behind these tools — 56 pages, balanced by tasting.</p>
+        <button class="affiliate-btn">Get the Cookbook — $3.99</button>
+      </div>
+    </a>
+    <a href="/videos/" class="gear-item">
+      <div class="gear-img-wrapper"><img src="/kitchen-videos-link.webp" alt="Cook-along videos from Josh &amp; Jordan's Kitchen" width="600" height="299" loading="lazy"></div>
+      <div class="gear-info">
+        <h3>Watch the Cooks</h3>
+        <p>The same kitchen, on video — a short cut of each cook plus the full real-time version, nothing sped up.</p>
+        <button class="affiliate-btn">Watch the Videos</button>
+      </div>
+    </a>
+    <a href="https://builtbyjoshstudio.com/" target="_blank" rel="noopener" class="gear-item">
+      <div class="gear-img-wrapper"><img src="/studio-link.webp" alt="Built by Josh Studio" width="600" height="299" loading="lazy"></div>
+      <div class="gear-info">
+        <h3>Built by Josh Studio</h3>
+        <p>Local-first software, CRM solutions, and technical projects.</p>
+        <button class="affiliate-btn">Visit Website</button>
+      </div>
+    </a>
+    <a href="https://www.youtube.com/@TalesofInkShadowsStudio" target="_blank" rel="noopener" class="gear-item">
+      <div class="gear-img-wrapper"><img src="/tales-link.webp" alt="Tales of Ink &amp; Shadows" width="600" height="299" loading="lazy"></div>
+      <div class="gear-info">
+        <h3>Tales of Ink &amp; Shadows</h3>
+        <p>Historical noir documentaries and immersive storytelling.</p>
+        <button class="affiliate-btn">Watch on YouTube</button>
+      </div>
+    </a>
+  </div>
+</section>
+
+<footer class="footer" style="text-align: center; font-size: 11px; color: var(--muted); padding: 32px 20px; margin-top: 40px; line-height: 1.6; max-width: 640px; margin-left: auto; margin-right: auto;">
+  <p style="margin-bottom: 8px;"><strong>Disclaimer:</strong> Hydration ratios and flour absorption rates vary depending on ambient humidity, brand processing, and milling precision. Adjust flour or water by small amounts during mixing to achieve target gluten structure.</p>
+  <p style="margin-bottom: 12px;">These tools provide estimates for planning purposes. Always use a food thermometer to confirm doneness, and follow current USDA food-safety guidance for cooking, thawing, and storing food.</p>
+</footer>
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="site-footer__grid">
+      <div class="site-footer__brand">
+        <span class="mark" aria-hidden="true">J<span class="amp">&amp;</span>J</span>
+        <p class="tagline" style="font-size:var(--text-base)">real home cooking &amp; baking</p>
+        <div class="divider divider--inline" style="justify-content:flex-start" aria-hidden="true"><span class="diamond"></span></div>
+      </div>
+      <div>
+        <h2>Kitchen</h2>
+        <ul>
+          <li><a href="/videos/">Videos</a></li>
+          <li><a href="/tools/">Tools</a></li>
+          <li><a href="/cookbook/">Cookbook</a></li>
+          <li><a href="/blog/">Blog</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>More from the studio</h2>
+        <ul>
+          <li><a href="https://builtbyjoshstudio.com/">Built by Josh Studio</a></li>
+          <li><a href="https://tynkr.builtbyjoshstudio.com/">Tynkr apps</a></li>
+          <li><a href="https://tools.builtbyjoshstudio.com/money/">Money tools</a></li>
+          <li><a href="https://writing.builtbyjoshstudio.com/">J.S. Warden — books</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Contact</h2>
+        <address>
+          <a href="mailto:support@builtbyjoshstudio.com">support@builtbyjoshstudio.com</a>
+        </address>
+        <ul style="margin-top:var(--space-4)">
+          <li><a href="https://www.youtube.com/@joshandjordanskitchen" rel="noopener">YouTube</a></li>
+          <li><a href="https://www.tiktok.com/@JOSHANDJORDANSKITCHEN" rel="noopener">TikTok</a></li>
+          <li><a href="https://www.instagram.com/JOSHANDJORDANSKITCHEN" rel="noopener">Instagram</a></li>
+          <li><a href="https://www.facebook.com/joshandjordanskitchen/" rel="noopener">Facebook</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="site-footer__legal">
+      <ul>
+        <li><a href="/privacy/">Privacy</a></li>
+        <li><a href="https://builtbyjoshstudio.com/terms.html">Terms</a></li>
+        <li><a href="https://builtbyjoshstudio.com/refunds.html">Refunds</a></li>
+      </ul>
+      <p class="wordmark" style="padding-left:0;text-align:left;margin:0">&copy; <span class="tabular">2026</span> Built by Josh Studio LLC. All rights reserved.</p>
+    </div>
+    <p class="site-footer__brands">Tynkr Tools &amp; Co and <a href="https://littleacrelearning.com" rel="noopener">Little Acre Learning</a> are brands of Built by Josh Studio LLC.</p>
+  </div>
+</footer>
+
+<script src="../ingredients-db.js?v=dd06fee0fc"></script>
+<script src="script.js?v=31d420837e" defer></script>
+<script src="../kinetic.js?v=f935f39fab" defer></script>
+</body>
+</html>

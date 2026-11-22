@@ -1,0 +1,30 @@
+#!/bin/sh
+# Refuse a commit whose CSS/JS version tags (?v=<hash>) or sw.js are out of date.
+#
+# It checks exactly what is being committed: the staged files are copied to a temporary folder and
+# .github/build_sw.py --check runs there. To fix a refusal:
+#     python3 .github/build_sw.py
+#     git add -A
+#     git commit ...
+#
+# Install once per clone:  git config core.hooksPath .githooks
+set -e
+top=$(git rev-parse --show-toplevel)
+tmp=$(mktemp -d 2>/dev/null || mktemp -d -t build-sw)
+cleanup() { if [ -n "$tmp" ] && [ -d "$tmp" ]; then rm -r -f -- "$tmp"; fi; }
+trap cleanup EXIT INT TERM
+git checkout-index --all --prefix="$tmp/"
+
+if [ ! -f "$tmp/.github/build_sw.py" ]; then
+  echo "pre-commit: .github/build_sw.py is not staged; cannot check the build." >&2
+  exit 1
+fi
+PY=$(command -v python3 || command -v python || true)
+if [ -z "$PY" ]; then
+  echo "pre-commit: Python 3 is needed to check the build (python3 or python on PATH)." >&2
+  exit 1
+fi
+if ! "$PY" -I "$tmp/.github/build_sw.py" --check "$tmp"; then
+  echo "pre-commit: commit refused: the staged site has stale version tags or a stale sw.js." >&2
+  exit 1
+fi

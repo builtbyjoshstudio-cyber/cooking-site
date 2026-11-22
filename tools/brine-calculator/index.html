@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<script>if(location.protocol.indexOf("http")===0&&/\/index\.html$/i.test(location.pathname))location.replace(location.pathname.slice(0,-10)+location.search+location.hash);</script>
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QDSPBB7S9J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      var gaKeep = new URLSearchParams(); new URLSearchParams(location.search).forEach(function (v, k) { if (k.indexOf('utm_') === 0) gaKeep.append(k, v); });
+      gtag('config', 'G-QDSPBB7S9J', { page_location: location.origin + location.pathname + (gaKeep.toString() ? '?' + gaKeep.toString() : ''), page_referrer: document.referrer.split(/[?#]/)[0] });
+    </script>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Calculate wet or dry brines for turkey, chicken, pork, and more. Get precise salt amounts, water ratios, sugar options, and brining time recommendations.">
+<meta name="robots" content="max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta property="og:title" content="Brine Calculator | Free Wet &amp; Dry Brine Salt &amp; Time Math">
+    <meta property="og:type" content="website">
+<meta property="og:description" content="Calculate precise wet or dry brines for turkey, chicken, pork, and beef. Get exact salt-to-water ratios, salt brand density adjustments, and interactive kitchen timers.">
+<meta property="og:image" content="https://cooking.builtbyjoshstudio.com/icons/og-image.png">
+<meta property="og:url" content="https://cooking.builtbyjoshstudio.com/tools/brine-calculator/">
+<meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://cooking.builtbyjoshstudio.com/tools/brine-calculator/">
+    <meta name="twitter:title" content="Brine Calculator | Free Wet &amp; Dry Brine Salt &amp; Time Math">
+    <meta name="twitter:description" content="Calculate precise wet or dry brines for turkey, chicken, pork, and beef. Get exact salt-to-water ratios, salt brand density adjustments, and interactive kitchen timers.">
+    <meta name="twitter:image" content="https://cooking.builtbyjoshstudio.com/icons/og-image.png">
+<title>Brine Calculator | Free Wet &amp; Dry Brine Salt &amp; Time Math</title>
+<link rel="canonical" href="https://cooking.builtbyjoshstudio.com/tools/brine-calculator/" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Brine Calculator",
+  "url": "https://cooking.builtbyjoshstudio.com/tools/brine-calculator/",
+  "description": "Calculate precise salt, water, and sugar ratios and brining times for wet and dry brines, by protein weight and salt density. Free, ad-free, local-first.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (web browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://builtbyjoshstudio.com/#organization",
+    "name": "Built by Josh Studio LLC",
+    "legalName": "Built by Josh Studio LLC",
+    "alternateName": [
+      "BBJ Studio",
+      "Built by Josh Studio"
+    ],
+    "url": "https://builtbyjoshstudio.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://builtbyjoshstudio.com/images/logo/logo.webp",
+      "width": 512,
+      "height": 512
+    },
+    "image": "https://builtbyjoshstudio.com/images/logo/logo.webp",
+    "sameAs": [
+      "https://linktr.ee/builtbyjoshstudio",
+      "https://www.youtube.com/@TalesofInkShadowsStudio",
+      "https://www.youtube.com/@joshandjordanskitchen",
+      "https://tynkrtoolsandco.etsy.com",
+      "https://www.etsy.com/shop/BuiltByJoshStudio",
+      "https://www.redbubble.com/people/BBJStudio/shop"
+    ],
+    "identifier": [
+      {
+        "@type": "PropertyValue",
+        "propertyID": "Kansas Business ID",
+        "value": "10076138"
+      }
+    ]
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Josh & Jordan's Kitchen", "item": "https://cooking.builtbyjoshstudio.com/"},
+    {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://cooking.builtbyjoshstudio.com/tools/"},
+    {"@type": "ListItem", "position": 3, "name": "Brine Calculator", "item": "https://cooking.builtbyjoshstudio.com/tools/brine-calculator/"}
+  ]
+}
+</script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What's the difference between a wet brine and a dry brine?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A wet brine dissolves salt in water and submerges the meat; a dry brine applies salt directly to the surface. Dry brining is less messy and crisps skin better; wet brining adds the most moisture. This tool calculates both."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much salt do I need to brine a turkey?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "For a 10-pound turkey in a standard wet brine, about 300 g of coarse kosher salt in 6 liters (6.3 quarts) of water, brined for about 10 hours. The amount scales with the bird's weight, and salt brands differ a lot by volume, so weigh the salt or pick your salt type in the calculator."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long should I brine meat?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "For a wet brine, about an hour per pound for whole birds, chicken pieces and roasts, never under 30 minutes, with chicken capped at 4 hours and turkey, duck and goose at 24 hours. Steaks, chops and seafood are timed by the piece, not the pack: 30 minutes to 1 hour for steaks and chops, 15 to 30 minutes for fish and seafood. Ground meat isn't wet brined. A dry brine takes 1 to 2 hours per pound (at least 1 hour, with turkey, chicken, duck and goose capped at 24 hours), and an equilibrium brine at least as long as a standard one, up to 2 days."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I brine pre-seasoned or \"enhanced\" meat?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It's not recommended. Many supermarket turkeys and pork are already injected with a salt solution, and brining on top of that makes them too salty. Check the label for \"enhanced\" or a sodium-containing ingredient list before brining."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the formula for a brine?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A standard wet brine is salt at about 5% of the water's weight, which is 50 g of salt per liter of water. A dry brine is salt at about 1% of the meat's weight. This calculator uses about 0.6 liters of water per pound of meat (at least 2 liters) to keep it submerged, so a 12-pound turkey takes about 7.2 liters of water and 360 g of salt."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is an equilibrium brine?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "An equilibrium brine uses exactly the amount of salt you want to end up in the food, so it cannot over-salt however long it soaks. The calculator sets it at 1.5% of the combined weight of the meat and the water. It is slower than a standard brine but far more forgiving, so the calculator gives it at least the standard brine's time and up to 2 days. The limit there is the fridge, not the salt: a 1.5% brine doesn't preserve meat, and raw poultry keeps only 1 to 2 days."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much salt do I use for a dry brine per pound?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "About 1% of the meat's weight, which is roughly 4.5 g of salt per pound. That is about one and a half teaspoons of coarse flaky kosher salt but only three quarters of a teaspoon of table salt, which is why weighing the salt is more reliable than measuring by the spoon."
+          }
+        }
+      ]
+    }
+    </script>
+
+<link rel="preload" href="/fonts/playfair-display-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/be-vietnam-pro-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/fonts/fonts.css?v=ac58de8e6c">
+<link rel="stylesheet" href="/fonts/fonts-vietnamese.css?v=96e6ae2194">
+<link rel="stylesheet" href="/css/studio/tokens.css?v=f58e0d92c0">
+<link rel="stylesheet" href="/css/studio/components.css?v=09a4d9f402">
+<link rel="stylesheet" href="/css/studio/tools.css?v=76acb59400">
+<link rel="stylesheet" href="styles.css?v=6358de71a3">
+<link rel="stylesheet" href="/css/tokens.css?v=e6976ee263">
+<link rel="stylesheet" href="/css/chrome.css?v=04f9a9fc23">
+<link rel="stylesheet" href="/css/tool-bridge.css?v=6bfe8d2938">
+<link rel="stylesheet" href="/css/tool-parts.css?v=ba7a255de3">
+<script src="/js/theme.js?v=dc84991f4a"></script>
+<script src="/js/nav.js?v=a16bc0e1ce" defer></script>
+
+<link rel="icon" href="/icons/favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="icon" href="/icons/icon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header" id="site-header">
+  <div class="container site-header__inner">
+    <a class="brand" href="/" aria-label="Josh and Jordan's Kitchen — home">
+      <span class="mark" aria-hidden="true">J<span class="amp">&amp;</span>J</span>
+      <span class="brand__name">Josh &amp; Jordan's Kitchen</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="site-nav" id="site-nav" aria-label="Primary">
+      <ul class="site-nav__list">
+        <li><a href="/videos/">Videos</a></li>
+        <li><a href="/tools/">Tools</a></li>
+        <li><a href="/cookbook/">Cookbook</a></li>
+        <li><a href="/blog/">Blog</a></li>
+      </ul>
+      <div class="theme-switch theme-switch--compact" role="group" aria-label="Color theme">
+        <button type="button" data-theme-set="cream"><span class="swatch" aria-hidden="true"></span><span class="label">Cream</span></button>
+        <button type="button" data-theme-set="mint"><span class="swatch" aria-hidden="true"></span><span class="label">Mint</span></button>
+        <button type="button" data-theme-set="rust"><span class="swatch" aria-hidden="true"></span><span class="label">Rust</span></button>
+        <button type="button" data-theme-set="cast-iron"><span class="swatch" aria-hidden="true"></span><span class="label">Cast iron</span></button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<div class="studio-tool">
+<main class="page tool-shell" id="main" tabindex="-1">
+
+  <header class="hero glass">
+    <div style="flex:1; min-width: 0">
+      <div class="meta">
+        <span class="pill live">&#9679; Utilities</span>
+        <span>Wet &amp; dry brining math</span>
+        <span class="updated-date">Updated November 2026</span>
+      </div>
+      <h1>Brine Calculator</h1>
+      <p>Calculate precise salt, water, and sugar ratios for wet and dry meat brining, factoring in protein weight and salt density.</p>
+    </div>
+  </header>
+
+  <div class="tool-controls">
+    <div class="segmented">
+      <button type="button" id="brine-type-wet" class="active">Wet Brine</button>
+      <button type="button" id="brine-type-dry">Dry Brine</button>
+    </div>
+    <div class="segmented">
+      <button type="button" id="unit-imperial" class="active">Pounds (lbs)</button>
+      <button type="button" id="unit-metric">Kilograms (kg)</button>
+    </div>
+    <div class="segmented">
+      <button type="button" id="volume-unit-imperial" class="active">Imperial</button>
+      <button type="button" id="volume-unit-metric">Metric</button>
+    </div>
+  </div>
+
+  <div class="glass type-card" style="margin-bottom: 24px;">
+    <div class="role">Brine Inputs</div>
+
+    <div style="display: flex; flex-direction: column; gap: 16px;">
+      <div class="field">
+        <label class="field__label" for="protein-type">Protein Type</label>
+        <select id="protein-type" name="proteinType" class="select">
+          <optgroup label="Poultry">
+            <option value="turkey">Turkey (Whole or Breast)</option>
+            <option value="chicken">Chicken (Whole or Pieces)</option>
+            <option value="duck-goose">Duck &amp; Goose</option>
+          </optgroup>
+          <optgroup label="Beef">
+            <option value="beef-roast">Beef Roasts (Prime Rib/Tri-Tip)</option>
+            <option value="beef-brisket">Beef Brisket (Low &amp; Slow)</option>
+            <option value="beef-steak">Steaks &amp; Chops (Individual)</option>
+          </optgroup>
+          <optgroup label="Pork &amp; Lamb">
+            <option value="pork-shoulder">Pork Shoulder &amp; Hams</option>
+            <option value="lamb">Lamb Leg or Rack</option>
+          </optgroup>
+          <optgroup label="Ground, Game &amp; Seafood">
+            <option value="ground-meat">Ground Beef, Pork &amp; Lamb</option>
+            <option value="ground-poultry">Ground Turkey &amp; Chicken</option>
+            <option value="game-meat">Venison &amp; Bison (Lean Game)</option>
+            <option value="seafood">Fish &amp; Seafood</option>
+          </optgroup>
+        </select>
+      </div>
+
+      <div class="field">
+        <label class="field__label" id="meat-weight-label" for="meat-weight">Meat Weight</label>
+        <input type="number" id="meat-weight" class="input" value="10" step="0.1" min="0.1">
+      </div>
+
+      <div id="turkey-helper-container" class="choice" style="display: none; margin-top: -8px;">
+        <input type="checkbox" id="turkey-helper-toggle">
+        <div style="display: flex; flex-direction: column; gap: 4px;">
+          <label for="turkey-helper-toggle">Is this a whole turkey?</label>
+          <div id="turkey-helper-note" class="alert alert--warning" style="display: none;">Chef's Tip: Subtract 1.5 lbs from your package weight to account for the neck and giblets before entering the weight above.</div>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="field__label" for="salt-type">Salt Type</label>
+        <select id="salt-type" class="select">
+          <option value="coarse">Coarse Flaky Kosher Salt</option>
+          <option value="dense">Dense Granular Kosher Salt</option>
+          <option value="table">Table Salt</option>
+          <option value="sea">Fine Sea Salt</option>
+        </select>
+      </div>
+      <div id="salt-warning-node" class="alert alert--warning" style="display: none; margin-top: -8px;"></div>
+
+      <div class="field">
+        <label class="field__label" for="brine-strength">Brine Strength</label>
+        <select id="brine-strength" class="select">
+          <option value="standard" selected>Standard</option>
+          <option value="light">Light</option>
+          <option value="strong">Strong</option>
+        </select>
+      </div>
+
+      <div class="field" id="brining-method-container">
+        <label class="field__label" for="brining-method">Wet Brining Method</label>
+        <select id="brining-method" class="select">
+          <option value="standard" selected>Standard Gradient (Faster)</option>
+          <option value="eq">Equilibrium (Precise, Slower)</option>
+        </select>
+      </div>
+
+      <div class="choice" style="margin-top: 8px;">
+        <input type="checkbox" id="include-sugar">
+        <label for="include-sugar">Include Sugar (Balances saltiness)</label>
+      </div>
+    </div>
+
+    <div style="margin-top: 24px;">
+      <button id="calculate-btn" class="btn" style="width: 100%;">Calculate Brine</button>
+    </div>
+  </div>
+
+  <div class="results" style="margin-bottom: 24px;">
+    <div class="results__hero" style="justify-items: center; gap: 24px; text-align: center;">
+      <div>
+        <div class="lbl" style="margin-bottom: 8px;">Salt Required</div>
+        <div id="salt-volume-output" class="num">-- Tbsp</div>
+        <div id="salt-weight-output" class="num" style="font-size: var(--text-sm); font-weight: 500; color: var(--text-muted); margin-top: 6px;">-- g</div>
+      </div>
+
+      <div id="water-section">
+        <div class="lbl" style="margin-bottom: 8px;">Water Required</div>
+        <div id="water-output" class="num">--</div>
+      </div>
+
+      <div id="sugar-section" style="display: none;">
+        <div class="lbl" style="margin-bottom: 8px;">Sugar Required</div>
+        <div id="sugar-output" class="num" style="font-size: var(--text-xl);">-- g</div>
+      </div>
+    </div>
+
+    <div class="anatomy-labels">
+      <div class="alert alert--info">
+        <div class="ix" aria-hidden="true">&#9201;</div>
+        <div>
+          <h2 class="alert__title">Brining Time</h2>
+          <p id="time-output">Calculate to view time recommendations.</p>
+        </div>
+      </div>
+
+      <div class="alert alert--warning">
+        <div class="ix" aria-hidden="true">!</div>
+        <div>
+          <h3 class="alert__title">Chef's Notes</h3>
+          <p id="notes-output">Warning: Do not brine meat that is labeled as 'enhanced', 'basted', or 'pre-seasoned' (like most frozen turkeys), as it will be incredibly salty.</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="timer-container" style="display: none; margin-top: 24px; padding-top: 24px; border-top: 1px solid var(--line); text-align: center;">
+      <div style="font-family: var(--font-ui); font-weight:600; font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: var(--tracking-label); margin-bottom: 8px;">Active Brine Timer</div>
+      <div id="live-timer-display" class="num" style="font-size: var(--text-3xl);">00:00:00</div>
+      <button id="stop-timer-btn" class="btn btn--danger" style="margin-top: 14px;">Stop Timer</button>
+    </div>
+
+    <div style="position: relative; margin-top: 24px; display: flex; justify-content: center; width: 100%; gap: 12px; flex-wrap: wrap;">
+      <button id="start-timer-btn" class="btn">Start Brining Timer</button>
+      <button id="copy-btn" class="btn btn--ghost">Copy to Clipboard</button>
+      <button type="button" id="copy-link-btn" class="btn btn--ghost" aria-label="Copy link to these numbers">Copy link</button>
+      <span id="copy-link-status" role="status" style="position: absolute; top: 100%; left: 0; right: 0; font-family: var(--font-mono); font-size: 12px; line-height: 2; color: var(--muted); text-align: center;"></span>
+    </div>
+
+    <div style="margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--line); text-align: center;">
+      <h2 style="font-family: var(--font-ui); font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: var(--tracking-label); color: var(--muted); margin: 0 0 14px;">Next Steps for Your Cook</h2>
+      <div style="display: flex; flex-direction: column; gap: 10px; font-size: 14px;">
+        <a id="pipeline-link-thawing" href="../meat-thawing-planner/" style="color: var(--accent); text-decoration: none; font-weight: 600;">Need to thaw it first? Use the Meat Thawing Planner &rarr;</a>
+        <a id="pipeline-link-roast" href="../perfect-roast-pull-temp-calculator/" style="color: var(--accent); text-decoration: none; font-weight: 600;">Ready to cook? Find your exact target pull temperature &rarr;</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- AT A GLANCE (P2-c) -->
+  <div class="glass glance glance--flush">
+    <h2>At a glance</h2>
+    <div class="table-wrap">
+    <table class="table">
+      <tbody>
+        <tr><th>What it does</th><td>Calculates wet- and dry-brine quantities — salt, water, optional sugar — plus a recommended brining time window, from your protein and its weight.</td></tr>
+        <tr><th>Inputs</th><td>Protein type (12 options, whole turkey to fish), weight in lbs or kg, wet or dry method, salt type (4 densities), brine strength, standard-gradient or equilibrium method, optional sugar.</td></tr>
+        <tr><th>Outputs</th><td>Salt in tablespoons and grams, water volume (wet brine), sugar amount, a brining-time recommendation, and a live brining timer.</td></tr>
+        <tr><th>Cost &amp; privacy</th><td>Free, ad-free, no signup. Runs entirely in your browser — nothing is uploaded.</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+
+  <!-- Explanatory Prose & FAQ Section -->
+  <div class="glass" style="margin-bottom: 24px; padding: 24px; text-align: left;">
+    <h2 style="font-family: var(--font-display); font-weight: 800; font-size: 20px; letter-spacing: -0.02em; margin-top: 0; margin-bottom: 12px;">Why brining works</h2>
+    <p style="margin-bottom: 12px; line-height: 1.6; color: var(--ink);">Brining seasons meat all the way through and helps it hold on to moisture during cooking, so a lean turkey breast or pork chop comes out juicier and more evenly seasoned. A wet brine submerges the meat in saltwater; a dry brine rubs salt directly onto the surface and lets it draw moisture in over time.</p>
+    <p style="margin-bottom: 24px; line-height: 1.6; color: var(--ink);">Both rely on getting the salt ratio right for the weight of meat — too little does nothing, too much makes it inedibly salty. This calculator works out the salt, water, and optional sugar for your protein and weight, and adjusts for the fact that different salt brands have very different densities by volume.</p>
+
+    <h2 id="dry-brine" style="font-family: var(--font-display); font-weight: 800; font-size: 20px; letter-spacing: -0.02em; margin-top: 0; margin-bottom: 12px; padding-top: 16px; border-top: 1px solid var(--line-2);">Dry brine calculator</h2>
+    <p style="margin-bottom: 24px; line-height: 1.6; color: var(--ink);">A dry brine skips the water: you rub salt straight onto the surface, and it pulls moisture out and then back in, seasoned. For a dry brine the calculator sets the salt at about 1% of the meat's weight — adjustable to 0.75% for a lighter cure or 1.25% for a stronger one — and shows that amount by weight and by volume for your salt type, since coarse, table, and sea salts differ a lot by the spoonful. Switch to Dry, enter the protein and weight, and you get the exact salt to scatter on. Best for crisp-skinned poultry and steaks you rest uncovered in the fridge.</p>
+    <h2 id="wet-brine" style="font-family: var(--font-display); font-weight: 800; font-size: 20px; letter-spacing: -0.02em; margin-top: 0; margin-bottom: 12px; padding-top: 16px; border-top: 1px solid var(--line-2);">Wet brine calculator</h2>
+    <p style="margin-bottom: 24px; line-height: 1.6; color: var(--ink);">A wet brine dissolves salt in water and submerges the meat. The calculator uses about 0.6 liters of water per pound of meat (at least 2 liters), enough to keep it submerged, then salts that water to roughly 5% for a standard brine (4% light, 6% strong) — or, if you pick the equilibrium (EQ) method, targets 1.5% of the combined meat-and-water weight, which is much harder to over-salt on a long soak. It returns the salt (weight and volume), the water amount, and optional sugar, all scaled to your protein and weight. Best for lean cuts like turkey breast and pork chops that dry out easily.</p>
+
+    <h2 style="font-family: var(--font-display); font-weight: 800; font-size: 20px; letter-spacing: -0.02em; margin-top: 0; margin-bottom: 12px; padding-top: 16px; border-top: 1px solid var(--line-2);">Brine formula and salt by weight</h2>
+
+    <p style="margin-bottom: 12px; line-height: 1.6; color: var(--ink);">Every number the calculator returns comes from three ratios:</p>
+
+    <p style="margin-bottom: 12px; line-height: 1.8; color: var(--ink); font-family: var(--font-mono); font-size: 13px;">Wet brine: water = 0.6 L per lb of meat (2 L minimum), salt = 5% of the water (4% light, 6% strong)<br>Equilibrium brine: salt = 1.5% of the meat and water combined<br>Dry brine: salt = 1% of the meat&#39;s weight (0.75% light, 1.25% strong)</p>
+
+    <p style="margin-bottom: 12px; line-height: 1.6; color: var(--ink);">Worked out by meat weight, at standard strength:</p>
+
+    <div class="table-wrap" style="margin-bottom: 14px;">
+    <table class="table">
+      <thead><tr><th class="num">Meat</th><th class="num">Water</th><th class="num">Salt, standard wet brine</th><th class="num">Salt, equilibrium</th><th class="num">Salt, dry brine</th></tr></thead>
+      <tbody>
+        <tr><td class="num">2&nbsp;lb</td><td class="num">2.0&nbsp;L</td><td class="num">100&nbsp;g</td><td class="num">44&nbsp;g</td><td class="num">9&nbsp;g</td></tr>
+        <tr><td class="num">4&nbsp;lb</td><td class="num">2.4&nbsp;L</td><td class="num">120&nbsp;g</td><td class="num">63&nbsp;g</td><td class="num">18&nbsp;g</td></tr>
+        <tr><td class="num">8&nbsp;lb</td><td class="num">4.8&nbsp;L</td><td class="num">240&nbsp;g</td><td class="num">126&nbsp;g</td><td class="num">36&nbsp;g</td></tr>
+        <tr><td class="num">12&nbsp;lb</td><td class="num">7.2&nbsp;L</td><td class="num">360&nbsp;g</td><td class="num">190&nbsp;g</td><td class="num">54&nbsp;g</td></tr>
+        <tr><td class="num">16&nbsp;lb</td><td class="num">9.6&nbsp;L</td><td class="num">480&nbsp;g</td><td class="num">253&nbsp;g</td><td class="num">73&nbsp;g</td></tr>
+        <tr><td class="num">20&nbsp;lb</td><td class="num">12.0&nbsp;L</td><td class="num">600&nbsp;g</td><td class="num">316&nbsp;g</td><td class="num">91&nbsp;g</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <p style="margin-bottom: 24px; line-height: 1.6; color: var(--ink);">Salt is listed in grams because a tablespoon is not a fixed amount of salt: coarse flaky kosher salt weighs about 8 g per tablespoon and table salt about 18 g. Pick your salt type in the calculator and it converts the weight to spoons for that salt.</p>
+
+    <h2 style="font-family: var(--font-display); font-weight: 800; font-size: 20px; letter-spacing: -0.02em; margin-top: 0; margin-bottom: 16px; padding-top: 16px; border-top: 1px solid var(--line-2);">Frequently Asked Questions</h2>
+    <div style="display: flex; flex-direction: column; gap: 18px;">
+      <div>
+        <h3 style="font-family: var(--font-ui); font-weight: 700; font-size: 14px; margin: 0 0 6px; color: var(--ink);">What's the difference between a wet brine and a dry brine?</h3>
+        <p style="margin: 0; line-height: 1.5; font-size: 13px; color: var(--muted);">A wet brine dissolves salt in water and submerges the meat; a dry brine applies salt directly to the surface. Dry brining is less messy and crisps skin better; wet brining adds the most moisture. This tool calculates both.</p>
+      </div>
+      <div>
+        <h3 style="font-family: var(--font-ui); font-weight: 700; font-size: 14px; margin: 0 0 6px; color: var(--ink);">How much salt do I need to brine a turkey?</h3>
+        <p style="margin: 0; line-height: 1.5; font-size: 13px; color: var(--muted);">For a 10-pound turkey in a standard wet brine, about 300 g of coarse kosher salt in 6 liters (6.3 quarts) of water, brined for about 10 hours. The amount scales with the bird's weight, and salt brands differ a lot by volume, so weigh the salt or pick your salt type in the calculator.</p>
+      </div>
+      <div>
+        <h3 style="font-family: var(--font-ui); font-weight: 700; font-size: 14px; margin: 0 0 6px; color: var(--ink);">How long should I brine meat?</h3>
+        <p style="margin: 0; line-height: 1.5; font-size: 13px; color: var(--muted);">For a wet brine, about an hour per pound for whole birds, chicken pieces and roasts, never under 30 minutes, with chicken capped at 4 hours and turkey, duck and goose at 24 hours. Steaks, chops and seafood are timed by the piece, not the pack: 30 minutes to 1 hour for steaks and chops, 15 to 30 minutes for fish and seafood. Ground meat isn't wet brined. A dry brine takes 1 to 2 hours per pound (at least 1 hour, with turkey, chicken, duck and goose capped at 24 hours), and an equilibrium brine at least as long as a standard one, up to 2 days.</p>
+      </div>
+      <div>
+        <h3 style="font-family: var(--font-ui); font-weight: 700; font-size: 14px; margin: 0 0 6px; color: var(--ink);">Can I brine pre-seasoned or "enhanced" meat?</h3>
+        <p style="margin: 0; line-height: 1.5; font-size: 13px; color: var(--muted);">It's not recommended. Many supermarket turkeys and pork are already injected with a salt solution, and brining on top of that makes them too salty. Check the label for "enhanced" or a sodium-containing ingredient list before brining.</p>
+      </div>
+      <div>
+        <h3 style="font-family: var(--font-ui); font-weight: 700; font-size: 14px; margin: 0 0 6px; color: var(--ink);">What is the formula for a brine?</h3>
+        <p style="margin: 0; line-height: 1.5; font-size: 13px; color: var(--muted);">A standard wet brine is salt at about 5% of the water&#39;s weight, which is 50 g of salt per liter of water. A dry brine is salt at about 1% of the meat&#39;s weight. This calculator uses about 0.6 liters of water per pound of meat (at least 2 liters) to keep it submerged, so a 12-pound turkey takes about 7.2 liters of water and 360 g of salt.</p>
+      </div>
+      <div>
+        <h3 style="font-family: var(--font-ui); font-weight: 700; font-size: 14px; margin: 0 0 6px; color: var(--ink);">What is an equilibrium brine?</h3>
+        <p style="margin: 0; line-height: 1.5; font-size: 13px; color: var(--muted);">An equilibrium brine uses exactly the amount of salt you want to end up in the food, so it cannot over-salt however long it soaks. The calculator sets it at 1.5% of the combined weight of the meat and the water. It is slower than a standard brine but far more forgiving, so the calculator gives it at least the standard brine's time and up to 2 days. The limit there is the fridge, not the salt: a 1.5% brine doesn't preserve meat, and raw poultry keeps only 1 to 2 days.</p>
+      </div>
+      <div>
+        <h3 style="font-family: var(--font-ui); font-weight: 700; font-size: 14px; margin: 0 0 6px; color: var(--ink);">How much salt do I use for a dry brine per pound?</h3>
+        <p style="margin: 0; line-height: 1.5; font-size: 13px; color: var(--muted);">About 1% of the meat&#39;s weight, which is roughly 4.5 g of salt per pound. That is about one and a half teaspoons of coarse flaky kosher salt but only three quarters of a teaspoon of table salt, which is why weighing the salt is more reliable than measuring by the spoon.</p>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<section class="net-band">
+  <h2><span class="lbl">Network</span> More from the studio</h2>
+  <div class="net-grid">
+    <a href="/cookbook/" class="gear-item">
+      <div class="gear-img-wrapper"><img src="/nuoc-mam-link.webp" alt="Nước Mắm — A Vietnamese Family Cookbook by Josh Tran" width="600" height="600" loading="lazy"></div>
+      <div class="gear-info">
+        <h3>Nước Mắm — the Cookbook</h3>
+        <p>A Vietnamese family cookbook by the cook behind these tools — 56 pages, balanced by tasting.</p>
+        <button class="affiliate-btn">Get the Cookbook — $3.99</button>
+      </div>
+    </a>
+    <a href="/videos/" class="gear-item">
+      <div class="gear-img-wrapper"><img src="/kitchen-videos-link.webp" alt="Cook-along videos from Josh &amp; Jordan's Kitchen" width="600" height="299" loading="lazy"></div>
+      <div class="gear-info">
+        <h3>Watch the Cooks</h3>
+        <p>The same kitchen, on video — a short cut of each cook plus the full real-time version, nothing sped up.</p>
+        <button class="affiliate-btn">Watch the Videos</button>
+      </div>
+    </a>
+    <a href="https://builtbyjoshstudio.com/" target="_blank" rel="noopener" class="gear-item">
+      <div class="gear-img-wrapper"><img src="/studio-link.webp" alt="Built by Josh Studio" width="600" height="299" loading="lazy"></div>
+      <div class="gear-info">
+        <h3>Built by Josh Studio</h3>
+        <p>Local-first software, CRM solutions, and technical projects.</p>
+        <button class="affiliate-btn">Visit Website</button>
+      </div>
+    </a>
+    <a href="https://www.youtube.com/@TalesofInkShadowsStudio" target="_blank" rel="noopener" class="gear-item">
+      <div class="gear-img-wrapper"><img src="/tales-link.webp" alt="Tales of Ink &amp; Shadows" width="600" height="299" loading="lazy"></div>
+      <div class="gear-info">
+        <h3>Tales of Ink &amp; Shadows</h3>
+        <p>Historical noir documentaries and immersive storytelling.</p>
+        <button class="affiliate-btn">Watch on YouTube</button>
+      </div>
+    </a>
+  </div>
+</section>
+
+<footer class="footer" style="text-align: center; font-size: 11px; color: var(--muted); padding: 32px 20px; margin-top: 48px; line-height: 1.6; max-width: 720px; margin-left: auto; margin-right: auto;">
+  <p style="margin-bottom: 8px;">Disclaimer: These measurements are guidelines. Adjust for personal taste and always verify food safety practices.</p>
+  <p style="margin-bottom: 12px;">These tools provide estimates for planning purposes. Always use a food thermometer to confirm doneness, and follow current USDA food-safety guidance for cooking, thawing, and storing food.</p>
+</footer>
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="site-footer__grid">
+      <div class="site-footer__brand">
+        <span class="mark" aria-hidden="true">J<span class="amp">&amp;</span>J</span>
+        <p class="tagline" style="font-size:var(--text-base)">real home cooking &amp; baking</p>
+        <div class="divider divider--inline" style="justify-content:flex-start" aria-hidden="true"><span class="diamond"></span></div>
+      </div>
+      <div>
+        <h2>Kitchen</h2>
+        <ul>
+          <li><a href="/videos/">Videos</a></li>
+          <li><a href="/tools/">Tools</a></li>
+          <li><a href="/cookbook/">Cookbook</a></li>
+          <li><a href="/blog/">Blog</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>More from the studio</h2>
+        <ul>
+          <li><a href="https://builtbyjoshstudio.com/">Built by Josh Studio</a></li>
+          <li><a href="https://tynkr.builtbyjoshstudio.com/">Tynkr apps</a></li>
+          <li><a href="https://tools.builtbyjoshstudio.com/money/">Money tools</a></li>
+          <li><a href="https://writing.builtbyjoshstudio.com/">J.S. Warden — books</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Contact</h2>
+        <address>
+          <a href="mailto:support@builtbyjoshstudio.com">support@builtbyjoshstudio.com</a>
+        </address>
+        <ul style="margin-top:var(--space-4)">
+          <li><a href="https://www.youtube.com/@joshandjordanskitchen" rel="noopener">YouTube</a></li>
+          <li><a href="https://www.tiktok.com/@JOSHANDJORDANSKITCHEN" rel="noopener">TikTok</a></li>
+          <li><a href="https://www.instagram.com/JOSHANDJORDANSKITCHEN" rel="noopener">Instagram</a></li>
+          <li><a href="https://www.facebook.com/joshandjordanskitchen/" rel="noopener">Facebook</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="site-footer__legal">
+      <ul>
+        <li><a href="/privacy/">Privacy</a></li>
+        <li><a href="https://builtbyjoshstudio.com/terms.html">Terms</a></li>
+        <li><a href="https://builtbyjoshstudio.com/refunds.html">Refunds</a></li>
+      </ul>
+      <p class="wordmark" style="padding-left:0;text-align:left;margin:0">&copy; <span class="tabular">2026</span> Built by Josh Studio LLC. All rights reserved.</p>
+    </div>
+    <p class="site-footer__brands">Tynkr Tools &amp; Co and <a href="https://littleacrelearning.com" rel="noopener">Little Acre Learning</a> are brands of Built by Josh Studio LLC.</p>
+  </div>
+</footer>
+
+<script src="../ingredients-db.js?v=dd06fee0fc"></script>
+<script src="script.js?v=7bdfce630c" defer></script>
+<script src="../kinetic.js?v=f935f39fab" defer></script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+/* perfect-roast-pull-temp-calculator - page styles. Loads after /css/tokens.css, /css/components.css and /css/tools.css.
+   Moved here from the page's <style> block with values converted to Ledger tokens. */
+
+.page.tool-shell { max-width: 920px; padding-top: 28px; }
+.tool-controls { display: flex; justify-content: flex-start; gap: 14px; flex-wrap: wrap; margin-bottom: 22px; }
+.net-band { max-width: 920px; margin: 56px auto 0; padding: 0 28px; }
+.net-band h2 { font-family: var(--font-display); font-weight: 800; font-size: 20px; letter-spacing: -0.02em; margin: 0 0 18px; padding-bottom: 12px; border-bottom: 1px solid var(--line-2); display: flex; align-items: baseline; gap: 12px; }
+.net-band h2 .lbl { font-family: var(--font-ui); font-size: 11px; font-weight: 600; letter-spacing: var(--tracking-label); text-transform: uppercase; color: var(--accent); }
+.net-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.net-grid .gear-img-wrapper { height: 120px; }
+@media (max-width: 760px) { .net-grid { grid-template-columns: 1fr; } }
+
+/* the resting note is a kit info message, but the script writes inline <strong> runs into it:
+   kept a text block (the kit .alert is flex, which would split each run into its own column) */
+.studio-tool #rest-warning.alert { display: block; }
+/* the script saves and restores the Copy button's label through innerText, which returns the
+   rendered (uppercased) text; the share row keeps its written case so the label stays as written */
+.studio-tool :is(#copy-btn, #copy-link-btn) { text-transform: none; letter-spacing: .01em; }
+/* Rust: kit .btn--ghost:hover draws var(--bg) text on var(--text); inside a panel --text is the panel's
+   light text while --bg stays the page's light ground (1.14:1). Use the panel surface instead. */
+[data-theme="rust"] .studio-tool :is(.glass, .results) .btn--ghost:hover { color: var(--surface); }
+/* at-a-glance table (kit .table): tools.css drops the last row's rule on the row label (th) while the kit keeps it
+   on the cell (td); give the label the same hairline so the last line runs the full width */
+.studio-tool .glance .table tr:last-child th { border-bottom: 1px solid var(--hairline); }

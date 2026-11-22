@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<script>if(location.protocol.indexOf("http")===0&&/\/index\.html$/i.test(location.pathname))location.replace(location.pathname.slice(0,-10)+location.search+location.hash);</script>
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QDSPBB7S9J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      var gaKeep = new URLSearchParams(); new URLSearchParams(location.search).forEach(function (v, k) { if (k.indexOf('utm_') === 0) gaKeep.append(k, v); });
+      gtag('config', 'G-QDSPBB7S9J', { page_location: location.origin + location.pathname + (gaKeep.toString() ? '?' + gaKeep.toString() : ''), page_referrer: document.referrer.split(/[?#]/)[0] });
+    </script>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Free cost per serving calculator. Enter what you used, the pack size, and the pack price to get total recipe cost and price per serving. No signup, no ads.">
+<meta name="robots" content="max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta property="og:title" content="Cost Per Serving Calculator | Free Recipe Cost Calculator">
+    <meta property="og:type" content="website">
+<meta property="og:description" content="Free cost per serving calculator. Enter what you used, the pack size, and the pack price to get total recipe cost and price per serving. No signup, no ads.">
+<meta property="og:image" content="https://cooking.builtbyjoshstudio.com/icons/og-image.png">
+<meta property="og:url" content="https://cooking.builtbyjoshstudio.com/tools/cost-per-serving-calculator/">
+<meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://cooking.builtbyjoshstudio.com/tools/cost-per-serving-calculator/">
+    <meta name="twitter:title" content="Cost Per Serving Calculator | Free Recipe Cost Calculator">
+    <meta name="twitter:description" content="Free cost per serving calculator. Enter what you used, the pack size, and the pack price to get total recipe cost and price per serving. No signup, no ads.">
+    <meta name="twitter:image" content="https://cooking.builtbyjoshstudio.com/icons/og-image.png">
+<title>Cost Per Serving Calculator | Free Recipe Cost Calculator</title>
+<link rel="canonical" href="https://cooking.builtbyjoshstudio.com/tools/cost-per-serving-calculator/" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Cost Per Serving Calculator",
+  "url": "https://cooking.builtbyjoshstudio.com/tools/cost-per-serving-calculator/",
+  "description": "Free recipe cost calculator. Works out total recipe cost and cost per serving from the amount of each ingredient used, the pack size, and the pack price, with a waste allowance, automatic unit conversion, and leftover tracking. Runs locally in the browser.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (web browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://builtbyjoshstudio.com/#organization",
+    "name": "Built by Josh Studio LLC",
+    "legalName": "Built by Josh Studio LLC",
+    "alternateName": [
+      "BBJ Studio",
+      "Built by Josh Studio"
+    ],
+    "url": "https://builtbyjoshstudio.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://builtbyjoshstudio.com/images/logo/logo.webp",
+      "width": 512,
+      "height": 512
+    },
+    "image": "https://builtbyjoshstudio.com/images/logo/logo.webp",
+    "sameAs": [
+      "https://linktr.ee/builtbyjoshstudio",
+      "https://www.youtube.com/@TalesofInkShadowsStudio",
+      "https://www.youtube.com/@joshandjordanskitchen",
+      "https://tynkrtoolsandco.etsy.com",
+      "https://www.etsy.com/shop/BuiltByJoshStudio",
+      "https://www.redbubble.com/people/BBJStudio/shop"
+    ],
+    "identifier": [
+      {
+        "@type": "PropertyValue",
+        "propertyID": "Kansas Business ID",
+        "value": "10076138"
+      }
+    ]
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Josh & Jordan\'s Kitchen", "item": "https://cooking.builtbyjoshstudio.com/"},
+    {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://cooking.builtbyjoshstudio.com/tools/"},
+    {"@type": "ListItem", "position": 3, "name": "Cost Per Serving Calculator", "item": "https://cooking.builtbyjoshstudio.com/tools/cost-per-serving-calculator/"}
+  ]
+}
+</script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do you calculate cost per serving?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Add up the cost of the exact portion of each ingredient you used, then divide the total by the number of servings the recipe makes. The tricky part is converting from the package you bought to the amount you used, which this calculator does automatically."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is a waste allowance and why does it matter?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A waste allowance is a percentage buffer added to your ingredient costs to account for trim, peelings, spoilage, and spills. Most kitchens use somewhere between 5% and 15%, depending on how much prep loss a recipe involves."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I mix weights and volumes?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, for common ingredients. If you measured by volume but the pack is sold by weight, or the other way round, the calculator converts using a built-in density for ingredients it recognizes by name, such as flour, sugar, butter, honey, milk, and oil, and notes the conversion in the cost breakdown. For an ingredient it does not recognize it flags a mismatch, so enter the amount used and the pack size in the same kind of unit instead."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does this calculator save my data?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, in this browser only. All calculations run locally, and your ledger, servings, and waste allowance are saved in this browser, so they're still here next time; nothing is uploaded or stored on a server. Reset to the example clears them."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the formula for cost per serving?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Cost per serving equals total ingredient cost divided by the number of servings. The total is the sum, for every ingredient, of the pack price multiplied by the amount used divided by the pack size, plus any waste allowance."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between cost per serving and price per serving?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Cost per serving is what the ingredients in one portion cost you. Price per serving is what you charge for it. At home they are the same number. If you sell food, a common approach is to divide the cost per serving by a target food cost percentage, often around 30%, to get a starting menu price."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does the calculator include labor, packaging, or overhead?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. It covers ingredient cost plus an optional waste allowance. Labor, packaging, utilities, and other overhead are not included, so add them separately when you set a selling price."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I use it as a recipe cost calculator for a bakery or small food business?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. It works for any recipe: enter each ingredient's amount used, pack size, and pack price, set the number of servings or pieces the batch makes, and it returns the batch cost and the cost of each one. It is free, and nothing you enter leaves your browser."
+          }
+        }
+      ]
+    }
+</script>
+
+<link rel="preload" href="/fonts/playfair-display-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/be-vietnam-pro-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/fonts/fonts.css?v=ac58de8e6c">
+<link rel="stylesheet" href="/fonts/fonts-vietnamese.css?v=96e6ae2194">
+<link rel="stylesheet" href="/css/studio/tokens.css?v=f58e0d92c0">
+<link rel="stylesheet" href="/css/studio/components.css?v=09a4d9f402">
+<link rel="stylesheet" href="/css/studio/tools.css?v=76acb59400">
+<link rel="stylesheet" href="styles.css?v=711502ca09">
+<link rel="stylesheet" href="/css/tokens.css?v=e6976ee263">
+<link rel="stylesheet" href="/css/chrome.css?v=04f9a9fc23">
+<link rel="stylesheet" href="/css/tool-bridge.css?v=6bfe8d2938">
+<link rel="stylesheet" href="/css/tool-parts.css?v=ba7a255de3">
+<script src="/js/theme.js?v=dc84991f4a"></script>
+<script src="/js/nav.js?v=a16bc0e1ce" defer></script>
+
+<link rel="icon" href="/icons/favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="icon" href="/icons/icon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header" id="site-header">
+  <div class="container site-header__inner">
+    <a class="brand" href="/" aria-label="Josh and Jordan's Kitchen — home">
+      <span class="mark" aria-hidden="true">J<span class="amp">&amp;</span>J</span>
+      <span class="brand__name">Josh &amp; Jordan's Kitchen</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="site-nav" id="site-nav" aria-label="Primary">
+      <ul class="site-nav__list">
+        <li><a href="/videos/">Videos</a></li>
+        <li><a href="/tools/">Tools</a></li>
+        <li><a href="/cookbook/">Cookbook</a></li>
+        <li><a href="/blog/">Blog</a></li>
+      </ul>
+      <div class="theme-switch theme-switch--compact" role="group" aria-label="Color theme">
+        <button type="button" data-theme-set="cream"><span class="swatch" aria-hidden="true"></span><span class="label">Cream</span></button>
+        <button type="button" data-theme-set="mint"><span class="swatch" aria-hidden="true"></span><span class="label">Mint</span></button>
+        <button type="button" data-theme-set="rust"><span class="swatch" aria-hidden="true"></span><span class="label">Rust</span></button>
+        <button type="button" data-theme-set="cast-iron"><span class="swatch" aria-hidden="true"></span><span class="label">Cast iron</span></button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<div class="studio-tool">
+<main class="page tool-shell" id="main" tabindex="-1">
+
+  <header class="hero glass">
+    <div style="flex:1; min-width: 0">
+      <div class="meta">
+        <span class="pill live">&#9679; Utilities</span>
+        <span>Recipe cost &amp; price per serving</span>
+        <span class="updated-date">Updated November 2026</span>
+      </div>
+      <h1>Cost Per Serving Calculator</h1>
+      <p>Work out what a recipe costs to make and what each serving costs. Enter how much of each ingredient you used, the size of the pack you bought, and what you paid. The calculator does the pack-to-portion math, converts the units, and shows what is left in every pack.</p>
+    </div>
+  </header>
+
+  <div class="glass type-card" style="margin-bottom: 24px; padding: 24px;">
+    <div class="role">Recipe Parameters</div>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px;">
+      <div class="field">
+        <label class="field__label" for="servings">Recipe Servings</label>
+        <input type="number" id="servings" class="input" value="4" min="1" step="1">
+      </div>
+
+      <div class="field">
+        <label class="field__label" for="waste">Waste / Buffer: <span id="waste-val">0%</span></label>
+        <input type="range" id="waste" class="form-input-range" value="0" min="0" max="50" step="5">
+      </div>
+    </div>
+  </div>
+
+  <div class="glass type-card" style="margin-bottom: 24px; padding: 24px;">
+    <div class="role">Ingredients Ledger</div>
+
+    <div class="ledger-header">
+      <span>Ingredient Name</span>
+      <span>Amt Used</span>
+      <span>Unit</span>
+      <span>Pack Size</span>
+      <span>Unit</span>
+      <span>Pack Cost</span>
+      <span>Action</span>
+    </div>
+
+    <p id="example-note" class="field__hint" style="margin: 0 0 12px;">Example loaded: spaghetti with meat sauce for four. Edit any row, or start fresh with your own recipe.</p>
+
+    <div id="ledger-rows" class="ledger-rows">
+      <!-- Dynamic Rows get injected here -->
+    </div>
+
+    <div class="add-row-btn-container">
+      <button type="button" id="add-ingredient-btn" class="btn">+ Add Ingredient</button>
+      <button type="button" id="clear-ledger-btn" class="btn btn--ghost">Start fresh</button>
+      <button type="button" id="reset-ledger-btn" class="btn btn--ghost">Reset to the example</button>
+    </div>
+  </div>
+
+  <div class="results" style="margin-bottom: 24px;">
+    <div class="results__hero" style="justify-items: center; gap: 24px; text-align: center;">
+      <div>
+        <div class="lbl" style="margin-bottom: 8px;">Cost Per Serving</div>
+        <div id="cost-per-serving-output" class="num">$0.00</div>
+      </div>
+
+      <div>
+        <div class="lbl" style="margin-bottom: 8px;">Total Recipe Cost</div>
+        <div id="total-cost-output" class="num">$0.00</div>
+      </div>
+    </div>
+
+    <div class="anatomy-labels">
+      <div class="lbl cps-breakdown-lbl">Cost Breakdown</div>
+      <div id="breakdown-list" style="display: flex; flex-direction: column; gap: 10px;">
+        <!-- Dynamic Breakdown Row List gets injected here -->
+      </div>
+    </div>
+  </div>
+
+  <div class="glass" style="margin-bottom: 24px; padding: 24px; text-align: center;">
+    <h2 style="font-family: var(--font-ui); font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: var(--tracking-label); color: var(--muted); margin: 0 0 14px;">Next Steps for Your Cook</h2>
+    <div style="display: flex; flex-direction: column; gap: 10px; font-size: 14px;">
+      <a id="pipeline-link-scaler" href="../universal-recipe-scaler/" style="color: var(--accent); text-decoration: none; font-weight: 600;">Need a different batch size? Scale the recipe with the Universal Recipe Scaler &rarr;</a>
+      <a href="../recipe-nutrition-calculator/" style="color: var(--accent); text-decoration: none; font-weight: 600;">Want the nutrition facts for the same recipe? Open the Recipe Nutrition Calculator &rarr;</a>
+      <a href="https://tools.builtbyjoshstudio.com/profit-margin-calculator/" style="color: var(--accent); text-decoration: none; font-weight: 600;">Selling it? Check what a price leaves you with the Profit Margin Calculator &rarr;</a>
+    </div>
+  </div>
+
+  <!-- AT A GLANCE (P2-c) -->
+  <div class="glass glance glance--flush">
+    <h2>At a glance</h2>
+    <div class="table-wrap">
+    <table class="table">
+      <tbody>
+        <tr><th>What it does</th><td>Works out what a recipe actually costs to make, ingredient by ingredient.</td></tr>
+        <tr><th>Inputs</th><td>Recipe servings plus each ingredient's quantity used, pack size, and pack price; mass and volume units convert automatically.</td></tr>
+        <tr><th>Outputs</th><td>Total recipe cost, cost per serving, per-ingredient cost breakdown, and leftover analysis for partially used packs.</td></tr>
+        <tr><th>Cost &amp; privacy</th><td>Free, ad-free, no signup. Runs entirely in your browser — nothing is uploaded.</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+
+  <!-- Explanatory Prose & FAQ Section -->
+  <div class="glass" style="margin-bottom: 24px; padding: 24px; text-align: left;">
+    <h2 style="font-family: var(--font-display); font-weight: 800; font-size: 20px; letter-spacing: -0.02em; margin-top: 0; margin-bottom: 12px;">How to calculate cost per serving</h2>
+    <p style="margin-bottom: 12px; line-height: 1.6; color: var(--ink);">Knowing what a dish costs to make is the difference between guessing at a menu price and setting one with confidence. The math is simple in principle — divide the cost of every ingredient you used by the number of servings — but it gets fiddly fast, because you rarely use a whole package of anything. You buy a five-pound bag of flour and use 300 grams of it; you buy a dozen eggs and use three.</p>
+    <p style="margin-bottom: 12px; line-height: 1.8; color: var(--ink); font-family: var(--font-mono); font-size: 13px;">Ingredient cost = pack price &times; (amount used &divide; pack size)<br>Cost per serving = total ingredient cost &divide; number of servings</p>
+    <p style="margin-bottom: 24px; line-height: 1.6; color: var(--ink);">This calculator handles that proportion for you. For each ingredient you enter how much you used, the size and price of the package you bought it in, and it works out the true cost of just the portion that went into the dish. Add a waste allowance to account for trim, spoilage, and spills, and you get a total recipe cost and a per-serving figure you can actually build a price around. Everything stays in your browser — no accounts, no data leaving your device.</p>
+
+    <h2 style="font-family: var(--font-display); font-weight: 800; font-size: 20px; letter-spacing: -0.02em; margin-top: 0; margin-bottom: 12px;">A worked example: spaghetti with meat sauce for four</h2>
+
+    <p style="margin-bottom: 12px; line-height: 1.6; color: var(--ink);">Say you make spaghetti with meat sauce for four. You used one pound of ground beef out of a three-pound pack, most of a box of pasta, a whole jar of sauce, one onion from a bag of three, and a couple of ounces of parmesan. Entered into the calculator, it looks like this (example prices, so use your own receipts):</p>
+
+    <div class="table-wrap" style="margin-bottom: 14px;">
+    <table class="table">
+      <thead><tr><th>Ingredient</th><th class="num">Used</th><th class="num">Pack</th><th class="num">Pack price</th><th class="num">Cost</th></tr></thead>
+      <tbody>
+        <tr><td>Ground beef</td><td class="num">1&nbsp;lb</td><td class="num">3&nbsp;lb</td><td class="num">$14.97</td><td class="num">$4.99</td></tr>
+        <tr><td>Spaghetti</td><td class="num">12&nbsp;oz</td><td class="num">16&nbsp;oz</td><td class="num">$1.92</td><td class="num">$1.44</td></tr>
+        <tr><td>Pasta sauce</td><td class="num">24&nbsp;oz</td><td class="num">24&nbsp;oz</td><td class="num">$3.48</td><td class="num">$3.48</td></tr>
+        <tr><td>Onion</td><td class="num">1&nbsp;unit</td><td class="num">3&nbsp;units</td><td class="num">$2.49</td><td class="num">$0.83</td></tr>
+        <tr><td>Parmesan</td><td class="num">2&nbsp;oz</td><td class="num">8&nbsp;oz</td><td class="num">$6.00</td><td class="num">$1.50</td></tr>
+        <tr class="sum"><td colspan="4">Total recipe cost</td><td class="num">$12.24</td></tr>
+        <tr class="sum per"><td colspan="4">Cost per serving (4&nbsp;servings)</td><td class="num">$3.06</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <p style="margin-bottom: 12px; line-height: 1.6; color: var(--ink);">That is $12.24 for the pot and $3.06 a serving. The breakdown also shows what is still in each pack: two pounds of beef, two onions, and six ounces of parmesan you have already paid for, which is where the next meal's math starts.</p>
+
+    <p style="margin-bottom: 24px; line-height: 1.6; color: var(--ink);">Slide the waste allowance to 10% to cover trim and whatever stays behind in the jar, and the same meal comes to $13.46, or $3.37 a serving.</p>
+
+    <h2 style="font-family: var(--font-display); font-weight: 800; font-size: 20px; letter-spacing: -0.02em; margin-top: 0; margin-bottom: 12px;">Cost per serving examples</h2>
+
+    <p style="margin-bottom: 12px; line-height: 1.6; color: var(--ink);"><strong>Cost per serving = total cost &divide; number of servings.</strong></p>
+
+    <ul style="margin: 0 0 24px; padding-left: 20px; line-height: 1.7; color: var(--ink);">
+      <li>A box of crackers costs $2.59 and has 24 servings: $2.59 &divide; 24 = <strong>$0.11 per serving</strong>.</li>
+      <li>A recipe costs $12 to make and yields 6 servings: $12 &divide; 6 = <strong>$2.00 per serving</strong>.</li>
+      <li>Beef costs $6 per pound and each serving uses 6 ounces: 6 oz is 0.375 lb, so 0.375 &times; $6 = <strong>$2.25 per serving</strong>.</li>
+      <li>Potatoes cost $1.60 per pound and each serving uses 8 ounces: 8 oz is 0.5 lb, so 0.5 &times; $1.60 = <strong>$0.80 per serving</strong>.</li>
+    </ul>
+
+    <h2 style="font-family: var(--font-display); font-weight: 800; font-size: 20px; letter-spacing: -0.02em; margin-top: 0; margin-bottom: 12px;">Cost per serving vs. price per serving</h2>
+
+    <p style="margin-bottom: 12px; line-height: 1.6; color: var(--ink);">If you cook at home, the two are the same number: what a plate costs you. If you sell food, cost per serving is the floor and the price sits above it. A common rule of thumb is to price so that ingredients come to roughly 28% to 35% of the menu price, which means dividing the cost per serving by your target food cost percentage. At 30%, the $3.06 plate above prices at $10.20.</p>
+
+    <p style="margin-bottom: 24px; line-height: 1.6; color: var(--ink);">This calculator covers ingredients and waste only. Labor, packaging, and overhead sit on top, so treat the result as the line you cannot price below, not the price itself. To see what a given price leaves you, use the <a href="https://tools.builtbyjoshstudio.com/profit-margin-calculator/" style="color: var(--accent); font-weight: 600; text-decoration: underline;">Profit Margin Calculator</a>. For the whole method worked by hand, read <a href="/blog/cost-per-serving-calculator/" style="color: var(--accent); font-weight: 600; text-decoration: underline;">how to calculate the cost per serving of a recipe</a>.</p>
+
+    <h2 style="font-family: var(--font-display); font-weight: 800; font-size: 20px; letter-spacing: -0.02em; margin-top: 0; margin-bottom: 16px; padding-top: 16px; border-top: 1px solid var(--line-2);">Frequently Asked Questions</h2>
+    <div style="display: flex; flex-direction: column; gap: 18px;">
+      <div>
+        <h3 style="font-family: var(--font-ui); font-weight: 700; font-size: 14px; margin: 0 0 6px; color: var(--ink);">How do you calculate cost per serving?</h3>
+        <p style="margin: 0; line-height: 1.5; font-size: 13px; color: var(--muted);">Add up the cost of the exact portion of each ingredient you used, then divide the total by the number of servings the recipe makes. The tricky part is converting from the package you bought to the amount you used, which this calculator does automatically.</p>
+      </div>
+      <div>
+        <h3 style="font-family: var(--font-ui); font-weight: 700; font-size: 14px; margin: 0 0 6px; color: var(--ink);">What is a waste allowance and why does it matter?</h3>
+        <p style="margin: 0; line-height: 1.5; font-size: 13px; color: var(--muted);">A waste allowance is a percentage buffer added to your ingredient costs to account for trim, peelings, spoilage, and spills. Most kitchens use somewhere between 5% and 15%, depending on how much prep loss a recipe involves.</p>
+      </div>
+      <div>
+        <h3 style="font-family: var(--font-ui); font-weight: 700; font-size: 14px; margin: 0 0 6px; color: var(--ink);">Can I mix weights and volumes?</h3>
+        <p style="margin: 0; line-height: 1.5; font-size: 13px; color: var(--muted);">Yes, for common ingredients. If you measured by volume but the pack is sold by weight, or the other way round, the calculator converts using a built-in density for ingredients it recognizes by name, such as flour, sugar, butter, honey, milk, and oil, and notes the conversion in the cost breakdown. For an ingredient it does not recognize it flags a mismatch, so enter the amount used and the pack size in the same kind of unit instead.</p>
+      </div>
+      <div>
+        <h3 style="font-family: var(--font-ui); font-weight: 700; font-size: 14px; margin: 0 0 6px; color: var(--ink);">Does this calculator save my data?</h3>
+        <p style="margin: 0; line-height: 1.5; font-size: 13px; color: var(--muted);">Yes, in this browser only. All calculations run locally, and your ledger, servings, and waste allowance are saved in this browser, so they're still here next time; nothing is uploaded or stored on a server. Reset to the example clears them.</p>
+      </div>
+      <div>
+        <h3 style="font-family: var(--font-ui); font-weight: 700; font-size: 14px; margin: 0 0 6px; color: var(--ink);">What is the formula for cost per serving?</h3>
+        <p style="margin: 0; line-height: 1.5; font-size: 13px; color: var(--muted);">Cost per serving equals total ingredient cost divided by the number of servings. The total is the sum, for every ingredient, of the pack price multiplied by the amount used divided by the pack size, plus any waste allowance.</p>
+      </div>
+      <div>
+        <h3 style="font-family: var(--font-ui); font-weight: 700; font-size: 14px; margin: 0 0 6px; color: var(--ink);">What is the difference between cost per serving and price per serving?</h3>
+        <p style="margin: 0; line-height: 1.5; font-size: 13px; color: var(--muted);">Cost per serving is what the ingredients in one portion cost you. Price per serving is what you charge for it. At home they are the same number. If you sell food, a common approach is to divide the cost per serving by a target food cost percentage, often around 30%, to get a starting menu price.</p>
+      </div>
+      <div>
+        <h3 style="font-family: var(--font-ui); font-weight: 700; font-size: 14px; margin: 0 0 6px; color: var(--ink);">Does the calculator include labor, packaging, or overhead?</h3>
+        <p style="margin: 0; line-height: 1.5; font-size: 13px; color: var(--muted);">No. It covers ingredient cost plus an optional waste allowance. Labor, packaging, utilities, and other overhead are not included, so add them separately when you set a selling price.</p>
+      </div>
+      <div>
+        <h3 style="font-family: var(--font-ui); font-weight: 700; font-size: 14px; margin: 0 0 6px; color: var(--ink);">Can I use it as a recipe cost calculator for a bakery or small food business?</h3>
+        <p style="margin: 0; line-height: 1.5; font-size: 13px; color: var(--muted);">Yes. It works for any recipe: enter each ingredient&#39;s amount used, pack size, and pack price, set the number of servings or pieces the batch makes, and it returns the batch cost and the cost of each one. It is free, and nothing you enter leaves your browser.</p>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<section class="net-band">
+  <h2><span class="lbl">Network</span> More from the studio</h2>
+  <div class="net-grid">
+    <a href="/cookbook/" class="gear-item">
+      <div class="gear-img-wrapper"><img src="/nuoc-mam-link.webp" alt="Nước Mắm — A Vietnamese Family Cookbook by Josh Tran" width="600" height="600" loading="lazy"></div>
+      <div class="gear-info">
+        <h3>Nước Mắm — the Cookbook</h3>
+        <p>A Vietnamese family cookbook by the cook behind these tools — 56 pages, balanced by tasting.</p>
+        <button class="affiliate-btn">Get the Cookbook — $3.99</button>
+      </div>
+    </a>
+    <a href="/videos/" class="gear-item">
+      <div class="gear-img-wrapper"><img src="/kitchen-videos-link.webp" alt="Cook-along videos from Josh &amp; Jordan's Kitchen" width="600" height="299" loading="lazy"></div>
+      <div class="gear-info">
+        <h3>Watch the Cooks</h3>
+        <p>The same kitchen, on video — a short cut of each cook plus the full real-time version, nothing sped up.</p>
+        <button class="affiliate-btn">Watch the Videos</button>
+      </div>
+    </a>
+    <a href="https://builtbyjoshstudio.com/" target="_blank" rel="noopener" class="gear-item">
+      <div class="gear-img-wrapper"><img src="/studio-link.webp" alt="Built by Josh Studio" width="600" height="299" loading="lazy"></div>
+      <div class="gear-info">
+        <h3>Built by Josh Studio</h3>
+        <p>Local-first software, CRM solutions, and technical projects.</p>
+        <button class="affiliate-btn">Visit Website</button>
+      </div>
+    </a>
+    <a href="https://www.youtube.com/@TalesofInkShadowsStudio" target="_blank" rel="noopener" class="gear-item">
+      <div class="gear-img-wrapper"><img src="/tales-link.webp" alt="Tales of Ink &amp; Shadows" width="600" height="299" loading="lazy"></div>
+      <div class="gear-info">
+        <h3>Tales of Ink &amp; Shadows</h3>
+        <p>Historical noir documentaries and immersive storytelling.</p>
+        <button class="affiliate-btn">Watch on YouTube</button>
+      </div>
+    </a>
+  </div>
+</section>
+
+<footer class="footer" style="text-align: center; font-size: 11px; color: var(--muted); padding: 32px 20px; margin-top: 48px; line-height: 1.6; max-width: 720px; margin-left: auto; margin-right: auto;">
+  <p style="margin-bottom: 12px;">These tools provide estimates for planning purposes. Always use a food thermometer to confirm doneness, and follow current USDA food-safety guidance for cooking, thawing, and storing food.</p>
+</footer>
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="site-footer__grid">
+      <div class="site-footer__brand">
+        <span class="mark" aria-hidden="true">J<span class="amp">&amp;</span>J</span>
+        <p class="tagline" style="font-size:var(--text-base)">real home cooking &amp; baking</p>
+        <div class="divider divider--inline" style="justify-content:flex-start" aria-hidden="true"><span class="diamond"></span></div>
+      </div>
+      <div>
+        <h2>Kitchen</h2>
+        <ul>
+          <li><a href="/videos/">Videos</a></li>
+          <li><a href="/tools/">Tools</a></li>
+          <li><a href="/cookbook/">Cookbook</a></li>
+          <li><a href="/blog/">Blog</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>More from the studio</h2>
+        <ul>
+          <li><a href="https://builtbyjoshstudio.com/">Built by Josh Studio</a></li>
+          <li><a href="https://tynkr.builtbyjoshstudio.com/">Tynkr apps</a></li>
+          <li><a href="https://tools.builtbyjoshstudio.com/money/">Money tools</a></li>
+          <li><a href="https://writing.builtbyjoshstudio.com/">J.S. Warden — books</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Contact</h2>
+        <address>
+          <a href="mailto:support@builtbyjoshstudio.com">support@builtbyjoshstudio.com</a>
+        </address>
+        <ul style="margin-top:var(--space-4)">
+          <li><a href="https://www.youtube.com/@joshandjordanskitchen" rel="noopener">YouTube</a></li>
+          <li><a href="https://www.tiktok.com/@JOSHANDJORDANSKITCHEN" rel="noopener">TikTok</a></li>
+          <li><a href="https://www.instagram.com/JOSHANDJORDANSKITCHEN" rel="noopener">Instagram</a></li>
+          <li><a href="https://www.facebook.com/joshandjordanskitchen/" rel="noopener">Facebook</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="site-footer__legal">
+      <ul>
+        <li><a href="/privacy/">Privacy</a></li>
+        <li><a href="https://builtbyjoshstudio.com/terms.html">Terms</a></li>
+        <li><a href="https://builtbyjoshstudio.com/refunds.html">Refunds</a></li>
+      </ul>
+      <p class="wordmark" style="padding-left:0;text-align:left;margin:0">&copy; <span class="tabular">2026</span> Built by Josh Studio LLC. All rights reserved.</p>
+    </div>
+    <p class="site-footer__brands">Tynkr Tools &amp; Co and <a href="https://littleacrelearning.com" rel="noopener">Little Acre Learning</a> are brands of Built by Josh Studio LLC.</p>
+  </div>
+</footer>
+
+  <datalist id="ingredients-list"></datalist>
+  <script src="../ingredients-db.js?v=dd06fee0fc"></script>
+  <script src="script.js?v=bd8b1af951" defer></script>
+  <script src="../kinetic.js?v=f935f39fab" defer></script>
+</body>
+</html>

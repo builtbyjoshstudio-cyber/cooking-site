@@ -1,0 +1,30 @@
+/* yeast-converter - page styles. Loads after /css/tokens.css, /css/components.css and /css/tools.css.
+   Moved here from the page's <style> block with values converted to Ledger tokens. */
+
+.page.tool-shell { max-width: 920px; padding-top: 28px; }
+.net-band { max-width: 920px; margin: 56px auto 0; padding: 0 28px; }
+.net-band h2 { font-family: var(--font-display); font-weight: 800; font-size: 20px; letter-spacing: -0.02em; margin: 0 0 18px; padding-bottom: 12px; border-bottom: 1px solid var(--line-2); display: flex; align-items: baseline; gap: 12px; }
+.net-band h2 .lbl { font-family: var(--font-ui); font-size: 11px; font-weight: 600; letter-spacing: var(--tracking-label); text-transform: uppercase; color: var(--accent); }
+.net-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.net-grid .gear-img-wrapper { height: 120px; }
+
+/* onboarding steps */
+.onboarding-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.step-col h3, .step-col h4 { font-family: var(--font-display); font-weight: 700; font-size: 15px; margin: 0 0 6px; color: var(--ink); }
+.step-col p { font-size: 13px; color: var(--muted); line-height: 1.5; margin: 0; }
+
+@media (max-width: 760px) {
+  .net-grid { grid-template-columns: 1fr; }
+  .onboarding-steps { grid-template-columns: 1fr; gap: 16px; }
+}
+
+/* restyle (kit tool parts): the two converted amounts are kit results heroes, each in a hairline well */
+.studio-tool .results .results__hero { gap: var(--space-2); align-content: start; padding: var(--space-5); border: 1px solid var(--hairline); border-radius: var(--radius-md); }
+.studio-tool .results .results__hero h3.lbl { margin: 0; }
+/* each amount is one "g / oz" line, so it takes the kit xl size (the hero's 3xl, up to 80px, broke it over two lines) */
+.studio-tool .results .results__hero > .num:not([id]) { font-size: var(--text-xl); line-height: 1.15; }
+/* the ghost button's hover text is the page ground (--bg), which panels do not remap: on rust's dark panels that is
+   light on light (1.14:1). Inside the results panel it takes the panel ground instead. */
+.studio-tool .results .btn--ghost:hover { color: var(--surface); }
+/* the "approx. … tsp or … packets" line under each amount: body line height, so it reads well when it wraps at 320px */
+.studio-tool .results .results__hero > .num[id] { line-height: 1.4; }

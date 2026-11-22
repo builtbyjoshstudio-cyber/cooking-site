@@ -1,0 +1,417 @@
+/* ==========================================================================
+   Josh & Jordan's Kitchen — design tokens
+   --------------------------------------------------------------------------
+   Layer 1  PRIMITIVES  — the raw brand palette (never use directly in UI)
+   Layer 2  SEMANTIC    — what the UI actually reads (--bg, --text, --primary…)
+                          redefined per theme on [data-theme="…"]
+   Layer 3  SCALE       — type, spacing, radii, shadows (theme-independent)
+
+   Switch the whole page:    <html data-theme="mint">
+   Switch one section only:  <section data-theme="rust">…</section>
+   (tokens are scoped to the element carrying data-theme, so nesting works)
+   ========================================================================== */
+
+:root {
+  /* ---------- Layer 1 · primitives ---------- */
+  /* rust family (primary brand) */
+  --jjk-rust-700: #8F3A18;
+  --jjk-rust-800: #7A3012;   /* rust: links/buttons on the cream page, panel surface-2 */
+  --jjk-rust-900: #5E240D;   /* rust: panel surface */
+  --jjk-rust-600: #A5461F;   /* brand primary */
+  --jjk-rust-500: #B85526;
+  --jjk-rust-pop: #C85A32;   /* only on dark/photo backgrounds — thumbnail terracotta */
+  --jjk-rust-ember: #E27349; /* dark-theme primary: the only terracotta that passes AA on #1E1E1E */
+
+  /* honey / wheat / cream */
+  --jjk-gold-600: #C99B52;   /* honey gold · secondary */
+  --jjk-gold-pop: #F5B742;   /* only on dark/photo backgrounds — thumbnail gold */
+  --jjk-honey-500: #D99426;  /* Jordan honey pill */
+  --jjk-wheat-300: #E8CF9E;  /* light accent */
+  --jjk-wheat-200: #F3E2C2;  /* AA small-text muted on rust bg (wheat-300 is 4.0:1 — ornament/large only) */
+  --jjk-cream-200: #F6EAD2;
+  --jjk-cream-100: #FBF4E5;  /* page cream */
+  --jjk-cream-300: #EFDDBB;  /* rust: the darker-cream page */
+  --jjk-cream-50:  #F8ECD6;  /* cream used as text/ink on rust */
+  --jjk-paper:     #FFFDF9;  /* lightest surface */
+
+  /* mint / teal (Jordan Bakes) */
+  --jjk-teal-800: #1F4E49;
+  --jjk-teal-600: #2F6F68;
+  --jjk-teal-650: #245A54;   /* AA small-text muted on mint bg (teal-600 is 3.7:1 — ornament/large only) */
+  --jjk-mint-500: #8FC4BC;
+  --jjk-mint-300: #A9D8D1;
+  --jjk-mint-200: #C3E6E0;
+  --jjk-mint-50:  #F2FAF8;
+
+  /* ink / neutrals */
+  --jjk-ink-900: #1E1E1E;    /* cast iron black (thumbnails) */
+  --jjk-ink-800: #2A2522;    /* warm charcoal */
+  --jjk-ink-700: #2B2320;    /* body text on cream */
+  --jjk-ink-500: #4A3A28;    /* serif supporting copy */
+  --jjk-ink-400: #6B5B4E;    /* muted */
+  --jjk-ink-300: #5B5048;    /* UI labels */
+  --jjk-ink-100: #E9DFD3;    /* muted text on dark */
+
+  /* theme swatches for the switcher — fixed regardless of the active theme */
+  --swatch-cream: var(--jjk-cream-100);
+  --swatch-mint:  var(--jjk-mint-300);
+  --swatch-rust:  var(--jjk-rust-600);
+  --swatch-cast-iron: var(--jjk-ink-900);
+
+  /* ---------- Layer 3 · scale (theme-independent) ---------- */
+  --font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-serif:   'Lora', Georgia, serif;
+  --font-sans:    'Be Vietnam Pro', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  /* numbers that must line up (calculator output, tables). Lora carries a real
+     OpenType `tnum` feature (equal 650-unit digits); Be Vietnam Pro's digits are
+     proportional and have no tnum, so never set numeric columns in the sans. */
+  --font-numeric: 'Lora', Georgia, serif;
+  --numeric-features: tabular-nums lining-nums;
+
+  /* fluid type scale — tuned to the card proportions (title ≈ 3.7× tagline) */
+  --text-xs:   0.75rem;                              /* 12 */
+  --text-sm:   0.875rem;                             /* 14 */
+  --text-base: 1.0625rem;                            /* 17 */
+  --text-lg:   1.25rem;                              /* 20 */
+  --text-xl:   clamp(1.5rem, 1.2rem + 1vw, 1.875rem);/* 24–30 */
+  --text-2xl:  clamp(2rem, 1.4rem + 2vw, 3rem);      /* 32–48 */
+  --text-3xl:  clamp(2.75rem, 1.8rem + 3.5vw, 5rem); /* 44–80 */
+  --text-hero: clamp(3rem, 1.5rem + 6vw, 7.5rem);    /* 48–120 */
+
+  --leading-tight: 1.06;   /* Playfair titles */
+  --leading-snug:  1.3;    /* Lora taglines */
+  --leading-body:  1.65;
+
+  --tracking-tight: -0.01em;  /* Playfair titles */
+  --tracking-eyebrow: 0.34em; /* uppercase Be Vietnam Pro kickers */
+  --tracking-wide: 0.24em;    /* pill buttons */
+
+  /* spacing — 4px base */
+  --space-1: 0.25rem; --space-2: 0.5rem; --space-3: 0.75rem; --space-4: 1rem;
+  --space-5: 1.25rem; --space-6: 1.5rem; --space-8: 2rem;  --space-10: 2.5rem;
+  --space-12: 3rem;   --space-16: 4rem;  --space-20: 5rem; --space-24: 6rem;
+
+  /* radii — the brand uses small radii + full pills, nothing in between */
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-pill: 999px;
+  --radius-field: 8px;     /* inputs, selects, textareas */
+  --field-height: 2.75rem; /* 44px — touch target */
+
+  /* frame insets (the double rule around every card) */
+  --frame-outer: clamp(16px, 2.9vw, 56px);
+  --frame-gap: 14px;
+
+  /* motion */
+  --ease-out: cubic-bezier(.2,.7,.2,1);
+  --dur-fast: 120ms;
+  --dur-base: 200ms;
+  --dur-theme: 260ms;
+
+  --container: 72rem;
+}
+
+/* ==========================================================================
+   Layer 2 · semantic tokens, per theme
+   Every theme defines the SAME set of names. UI only ever reads these.
+   ========================================================================== */
+
+/* ---- PANEL TOKENS (v2.3) ----
+   Cards and panels (.card, .results, .buy-box and the site's own panels) read --panel-*
+   through one rule in components.css. In cream, mint and cast iron the panel tokens equal
+   the page tokens, so nothing changes there. Rust overrides them: a darker-cream page with
+   dark-rust panels. Declared on every themed element so nested themes resolve correctly. */
+:root, [data-theme] {
+  --panel-bg: var(--bg);
+  --panel-surface: var(--surface);
+  --panel-surface-2: var(--surface-2);
+  --panel-text: var(--text);
+  --panel-text-serif: var(--text-serif);
+  --panel-text-muted: var(--text-muted);
+  --panel-text-on-primary: var(--text-on-primary);
+  --panel-primary: var(--primary);
+  --panel-primary-hover: var(--primary-hover);
+  --panel-accent: var(--accent);
+  --panel-accent-soft: var(--accent-soft);
+  --panel-text-on-soft: var(--text-on-soft);
+  --panel-border: var(--border);
+  --panel-border-soft: var(--border-soft);
+  --panel-hairline: var(--hairline);
+  --panel-focus: var(--focus);
+  --panel-selection: var(--selection);
+  --panel-field-bg: var(--field-bg);
+  --panel-field-text: var(--field-text);
+  --panel-field-placeholder: var(--field-placeholder);
+  --panel-field-border: var(--field-border);
+  --panel-field-border-hover: var(--field-border-hover);
+  --panel-field-ring: var(--field-ring);
+  --panel-field-disabled-bg: var(--field-disabled-bg);
+  --panel-field-disabled-text: var(--field-disabled-text);
+  --panel-success: var(--success);
+  --panel-success-bg: var(--success-bg);
+  --panel-success-border: var(--success-border);
+  --panel-warning: var(--warning);
+  --panel-warning-bg: var(--warning-bg);
+  --panel-warning-border: var(--warning-border);
+  --panel-error: var(--error);
+  --panel-error-bg: var(--error-bg);
+  --panel-error-border: var(--error-border);
+  --panel-info: var(--info);
+  --panel-info-bg: var(--info-bg);
+  --panel-info-border: var(--info-border);
+}
+
+/* ---- v2.4 ----
+   --page-focus     the page's focus colour. A focusable card or panel draws its ring OUTSIDE
+                    itself, on the page ground, so the ring reads --page-focus, not the panel's
+                    --focus (in rust the panel focus colour on the cream page was 1.14:1).
+   --on-overlay     text and icons drawn on --overlay (video badges, captions on images).
+   --overlay-ground an opaque ground under --overlay for small text: over a bright image the
+                    bare overlay is too thin (paper text 3.18:1 in mint, 3.54:1 in cream).
+   Declared on every themed element, so each resolves to that element's theme. */
+:root, [data-theme] {
+  --page-focus: var(--focus);
+  --on-overlay: var(--jjk-paper);
+  --overlay-ground: var(--jjk-ink-700);
+}
+
+/* ---- CREAM · "Cream Kitchen" · channel default / Josh ---- */
+:root,
+[data-theme="cream"] {
+  color-scheme: light;
+  --theme-name: "cream";
+
+  --bg:            var(--jjk-cream-100);
+  --bg-gradient:   linear-gradient(150deg, #FBF4E5 0%, #F6EAD2 48%, #EFDDBB 100%);
+  --bg-glow-1:     rgba(165,70,31,.10);   /* radial blooms used on hero/cover */
+  --bg-glow-2:     rgba(201,155,82,.16);
+  --surface:       var(--jjk-paper);
+  --surface-2:     var(--jjk-cream-200);
+
+  --text:          var(--jjk-ink-700);
+  --text-serif:    var(--jjk-ink-500);
+  --text-muted:    var(--jjk-ink-400);
+  --text-on-primary: var(--jjk-cream-50);
+
+  --primary:       var(--jjk-rust-600);
+  --primary-hover: var(--jjk-rust-700);
+  --accent:        var(--jjk-gold-600);   /* ornament + large text only (see spec) */
+  --accent-soft:   var(--jjk-wheat-300);
+  --text-on-soft:  var(--jjk-ink-700);
+  --mark:          var(--jjk-rust-600);   /* J&J monogram */
+  --mark-amp:      var(--jjk-gold-600);   /* the italic & */
+
+  --border:        rgba(201,155,82,.55);
+  --border-soft:   rgba(201,155,82,.35);
+  --hairline:      #E5D9C6;
+  --focus:         var(--jjk-rust-600);
+  --shadow-card:   0 24px 60px rgba(90,42,8,.18);
+  --shadow-pop:    4px 4px 0 var(--jjk-ink-900);
+  --selection:     rgba(201,155,82,.35);
+
+  /* fields */
+  --field-bg:          var(--jjk-paper);
+  --field-text:        var(--jjk-ink-700);
+  --field-placeholder: var(--jjk-ink-400);
+  --field-border:      #948466;   /* 3.3:1 on cream — WCAG 1.4.11 non-text */
+  --field-border-hover:var(--jjk-ink-400);
+  --field-ring:        var(--jjk-rust-600);
+  --field-disabled-bg: var(--jjk-cream-200);
+  --field-disabled-text:var(--text-muted);
+  /* status (strong = text/icon/border; bg = tinted field; text on bg = --text) */
+  --success:    #2E6B3F;  --success-bg: #DCEBD3;  --success-border: #2E6B3F;
+  --warning:    #8A5A0B;  --warning-bg: #F6E3B4;  --warning-border: #8A5A0B;
+  --error:      #A12B2B;  --error-bg:   #F5D6CF;  --error-border:   #A12B2B;
+  --info:       var(--jjk-teal-600); --info-bg: #DCEDEA; --info-border: var(--jjk-teal-600);
+  --header-bg:  rgba(255,253,249,.88);
+  --overlay:    rgba(43,35,32,.55);
+}
+
+/* ---- MINT · "Mint Bakery" · Jordan Bakes ---- */
+[data-theme="mint"] {
+  color-scheme: light;
+  --theme-name: "mint";
+
+  --bg:            var(--jjk-mint-300);
+  --bg-gradient:   radial-gradient(circle at 38% 30%, #C3E6E0 0%, #A9D8D1 55%, #8FC4BC 100%);
+  --bg-glow-1:     rgba(31,78,73,.08);
+  --bg-glow-2:     rgba(242,250,248,.35);
+  --surface:       var(--jjk-mint-50);
+  --surface-2:     var(--jjk-mint-200);
+
+  --text:          var(--jjk-teal-800);
+  --text-serif:    var(--jjk-teal-800);
+  --text-muted:    var(--jjk-teal-650);
+  --text-on-primary: var(--jjk-mint-50);
+
+  --primary:       var(--jjk-teal-800);
+  --primary-hover: #163B37;
+  --accent:        var(--jjk-teal-600);
+  --accent-soft:   var(--jjk-mint-500);
+  --text-on-soft:  var(--jjk-teal-800);
+  --mark:          var(--jjk-teal-800);
+  --mark-amp:      var(--jjk-teal-600);
+
+  --border:        rgba(31,78,73,.35);
+  --border-soft:   rgba(31,78,73,.20);
+  --hairline:      rgba(31,78,73,.18);
+  --focus:         var(--jjk-teal-800);
+  --shadow-card:   0 24px 60px rgba(15,45,42,.22);
+  --shadow-pop:    4px 4px 0 var(--jjk-teal-800);
+  --selection:     rgba(31,78,73,.22);
+
+  /* fields */
+  --field-bg:          var(--jjk-mint-50);
+  --field-text:        var(--jjk-teal-800);
+  --field-placeholder: var(--jjk-teal-650);
+  --field-border:      #3F7A72;   /* 3.2:1 on mint */
+  --field-border-hover:var(--jjk-teal-600);
+  --field-ring:        var(--jjk-teal-800);
+  --field-disabled-bg: var(--jjk-mint-200);
+  --field-disabled-text:var(--text-muted);
+  --success:    #1C5A2F;  --success-bg: #CDEBD2;  --success-border: #1C5A2F;
+  --warning:    #704300;  --warning-bg: #EFE0B2;  --warning-border: #704300;
+  --error:      #8E1F1F;  --error-bg:   #F2D0CA;  --error-border:   #8E1F1F;
+  --info:       var(--jjk-teal-800); --info-bg: var(--jjk-mint-50); --info-border: var(--jjk-teal-600);
+  --header-bg:  rgba(169,216,209,.88);
+  --overlay:    rgba(31,78,73,.6);
+}
+
+/* ---- RUST · "Rust Hearth" · outro / story / profile ----
+   v2.3: a darker-cream page (#EFDDBB) with dark-rust panels (#5E240D). The page reads light;
+   cards and panels keep the original rust look through the --panel-* tokens below. */
+[data-theme="rust"] {
+  color-scheme: light;
+  --theme-name: "rust";
+
+  --bg:            var(--jjk-cream-300);
+  --bg-gradient:   var(--jjk-cream-300);
+  --bg-glow-1:     transparent;
+  --bg-glow-2:     transparent;
+  --surface:       var(--jjk-paper);
+  --surface-2:     var(--jjk-cream-200);
+
+  --text:          var(--jjk-ink-700);   /* 11.53:1 on the page */
+  --text-serif:    var(--jjk-ink-500);
+  --text-muted:    var(--jjk-ink-300);   /* 5.86:1 */
+  --text-on-primary: var(--jjk-cream-50);
+
+  --primary:       var(--jjk-rust-800);  /* 6.96:1 */
+  --primary-hover: var(--jjk-rust-900);
+  --accent:        var(--jjk-rust-800);
+  --accent-soft:   var(--jjk-wheat-300);
+  --text-on-soft:  var(--jjk-ink-700);
+  --mark:          var(--jjk-rust-800);
+  --mark-amp:      var(--jjk-rust-800);
+
+  --border:        rgba(122,48,18,.45);
+  --border-soft:   rgba(122,48,18,.25);
+  --hairline:      rgba(122,48,18,.22);
+  --focus:         var(--jjk-rust-800);
+  --shadow-card:   0 30px 70px rgba(40,15,4,.4);
+  --shadow-pop:    4px 4px 0 var(--jjk-rust-700);
+  --selection:     rgba(201,155,82,.35);
+
+  /* fields on the page (inside panels the --panel-field-* values apply) */
+  --field-bg:          var(--jjk-paper);
+  --field-text:        var(--jjk-ink-700);
+  --field-placeholder: var(--jjk-ink-400);
+  --field-border:      var(--jjk-ink-400);   /* #948466 is 2.73:1 on the darker cream */
+  --field-border-hover:var(--jjk-ink-500);
+  --field-ring:        var(--jjk-rust-800);
+  --field-disabled-bg: var(--jjk-cream-200);
+  --field-disabled-text:var(--jjk-ink-500);
+  --success:    #2E6B3F;  --success-bg: #DCEBD3;  --success-border: #2E6B3F;
+  --warning:    #7A4E09;  --warning-bg: #F6E3B4;  --warning-border: #7A4E09;   /* cream's #8A5A0B is 4.43:1 on this page; NEW value, owner to approve */
+  --error:      #A12B2B;  --error-bg:   #F5D6CF;  --error-border:   #A12B2B;
+  --info:       var(--jjk-teal-800); --info-bg: #DCEDEA; --info-border: var(--jjk-teal-800);   /* teal-600 is 4.38:1 here */
+  --header-bg:  rgba(239,221,187,.92);
+  --overlay:    rgba(40,15,4,.6);
+
+  /* panels: the original rust look, on rust-900 */
+  --panel-bg:            var(--jjk-rust-900);   /* the ground inverse colours use inside a panel */
+  --panel-surface:       var(--jjk-rust-900);
+  --panel-surface-2:     var(--jjk-rust-800);
+  --panel-text:          var(--jjk-cream-50);
+  --panel-text-serif:    var(--jjk-cream-50);
+  --panel-text-muted:    var(--jjk-wheat-200);
+  --panel-text-on-primary: var(--jjk-rust-600);
+  --panel-primary:       var(--jjk-cream-50);
+  --panel-primary-hover: #FFFFFF;
+  --panel-accent:        var(--jjk-wheat-300);
+  --panel-accent-soft:   var(--jjk-wheat-300);
+  --panel-text-on-soft:  var(--jjk-rust-700);
+  --panel-border:        rgba(232,207,158,.5);
+  --panel-border-soft:   rgba(232,207,158,.3);
+  --panel-hairline:      rgba(232,207,158,.25);
+  --panel-focus:         var(--jjk-wheat-300);
+  --panel-selection:     rgba(232,207,158,.35);
+  --panel-field-bg:          var(--jjk-cream-50);
+  --panel-field-text:        var(--jjk-ink-700);
+  --panel-field-placeholder: var(--jjk-ink-400);
+  --panel-field-border:      var(--jjk-cream-50);
+  --panel-field-border-hover:#FFFFFF;
+  --panel-field-ring:        var(--jjk-wheat-300);
+  --panel-field-disabled-bg: #C9A98F;
+  --panel-field-disabled-text:var(--jjk-ink-500);
+  --panel-success: #CBE9BF;  --panel-success-bg: #3E5A32;  --panel-success-border: #CBE9BF;
+  --panel-warning: #FBE3A4;  --panel-warning-bg: #6A4A10;  --panel-warning-border: #FBE3A4;
+  --panel-error:   #FDD9D1;  --panel-error-bg:   #6E1F17;  --panel-error-border:   #FDD9D1;
+  --panel-info:    var(--jjk-mint-200); --panel-info-bg: var(--jjk-teal-800); --panel-info-border: var(--jjk-mint-200);
+}
+
+/* ---- CAST-IRON · dark mode · from the thumbnail generator UI ---- */
+[data-theme="cast-iron"] {
+  color-scheme: dark;
+  --theme-name: "cast-iron";
+
+  --bg:            var(--jjk-ink-900);
+  --bg-gradient:   linear-gradient(160deg, #2A2522 0%, #1E1E1E 100%);
+  --bg-glow-1:     rgba(200,90,50,.14);
+  --bg-glow-2:     rgba(245,183,66,.08);
+  --surface:       var(--jjk-ink-800);
+  --surface-2:     #352E2A;
+
+  --text:          var(--jjk-paper);
+  --text-serif:    var(--jjk-ink-100);
+  --text-muted:    var(--jjk-ink-100);
+  --text-on-primary: var(--jjk-ink-900);  /* dark text on ember — cream fails AA here */
+
+  --primary:       var(--jjk-rust-ember);
+  --primary-hover: var(--jjk-rust-pop);
+  --accent:        var(--jjk-gold-pop);
+  --accent-soft:   var(--jjk-honey-500);
+  --text-on-soft:  var(--jjk-ink-900);
+  --mark:          var(--jjk-paper);
+  --mark-amp:      var(--jjk-gold-pop);
+
+  --border:        rgba(255,253,249,.22);
+  --border-soft:   rgba(255,253,249,.12);
+  --hairline:      rgba(255,253,249,.12);
+  --focus:         var(--jjk-gold-pop);
+  --shadow-card:   0 24px 60px rgba(0,0,0,.55);
+  --shadow-pop:    4px 4px 0 #000;
+  --selection:     rgba(245,183,66,.3);
+
+  /* fields */
+  --field-bg:          #352E2A;
+  --field-text:        var(--jjk-paper);
+  --field-placeholder: #B9AEA4;
+  --field-border:      #7A6F68;   /* 3.4:1 on cast iron */
+  --field-border-hover:#8A7E76;
+  --field-ring:        var(--jjk-gold-pop);
+  --field-disabled-bg: var(--jjk-ink-800);
+  --field-disabled-text:var(--text-muted);
+  --success:    #9FD69C;  --success-bg: #1F3A22;  --success-border: #9FD69C;
+  --warning:    #F5C96B;  --warning-bg: #3D2E0C;  --warning-border: #F5C96B;
+  --error:      #F39A8F;  --error-bg:   #4A1A16;  --error-border:   #F39A8F;
+  --info:       var(--jjk-mint-500); --info-bg: #1C3330; --info-border: var(--jjk-mint-500);
+  --header-bg:  rgba(30,30,30,.88);
+  --overlay:    rgba(0,0,0,.65);
+}
+
+/* Reduced-motion: no theme cross-fade */
+@media (prefers-reduced-motion: reduce) {
+  :root { --dur-theme: 0ms; --dur-base: 0ms; --dur-fast: 0ms; }
+}

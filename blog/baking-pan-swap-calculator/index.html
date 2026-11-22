@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<script>if(location.protocol.indexOf("http")===0&&/\/index\.html$/i.test(location.pathname))location.replace(location.pathname.slice(0,-10)+location.search+location.hash);</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QDSPBB7S9J"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  var gaKeep = new URLSearchParams(); new URLSearchParams(location.search).forEach(function (v, k) { if (k.indexOf('utm_') === 0) gaKeep.append(k, v); });
+  gtag('config', 'G-QDSPBB7S9J', { page_location: location.origin + location.pathname + (gaKeep.toString() ? '?' + gaKeep.toString() : ''), page_referrer: document.referrer.split(/[?#]/)[0] });
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Baking Pan Swap Calculator — Free Pan Conversion Tool</title>
+<meta name="description" content="Convert any recipe between pan sizes — square, round, rectangle, muffin tin, Bundt — with an instant scaling multiplier and bake-time warning. Free, no signup.">
+<meta name="robots" content="max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<link rel="canonical" href="https://cooking.builtbyjoshstudio.com/blog/baking-pan-swap-calculator/">
+<meta property="og:title" content="The Baking Pan Swap Calculator — Free Pan Conversion Tool">
+<meta property="og:description" content="Convert any recipe between pan sizes — square, round, rectangle, muffin tin, Bundt — with an instant scaling multiplier and bake-time warning. Free, no signup.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://cooking.builtbyjoshstudio.com/blog/baking-pan-swap-calculator/">
+<meta property="og:image" content="https://cooking.builtbyjoshstudio.com/images/products/pan-swap-calculator.webp">
+<meta property="og:site_name" content="Josh &amp; Jordan&#x27;s Kitchen">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Baking Pan Swap Calculator — Free Pan Conversion Tool">
+<meta name="twitter:description" content="Convert any recipe between pan sizes — square, round, rectangle, muffin tin, Bundt — with an instant scaling multiplier and bake-time warning. Free, no signup.">
+<meta name="twitter:image" content="https://cooking.builtbyjoshstudio.com/images/products/pan-swap-calculator.webp">
+<link rel="alternate" type="application/rss+xml" title="Josh &amp; Jordan&#x27;s Kitchen — Blog" href="https://cooking.builtbyjoshstudio.com/feed.xml">
+<link rel="icon" href="/icons/favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="icon" href="/icons/icon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="preload" href="/fonts/playfair-display-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/be-vietnam-pro-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/fonts/fonts.css?v=ac58de8e6c">
+<link rel="stylesheet" href="/fonts/fonts-vietnamese.css?v=96e6ae2194">
+<link rel="stylesheet" href="/css/tokens.css?v=e6976ee263">
+<link rel="stylesheet" href="/css/base.css?v=5a6e1b4cbb">
+<link rel="stylesheet" href="/css/components.css?v=a04d1c5175">
+<link rel="stylesheet" href="/css/site.css?v=da9a9943e6">
+<!-- theme.js stays in <head> without defer: it applies the saved theme before first paint -->
+<script src="/js/theme.js?v=dc84991f4a"></script>
+<script src="/js/nav.js?v=a16bc0e1ce" defer></script>
+<!-- offline support: every page registers the service worker (review finding 1) -->
+<script src="/tools/kinetic.js?v=f935f39fab" defer></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "The Baking Pan Swap Calculator: Why Pan Math Shouldn't Be a Guess",
+  "description": "A free, no-signup calculator that converts any recipe between pan sizes — square, round, rectangle, muffin tin, Bundt. Instant scaling multiplier plus a bake-time warning. Built by Josh Studio LLC.",
+  "author": {
+    "@type": "Person",
+    "@id": "https://builtbyjoshstudio.com/about.html#josh",
+    "name": "Josh",
+    "url": "https://builtbyjoshstudio.com/about.html"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://builtbyjoshstudio.com/#organization",
+    "name": "Built by Josh Studio LLC",
+    "url": "https://builtbyjoshstudio.com"
+  },
+  "mainEntityOfPage": "https://cooking.builtbyjoshstudio.com/blog/baking-pan-swap-calculator/",
+  "image": "https://builtbyjoshstudio.com/images/products/pan-swap-calculator.webp",
+  "datePublished": "2026-05-18T00:00:00Z",
+  "dateModified": "2026-05-18T00:00:00Z"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Baking Pan Swap Calculator",
+  "description": "A free, instant pan-conversion calculator. Enter the pan a recipe calls for and the pan you actually own — square, rectangle, round, muffin tin, or Bundt — and it returns the exact ingredient scaling multiplier plus a bake-time warning. Runs entirely in your browser — no backend, no signup, nothing uploaded.",
+  "url": "https://cooking.builtbyjoshstudio.com/tools/pan-swap-calculator/",
+  "applicationCategory": "UtilitiesApplication",
+  "applicationSubCategory": "Cooking & Recipes",
+  "operatingSystem": "Any (web browser)",
+  "browserRequirements": "Modern web browser with JavaScript support",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD",
+    "hasMerchantReturnPolicy": {
+      "@type": "MerchantReturnPolicy",
+      "applicableCountry": "US",
+      "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted"
+    },
+    "shippingDetails": {
+      "@type": "OfferShippingDetails",
+      "shippingRate": {
+        "@type": "MonetaryAmount",
+        "value": 0,
+        "currency": "USD"
+      },
+      "shippingDestination": {
+        "@type": "DefinedRegion",
+        "addressCountry": "US"
+      },
+      "deliveryTime": {
+        "@type": "ShippingDeliveryTime",
+        "handlingTime": {
+          "@type": "QuantitativeValue",
+          "minValue": 0,
+          "maxValue": 0,
+          "unitCode": "DAY"
+        },
+        "transitTime": {
+          "@type": "QuantitativeValue",
+          "minValue": 0,
+          "maxValue": 0,
+          "unitCode": "DAY"
+        }
+      }
+    }
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://builtbyjoshstudio.com/#organization",
+    "name": "Built by Josh Studio LLC",
+    "url": "https://builtbyjoshstudio.com"
+  },
+  "featureList": [
+    "Surface-area engine for square, rectangle, and round pans",
+    "Hardcoded equivalents for muffin tins and Bundt pans",
+    "Exact ingredient scaling multiplier (e.g. 1.50X)",
+    "Dynamic bake-time / temperature depth warning",
+    "Imperial / metric toggle (inches and centimeters)",
+    "One-click copy to clipboard"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Josh & Jordan's Kitchen",
+      "item": "https://cooking.builtbyjoshstudio.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://cooking.builtbyjoshstudio.com/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "The Baking Pan Swap Calculator: Why Pan Math Shouldn't Be a Guess",
+      "item": "https://cooking.builtbyjoshstudio.com/blog/baking-pan-swap-calculator/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://builtbyjoshstudio.com/#organization",
+  "name": "Built by Josh Studio LLC",
+  "alternateName": [
+    "BBJ Studio",
+    "Built by Josh Studio"
+  ],
+  "legalName": "Built by Josh Studio LLC",
+  "url": "https://builtbyjoshstudio.com",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://builtbyjoshstudio.com/images/logo/logo.webp",
+    "width": 512,
+    "height": 512
+  },
+  "image": "https://builtbyjoshstudio.com/images/logo/logo.webp",
+  "description": "Built by Josh Studio LLC is a Kansas-based independent creative studio that publishes original zodiac digital art under its own name and Notion OS templates and personal finance workbooks under the Tynkr Tools & Co brand. Templates, workbooks, the cookbook, and art are instant digital downloads. Everything is built by a single founder.",
+  "founder": {
+    "@type": "Person",
+    "@id": "https://builtbyjoshstudio.com/about.html#josh",
+    "name": "Josh"
+  },
+  "foundingDate": "2026-05-13",
+  "foundingLocation": {
+    "@type": "Place",
+    "address": {
+      "@type": "PostalAddress",
+      "addressRegion": "KS",
+      "addressCountry": "US"
+    }
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "addressRegion": "KS",
+    "addressCountry": "US"
+  },
+  "areaServed": "Worldwide",
+  "knowsAbout": [
+    "Zodiac digital art",
+    "Western zodiac",
+    "Chinese zodiac",
+    "Notion templates",
+    "Personal finance spreadsheets",
+    "Digital product design",
+    "Print-on-demand licensing"
+  ],
+  "brand": [
+    {
+      "@type": "Brand",
+      "name": "Built by Josh Studio",
+      "description": "Original digital zodiac art bundles — Western signs, Chinese signs, zodiac landscapes, and zodiac realms — sold as print-ready, POD-licensed digital downloads."
+    },
+    {
+      "@type": "Brand",
+      "name": "Tynkr Tools & Co",
+      "description": "Notion OS templates and Excel and Google Sheets workbooks for creators, solopreneurs, and personal-finance milestones."
+    }
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "email": "support@builtbyjoshstudio.com",
+    "contactType": "customer support",
+    "areaServed": "Worldwide",
+    "availableLanguage": "English"
+  },
+  "sameAs": [
+    "https://linktr.ee/builtbyjoshstudio",
+    "https://www.youtube.com/@TalesofInkShadowsStudio",
+    "https://www.youtube.com/@joshandjordanskitchen",
+    "https://tynkrtoolsandco.etsy.com",
+    "https://www.etsy.com/shop/BuiltByJoshStudio",
+    "https://www.redbubble.com/people/BBJStudio/shop"
+  ],
+  "identifier": [
+    {
+      "@type": "PropertyValue",
+      "propertyID": "Kansas Business ID",
+      "value": "10076138"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header" id="site-header">
+  <div class="container site-header__inner">
+    <a class="brand" href="/" aria-label="Josh and Jordan's Kitchen — home">
+      <span class="mark" aria-hidden="true">J<span class="amp">&amp;</span>J</span>
+      <span class="brand__name">Josh &amp; Jordan's Kitchen</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="site-nav" id="site-nav" aria-label="Primary">
+      <ul class="site-nav__list">
+        <li><a href="/videos/">Videos</a></li>
+        <li><a href="/tools/">Tools</a></li>
+        <li><a href="/cookbook/">Cookbook</a></li>
+        <li><a href="/blog/">Blog</a></li>
+      </ul>
+      <div class="theme-switch theme-switch--compact" role="group" aria-label="Color theme">
+        <button type="button" data-theme-set="cream"><span class="swatch" aria-hidden="true"></span><span class="label">Cream</span></button>
+        <button type="button" data-theme-set="mint"><span class="swatch" aria-hidden="true"></span><span class="label">Mint</span></button>
+        <button type="button" data-theme-set="rust"><span class="swatch" aria-hidden="true"></span><span class="label">Rust</span></button>
+        <button type="button" data-theme-set="cast-iron"><span class="swatch" aria-hidden="true"></span><span class="label">Cast iron</span></button>
+      </div>
+    </nav>
+  </div>
+</header>
+<main id="main" tabindex="-1">
+<article class="article container section post">
+  <header class="article__head">
+    <ol class="breadcrumb"><li><a href="/">Home</a></li><li><a href="/blog/">Blog</a></li></ol>
+    <p class="eyebrow">Projects · Kitchen Tools</p>
+    <h1>The Baking Pan Swap Calculator: Why <span class="hi">Pan Math Shouldn't Be a Guess</span></h1>
+    <p class="tagline">You find the perfect recipe — it calls for an 8×8 square pan, and all you own is a 9×13. This free tool gives you the exact ingredient multiplier in one click, plus a warning when the swap changes your bake time. Here's the build.</p>
+    <div class="article__meta"><span>May 18, 2026</span><span>·</span><span>7 min read</span><span>·</span><span>Built by Josh Studio LLC</span></div>
+  </header>
+  <div class="prose post__body">
+<div class="post-summary short"><span class="short__label">The Short Version</span><p>Twenty years in kitchens taught me the recipe is rarely the problem — the pan is. This is a free, ad-free, local-first utility: pick the pan a recipe calls for, pick the pan you actually own, get the exact ingredient multiplier in one tap. It earns its keep on the conversions home bakers genuinely dread — convert a cake recipe to a muffin tin, or pull a clean bundt pan conversion multiplier — with zero 3D volume math on your end. A dynamic bake-time warning rides along when the swap changes batter depth.</p></div>
+
+      <h2>The Wall Every Baker Hits</h2>
+      <p>In twenty-plus years of cooking, I've watched every home baker I know hit the exact same wall. You find a perfect recipe — and it calls for an 8×8 square pan. You own a 9×13 rectangle, a 9-inch round, or a muffin tin. Now what?</p>
+      <p>Most people guess. Guessing the math leads to one of three bad endings: batter that overflows the pan, edges that burn while the center is raw, or a sad sunken middle because the batter was spread too thin. None of those are recipe failures. They're geometry failures.</p>
+      <p>I wanted to delete the guesswork entirely. You shouldn't have to scroll past a 2,000-word life story and four auto-playing banner ads on some recipe site just to find a conversion chart that doesn't even list your pan. So I built a clean, instant utility: you input the original pan the recipe calls for, select the pan you actually have, and it returns the exact scaling multiplier you need to adjust the ingredients — for example, 1.50X. No sign-up, no loading screen, no ads, ever. It runs entirely in your browser and it stays free.</p>
+
+      <h2>What It Does</h2>
+      <p>The flow is deliberately short, because nobody wants to fill out a form mid-bake:</p>
+      <ol>
+        <li>Pick the pan the <em>recipe</em> calls for.</li>
+        <li>Pick the pan <em>you actually own</em>.</li>
+        <li>Read the multiplier. Multiply your ingredient quantities by it. Done.</li>
+      </ol>
+      <p>If the recipe makes a 2-cup batter for an 8×8 and you're moving to a 9×13, the tool tells you to make 1.46× the batter so the depth stays right. One number. No mental math, no half-remembered ratios, and no scrolling past a wall of pop-ups to find a conversion table that doesn't list your pan anyway.</p>
+
+      <h2>The Area Engine</h2>
+      <p>Baking math is geometry, and the core of the tool is an area engine. The batter in a pan is, functionally, a volume spread across a surface. If you keep the depth roughly constant, the amount of batter you need scales with the <em>surface area</em> of the pan.</p>
+      <p>So the calculator computes the surface area of the original pan and the target pan and divides them:</p>
+      <ul>
+        <li><strong>Rectangles and squares:</strong> length × width.</li>
+        <li><strong>Round pans:</strong> π × radius². A "9-inch round" is a 9-inch diameter, so the radius is 4.5 and the area is about 63.6 sq in.</li>
+      </ul>
+      <p>Divide the target area by the original area and you get the multiplier. An 8×8 (64 sq in) to a 9×13 (117 sq in) is 117 ÷ 64 ≈ 1.83 — but a 9-inch round (63.6 sq in) to an 8×8 (64 sq in) is essentially 1.0, which is why those two pans are famously interchangeable. The tool just makes that instant instead of something you look up and second-guess.</p>
+
+      <h2>The Star Feature: Convert a Cake Recipe to a Muffin Tin — or a Bundt — Without 3D Math</h2>
+      <p>This is the feature I'm proudest of, and honestly the reason the whole thing exists. Muffin tins and Bundt pans are exactly where every other converter quietly gives up. A 12-cup muffin tin is twelve little wells; a 10-cup Bundt is a ring with a hole and sloped, fluted sides. There's no honest "length × width" to type in, so most charts just don't cover them — which is precisely the moment a cake batter ends up overflowing twelve cups or drowning the bottom of a Bundt.</p>
+      <p>The technically-correct fix is a full volume-to-area conversion: measure your pan's cup capacity, run the numbers, translate it to a flat-area equivalent. Nobody is doing that mid-recipe with flour on their hands. So I did it once, for everyone. The standard 12-cup muffin tin and the 10-cup Bundt have their real <em>flat-area equivalents</em> hardcoded into the tool — a 12-cup muffin tin behaves like roughly a 64 sq in pan, a 10-cup Bundt like about 117 sq in. That means you can convert a cake recipe to a muffin tin, or get an exact bundt pan conversion multiplier, by choosing one option from a dropdown. No volume formula, no second-guessing, no 3D math — ever.</p>
+      <p>That decision never appears in the interface, and that is the entire point. The hard part is absorbed so the home baker just selects "muffin tin (12-cup)" or "Bundt (10-cup)" and gets a real, trustworthy number back. Twenty years of cooking taught me the best kitchen tools hide their complexity — this one buries a volumetric conversion behind a single click so converting a cake recipe to a muffin tin stops being the frustrating part of the bake.</p>
+
+      <h2>The Depth Warning</h2>
+      <p>A multiplier alone is a half-answer, and a half-answer in baking is how you get a raw center.</p>
+      <p>Here's the trap: surface area scaling keeps the <em>total batter</em> right, but it doesn't guarantee the batter <em>depth</em> is the same. Move a recipe into a smaller-footprint, taller pan and the batter sits deeper. Deeper batter at the same oven temperature means the outside sets before the inside cooks — burnt edges, gummy middle.</p>
+      <p>So the tool ships a dynamic "Chef's Note." When the swap produces a meaningfully deeper batter level — say, a sheet pan to a loaf-shaped vessel — it automatically warns you to <strong>drop the oven temperature by 25°F (15°C) and extend the baking time by 15–20 minutes</strong>, then verify the absolute center with a toothpick before pulling. The math gets you the right amount of batter; the Chef's Note keeps you from ruining it in the oven anyway. Both halves matter.</p>
+
+      <h2>The Capacities Cheat Sheet</h2>
+      <p>Tucked under the calculator is a collapsible <strong>"Standard Pan Capacities Quick-Ref"</strong> table — the kind of chart most cooks have a vague memory of and have to Google five seconds before pouring batter. It lists the actual fluid capacity of the most common bakeware so you can verify on the fly:</p>
+      <ul>
+        <li><strong>9×13-inch rectangular:</strong> ~14 cups (3.3 L)</li>
+        <li><strong>8×8-inch square:</strong> ~8 cups (1.9 L)</li>
+        <li><strong>9-inch round cake:</strong> ~8 cups (1.9 L)</li>
+        <li><strong>Standard loaf pan (8.5×4.5):</strong> ~6 cups (1.4 L)</li>
+        <li><strong>Standard 12-cup muffin tin:</strong> ~4 cups (1.0 L) total</li>
+        <li><strong>10-inch Bundt:</strong> ~12 cups (2.8 L)</li>
+      </ul>
+      <p>Closed by default so it doesn't crowd the main result; one click opens it when you need to sanity-check whether your batter is actually going to fit.</p>
+
+      <h2>An Ad-Free Pan Converter That Actually Speaks Metric</h2>
+      <p>Baking is international; recipe blogs mostly aren't. Half the best recipes online run in grams and centimeters, and the usual move is to bounce to a second site — more ads, more pop-ups, more cookie banners — just to convert your numbers. This is an ad-free baking pan converter with metric built straight in: one Imperial/Metric toggle instantly shifts every input and output between inches and centimeters. Flip it once and the whole tool follows. Converting units is the tool's job, not yours — and it happens in the same clean panel, with nothing trying to sell you anything.</p>
+
+      <h2>The Stack and the Design System</h2>
+      <p>Same philosophy as the rest of the kit, and it's a deliberate rebuke of how recipe math usually gets served: vanilla HTML, CSS, and JavaScript. No framework, no backend, no loading screen, no forced sign-up, and — the part I care about most as both a cook and the person who builds these — no ads. It runs entirely locally in the browser and it's hosted as a single static page on GitHub Pages. A JSON-LD <code>WebApplication</code> schema is injected so search engines and AI assistants understand exactly what it is: a free, ad-free software utility published by Built by Josh Studio LLC.</p>
+      <p>The one thing that's genuinely new under the hood: this tool was built on the <strong>Tynkr Glass design system</strong> — a newly centralized CSS architecture. Instead of every utility carrying its own hand-written styles, this one inherits everything from a master design system. That means 100% brand cohesion across the toolset and a lot less CSS bloat to maintain. The earlier tools were each their own island; this is the first one that's properly part of a system.</p>
+      <p>The original version leaned into a moody glassmorphism: the calculator sits as a blurred, semi-transparent frosted-glass panel over a dark, atmospheric culinary background, and it booted in dark mode. And because the whole point is speed, there's a one-click "Copy to Clipboard" button that grabs the exact multiplier and the bake warning together, so you can paste it straight next to the recipe.</p>
+
+      <!-- INLINE CTA -->
+      <div class="inline-cta panel">
+        <div class="inline-label eyebrow eyebrow--plain">Try the Tool</div>
+        <h3>Open the Baking Pan Swap Calculator.</h3>
+        <p>Free, instant, no signup. Pick the recipe's pan, pick yours, get the exact multiplier and a bake-time warning.</p>
+        <a href="/tools/pan-swap-calculator/" class="btn-inline btn">Open the Calculator →</a>
+      </div>
+
+      <div class="related-posts">
+        <h2 class="related-posts-label">Related Reading</h2>
+        <div class="related-posts-grid grid">
+          <a href="/blog/building-the-universal-recipe-scaler/" class="related-post-card card">
+            <h3>Building the Universal Recipe Scaler</h3>
+            <p>The first tool in the kit — scaling ingredient amounts and converting units. The companion to the pan swap calculator.</p>
+            <span class="related-link">Read the post ↗</span>
+          </a>
+
+          <a href="/blog/reverse-roasting-timeline-calculator/" class="related-post-card card">
+            <h3>The Reverse Roasting Timeline Calculator</h3>
+            <p>The second tool — input your dinner time, get the full backward cooking schedule. Why cooking math is harder than it looks.</p>
+            <span class="related-link">Read the post ↗</span>
+          </a>
+
+          <a href="/blog/how-i-cook-rice-finger-method/" class="related-post-card card">
+            <h3>How I Actually Cook Rice (Finger Method)</h3>
+            <p>Measurements are starting points, not endpoints — the same principle behind the calculator's Chef's Note warning.</p>
+            <span class="related-link">Read the post ↗</span>
+          </a>
+
+          <a href="/blog/what-i-actually-keep-in-my-kitchen/" class="related-post-card card">
+            <h3>What I Keep in My Kitchen</h3>
+            <p>Seven ingredients I always have, the broth-based weekly system, and the honest tired-night fallback meals.</p>
+            <span class="related-link">Read the post ↗</span>
+          </a>
+
+          <a href="/blog/cook-the-way-you-want-to-cook/" class="related-post-card card">
+            <h3>Cook the Way You Want to Cook</h3>
+            <p>The only rules worth following are food safety and a few real technique rules. Everything else is yours.</p>
+            <span class="related-link">Read the post ↗</span>
+          </a>
+
+          <a href="/blog/yeast-converter/" class="related-post-card card">
+            <h3>How to Convert Between Active Dry, Instant, and Fresh Yeast</h3>
+            <p>The swap ratios, why the three types aren’t interchangeable gram-for-gram, and the converter that does the math.</p>
+            <span class="related-link">Read the post ↗</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="author-bio panel panel--inset">
+        <strong>About the Author</strong>
+        <p>Josh is the founder of Built by Josh Studio and Tynkr Tools &amp; Co — a one-person creative operation based in Kansas building Notion templates, spreadsheets, zodiac digital art, and the occasional vanilla-JS side project. He's also the author of <em>Overlayed Echoes</em>.</p>
+        <a href="https://builtbyjoshstudio.com/about.html">Learn more →</a>
+      </div>
+  </div>
+  <aside class="post-aside" aria-label="Sidebar">
+<div class="article-sidebar-sticky card">
+        <img src="/images/products/pan-swap-calculator.webp" alt="Baking Pan Swap Calculator — app screenshot" class="sidebar-thumb" loading="lazy" width="1200" height="600" />
+        <div class="sidebar-kicker">Free Web App</div>
+        <h3 class="sidebar-name">Baking Pan Swap Calculator</h3>
+        <div class="sidebar-price-block">Free</div>
+        <a href="/tools/pan-swap-calculator/" class="sidebar-cta-btn btn btn--primary btn--block">Open the Calculator →</a>
+        <ul class="sidebar-checklist">
+          <li>Square, rectangle, round, muffin tin, Bundt</li>
+          <li>Exact ingredient scaling multiplier</li>
+          <li>Depth warning: −25°F &amp; +15–20 min when batter goes deep</li>
+          <li>Standard pan capacities cheat sheet, inches / cm toggle</li>
+        </ul>
+      </div>
+      <div class="article-sidebar-sticky card">
+        <img src="/images/books/nuoc-mam-og.jpg" alt="Nước Mắm — A Vietnamese Family Cookbook by Josh Tran" class="sidebar-thumb" loading="lazy" width="1200" height="630" />
+        <div class="sidebar-kicker">From My Kitchen</div>
+        <div class="sidebar-name">Nước Mắm — A Vietnamese Family Cookbook</div>
+        <p class="note">56 pages of the food I grew up cooking — balanced by tasting, not measuring. $3.99, EPUB + PDF or Kindle.</p>
+        <a href="/cookbook/" class="sidebar-cta-btn btn btn--primary btn--block">Get the cookbook →</a>
+        <p class="note"><a href="/videos/">Watch the cooks on video →</a></p>
+      </div>
+  </aside>
+  <section class="cta-band bcta panel">
+    <p class="cta-eyebrow eyebrow eyebrow--plain">Try the Tool</p>
+    <h2>Bookmark it now. <span class="hi">Use it on your next bake.</span></h2>
+    <p class="cta-sub">The Baking Pan Swap Calculator is free, local-first, and lives at a single URL — no signup, no email, no ads. It's the perfect companion to the Universal Recipe Scaler: one gets your portions right, the other gets your pan right.</p>
+    <div class="cta-buttons">
+      <a href="/tools/pan-swap-calculator/" class="btn-primary btn btn--primary">Open the Pan Swap Calculator →</a>
+      <a href="/tools/universal-recipe-scaler/" class="btn-secondary btn">Try the Recipe Scaler →</a>
+    </div>
+    <div class="contact">Questions or feedback? Reach out at <a href="mailto:support@builtbyjoshstudio.com">support@builtbyjoshstudio.com</a></div>
+  </section>
+</article>
+</main>
+<footer class="site-footer">
+  <div class="container">
+    <div class="site-footer__grid">
+      <div class="site-footer__brand">
+        <span class="mark" aria-hidden="true">J<span class="amp">&amp;</span>J</span>
+        <p class="tagline" style="font-size:var(--text-base)">real home cooking &amp; baking</p>
+        <div class="divider divider--inline" style="justify-content:flex-start" aria-hidden="true"><span class="diamond"></span></div>
+      </div>
+      <div>
+        <h2>Kitchen</h2>
+        <ul>
+          <li><a href="/videos/">Videos</a></li>
+          <li><a href="/tools/">Tools</a></li>
+          <li><a href="/cookbook/">Cookbook</a></li>
+          <li><a href="/blog/">Blog</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>More from the studio</h2>
+        <ul>
+          <li><a href="https://builtbyjoshstudio.com/">Built by Josh Studio</a></li>
+          <li><a href="https://tynkr.builtbyjoshstudio.com/">Tynkr apps</a></li>
+          <li><a href="https://tools.builtbyjoshstudio.com/money/">Money tools</a></li>
+          <li><a href="https://writing.builtbyjoshstudio.com/">J.S. Warden — books</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Contact</h2>
+        <address>
+          <a href="mailto:support@builtbyjoshstudio.com">support@builtbyjoshstudio.com</a>
+        </address>
+        <ul style="margin-top:var(--space-4)">
+          <li><a href="https://www.youtube.com/@joshandjordanskitchen" rel="noopener">YouTube</a></li>
+          <li><a href="https://www.tiktok.com/@JOSHANDJORDANSKITCHEN" rel="noopener">TikTok</a></li>
+          <li><a href="https://www.instagram.com/JOSHANDJORDANSKITCHEN" rel="noopener">Instagram</a></li>
+          <li><a href="https://www.facebook.com/joshandjordanskitchen/" rel="noopener">Facebook</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="site-footer__legal">
+      <ul>
+        <li><a href="/privacy/">Privacy</a></li>
+        <li><a href="https://builtbyjoshstudio.com/terms.html">Terms</a></li>
+        <li><a href="https://builtbyjoshstudio.com/refunds.html">Refunds</a></li>
+      </ul>
+      <p class="wordmark" style="padding-left:0;text-align:left;margin:0">&copy; <span class="tabular">2026</span> Built by Josh Studio LLC. All rights reserved.</p>
+    </div>
+    <p class="site-footer__brands">Tynkr Tools &amp; Co and <a href="https://littleacrelearning.com" rel="noopener">Little Acre Learning</a> are brands of Built by Josh Studio LLC.</p>
+  </div>
+</footer>
+<script src="/js/ga4-events.js?v=f345395c6c" defer></script>
+</body>
+</html>

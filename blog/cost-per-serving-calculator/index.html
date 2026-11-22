@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<script>if(location.protocol.indexOf("http")===0&&/\/index\.html$/i.test(location.pathname))location.replace(location.pathname.slice(0,-10)+location.search+location.hash);</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QDSPBB7S9J"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  var gaKeep = new URLSearchParams(); new URLSearchParams(location.search).forEach(function (v, k) { if (k.indexOf('utm_') === 0) gaKeep.append(k, v); });
+  gtag('config', 'G-QDSPBB7S9J', { page_location: location.origin + location.pathname + (gaKeep.toString() ? '?' + gaKeep.toString() : ''), page_referrer: document.referrer.split(/[?#]/)[0] });
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to Calculate Cost Per Serving (Formula + Examples)</title>
+<meta name="description" content="The cost per serving formula with worked examples: package price to per-serving math, waste allowances, and the mistakes that throw the number off.">
+<meta name="robots" content="max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<link rel="canonical" href="https://cooking.builtbyjoshstudio.com/blog/cost-per-serving-calculator/">
+<meta property="og:title" content="How to Calculate Cost Per Serving (Formula + Examples)">
+<meta property="og:description" content="The cost per serving formula with worked examples: package price to per-serving math, waste allowances, and the mistakes that throw the number off.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://cooking.builtbyjoshstudio.com/blog/cost-per-serving-calculator/">
+<meta property="og:image" content="https://cooking.builtbyjoshstudio.com/images/products/cost-per-serving-calculator.webp">
+<meta property="og:site_name" content="Josh &amp; Jordan&#x27;s Kitchen">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to Calculate Cost Per Serving (Formula + Examples)">
+<meta name="twitter:description" content="The cost per serving formula with worked examples: package price to per-serving math, waste allowances, and the mistakes that throw the number off.">
+<meta name="twitter:image" content="https://cooking.builtbyjoshstudio.com/images/products/cost-per-serving-calculator.webp">
+<link rel="alternate" type="application/rss+xml" title="Josh &amp; Jordan&#x27;s Kitchen — Blog" href="https://cooking.builtbyjoshstudio.com/feed.xml">
+<link rel="icon" href="/icons/favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="icon" href="/icons/icon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="preload" href="/fonts/playfair-display-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/be-vietnam-pro-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/fonts/fonts.css?v=ac58de8e6c">
+<link rel="stylesheet" href="/fonts/fonts-vietnamese.css?v=96e6ae2194">
+<link rel="stylesheet" href="/css/tokens.css?v=e6976ee263">
+<link rel="stylesheet" href="/css/base.css?v=5a6e1b4cbb">
+<link rel="stylesheet" href="/css/components.css?v=a04d1c5175">
+<link rel="stylesheet" href="/css/site.css?v=da9a9943e6">
+<!-- theme.js stays in <head> without defer: it applies the saved theme before first paint -->
+<script src="/js/theme.js?v=dc84991f4a"></script>
+<script src="/js/nav.js?v=a16bc0e1ce" defer></script>
+<!-- offline support: every page registers the service worker (review finding 1) -->
+<script src="/tools/kinetic.js?v=f935f39fab" defer></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "How to Actually Calculate the Cost Per Serving of a Recipe",
+  "description": "A practical, step-by-step guide to figuring out what a dish really costs to make — from package prices to per-serving math, waste allowances, and the mistakes that throw the number off.",
+  "author": {
+    "@type": "Person",
+    "@id": "https://builtbyjoshstudio.com/about.html#josh",
+    "name": "Josh",
+    "url": "https://builtbyjoshstudio.com/about.html"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://builtbyjoshstudio.com/#organization",
+    "name": "Built by Josh Studio LLC",
+    "url": "https://builtbyjoshstudio.com"
+  },
+  "mainEntityOfPage": "https://cooking.builtbyjoshstudio.com/blog/cost-per-serving-calculator/",
+  "image": "https://builtbyjoshstudio.com/images/products/cost-per-serving-calculator.webp",
+  "datePublished": "2026-06-07T00:00:00Z",
+  "dateModified": "2026-09-18T00:00:00Z"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Josh & Jordan's Kitchen",
+      "item": "https://cooking.builtbyjoshstudio.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://cooking.builtbyjoshstudio.com/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "How to Actually Calculate the Cost Per Serving of a Recipe",
+      "item": "https://cooking.builtbyjoshstudio.com/blog/cost-per-serving-calculator/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://builtbyjoshstudio.com/#organization",
+  "name": "Built by Josh Studio LLC",
+  "alternateName": [
+    "BBJ Studio",
+    "Built by Josh Studio"
+  ],
+  "legalName": "Built by Josh Studio LLC",
+  "url": "https://builtbyjoshstudio.com",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://builtbyjoshstudio.com/images/logo/logo.webp",
+    "width": 512,
+    "height": 512
+  },
+  "image": "https://builtbyjoshstudio.com/images/logo/logo.webp",
+  "description": "Built by Josh Studio LLC is a Kansas-based independent creative studio that publishes original zodiac digital art under its own name and Notion OS templates and personal finance workbooks under the Tynkr Tools & Co brand. Templates, workbooks, the cookbook, and art are instant digital downloads. Everything is built by a single founder.",
+  "founder": {
+    "@type": "Person",
+    "@id": "https://builtbyjoshstudio.com/about.html#josh",
+    "name": "Josh"
+  },
+  "foundingDate": "2026-05-13",
+  "foundingLocation": {
+    "@type": "Place",
+    "address": {
+      "@type": "PostalAddress",
+      "addressRegion": "KS",
+      "addressCountry": "US"
+    }
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "addressRegion": "KS",
+    "addressCountry": "US"
+  },
+  "areaServed": "Worldwide",
+  "knowsAbout": [
+    "Zodiac digital art",
+    "Western zodiac",
+    "Chinese zodiac",
+    "Notion templates",
+    "Personal finance spreadsheets",
+    "Digital product design",
+    "Print-on-demand licensing"
+  ],
+  "brand": [
+    {
+      "@type": "Brand",
+      "name": "Built by Josh Studio",
+      "description": "Original digital zodiac art bundles — Western signs, Chinese signs, zodiac landscapes, and zodiac realms — sold as print-ready, POD-licensed digital downloads."
+    },
+    {
+      "@type": "Brand",
+      "name": "Tynkr Tools & Co",
+      "description": "Notion OS templates and Excel and Google Sheets workbooks for creators, solopreneurs, and personal-finance milestones."
+    }
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "email": "support@builtbyjoshstudio.com",
+    "contactType": "customer support",
+    "areaServed": "Worldwide",
+    "availableLanguage": "English"
+  },
+  "sameAs": [
+    "https://linktr.ee/builtbyjoshstudio",
+    "https://www.youtube.com/@TalesofInkShadowsStudio",
+    "https://www.youtube.com/@joshandjordanskitchen",
+    "https://tynkrtoolsandco.etsy.com",
+    "https://www.etsy.com/shop/BuiltByJoshStudio",
+    "https://www.redbubble.com/people/BBJStudio/shop"
+  ],
+  "identifier": [
+    {
+      "@type": "PropertyValue",
+      "propertyID": "Kansas Business ID",
+      "value": "10076138"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header" id="site-header">
+  <div class="container site-header__inner">
+    <a class="brand" href="/" aria-label="Josh and Jordan's Kitchen — home">
+      <span class="mark" aria-hidden="true">J<span class="amp">&amp;</span>J</span>
+      <span class="brand__name">Josh &amp; Jordan's Kitchen</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="site-nav" id="site-nav" aria-label="Primary">
+      <ul class="site-nav__list">
+        <li><a href="/videos/">Videos</a></li>
+        <li><a href="/tools/">Tools</a></li>
+        <li><a href="/cookbook/">Cookbook</a></li>
+        <li><a href="/blog/">Blog</a></li>
+      </ul>
+      <div class="theme-switch theme-switch--compact" role="group" aria-label="Color theme">
+        <button type="button" data-theme-set="cream"><span class="swatch" aria-hidden="true"></span><span class="label">Cream</span></button>
+        <button type="button" data-theme-set="mint"><span class="swatch" aria-hidden="true"></span><span class="label">Mint</span></button>
+        <button type="button" data-theme-set="rust"><span class="swatch" aria-hidden="true"></span><span class="label">Rust</span></button>
+        <button type="button" data-theme-set="cast-iron"><span class="swatch" aria-hidden="true"></span><span class="label">Cast iron</span></button>
+      </div>
+    </nav>
+  </div>
+</header>
+<main id="main" tabindex="-1">
+<article class="article container section post">
+  <header class="article__head">
+    <ol class="breadcrumb"><li><a href="/">Home</a></li><li><a href="/blog/">Blog</a></li></ol>
+    <p class="eyebrow">Projects · Kitchen Tools</p>
+    <h1>How to Actually Calculate the <span class="hi">Cost Per Serving</span> of a Recipe</h1>
+    <p class="tagline">A practical, step-by-step guide to figuring out what a dish really costs to make — from package prices to per-serving math, waste allowances, and the mistakes that throw the number off.</p>
+    <div class="article__meta"><span>June 7, 2026</span><span>·</span><span>7 min read</span><span>·</span><span>Built by Josh Studio LLC</span></div>
+  </header>
+  <div class="prose post__body">
+<div class="post-summary short"><span class="short__label">The Short Version</span><p>The cost per serving of a dish is its total ingredient cost — the cost of the amounts you actually used, plus a small waste allowance — divided by the number of servings. The fiddly part is converting package prices into the cost of the portion you actually used, and the one rule that quietly breaks the math is comparing a weight against a volume. This guide walks the whole method by hand, step by step, so the number means something — the free Cost Per Serving Calculator just automates it once you understand it.</p></div>
+
+      <p>Most people who cook regularly have no real idea what a given meal costs them. Not because the math is hard, but because it's tedious in a specific way: you almost never use a whole package of anything. You buy a five-pound bag of flour and use 300 grams. You buy a dozen eggs and use three. You buy a bottle of olive oil that lasts two months. Working out what <em>one dinner</em> drew from all of that is the part that makes people give up and just guess.</p>
+      <p>This guide walks through how to do it properly — the same method the <a href="/tools/cost-per-serving-calculator/">Cost Per Serving Calculator</a> automates — so that whether you're pricing a dish to sell, budgeting your groceries, or just curious, you end up with a number you can trust.</p>
+
+      <h2>Why "cost per serving" is the number that matters</h2>
+      <p>Total recipe cost is useful, but it's not the figure you make decisions with. A pot of chili that costs $14 to make tells you very little on its own. The same $14 split across four servings ($3.50) versus eight servings ($1.75) is the difference between an expensive meal and a cheap one. Per-serving cost is what lets you compare dishes fairly, set a price with a margin you understand, or decide whether a recipe is worth making again.</p>
+      <p>So the goal of all the math below is a single output: <strong>what one serving costs</strong>. Everything else is in service of that.</p>
+
+      <h2>The core formula</h2>
+      <p>At its simplest:</p>
+      <p><strong>Cost per serving = (total cost of ingredients used) ÷ (number of servings)</strong></p>
+      <p>That's the whole thing. The complications are entirely in that first term — figuring out the <em>cost of what you actually used</em>, not the cost of what you bought.</p>
+
+      <h2>Step 1: List every ingredient and what you used</h2>
+      <p>Write down each ingredient and the amount the recipe calls for, in whatever unit the recipe uses — 300 g flour, 2 cups stock, 3 eggs, 1 tbsp olive oil. Don't convert anything yet. Just capture the real amounts.</p>
+      <p>Be honest about the small stuff. Salt, spices, a splash of oil — individually they're pennies, but a spice-heavy dish can quietly add up, and leaving them out makes your number optimistic. You don't need to be perfect, but don't pretend the seasoning is free.</p>
+
+      <h2>Step 2: Record what you paid, and for how much</h2>
+      <p>For each ingredient, you need two things from the package you bought it in: the <strong>size</strong> of the package and its <strong>price</strong>. A 1 kg bag of flour for $2.40. A dozen eggs for $4.20. A 750 ml bottle of oil for $9.</p>
+      <p>This is the part people skip, and it's the part that makes the whole calculation accurate. You're not paying recipe-sized portions; you're paying package prices. The math has to bridge that gap.</p>
+
+      <h2>Step 3: Convert package price to the cost of your portion</h2>
+      <p>Here's the actual work. For each ingredient, you're answering: <em>what fraction of the package did this recipe use, and what did that fraction cost?</em></p>
+      <p>The formula per ingredient is:</p>
+      <p><strong>Ingredient cost = package price × (amount used ÷ package size)</strong></p>
+      <p>A worked example. Say a recipe uses 300 g of flour, and you bought a 1,000 g bag for $2.40:</p>
+      <ul>
+        <li>Fraction used: 300 ÷ 1,000 = 0.3</li>
+        <li>Cost: $2.40 × 0.3 = <strong>$0.72</strong></li>
+      </ul>
+      <p>Do that for every ingredient and add them up. That sum is your real total ingredient cost — the first term in the core formula.</p>
+
+      <h2>The unit trap</h2>
+      <p>There's one rule that quietly breaks this math: <strong>the amount you used and the package size have to be the same kind of measurement.</strong> If you used the flour by weight (grams) but recorded the package by volume (cups), the fraction is meaningless — you'd be dividing grams by cups, which isn't a number that means anything.</p>
+      <p>You can mix units <em>within the same type</em> freely. Used in grams, bought in kilograms? Fine — both are weight, you just convert one. Used in teaspoons, bought in milliliters? Fine — both are volume. What you can't do is compare a weight against a volume, because the bridge between them (density) is different for every ingredient. A cup of flour and a cup of honey weigh very different amounts.</p>
+      <p>This is exactly why the <a href="/tools/cost-per-serving-calculator/">calculator</a> only bridges the two for ingredients whose density it knows, such as flour, sugar, butter, honey, milk, and oil, and flags a mismatch for anything else — it's protecting you from a number that would look fine but be wrong.</p>
+
+      <h2>Step 4: Add a waste allowance</h2>
+      <p>Recipes assume you use everything you measure. Real cooking doesn't work that way. You trim fat off meat, peel vegetables, lose a bit to the pan, spill some, let the end of the bunch of herbs go bad before you get to it. None of that makes it into the dish, but you paid for it.</p>
+      <p>A <strong>waste allowance</strong> is a percentage buffer that accounts for this. You add it on top of your ingredient cost so the number reflects what you actually spent, not the idealized amount the recipe lists.</p>
+      <p>How much? It depends on the recipe. A dish that's mostly pantry staples measured by weight wastes very little — maybe 5%. A recipe heavy on fresh produce that needs peeling and trimming, or one where you buy perishables you won't fully use, runs higher — 10% to 15% is common. There's no universal right answer; it's a judgment call about how much prep loss a given dish involves.</p>
+      <p>Mechanically, you just multiply your ingredient cost by (1 + waste percentage). A $10 ingredient cost with a 10% allowance becomes $11.</p>
+
+      <!-- INLINE CTA -->
+      <div class="inline-cta panel">
+        <div class="inline-label eyebrow eyebrow--plain">Try the Tool</div>
+        <h3>Skip the arithmetic — open the Cost Per Serving Calculator.</h3>
+        <p>Enter each ingredient's used amount, package size, and price, then set your servings and waste allowance. It returns the total cost and the per-serving figure, flags any weight-vs-volume unit mismatch, and shows how much of each package you have left over — all in your browser, nothing saved.</p>
+        <a href="/tools/cost-per-serving-calculator/" class="btn-inline btn">Open the Calculator →</a>
+      </div>
+
+      <h2>Step 5: Divide by servings</h2>
+      <p>Now the easy part. Take your total cost — ingredients plus waste allowance — and divide by the number of servings the recipe makes.</p>
+      <p>The honest snag here is "servings" is squishier than it sounds. A recipe that says "serves 4" might serve four big eaters or six modest ones. Pick the number you'll actually plate, and be consistent, because it directly scales your per-serving cost. If you halve the serving count, you double the cost per serving — so this single input matters as much as any ingredient.</p>
+
+      <h2>What the number is good for (and what it isn't)</h2>
+      <p>Once you have a reliable cost per serving, a few things open up.</p>
+      <p>If you're cooking at home, it tells you which meals are quietly expensive and which are bargains — often surprising you. The dishes that <em>feel</em> cheap aren't always, and vice versa.</p>
+      <p>If you're selling food, cost per serving is the floor you build a price on. The standard approach is to mark up from food cost, but how far depends entirely on your costs, your market, and your model — labor, overhead, packaging, and what people will pay all sit on top of the ingredient number. The per-serving cost doesn't tell you what to charge; it tells you the line you can't price below without losing money. Treat it as a starting input to a pricing decision, not the decision itself.</p>
+      <p>And what it <em>isn't</em>: a precise accounting figure. Ingredient prices drift, package sizes vary, and your waste allowance is an estimate. The goal is a number that's accurate enough to make good decisions with — not one accurate to the penny.</p>
+
+      <h2>Let the tool do the arithmetic</h2>
+      <p>Everything above is straightforward but fiddly to do by hand across a dozen ingredients, especially the package-to-portion conversions. The <a href="/tools/cost-per-serving-calculator/">Cost Per Serving Calculator</a> handles all of it: you enter each ingredient's used amount, package size, and price; set your servings and waste allowance; and it returns the total cost and per-serving figure, flags any unit mismatches, and shows you how much of each package you have left over. It runs entirely in your browser — nothing you enter is uploaded or saved anywhere.</p>
+      <p>Do the math once by hand to understand it. Then let the tool do it every time after that.</p>
+
+      <div class="related-posts">
+        <h2 class="related-posts-label">Related Reading</h2>
+        <div class="related-posts-grid grid">
+          <a href="/blog/building-the-universal-recipe-scaler/" class="related-post-card card">
+            <h3>Building the Universal Recipe Scaler</h3>
+            <p>The universal-layer companion — scale any recipe up or down and convert units before you price it out.</p>
+            <span class="related-link">Read the post ↗</span>
+          </a>
+
+          <a href="/blog/dough-hydration-calculator/" class="related-post-card card">
+            <h3>The Dough Hydration Calculator</h3>
+            <p>Baker's percentages for bread, pizza, pasta, and noodles — 11 flour types and 6 traditional style presets.</p>
+            <span class="related-link">Read the post ↗</span>
+          </a>
+
+          <a href="/blog/brine-calculator/" class="related-post-card card">
+            <h3>The Brine Calculator</h3>
+            <p>Precise salt, water, and sugar ratios for wet and dry brining, with four salt-type densities handled.</p>
+            <span class="related-link">Read the post ↗</span>
+          </a>
+
+          <a href="/blog/what-i-actually-keep-in-my-kitchen/" class="related-post-card card">
+            <h3>What I Keep in My Kitchen</h3>
+            <p>Seven ingredients I always have and the broth-based weekly system behind cheap, good dinners.</p>
+            <span class="related-link">Read the post ↗</span>
+          </a>
+
+          <a href="/blog/cook-the-way-you-want-to-cook/" class="related-post-card card">
+            <h3>Cook the Way You Want to Cook</h3>
+            <p>The only rules worth following are food safety and a few real technique rules. Everything else is yours.</p>
+            <span class="related-link">Read the post ↗</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="author-bio panel panel--inset">
+        <strong>About the Author</strong>
+        <p>Josh is the founder of Built by Josh Studio and Tynkr Tools &amp; Co — a one-person creative operation based in Kansas building Notion templates, spreadsheets, zodiac digital art, and the occasional vanilla-JS side project. He's also the author of <em>Overlayed Echoes</em>.</p>
+        <a href="https://builtbyjoshstudio.com/about.html">Learn more →</a>
+      </div>
+  </div>
+  <aside class="post-aside" aria-label="Sidebar">
+<div class="article-sidebar-sticky card">
+        <img src="/images/products/cost-per-serving-calculator.webp" alt="Cost Per Serving Calculator — app screenshot" class="sidebar-thumb" loading="lazy" width="1200" height="600" />
+        <div class="sidebar-kicker">Free Web App</div>
+        <h3 class="sidebar-name">Cost Per Serving Calculator</h3>
+        <div class="sidebar-price-block">Free</div>
+        <a href="/tools/cost-per-serving-calculator/" class="sidebar-cta-btn btn btn--primary btn--block">Open the Calculator →</a>
+        <ul class="sidebar-checklist">
+          <li>Total recipe cost and cost per serving</li>
+          <li>Package-price to portion conversion</li>
+          <li>Weight-vs-volume mismatch protection</li>
+          <li>Leftover / remaining-package tracking</li>
+        </ul>
+      </div>
+      <div class="article-sidebar-sticky card">
+        <img src="/images/books/nuoc-mam-og.jpg" alt="Nước Mắm — A Vietnamese Family Cookbook by Josh Tran" class="sidebar-thumb" loading="lazy" width="1200" height="630" />
+        <div class="sidebar-kicker">From My Kitchen</div>
+        <div class="sidebar-name">Nước Mắm — A Vietnamese Family Cookbook</div>
+        <p class="note">56 pages of the food I grew up cooking — balanced by tasting, not measuring. $3.99, EPUB + PDF or Kindle.</p>
+        <a href="/cookbook/" class="sidebar-cta-btn btn btn--primary btn--block">Get the cookbook →</a>
+        <p class="note"><a href="/videos/">Watch the cooks on video →</a></p>
+      </div>
+  </aside>
+  <section class="cta-band bcta panel">
+    <p class="cta-eyebrow eyebrow eyebrow--plain">Try the Tool</p>
+    <h2>Stop guessing what dinner costs. <span class="hi">Price it in seconds.</span></h2>
+    <p class="cta-sub">The Cost Per Serving Calculator is free, local-first, and lives at a single URL. Package-to-portion math, weight-vs-volume mismatch protection, and leftover tracking — no signup, no email, nothing you type is collected.</p>
+    <div class="cta-buttons">
+      <a href="/tools/cost-per-serving-calculator/" class="btn-primary btn btn--primary">Open the Cost Per Serving Calculator →</a>
+      <a href="/tools/universal-recipe-scaler/" class="btn-secondary btn">Try the Recipe Scaler →</a>
+    </div>
+    <div class="contact">Questions or feedback? Reach out at <a href="mailto:support@builtbyjoshstudio.com">support@builtbyjoshstudio.com</a></div>
+  </section>
+</article>
+</main>
+<footer class="site-footer">
+  <div class="container">
+    <div class="site-footer__grid">
+      <div class="site-footer__brand">
+        <span class="mark" aria-hidden="true">J<span class="amp">&amp;</span>J</span>
+        <p class="tagline" style="font-size:var(--text-base)">real home cooking &amp; baking</p>
+        <div class="divider divider--inline" style="justify-content:flex-start" aria-hidden="true"><span class="diamond"></span></div>
+      </div>
+      <div>
+        <h2>Kitchen</h2>
+        <ul>
+          <li><a href="/videos/">Videos</a></li>
+          <li><a href="/tools/">Tools</a></li>
+          <li><a href="/cookbook/">Cookbook</a></li>
+          <li><a href="/blog/">Blog</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>More from the studio</h2>
+        <ul>
+          <li><a href="https://builtbyjoshstudio.com/">Built by Josh Studio</a></li>
+          <li><a href="https://tynkr.builtbyjoshstudio.com/">Tynkr apps</a></li>
+          <li><a href="https://tools.builtbyjoshstudio.com/money/">Money tools</a></li>
+          <li><a href="https://writing.builtbyjoshstudio.com/">J.S. Warden — books</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Contact</h2>
+        <address>
+          <a href="mailto:support@builtbyjoshstudio.com">support@builtbyjoshstudio.com</a>
+        </address>
+        <ul style="margin-top:var(--space-4)">
+          <li><a href="https://www.youtube.com/@joshandjordanskitchen" rel="noopener">YouTube</a></li>
+          <li><a href="https://www.tiktok.com/@JOSHANDJORDANSKITCHEN" rel="noopener">TikTok</a></li>
+          <li><a href="https://www.instagram.com/JOSHANDJORDANSKITCHEN" rel="noopener">Instagram</a></li>
+          <li><a href="https://www.facebook.com/joshandjordanskitchen/" rel="noopener">Facebook</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="site-footer__legal">
+      <ul>
+        <li><a href="/privacy/">Privacy</a></li>
+        <li><a href="https://builtbyjoshstudio.com/terms.html">Terms</a></li>
+        <li><a href="https://builtbyjoshstudio.com/refunds.html">Refunds</a></li>
+      </ul>
+      <p class="wordmark" style="padding-left:0;text-align:left;margin:0">&copy; <span class="tabular">2026</span> Built by Josh Studio LLC. All rights reserved.</p>
+    </div>
+    <p class="site-footer__brands">Tynkr Tools &amp; Co and <a href="https://littleacrelearning.com" rel="noopener">Little Acre Learning</a> are brands of Built by Josh Studio LLC.</p>
+  </div>
+</footer>
+<script src="/js/ga4-events.js?v=f345395c6c" defer></script>
+</body>
+</html>

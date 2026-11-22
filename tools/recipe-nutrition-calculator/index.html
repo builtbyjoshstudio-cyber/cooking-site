@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <script>if(location.protocol.indexOf("http")===0&&/\/index\.html$/i.test(location.pathname))location.replace(location.pathname.slice(0,-10)+location.search+location.hash);</script>
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QDSPBB7S9J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      var gaKeep = new URLSearchParams(); new URLSearchParams(location.search).forEach(function (v, k) { if (k.indexOf('utm_') === 0) gaKeep.append(k, v); });
+      gtag('config', 'G-QDSPBB7S9J', { page_location: location.origin + location.pathname + (gaKeep.toString() ? '?' + gaKeep.toString() : ''), page_referrer: document.referrer.split(/[?#]/)[0] });
+    </script>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="Paste a recipe's ingredients and get calories, protein, carbs, and fat per serving, plus an estimated Nutrition Facts label. Free, no ads, no signup.">
+    <meta name="robots" content="max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta property="og:title" content="Recipe Nutrition Calculator | Calories &amp; Macros Per Serving">
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="Estimate recipe calories and macros. Features dynamic ingredient parsing, custom overrides, unmatched item review, and a local-first browser layout.">
+    <meta property="og:image" content="https://cooking.builtbyjoshstudio.com/icons/og-image.png">
+    <meta property="og:url" content="https://cooking.builtbyjoshstudio.com/tools/recipe-nutrition-calculator/">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://cooking.builtbyjoshstudio.com/tools/recipe-nutrition-calculator/">
+    <meta name="twitter:title" content="Recipe Nutrition Calculator | Calories &amp; Macros Per Serving">
+    <meta name="twitter:description" content="Estimate recipe calories and macros. Features dynamic ingredient parsing, custom overrides, unmatched item review, and a local-first browser layout.">
+    <meta name="twitter:image" content="https://cooking.builtbyjoshstudio.com/icons/og-image.png">
+    <title>Recipe Nutrition Calculator | Calories &amp; Macros Per Serving</title>
+    <link rel="canonical" href="https://cooking.builtbyjoshstudio.com/tools/recipe-nutrition-calculator/" />
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Recipe Nutrition Calculator",
+      "url": "https://cooking.builtbyjoshstudio.com/tools/recipe-nutrition-calculator/",
+      "description": "Calculate recipe calories and macronutrients from pasted text. Features custom ingredient overrides, unmatched ingredient reviews, and macro breakdowns. Free and local-first.",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any (web browser)",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "publisher": {
+        "@type": "Organization",
+        "@id": "https://builtbyjoshstudio.com/#organization",
+        "name": "Built by Josh Studio LLC",
+        "legalName": "Built by Josh Studio LLC",
+        "alternateName": [
+          "BBJ Studio",
+          "Built by Josh Studio"
+        ],
+        "url": "https://builtbyjoshstudio.com",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://builtbyjoshstudio.com/images/logo/logo.webp",
+          "width": 512,
+          "height": 512
+        },
+        "image": "https://builtbyjoshstudio.com/images/logo/logo.webp",
+        "sameAs": [
+          "https://linktr.ee/builtbyjoshstudio",
+          "https://www.youtube.com/@TalesofInkShadowsStudio",
+          "https://www.youtube.com/@joshandjordanskitchen",
+          "https://tynkrtoolsandco.etsy.com",
+          "https://www.etsy.com/shop/BuiltByJoshStudio",
+          "https://www.redbubble.com/people/BBJStudio/shop"
+        ],
+        "identifier": [
+          {
+            "@type": "PropertyValue",
+            "propertyID": "Kansas Business ID",
+            "value": "10076138"
+          }
+        ]
+      }
+    }
+    </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Josh & Jordan\'s Kitchen", "item": "https://cooking.builtbyjoshstudio.com/"},
+    {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://cooking.builtbyjoshstudio.com/tools/"},
+    {"@type": "ListItem", "position": 3, "name": "Recipe Nutrition Calculator", "item": "https://cooking.builtbyjoshstudio.com/tools/recipe-nutrition-calculator/"}
+  ]
+}
+</script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do you calculate the nutrition facts for a recipe?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Add up the calories and macros of every ingredient for the amount you used, then divide each total by the number of servings. Calories follow the 4-4-9 rule: 4 per gram of protein, 4 per gram of carbohydrate and 9 per gram of fat."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why does raw vs cooked state matter for rice and meats?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ingredients undergo massive moisture changes when cooked. 100g of dry jasmine rice absorbs water and expands to become roughly 250g of cooked rice. If you enter '100g rice' but cook it, the dry rice will yield nearly triple the calories of cooked rice for the same weight. Be specific with 'cooked' or 'dry' in your entries."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How are macro calorie splits calculated?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We use the standard 4-4-9 kcal/g conversion rules: 4 calories per gram of protein, 4 calories per gram of carbohydrates, and 9 calories per gram of fat. Summing these values gives a macro-based calorie split, which might differ slightly from direct database totals that account for organic acids, alcohol, or dietary fiber adjustments."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does this calculator check for food regulations?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. This calculator is strictly for home cooks, meal planning, and testing estimates. It is not compliant with official FDA labeling regulations and should not be used to produce commercial labels."
+          }
+        }
+      ]
+    }
+    </script>
+
+<link rel="preload" href="/fonts/playfair-display-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/be-vietnam-pro-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/fonts/fonts.css?v=ac58de8e6c">
+<link rel="stylesheet" href="/fonts/fonts-vietnamese.css?v=96e6ae2194">
+<link rel="stylesheet" href="/css/studio/tokens.css?v=f58e0d92c0">
+<link rel="stylesheet" href="/css/studio/components.css?v=09a4d9f402">
+<link rel="stylesheet" href="/css/studio/tools.css?v=76acb59400">
+<link rel="stylesheet" href="styles.css?v=11414e44c6">
+<link rel="stylesheet" href="/css/tokens.css?v=e6976ee263">
+<link rel="stylesheet" href="/css/chrome.css?v=04f9a9fc23">
+<link rel="stylesheet" href="/css/tool-bridge.css?v=6bfe8d2938">
+<link rel="stylesheet" href="/css/tool-parts.css?v=ba7a255de3">
+<script src="/js/theme.js?v=dc84991f4a"></script>
+<script src="/js/nav.js?v=a16bc0e1ce" defer></script>
+
+<link rel="icon" href="/icons/favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="icon" href="/icons/icon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header" id="site-header">
+  <div class="container site-header__inner">
+    <a class="brand" href="/" aria-label="Josh and Jordan's Kitchen — home">
+      <span class="mark" aria-hidden="true">J<span class="amp">&amp;</span>J</span>
+      <span class="brand__name">Josh &amp; Jordan's Kitchen</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="site-nav" id="site-nav" aria-label="Primary">
+      <ul class="site-nav__list">
+        <li><a href="/videos/">Videos</a></li>
+        <li><a href="/tools/">Tools</a></li>
+        <li><a href="/cookbook/">Cookbook</a></li>
+        <li><a href="/blog/">Blog</a></li>
+      </ul>
+      <div class="theme-switch theme-switch--compact" role="group" aria-label="Color theme">
+        <button type="button" data-theme-set="cream"><span class="swatch" aria-hidden="true"></span><span class="label">Cream</span></button>
+        <button type="button" data-theme-set="mint"><span class="swatch" aria-hidden="true"></span><span class="label">Mint</span></button>
+        <button type="button" data-theme-set="rust"><span class="swatch" aria-hidden="true"></span><span class="label">Rust</span></button>
+        <button type="button" data-theme-set="cast-iron"><span class="swatch" aria-hidden="true"></span><span class="label">Cast iron</span></button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<div class="studio-tool">
+<main class="page tool-shell" id="main" tabindex="-1">
+
+  <header class="hero glass">
+    <div style="flex:1; min-width: 0">
+      <div class="meta">
+        <span class="pill live">&#9679; Utilities</span>
+        <span>Recipe analysis &amp; macro estimates</span>
+        <span class="updated-date">Updated November 2026</span>
+      </div>
+      <h1>Recipe Nutrition Calculator</h1>
+      <p>Estimate per-serving calories, macro splits, and review ingredient matching gaps in real time. Local-first and entirely offline.</p>
+    </div>
+  </header>
+
+  <div class="alert alert--warning" style="margin-bottom: 24px;">
+    <span class="ix" aria-hidden="true">⚠️</span>
+    <p><b class="alert__title">Estimated Nutrition:</b> Calculations are estimates based on standard databases. Variances in ingredient brands, preparation (raw vs. cooked) states, and cooking moisture loss will impact final nutritional densities.</p>
+  </div>
+
+  <div class="recipe-workarea">
+    
+    <!-- LEFT PANEL: INPUTS -->
+    <div class="input-side">
+      
+      <!-- Text Area Card -->
+      <div class="glass type-card" style="margin-bottom: 24px; padding: 20px;">
+        <div class="role" style="margin-bottom: 12px;" id="recipe-input-label">Paste Ingredients</div>
+        <p id="example-note" class="field__hint" style="margin: 0 0 12px;">Example loaded: pancakes for four. Edit any line, or clear it and paste your own recipe.</p>
+        <textarea id="recipe-input" aria-labelledby="recipe-input-label" class="textarea" style="min-height: 180px; line-height: 1.6;" placeholder="Paste your recipe here (one item per line). E.g.&#10;500g chicken breast raw&#10;200g jasmine rice cooked&#10;1 tbsp olive oil"></textarea>
+        <div style="margin-top: 10px; text-align: right;">
+          <button type="button" id="clear-recipe-btn" class="btn btn--ghost btn--sm">Clear ingredients</button>
+        </div>
+
+        <div style="margin-top: 14px; display: flex; flex-wrap: wrap; gap: 14px; align-items: flex-end;">
+          <div class="field" style="flex: 1 1 8rem;">
+            <label class="field__label" for="servings">Recipe Servings</label>
+            <input type="number" id="servings" class="input" value="4" min="1" step="1">
+          </div>
+          <div class="segmented" style="margin-left: auto;">
+            <button type="button" id="display-mode-serving" class="active">Per Serving</button>
+            <button type="button" id="display-mode-total">Total Recipe</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Custom Ingredients Input Drawer -->
+      <div class="glass type-card" style="margin-bottom: 24px; padding: 20px;">
+        <div class="role" style="margin-bottom: 12px;">Add Custom Ingredient</div>
+        
+        <div style="display: flex; flex-direction: column; gap: 12px;">
+          <div class="field">
+            <label class="field__label" for="custom-name">Ingredient Name</label>
+            <input type="text" id="custom-name" class="input" placeholder="E.g. Raw Tofu">
+          </div>
+          
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+            <div class="field">
+              <label class="field__label" for="custom-weight">Weight (grams)</label>
+              <input type="number" id="custom-weight" class="input" min="1" placeholder="E.g. 300">
+            </div>
+            <div class="field">
+              <label class="field__label" for="custom-mode">Macro Entry Mode</label>
+              <select id="custom-mode" class="select">
+                <option value="per-100g">Values Per 100g</option>
+                <option value="total">Values for Full Weight</option>
+              </select>
+            </div>
+          </div>
+          
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;">
+            <div class="field">
+              <label class="field__label" for="custom-cal">Calories</label>
+              <input type="number" id="custom-cal" class="input" min="0" placeholder="kcal">
+            </div>
+            <div class="field">
+              <label class="field__label" for="custom-protein">Protein (g)</label>
+              <input type="number" id="custom-protein" class="input" min="0" step="0.1" placeholder="g">
+            </div>
+            <div class="field">
+              <label class="field__label" for="custom-carbs">Carbs (g)</label>
+              <input type="number" id="custom-carbs" class="input" min="0" step="0.1" placeholder="g">
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;">
+            <div class="field">
+              <label class="field__label" for="custom-fat">Fat (g)</label>
+              <input type="number" id="custom-fat" class="input" min="0" step="0.1" placeholder="g">
+            </div>
+            <div class="field">
+              <label class="field__label" for="custom-fiber">Fiber (g)</label>
+              <input type="number" id="custom-fiber" class="input" min="0" step="0.1" placeholder="g">
+            </div>
+            <div class="field">
+              <label class="field__label" for="custom-sodium">Sodium (mg)</label>
+              <input type="number" id="custom-sodium" class="input" min="0" placeholder="mg">
+            </div>
+          </div>
+          
+          <button type="button" id="add-custom-btn" class="btn" style="margin-top: 6px;">Add Custom Ingredient</button>
+        </div>
+
+        <!-- Custom Active List -->
+        <div id="custom-active-container" style="display: none; margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--line);">
+          <div style="font-family: var(--font-ui); font-weight:600; font-size: 11px; color: var(--muted); text-transform: uppercase; margin-bottom: 8px;">Active Custom Ingredients</div>
+          <div id="custom-active-list" style="display: flex; flex-direction: column; gap: 8px;"></div>
+        </div>
+      </div>
+
+      <!-- Ingredient Ambiguity Warnings & Unmatched list -->
+      <div id="warning-card" class="glass type-card" style="display: none; padding: 20px; margin-bottom: 24px;">
+        <div class="role" style="color: var(--warn); margin-bottom: 12px;">Ingredient Review Required</div>
+        <div id="ambiguous-warnings" style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 14px;"></div>
+        
+        <div id="unmatched-container" style="display: none;">
+          <div style="font-family: var(--font-ui); font-weight:600; font-size: 11px; color: var(--muted); text-transform: uppercase; margin-bottom: 6px;">Unmatched Lines (Not Calculated)</div>
+          <ul id="unmatched-list" style="padding-left: 18px; font-size: 13px; line-height: 1.5; color: var(--muted); margin: 0;"></ul>
+        </div>
+      </div>
+    </div>
+    
+    <!-- RIGHT PANEL: OUTPUTS -->
+    <div class="output-side">
+      
+      <!-- Summarized Stats & Macro Calorie Splits -->
+      <div class="results" style="margin-bottom: 24px; gap: var(--space-4);">
+        <div class="role" style="margin-bottom: 0;">Nutrition Summary (<span id="summary-mode-title">Per Serving</span>)</div>
+        
+        <div class="results__head" style="padding-bottom: 14px; border-bottom: 1px solid var(--line);">
+          <div class="lbl">Estimated Calories</div>
+          <div id="stat-calories" class="num" style="font-size: var(--text-2xl); line-height: 1;">0</div>
+        </div>
+
+        <div class="lbl">Macro Calorie Splits (4-4-9 kcal/g)</div>
+        
+        <div class="macro-chart-container">
+          <div class="macro-ratio-bar">
+            <div id="bar-protein" class="ratio-segment protein" style="width: 0%" title="Protein"></div>
+            <div id="bar-carbs" class="ratio-segment carbs" style="width: 0%" title="Carbs"></div>
+            <div id="bar-fat" class="ratio-segment fat" style="width: 0%" title="Fat"></div>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 14px;">
+            <div style="border-left: 3px solid var(--info); padding-left: 8px;">
+              <div class="lbl">Protein</div>
+              <div id="label-protein-kcal" class="num" style="font-size: var(--text-sm);">0 kcal (0%)</div>
+            </div>
+            <div style="border-left: 3px solid var(--success); padding-left: 8px;">
+              <div class="lbl">Carbs</div>
+              <div id="label-carbs-kcal" class="num" style="font-size: var(--text-sm);">0 kcal (0%)</div>
+            </div>
+            <div style="border-left: 3px solid var(--warning); padding-left: 8px;">
+              <div class="lbl">Fat</div>
+              <div id="label-fat-kcal" class="num" style="font-size: var(--text-sm);">0 kcal (0%)</div>
+            </div>
+          </div>
+          <p class="field__hint" style="margin-top: 12px;">
+            * Calorie split ratio utilizes 4-4-9 system. The ratio calculation may not equal the direct database total calories due to source databases using specific ingredient combustive values or fiber deductions.
+          </p>
+        </div>
+      </div>
+
+      <!-- Estimated Nutrition Facts Card -->
+      <div class="glass label-card" style="padding: 24px; margin-bottom: 24px;">
+        <div class="label-wrapper">
+          <div class="label-header">
+            <h2>Estimated Nutrition Facts</h2>
+            <div class="sub">Calculated recipe estimates</div>
+          </div>
+          
+          <div class="label-servings">
+            <div>Servings Per Container: <b id="lbl-servings">4</b></div>
+            <div>Serving Size: <b id="lbl-serving-size">--</b></div>
+          </div>
+          
+          <div class="label-calories">
+            <div class="title">Amount Per Serving</div>
+            <div class="row">
+              <div class="name">Calories</div>
+              <div class="val" id="lbl-calories">0</div>
+            </div>
+          </div>
+          
+          <div class="label-table">
+            <div class="dv-header">% Daily Value *</div>
+            
+            <div class="label-row">
+              <span class="name"><b>Total Fat</b> <span id="lbl-fat">0g</span></span>
+              <span class="dv" id="lbl-fat-dv">0%</span>
+            </div>
+            <div class="label-row">
+              <span class="name"><b>Sodium</b> <span id="lbl-sodium">0mg</span></span>
+              <span class="dv" id="lbl-sodium-dv">0%</span>
+            </div>
+            <div class="label-row">
+              <span class="name"><b>Total Carbohydrate</b> <span id="lbl-carbs">0g</span></span>
+              <span class="dv" id="lbl-carbs-dv">0%</span>
+            </div>
+            <div class="label-row indent">
+              <span class="name">Dietary Fiber <span id="lbl-fiber">0g</span></span>
+              <span class="dv" id="lbl-fiber-dv">0%</span>
+            </div>
+            <div class="label-row last">
+              <span class="name"><b>Protein</b> <span id="lbl-protein">0g</span></span>
+              <span class="dv">--</span>
+            </div>
+          </div>
+          
+          <div class="label-footer">
+            * The % Daily Value (DV) tells you how much a nutrient in a serving of food contributes to a daily diet of 2,000 calories. Standard daily reference values used: Fat 78g, Sodium 2,300mg, Carbohydrate 275g, Dietary Fiber 28g.
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="glass" style="margin-bottom: 24px; padding: 24px; text-align: center;">
+    <h3 style="font-family: var(--font-ui); font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: var(--tracking-label); color: var(--muted); margin: 0 0 14px;">Next Steps for Your Cook</h3>
+    <div style="display: flex; flex-direction: column; gap: 10px; font-size: 14px;">
+      <a id="pipeline-link-scaler" href="../universal-recipe-scaler/" style="color: var(--accent); text-decoration: none; font-weight: 600;">Want to convert weights or change portions? Use the Universal Recipe Scaler &rarr;</a>
+      <a id="pipeline-link-cost" href="../cost-per-serving-calculator/" style="color: var(--accent); text-decoration: none; font-weight: 600;">Want to price your recipe? Calculate unit economics with the Cost Per Serving Calculator &rarr;</a>
+    </div>
+  </div>
+
+  <!-- AT A GLANCE (P2-c) -->
+  <div class="glass glance glance--flush">
+    <h2>At a glance</h2>
+    <div class="table-wrap">
+    <table class="table">
+      <tbody>
+        <tr><th>What it does</th><td>Estimates per-serving nutrition for any recipe from its ingredient list.</td></tr>
+        <tr><th>Inputs</th><td>Recipe servings and each ingredient's name and weight in grams; macro entry per 100&nbsp;g or for the full weight (calories, protein, carbs, fat, fiber, sodium).</td></tr>
+        <tr><th>Outputs</th><td>Per-serving calories and macro split plus an Estimated Nutrition Facts label, with gaps flagged where an ingredient needs manual numbers.</td></tr>
+        <tr><th>Cost &amp; privacy</th><td>Free, ad-free, no signup. Runs entirely in your browser — nothing is uploaded.</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+
+  <!-- Explanatory Prose & FAQ Section -->
+  <div class="glass" style="margin-bottom: 24px; padding: 24px; text-align: left;">
+    <h2 style="font-family: var(--font-display); font-weight: 800; font-size: 20px; letter-spacing: -0.02em; margin-top: 0; margin-bottom: 12px;">Understanding recipe macro estimations</h2>
+    <p style="margin-bottom: 12px; line-height: 1.6; color: var(--ink);">Calculating recipe nutrition is an essential tool for meal prepping and recipe formulation, but it's important to treat the outputs as estimates. Whole foods vary significantly in calorie density depending on soil conditions, climate, brand processing variations, and moisture level changes during cooking. For example, raw grains double or triple in weight when cooked because they absorb water, which has zero calories but dilutes the nutrient density per gram.</p>
+    <p style="margin-bottom: 24px; line-height: 1.6; color: var(--ink);">To ensure the best possible calculations, always specify whether you are measuring dry ingredients or cooked ingredients (such as dry rice vs cooked rice), and make sure that you parse line weights correctly. Unmatched items should be manually entered using custom inputs to capture brand-specific nutrition labels correctly.</p>
+
+    <h2 style="font-family: var(--font-display); font-weight: 800; font-size: 20px; letter-spacing: -0.02em; margin-top: 0; margin-bottom: 12px;">A worked example: pancakes for four</h2>
+    <p style="margin-bottom: 24px; line-height: 1.6; color: var(--ink);">The loaded example, pancakes for four, comes to 335 calories per serving: 35 from protein, 183 from carbohydrate and 115 from fat.</p>
+
+    <h2 style="font-family: var(--font-display); font-weight: 800; font-size: 20px; letter-spacing: -0.02em; margin-top: 0; margin-bottom: 16px; padding-top: 16px; border-top: 1px solid var(--line-2);">Frequently Asked Questions</h2>
+    <div style="display: flex; flex-direction: column; gap: 18px;">
+      <div>
+        <h3 style="font-family: var(--font-ui); font-weight: 700; font-size: 14px; margin: 0 0 6px; color: var(--ink);">How do you calculate the nutrition facts for a recipe?</h3>
+        <p style="margin: 0; line-height: 1.5; font-size: 13px; color: var(--muted);">Add up the calories and macros of every ingredient for the amount you used, then divide each total by the number of servings. Calories follow the 4-4-9 rule: 4 per gram of protein, 4 per gram of carbohydrate and 9 per gram of fat.</p>
+      </div>
+      <div>
+        <h3 style="font-family: var(--font-ui); font-weight: 700; font-size: 14px; margin: 0 0 6px; color: var(--ink);">Why does raw vs cooked state matter for rice and meats?</h3>
+        <p style="margin: 0; line-height: 1.5; font-size: 13px; color: var(--muted);">Ingredients undergo massive moisture changes when cooked. 100g of dry jasmine rice absorbs water and expands to become roughly 250g of cooked rice. If you enter '100g rice' but cook it, the dry rice will yield nearly triple the calories of cooked rice for the same weight. Be specific with 'cooked' or 'dry' in your entries.</p>
+      </div>
+      <div>
+        <h3 style="font-family: var(--font-ui); font-weight: 700; font-size: 14px; margin: 0 0 6px; color: var(--ink);">How are macro calorie splits calculated?</h3>
+        <p style="margin: 0; line-height: 1.5; font-size: 13px; color: var(--muted);">We use the standard 4-4-9 kcal/g conversion rules: 4 calories per gram of protein, 4 calories per gram of carbohydrates, and 9 calories per gram of fat. Summing these values gives a macro-based calorie split, which might differ slightly from direct database totals that account for organic acids, alcohol, or dietary fiber adjustments.</p>
+      </div>
+      <div>
+        <h3 style="font-family: var(--font-ui); font-weight: 700; font-size: 14px; margin: 0 0 6px; color: var(--ink);">Does this calculator check for food regulations?</h3>
+        <p style="margin: 0; line-height: 1.5; font-size: 13px; color: var(--muted);">No. This calculator is strictly for home cooks, meal planning, and testing estimates. It is not compliant with official FDA labeling regulations and should not be used to produce commercial labels.</p>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<section class="net-band">
+  <h2><span class="lbl">Network</span> More from the studio</h2>
+  <div class="net-grid">
+    <a href="/cookbook/" class="gear-item">
+      <div class="gear-img-wrapper"><img src="/nuoc-mam-link.webp" alt="Nước Mắm — A Vietnamese Family Cookbook by Josh Tran" width="600" height="600" loading="lazy"></div>
+      <div class="gear-info">
+        <h3>Nước Mắm — the Cookbook</h3>
+        <p>A Vietnamese family cookbook by the cook behind these tools — 56 pages, balanced by tasting.</p>
+        <button class="affiliate-btn">Get the Cookbook — $3.99</button>
+      </div>
+    </a>
+    <a href="/videos/" class="gear-item">
+      <div class="gear-img-wrapper"><img src="/kitchen-videos-link.webp" alt="Cook-along videos from Josh &amp; Jordan's Kitchen" width="600" height="299" loading="lazy"></div>
+      <div class="gear-info">
+        <h3>Watch the Cooks</h3>
+        <p>The same kitchen, on video — a short cut of each cook plus the full real-time version, nothing sped up.</p>
+        <button class="affiliate-btn">Watch the Videos</button>
+      </div>
+    </a>
+    <a href="https://builtbyjoshstudio.com/" target="_blank" rel="noopener" class="gear-item">
+      <div class="gear-img-wrapper"><img src="/studio-link.webp" alt="Built by Josh Studio" width="600" height="299" loading="lazy"></div>
+      <div class="gear-info">
+        <h3>Built by Josh Studio</h3>
+        <p>Local-first software, CRM solutions, and technical projects.</p>
+        <button class="affiliate-btn">Visit Website</button>
+      </div>
+    </a>
+    <a href="https://www.youtube.com/@TalesofInkShadowsStudio" target="_blank" rel="noopener" class="gear-item">
+      <div class="gear-img-wrapper"><img src="/tales-link.webp" alt="Tales of Ink &amp; Shadows" width="600" height="299" loading="lazy"></div>
+      <div class="gear-info">
+        <h3>Tales of Ink &amp; Shadows</h3>
+        <p>Historical noir documentaries and immersive storytelling.</p>
+        <button class="affiliate-btn">Watch on YouTube</button>
+      </div>
+    </a>
+  </div>
+</section>
+
+<footer class="footer" style="text-align: center; font-size: 11px; color: var(--muted); padding: 32px 20px; margin-top: 48px; line-height: 1.6; max-width: 720px; margin-left: auto; margin-right: auto;">
+  <p style="margin-bottom: 12px;">These tools provide estimates for planning purposes. Always use a food thermometer to confirm doneness, and follow current USDA food-safety guidance for cooking, thawing, and storing food.</p>
+</footer>
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="site-footer__grid">
+      <div class="site-footer__brand">
+        <span class="mark" aria-hidden="true">J<span class="amp">&amp;</span>J</span>
+        <p class="tagline" style="font-size:var(--text-base)">real home cooking &amp; baking</p>
+        <div class="divider divider--inline" style="justify-content:flex-start" aria-hidden="true"><span class="diamond"></span></div>
+      </div>
+      <div>
+        <h2>Kitchen</h2>
+        <ul>
+          <li><a href="/videos/">Videos</a></li>
+          <li><a href="/tools/">Tools</a></li>
+          <li><a href="/cookbook/">Cookbook</a></li>
+          <li><a href="/blog/">Blog</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>More from the studio</h2>
+        <ul>
+          <li><a href="https://builtbyjoshstudio.com/">Built by Josh Studio</a></li>
+          <li><a href="https://tynkr.builtbyjoshstudio.com/">Tynkr apps</a></li>
+          <li><a href="https://tools.builtbyjoshstudio.com/money/">Money tools</a></li>
+          <li><a href="https://writing.builtbyjoshstudio.com/">J.S. Warden — books</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Contact</h2>
+        <address>
+          <a href="mailto:support@builtbyjoshstudio.com">support@builtbyjoshstudio.com</a>
+        </address>
+        <ul style="margin-top:var(--space-4)">
+          <li><a href="https://www.youtube.com/@joshandjordanskitchen" rel="noopener">YouTube</a></li>
+          <li><a href="https://www.tiktok.com/@JOSHANDJORDANSKITCHEN" rel="noopener">TikTok</a></li>
+          <li><a href="https://www.instagram.com/JOSHANDJORDANSKITCHEN" rel="noopener">Instagram</a></li>
+          <li><a href="https://www.facebook.com/joshandjordanskitchen/" rel="noopener">Facebook</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="site-footer__legal">
+      <ul>
+        <li><a href="/privacy/">Privacy</a></li>
+        <li><a href="https://builtbyjoshstudio.com/terms.html">Terms</a></li>
+        <li><a href="https://builtbyjoshstudio.com/refunds.html">Refunds</a></li>
+      </ul>
+      <p class="wordmark" style="padding-left:0;text-align:left;margin:0">&copy; <span class="tabular">2026</span> Built by Josh Studio LLC. All rights reserved.</p>
+    </div>
+    <p class="site-footer__brands">Tynkr Tools &amp; Co and <a href="https://littleacrelearning.com" rel="noopener">Little Acre Learning</a> are brands of Built by Josh Studio LLC.</p>
+  </div>
+</footer>
+
+<script src="../ingredients-db.js?v=dd06fee0fc"></script>
+<script src="script.js?v=5f27058bd4" defer></script>
+<script src="../kinetic.js?v=f935f39fab" defer></script>
+</body>
+</html>

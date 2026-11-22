@@ -1,0 +1,235 @@
+/* ==========================================================================
+   tool-bridge.css: makes the existing kitchen tools follow the kit's four
+   themes without rewriting them.
+
+   Each tool page wraps the tool's own markup (its <main>, the network band
+   and its disclaimer footer) in one container, <div class="studio-tool">.
+   The studio's variable names get their meanings on that container only,
+   so the kit header and footer outside it keep the kit's meanings.
+
+   The studio files in /css/studio/ stay byte-identical (sync-shared.py).
+   This file loads LAST on tool pages (see chrome.css for the full order).
+   The kit's tokens.css loads before it and after the studio files, so on
+   <html> every name both systems define (--surface, --surface-2, --text,
+   --accent, --font-display, ...) has the kit's value. Inside the container
+   the lines below put the studio meaning back where the two differ.
+
+   Left-hand side: the real studio names (from the Phase 0 inventory).
+   Right-hand side: the kit's semantic tokens only. No colour literals.
+   ========================================================================== */
+
+/* kit v2.3 panel tokens (this rule comes BEFORE the studio mappings below, so on the names
+   both systems define, --accent and --accent-soft, the studio meaning wins): the tool's panels are panels (dark rust on the darker-cream rust page;
+   identical to the page tokens in the other three themes) */
+.studio-tool :is(.glass, .glass-panel, .results, .gear-item, details.glass-lite) {
+  --bg: var(--panel-bg);
+  --surface: var(--panel-surface);
+  --surface-2: var(--panel-surface-2);
+  --text: var(--panel-text);
+  --text-serif: var(--panel-text-serif);
+  --text-muted: var(--panel-text-muted);
+  --text-on-primary: var(--panel-text-on-primary);
+  --primary: var(--panel-primary);
+  --primary-hover: var(--panel-primary-hover);
+  --accent: var(--panel-accent);
+  --accent-soft: var(--panel-accent-soft);
+  --text-on-soft: var(--panel-text-on-soft);
+  --border: var(--panel-border);
+  --border-soft: var(--panel-border-soft);
+  --hairline: var(--panel-hairline);
+  --focus: var(--panel-focus);
+  --selection: var(--panel-selection);
+  --field-bg: var(--panel-field-bg);
+  --field-text: var(--panel-field-text);
+  --field-placeholder: var(--panel-field-placeholder);
+  --field-border: var(--panel-field-border);
+  --field-border-hover: var(--panel-field-border-hover);
+  --field-ring: var(--panel-field-ring);
+  --field-disabled-bg: var(--panel-field-disabled-bg);
+  --field-disabled-text: var(--panel-field-disabled-text);
+  --success: var(--panel-success);
+  --success-bg: var(--panel-success-bg);
+  --success-border: var(--panel-success-border);
+  --warning: var(--panel-warning);
+  --warning-bg: var(--panel-warning-bg);
+  --warning-border: var(--panel-warning-border);
+  --error: var(--panel-error);
+  --error-bg: var(--panel-error-bg);
+  --error-border: var(--panel-error-border);
+  --info: var(--panel-info);
+  --info-bg: var(--panel-info-bg);
+  --info-border: var(--panel-info-border);
+  color: var(--text);   /* the tools' headings inherit their colour (tools.css:101) */
+}
+
+.studio-tool,
+.studio-tool :is(.glass, .glass-panel, .results, .gear-item, details.glass-lite) {   /* panels re-resolve the studio names with panel colours */
+  /* grounds and text */
+  --canvas:      var(--bg);
+  --ink:         var(--text);
+  --ink-2:       var(--text);
+  --muted:       var(--text-muted);
+  --text-soft:   var(--text-muted);
+  --surface-3:   var(--field-border);          /* range-slider track only (tools.css:160) */
+
+  /* lines (composites are redeclared so they resolve here, not on :root) */
+  --line:        var(--hairline);
+  --line-2:      var(--border);
+  --hair:        1px solid var(--hairline);
+  --rule:        1px solid var(--border);
+
+  /* action: the studio's --accent is the action colour; the kit's --accent is
+     ornament only and fails contrast as text or as a button colour */
+  --accent:      var(--primary);
+  --accent-ink:  var(--text-on-primary);
+  --accent-soft: var(--surface-2);              /* tint behind --accent text (pills, .ix) */
+
+  /* status */
+  --pos:         var(--success);
+  --pos-soft:    var(--success-bg);
+  --neg:         var(--error);
+  --neg-soft:    var(--error-bg);
+  --warn:        var(--warning);
+
+  /* elevation: --shadow keeps the studio value; the hover lift uses the kit's card shadow */
+  --shadow-lg:   var(--shadow-card);
+
+  /* fonts: headings use the kit's display face (same name, kit value);
+     UI text uses the kit sans; every number uses the kit's numeric face */
+  --font-ui:     var(--font-sans);
+  --font-body:   var(--font-sans);
+  --font-mono:   var(--font-numeric);
+}
+
+/* Cast iron: the action colour on --surface-2 is 4.30:1, below AA for the
+   12-14px pill and index text. On the page ground it is 5.38:1. */
+[data-theme="cast-iron"] .studio-tool,
+[data-theme="cast-iron"] .studio-tool :is(.glass, .glass-panel, .results, .gear-item, details.glass-lite) { --accent-soft: var(--bg); }
+
+/* ---------- values the studio CSS writes as literals or splits differently ---------- */
+
+/* primary hover (tools.css:139 is a literal) */
+.studio-tool :is(.btn.primary, .primary-btn, .affiliate-btn):hover,
+.studio-tool .gear-item:hover .affiliate-btn {
+  background: var(--primary-hover); border-color: var(--primary-hover); color: var(--text-on-primary);
+}
+/* kit v2.2: in cast iron, filled buttons keep --primary on hover (they already lift, tools.css:142) */
+[data-theme="cast-iron"] .studio-tool :is(.btn.primary, .primary-btn, .affiliate-btn):hover,
+[data-theme="cast-iron"] .studio-tool .gear-item:hover .affiliate-btn {
+  background: var(--primary); border-color: var(--primary);
+}
+
+/* form fields: the studio has no field tokens (inputs read --surface, --ink, --line-2) */
+.studio-tool :is(.form-input, .input-group input, .input-group select, textarea) {
+  background: var(--field-bg); color: var(--field-text); border-color: var(--field-border); box-shadow: none;
+}
+.studio-tool :is(.form-input, .input-group input, .input-group select, textarea):hover { border-color: var(--field-border-hover); }
+.studio-tool :is(.form-input, .input-group input, .input-group select, textarea):focus {
+  border-color: var(--field-ring); box-shadow: 0 0 0 3px color-mix(in srgb, var(--field-ring) 35%, transparent);
+}
+.studio-tool :is(.form-input, .input-group input, textarea)::placeholder { color: var(--field-placeholder); opacity: 1; }
+.studio-tool :is(select.form-input, .input-group select) :is(option, optgroup) { background-color: var(--field-bg); color: var(--field-text); }
+/* fields are light wells in every theme, so their native parts draw light */
+.studio-tool :is(.form-input, .input-group input, .input-group select, textarea) { color-scheme: light; }
+[data-theme="cast-iron"] .studio-tool :is(.form-input, .input-group input, .input-group select, textarea) { color-scheme: dark; }
+/* checkboxes: one accent colour, including the one with no inline accent-color */
+.studio-tool input[type="checkbox"] { accent-color: var(--primary); }
+
+/* focus and selection inside the tool keep the studio's shape, in kit colours */
+.studio-tool :focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; border-radius: var(--r-s); }
+/* kit v2.4: a focusable panel (the network band's cards) rings outside itself, on the page ground */
+.studio-tool :is(.glass, .glass-panel, .results, .gear-item, details.glass-lite):focus-visible { outline-color: var(--page-focus); }
+/* range sliders: the studio CSS removes their outline (tools.css:160); keyboard focus gets the kit ring (review finding 6) */
+.studio-tool input[type="range"]:focus-visible { outline: 2px solid var(--focus); outline-offset: 4px; }
+.studio-tool ::selection { background: var(--primary); color: var(--text-on-primary); }
+
+/* numbers: the kit's numeric face with tabular lining figures.
+   --font-mono already points at it; these set the figures, and the headline
+   results are set inline with --font-display, so they need !important. */
+.studio-tool :is(.anatomy-row .ix, .anatomy-row code, .ref-table td, .glance td) { font-variant-numeric: var(--numeric-features); }
+.studio-tool :is(.form-input, .input-group input)[type="number"] { font-family: var(--font-numeric); font-variant-numeric: var(--numeric-features); }
+.studio-tool :is(
+  #salt-volume-output, #salt-weight-output, #water-output, #sugar-output, #live-timer-display
+) { font-family: var(--font-numeric) !important; font-variant-numeric: var(--numeric-features); }
+
+/* the studio's grid texture on the page ground is off on the new sites */
+@media screen {
+  :root:not([data-theme="cosmic"]) body:not(.cosmos) { background-image: none; }
+}
+
+/* the network band's cookbook card: tools.css matches the old cookbook URL
+   (a[href*="nuoc-mam-cookbook"]); the card now links to /cookbook/ */
+.studio-tool .net-grid > a[href="/cookbook/"] { grid-row: span 2; }
+.studio-tool .net-grid > a[href="/cookbook/"] .gear-img-wrapper { flex: 1 1 auto; height: auto; aspect-ratio: 1 / 1; background: var(--jjk-cream-100); }
+.studio-tool .net-grid > a[href="/cookbook/"] .gear-img-wrapper img { position: absolute; inset: 0; object-fit: contain; transform: scale(1.3); }
+
+/* brine: the Chef's Notes text is set at 90% opacity inline, which drops it
+   below 4.5:1 (it was 4.41:1 on the tools site too). Full opacity: 4.97:1 in cream. */
+.studio-tool #notes-output { opacity: 1 !important; }
+
+/* network band: with the Substack card gone there are four cards, so the last
+   one spans the empty cell in the three-column grid (one column below 761px) */
+@media (min-width: 761px) {
+  .studio-tool .net-grid > .gear-item:last-child:nth-child(4) { grid-column: span 2; }
+}
+
+/* panels stand off the page in every theme (owner, option C): the kit's card shadow
+   plus the kit's border, instead of the studio's faint shadow and hairline */
+.studio-tool :is(.glass, .glass-panel, .results, .gear-item) { box-shadow: var(--shadow-card); border: 1px solid var(--border); }
+
+
+/* rust (owner): boxes inside a panel use the panel's own dark rust, not the lighter
+   --surface-2, with a 1px inset outline so they stay distinct (no layout change).
+   Small tinted labels keep the lighter rust through --accent-soft. */
+[data-theme="rust"] .studio-tool :is(.glass, .glass-panel, .results, .gear-item, details.glass-lite) {
+  --surface-2: var(--panel-surface);
+  --accent-soft: var(--panel-surface-2);
+}
+[data-theme="rust"] .studio-tool :is(.af-stat, .spec-cell, .item-badge, .ledger-row, .custom-item-row, .recipe-line.fractional-egg-row, details.glass-lite, #breakdown-list .anatomy-row) {
+  box-shadow: inset 0 0 0 1px var(--border);
+}
+/* recipe nutrition's custom-ingredient row reads --accent-soft (the lighter rust kept for small labels):
+   as a box inside the panel it takes the panel's own dark rust like the others (independent review) */
+[data-theme="rust"] .studio-tool .custom-item-row { background: var(--surface-2); }
+
+/* rust (owner): an alert that sits on the page, outside any panel, reads like the
+   alerts inside the panels (dark, light text) */
+[data-theme="rust"] .studio-tool :is(.alert, .advisor-alert) {
+  --bg: var(--panel-bg);
+  --surface: var(--panel-surface);
+  --surface-2: var(--panel-surface-2);
+  --text: var(--panel-text);
+  --text-serif: var(--panel-text-serif);
+  --text-muted: var(--panel-text-muted);
+  --text-on-primary: var(--panel-text-on-primary);
+  --primary: var(--panel-primary);
+  --primary-hover: var(--panel-primary-hover);
+  --accent: var(--panel-accent);
+  --accent-soft: var(--panel-accent-soft);
+  --text-on-soft: var(--panel-text-on-soft);
+  --border: var(--panel-border);
+  --border-soft: var(--panel-border-soft);
+  --hairline: var(--panel-hairline);
+  --focus: var(--panel-focus);
+  --selection: var(--panel-selection);
+  --field-bg: var(--panel-field-bg);
+  --field-text: var(--panel-field-text);
+  --field-placeholder: var(--panel-field-placeholder);
+  --field-border: var(--panel-field-border);
+  --field-border-hover: var(--panel-field-border-hover);
+  --field-ring: var(--panel-field-ring);
+  --field-disabled-bg: var(--panel-field-disabled-bg);
+  --field-disabled-text: var(--panel-field-disabled-text);
+  --success: var(--panel-success);
+  --success-bg: var(--panel-success-bg);
+  --success-border: var(--panel-success-border);
+  --warning: var(--panel-warning);
+  --warning-bg: var(--panel-warning-bg);
+  --warning-border: var(--panel-warning-border);
+  --error: var(--panel-error);
+  --error-bg: var(--panel-error-bg);
+  --error-border: var(--panel-error-border);
+  --info: var(--panel-info);
+  --info-bg: var(--panel-info-bg);
+  --info-border: var(--panel-info-border);
+}

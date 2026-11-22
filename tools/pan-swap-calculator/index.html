@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<script>if(location.protocol.indexOf("http")===0&&/\/index\.html$/i.test(location.pathname))location.replace(location.pathname.slice(0,-10)+location.search+location.hash);</script>
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QDSPBB7S9J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      var gaKeep = new URLSearchParams(); new URLSearchParams(location.search).forEach(function (v, k) { if (k.indexOf('utm_') === 0) gaKeep.append(k, v); });
+      gtag('config', 'G-QDSPBB7S9J', { page_location: location.origin + location.pathname + (gaKeep.toString() ? '?' + gaKeep.toString() : ''), page_referrer: document.referrer.split(/[?#]/)[0] });
+    </script>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Swap one baking pan for another: round, square, rectangular, muffin, or Bundt. Get the ingredient multiplier and a bake-time warning. Free and ad-free.">
+<meta name="robots" content="max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta property="og:title" content="Baking Pan Conversion Calculator | Swap Cake Pan Sizes, Free">
+    <meta property="og:type" content="website">
+<meta property="og:description" content="Swap one baking pan for another: round, square, rectangular, muffin, or Bundt. Get the ingredient multiplier and a bake-time warning. Free and ad-free.">
+<meta property="og:image" content="https://cooking.builtbyjoshstudio.com/icons/og-image.png">
+<meta property="og:url" content="https://cooking.builtbyjoshstudio.com/tools/pan-swap-calculator/">
+<meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://cooking.builtbyjoshstudio.com/tools/pan-swap-calculator/">
+    <meta name="twitter:title" content="Baking Pan Conversion Calculator | Swap Cake Pan Sizes, Free">
+    <meta name="twitter:description" content="Swap one baking pan for another: round, square, rectangular, muffin, or Bundt. Get the ingredient multiplier and a bake-time warning. Free and ad-free.">
+    <meta name="twitter:image" content="https://cooking.builtbyjoshstudio.com/icons/og-image.png">
+<title>Baking Pan Conversion Calculator | Swap Cake Pan Sizes, Free</title>
+<link rel="canonical" href="https://cooking.builtbyjoshstudio.com/tools/pan-swap-calculator/" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Pan Swap Calculator",
+  "url": "https://cooking.builtbyjoshstudio.com/tools/pan-swap-calculator/",
+  "description": "Instantly convert cake recipes between round, square, rectangular, muffin tin, and Bundt pans with exact multipliers and bake-time guidance. Free and ad-free.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (web browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://builtbyjoshstudio.com/#organization",
+    "name": "Built by Josh Studio LLC",
+    "legalName": "Built by Josh Studio LLC",
+    "alternateName": [
+      "BBJ Studio",
+      "Built by Josh Studio"
+    ],
+    "url": "https://builtbyjoshstudio.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://builtbyjoshstudio.com/images/logo/logo.webp",
+      "width": 512,
+      "height": 512
+    },
+    "image": "https://builtbyjoshstudio.com/images/logo/logo.webp",
+    "sameAs": [
+      "https://linktr.ee/builtbyjoshstudio",
+      "https://www.youtube.com/@TalesofInkShadowsStudio",
+      "https://www.youtube.com/@joshandjordanskitchen",
+      "https://tynkrtoolsandco.etsy.com",
+      "https://www.etsy.com/shop/BuiltByJoshStudio",
+      "https://www.redbubble.com/people/BBJStudio/shop"
+    ],
+    "identifier": [
+      {
+        "@type": "PropertyValue",
+        "propertyID": "Kansas Business ID",
+        "value": "10076138"
+      }
+    ]
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Josh & Jordan\'s Kitchen", "item": "https://cooking.builtbyjoshstudio.com/"},
+    {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://cooking.builtbyjoshstudio.com/tools/"},
+    {"@type": "ListItem", "position": 3, "name": "Pan Swap Calculator", "item": "https://cooking.builtbyjoshstudio.com/tools/pan-swap-calculator/"}
+  ]
+}
+</script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do I convert a recipe to a different pan size?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Compare the volume of the two pans (footprint times depth) — the ratio tells you how to scale the batter. A pan that holds twice as much needs roughly twice the batter. This tool calculates the exact multiplier for you."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why does pan depth matter?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Batter depth drives bake time and texture. Pans of the same depth, like standard 2-inch 8x8 and 9x13 pans, can be matched by area alone, but a loaf pan is 2.5 to 3 inches deep: scaling a loaf recipe by area keeps that deep batter and can fill a 9x13 to the rim. Scaling by volume fills the new pan to the same level instead. When the new pan is deeper, the batter sits deeper and needs a longer bake, which the tool flags."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What pan shapes can I convert between?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Round, square, rectangular, loaf, Bundt, and muffin pans."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Will the baking time change when I swap pans?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Often, yes. A shallower pan bakes faster, a deeper one slower. The tool flags when a swap pushes batter into a notably deeper or shallower setup so you know to check doneness early or extend the time."
+          }
+        }
+      ]
+    }
+    </script>
+
+<link rel="preload" href="/fonts/playfair-display-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/be-vietnam-pro-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/fonts/fonts.css?v=ac58de8e6c">
+<link rel="stylesheet" href="/fonts/fonts-vietnamese.css?v=96e6ae2194">
+<link rel="stylesheet" href="/css/studio/tokens.css?v=f58e0d92c0">
+<link rel="stylesheet" href="/css/studio/components.css?v=09a4d9f402">
+<link rel="stylesheet" href="/css/studio/tools.css?v=76acb59400">
+<link rel="stylesheet" href="styles.css?v=7ce1190d74">
+<link rel="stylesheet" href="/css/tokens.css?v=e6976ee263">
+<link rel="stylesheet" href="/css/chrome.css?v=04f9a9fc23">
+<link rel="stylesheet" href="/css/tool-bridge.css?v=6bfe8d2938">
+<link rel="stylesheet" href="/css/tool-parts.css?v=ba7a255de3">
+<script src="/js/theme.js?v=dc84991f4a"></script>
+<script src="/js/nav.js?v=a16bc0e1ce" defer></script>
+
+<link rel="icon" href="/icons/favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="icon" href="/icons/icon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header" id="site-header">
+  <div class="container site-header__inner">
+    <a class="brand" href="/" aria-label="Josh and Jordan's Kitchen — home">
+      <span class="mark" aria-hidden="true">J<span class="amp">&amp;</span>J</span>
+      <span class="brand__name">Josh &amp; Jordan's Kitchen</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="site-nav" id="site-nav" aria-label="Primary">
+      <ul class="site-nav__list">
+        <li><a href="/videos/">Videos</a></li>
+        <li><a href="/tools/">Tools</a></li>
+        <li><a href="/cookbook/">Cookbook</a></li>
+        <li><a href="/blog/">Blog</a></li>
+      </ul>
+      <div class="theme-switch theme-switch--compact" role="group" aria-label="Color theme">
+        <button type="button" data-theme-set="cream"><span class="swatch" aria-hidden="true"></span><span class="label">Cream</span></button>
+        <button type="button" data-theme-set="mint"><span class="swatch" aria-hidden="true"></span><span class="label">Mint</span></button>
+        <button type="button" data-theme-set="rust"><span class="swatch" aria-hidden="true"></span><span class="label">Rust</span></button>
+        <button type="button" data-theme-set="cast-iron"><span class="swatch" aria-hidden="true"></span><span class="label">Cast iron</span></button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<div class="studio-tool">
+<main class="page tool-shell" id="main" tabindex="-1">
+
+  <header class="hero glass">
+    <div style="flex:1; min-width: 0">
+      <div class="meta">
+        <span class="pill live">&#9679; Utilities</span>
+        <span>Baking pan math</span>
+        <span class="updated-date">Updated November 2026</span>
+      </div>
+      <h1>Pan Swap Calculator</h1>
+      <p>Calculate recipe multipliers and adjust bake times when switching between standard pans, 12-cup muffin tins, and Bundt pans.</p>
+    </div>
+  </header>
+
+  <div class="tool-controls">
+    <div class="segmented">
+      <button type="button" id="unit-imperial" class="active">Inches</button>
+      <button type="button" id="unit-metric">Centimeters</button>
+    </div>
+  </div>
+
+  <div class="glass type-card" style="margin-bottom: 24px;">
+    <div class="role">1. Original Pan</div>
+    <div style="display: flex; gap: 16px; margin-bottom: 16px;">
+      <div class="field">
+        <label class="field__label" for="orig-shape">Shape</label>
+        <select id="orig-shape" class="select">
+          <option value="round">Round</option>
+          <option value="square">Square</option>
+          <option value="rectangular">Rectangular</option>
+          <option value="loaf">Loaf Pan</option>
+          <option value="muffin">Muffin Tin (12-Cup Standard)</option>
+          <option value="bundt">Bundt/Tube Pan (10-Cup)</option>
+        </select>
+      </div>
+    </div>
+    <div id="orig-dims" style="display: flex; flex-wrap: wrap; gap: 16px;"></div>
+  </div>
+
+  <div class="glass type-card" style="margin-bottom: 24px;">
+    <div class="role">2. Target Pan</div>
+    <div style="display: flex; gap: 16px; margin-bottom: 16px;">
+      <div class="field">
+        <label class="field__label" for="target-shape">Shape</label>
+        <select id="target-shape" class="select">
+          <option value="round">Round</option>
+          <option value="square">Square</option>
+          <option value="rectangular">Rectangular</option>
+          <option value="loaf">Loaf Pan</option>
+          <option value="muffin">Muffin Tin (12-Cup Standard)</option>
+          <option value="bundt">Bundt/Tube Pan (10-Cup)</option>
+        </select>
+      </div>
+    </div>
+    <div id="target-dims" style="display: flex; flex-wrap: wrap; gap: 16px;"></div>
+  </div>
+
+  <details class="glass-lite" style="margin-bottom: 24px; padding: 16px; cursor: pointer; height: auto; overflow: visible;">
+    <summary style="font-family: var(--font-display); font-size: 15px; font-weight: 700; color: var(--text); list-style: none; display: flex; align-items: center; justify-content: space-between; user-select: none;">
+      <span>Standard Pan Capacities Quick-Ref</span>
+      <span style="font-size: 12px; color: var(--text-muted);">&#9660;</span>
+    </summary>
+    <div class="table-wrap" style="margin-top: 16px; cursor: default;">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Pan Type &amp; Size</th>
+            <th class="num">Capacity</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>9x13-inch Rectangular Pan</td><td class="num">~14&nbsp;Cups (3.3L)</td></tr>
+          <tr><td>8x8-inch Square Pan</td><td class="num">~8&nbsp;Cups (1.9L)</td></tr>
+          <tr><td>9-inch Round Cake Pan</td><td class="num">~8&nbsp;Cups (1.9L)</td></tr>
+          <tr><td>Standard Loaf Pan (8.5x4.5)</td><td class="num">~6&nbsp;Cups (1.4L)</td></tr>
+          <tr><td>Standard 12-Cup Muffin Tin</td><td class="num">~6&nbsp;Cups (1.4L) total</td></tr>
+          <tr><td>10-inch Bundt Pan</td><td class="num">~12&nbsp;Cups (2.8L)</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </details>
+
+  <div class="results" style="margin-bottom: 24px;">
+    <div class="results__hero" style="justify-items: center; text-align: center;">
+      <div style="text-align: center;">
+        <div class="lbl" style="margin-bottom: 8px;">Recipe Multiplier</div>
+        <div id="multiplier-output" class="num">1.00x</div>
+      </div>
+    </div>
+    <div class="anatomy-labels">
+      <div class="alert alert--info">
+        <div class="ix" aria-hidden="true">&#8721;</div>
+        <div>
+          <h2 class="alert__title">Volume Comparison</h2>
+          <p id="area-output">Original: 0.0 cu in | Target: 0.0 cu in</p>
+        </div>
+      </div>
+      <div class="alert alert--info">
+        <div class="ix" aria-hidden="true">&#9201;</div>
+        <div>
+          <h2 class="alert__title">Bake Time Warning</h2>
+          <p id="time-output">Select pan dimensions to see adjustment warnings.</p>
+        </div>
+      </div>
+      <div id="depth-warning-box" class="alert alert--warning" style="display: none;">
+        <div class="ix" aria-hidden="true">!</div>
+        <div>
+          <h3 class="alert__title">Critical Baking Warning</h3>
+          <p>The target pan is much deeper than the original, so at this multiplier your batter sits much deeper. To keep the center from staying raw and gummy, reduce your oven temperature by 25&deg;F and extend the baking time by 15 to 20 minutes. Use a toothpick to verify the absolute center before pulling.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="display: flex; justify-content: flex-end; gap: 12px; flex-wrap: wrap; margin-bottom: 8px;">
+    <span id="copy-link-status" role="status" style="font-family: var(--font-mono); font-size: 12px; color: var(--muted); align-self: center;"></span>
+    <button type="button" id="copy-link-btn" class="btn btn--ghost" aria-label="Copy link to these numbers">Copy link</button>
+    <button id="copy-btn" class="btn">Copy to Clipboard</button>
+  </div>
+
+  <div class="glass" style="margin-bottom: 24px; padding: 24px; text-align: center;">
+    <h2 style="font-family: var(--font-ui); font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: var(--tracking-label); color: var(--muted); margin: 0 0 14px;">Next Steps for Your Cook</h2>
+    <div style="display: flex; flex-direction: column; gap: 10px; font-size: 14px;">
+      <a id="pipeline-link-dough" href="../dough-hydration-calculator/" style="color: var(--accent); text-decoration: none; font-weight: 600;">Adjusting a bread or pizza recipe? Dial in your ratios with the Dough Hydration Calculator &rarr;</a>
+      <a href="../cookware-pan-guide/" style="color: var(--accent); text-decoration: none; font-weight: 600;">Not sure which pan to reach for? See the Cookware &amp; Pan Guide &rarr;</a>
+    </div>
+  </div>
+
+  <!-- AT A GLANCE (P2-c) -->
+  <div class="glass glance glance--flush">
+    <h2>At a glance</h2>
+    <div class="table-wrap">
+    <table class="table">
+      <tbody>
+        <tr><th>What it does</th><td>Converts a baking recipe between pan sizes and shapes by pan volume (footprint times depth).</td></tr>
+        <tr><th>Inputs</th><td>The recipe's pan and your pan — round, square, rectangular, loaf, 12-cup muffin tin, or 10-cup Bundt/tube, with dimensions and depth.</td></tr>
+        <tr><th>Outputs</th><td>The batter multiplier for the new pan plus bake-time and fill-level warnings.</td></tr>
+        <tr><th>Cost &amp; privacy</th><td>Free, ad-free, no signup. Runs entirely in your browser — nothing is uploaded. Copy link puts your pan sizes in a link only when you click it.</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+
+  <!-- Explanatory Prose & FAQ Section -->
+  <div class="glass" style="margin-bottom: 24px; padding: 24px; text-align: left;">
+    <h2 style="font-family: var(--font-display); font-weight: 800; font-size: 20px; letter-spacing: -0.02em; margin-top: 0; margin-bottom: 12px;">How pan conversion is calculated</h2>
+    <p style="margin-bottom: 12px; line-height: 1.6; color: var(--ink);">Swapping a recipe from one pan to another comes down to a single number: how much bigger or smaller the new pan is. This calculator works that out from the volume of each pan — its footprint times its depth. A round pan's footprint is π times the radius squared, a square, rectangular or loaf pan is just length times width, and that is multiplied by the depth you enter. Muffin tins and Bundt pans have no sizes to enter, so they use their brim-full capacity: 6 cups for a standard 12-cup muffin tin (each cup holds about half a cup) and 10 cups for the 10-cup Bundt. Footprint times depth runs about 13% over what a real pan holds, because of sloped sides and rounded corners, so those two capacities are raised by the same 13% to compare like with like. Divide the target pan's volume by the original's and you get the recipe multiplier: a value above 1 means you'll need more batter to fill the new pan, below 1 means less.</p>
+    <p style="margin-bottom: 24px; line-height: 1.6; color: var(--ink);">Scaling by volume fills the new pan to the same level as the original. When both pans are the same depth, as standard 8x8 and 9x13 pans are at 2 inches, that's the same as matching their footprints. Loaf pans are 2.5 to 3 inches deep, so a 9x5 loaf recipe scales to about 1.7x for a 9x13, not the 2.6x its footprint suggests. The place to be careful is depth: move a recipe from a shallow pan into a much deeper one and the batter sits much taller, which makes the outside set long before the center cooks through. When the calculator detects that kind of swap it flags it, and the fix is to lower the oven temperature by about 25°F and add 15 to 20 minutes, checking the center with a toothpick before pulling. Whenever the pan size changes meaningfully, treat the original bake time as a starting point and watch the pan, not the clock.</p>
+
+    <h2 style="font-family: var(--font-display); font-weight: 800; font-size: 20px; letter-spacing: -0.02em; margin-top: 0; margin-bottom: 12px;">A worked example: 8-inch round to 9-inch round</h2>
+    <p style="margin-bottom: 24px; line-height: 1.6; color: var(--ink);">Moving a recipe from an 8-inch round pan to a 9-inch round pan of the same depth takes 1.27 times the batter: the pan volume goes from 100.5 to 127.2 cubic inches. The depth is the same, so the bake time stays about the same.</p>
+
+    <h2 style="font-family: var(--font-display); font-weight: 800; font-size: 20px; letter-spacing: -0.02em; margin-top: 0; margin-bottom: 16px; padding-top: 16px; border-top: 1px solid var(--line-2);">Frequently Asked Questions</h2>
+    <div style="display: flex; flex-direction: column; gap: 18px;">
+      <div>
+        <h3 style="font-family: var(--font-ui); font-weight: 700; font-size: 14px; margin: 0 0 6px; color: var(--ink);">How do I convert a recipe to a different pan size?</h3>
+        <p style="margin: 0; line-height: 1.5; font-size: 13px; color: var(--muted);">Compare the volume of the two pans (footprint times depth) — the ratio tells you how to scale the batter. A pan that holds twice as much needs roughly twice the batter. This tool calculates the exact multiplier for you.</p>
+      </div>
+      <div>
+        <h3 style="font-family: var(--font-ui); font-weight: 700; font-size: 14px; margin: 0 0 6px; color: var(--ink);">Why does pan depth matter?</h3>
+        <p style="margin: 0; line-height: 1.5; font-size: 13px; color: var(--muted);">Batter depth drives bake time and texture. Pans of the same depth, like standard 2-inch 8x8 and 9x13 pans, can be matched by area alone, but a loaf pan is 2.5 to 3 inches deep: scaling a loaf recipe by area keeps that deep batter and can fill a 9x13 to the rim. Scaling by volume fills the new pan to the same level instead. When the new pan is deeper, the batter sits deeper and needs a longer bake, which the tool flags.</p>
+      </div>
+      <div>
+        <h3 style="font-family: var(--font-ui); font-weight: 700; font-size: 14px; margin: 0 0 6px; color: var(--ink);">What pan shapes can I convert between?</h3>
+        <p style="margin: 0; line-height: 1.5; font-size: 13px; color: var(--muted);">Round, square, rectangular, loaf, Bundt, and muffin pans.</p>
+      </div>
+      <div>
+        <h3 style="font-family: var(--font-ui); font-weight: 700; font-size: 14px; margin: 0 0 6px; color: var(--ink);">Will the baking time change when I swap pans?</h3>
+        <p style="margin: 0; line-height: 1.5; font-size: 13px; color: var(--muted);">Often, yes. A shallower pan bakes faster, a deeper one slower. The tool flags when a swap pushes batter into a notably deeper or shallower setup so you know to check doneness early or extend the time.</p>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<section class="net-band">
+  <h2><span class="lbl">Network</span> More from the studio</h2>
+  <div class="net-grid">
+    <a href="/cookbook/" class="gear-item">
+      <div class="gear-img-wrapper"><img src="/nuoc-mam-link.webp" alt="Nước Mắm — A Vietnamese Family Cookbook by Josh Tran" width="600" height="600" loading="lazy"></div>
+      <div class="gear-info">
+        <h3>Nước Mắm — the Cookbook</h3>
+        <p>A Vietnamese family cookbook by the cook behind these tools — 56 pages, balanced by tasting.</p>
+        <button class="affiliate-btn">Get the Cookbook — $3.99</button>
+      </div>
+    </a>
+    <a href="/videos/" class="gear-item">
+      <div class="gear-img-wrapper"><img src="/kitchen-videos-link.webp" alt="Cook-along videos from Josh &amp; Jordan's Kitchen" width="600" height="299" loading="lazy"></div>
+      <div class="gear-info">
+        <h3>Watch the Cooks</h3>
+        <p>The same kitchen, on video — a short cut of each cook plus the full real-time version, nothing sped up.</p>
+        <button class="affiliate-btn">Watch the Videos</button>
+      </div>
+    </a>
+    <a href="https://builtbyjoshstudio.com/" target="_blank" rel="noopener" class="gear-item">
+      <div class="gear-img-wrapper"><img src="/studio-link.webp" alt="Built by Josh Studio" width="600" height="299" loading="lazy"></div>
+      <div class="gear-info">
+        <h3>Built by Josh Studio</h3>
+        <p>Local-first software, CRM solutions, and technical projects.</p>
+        <button class="affiliate-btn">Visit Website</button>
+      </div>
+    </a>
+    <a href="https://www.youtube.com/@TalesofInkShadowsStudio" target="_blank" rel="noopener" class="gear-item">
+      <div class="gear-img-wrapper"><img src="/tales-link.webp" alt="Tales of Ink &amp; Shadows" width="600" height="299" loading="lazy"></div>
+      <div class="gear-info">
+        <h3>Tales of Ink &amp; Shadows</h3>
+        <p>Historical noir documentaries and immersive storytelling.</p>
+        <button class="affiliate-btn">Watch on YouTube</button>
+      </div>
+    </a>
+  </div>
+</section>
+
+<footer class="footer" style="text-align: center; font-size: 11px; color: var(--muted); padding: 32px 20px; margin-top: 40px; line-height: 1.6;">
+  <p style="margin-bottom: 12px;">These tools provide estimates for planning purposes. Always use a food thermometer to confirm doneness, and follow current USDA food-safety guidance for cooking, thawing, and storing food.</p>
+</footer>
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="site-footer__grid">
+      <div class="site-footer__brand">
+        <span class="mark" aria-hidden="true">J<span class="amp">&amp;</span>J</span>
+        <p class="tagline" style="font-size:var(--text-base)">real home cooking &amp; baking</p>
+        <div class="divider divider--inline" style="justify-content:flex-start" aria-hidden="true"><span class="diamond"></span></div>
+      </div>
+      <div>
+        <h2>Kitchen</h2>
+        <ul>
+          <li><a href="/videos/">Videos</a></li>
+          <li><a href="/tools/">Tools</a></li>
+          <li><a href="/cookbook/">Cookbook</a></li>
+          <li><a href="/blog/">Blog</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>More from the studio</h2>
+        <ul>
+          <li><a href="https://builtbyjoshstudio.com/">Built by Josh Studio</a></li>
+          <li><a href="https://tynkr.builtbyjoshstudio.com/">Tynkr apps</a></li>
+          <li><a href="https://tools.builtbyjoshstudio.com/money/">Money tools</a></li>
+          <li><a href="https://writing.builtbyjoshstudio.com/">J.S. Warden — books</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Contact</h2>
+        <address>
+          <a href="mailto:support@builtbyjoshstudio.com">support@builtbyjoshstudio.com</a>
+        </address>
+        <ul style="margin-top:var(--space-4)">
+          <li><a href="https://www.youtube.com/@joshandjordanskitchen" rel="noopener">YouTube</a></li>
+          <li><a href="https://www.tiktok.com/@JOSHANDJORDANSKITCHEN" rel="noopener">TikTok</a></li>
+          <li><a href="https://www.instagram.com/JOSHANDJORDANSKITCHEN" rel="noopener">Instagram</a></li>
+          <li><a href="https://www.facebook.com/joshandjordanskitchen/" rel="noopener">Facebook</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="site-footer__legal">
+      <ul>
+        <li><a href="/privacy/">Privacy</a></li>
+        <li><a href="https://builtbyjoshstudio.com/terms.html">Terms</a></li>
+        <li><a href="https://builtbyjoshstudio.com/refunds.html">Refunds</a></li>
+      </ul>
+      <p class="wordmark" style="padding-left:0;text-align:left;margin:0">&copy; <span class="tabular">2026</span> Built by Josh Studio LLC. All rights reserved.</p>
+    </div>
+    <p class="site-footer__brands">Tynkr Tools &amp; Co and <a href="https://littleacrelearning.com" rel="noopener">Little Acre Learning</a> are brands of Built by Josh Studio LLC.</p>
+  </div>
+</footer>
+
+<script src="script.js?v=8815c3bd16" defer></script>
+<script src="../kinetic.js?v=f935f39fab" defer></script>
+</body>
+</html>
