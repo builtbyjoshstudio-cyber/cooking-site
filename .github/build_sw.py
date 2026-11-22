@@ -232,15 +232,16 @@ def expected(root):
         new = REF.sub(sub, s)
         pages_text[os.path.normpath(html)] = new
         if new != s: out[os.path.relpath(html, root).replace(os.sep, '/')] = new
-    tool_dirs = sorted(d for d in glob.glob(os.path.join(root, 'tools/*/')) if os.path.exists(d + 'index.html'))
-    pages = ['/', '/tools/'] + ['/tools/%s/' % os.path.basename(d.rstrip('/')) for d in tool_dirs]
+    # tool folders by NAME (no path separators involved: on Windows glob's 'tools/*/' ends in a backslash)
+    tools_root = os.path.join(root, 'tools')
+    tool_names = sorted(n for n in os.listdir(tools_root) if os.path.isfile(os.path.join(tools_root, n, 'index.html')))
+    pages = ['/', '/tools/'] + ['/tools/%s/' % n for n in tool_names]
     assets = ['/manifest.webmanifest', '/fonts/fonts.css', '/fonts/fonts-vietnamese.css', '/css/tokens.css', '/css/chrome.css',
               '/css/tool-bridge.css', '/css/tool-parts.css', '/css/base.css', '/css/components.css', '/css/site.css',
               '/css/studio/tokens.css', '/css/studio/components.css', '/css/studio/tools.css',
               '/js/theme.js', '/js/nav.js', '/tools/kinetic.js', '/tools/ingredients-db.js', '/icons/icon-192.png']
-    for d in tool_dirs:
-        name = os.path.basename(d.rstrip('/'))
-        s = open(d + 'index.html', encoding='utf-8').read()
+    for name in tool_names:
+        s = open(os.path.join(tools_root, name, 'index.html'), encoding='utf-8').read()
         for ref in re.findall(r'(?:href|src)="([^"#?]+\.(?:css|js))(?:\?[^"]*)?"', s):
             if ref.startswith('http'): continue
             a = ref if ref.startswith('/') else '/tools/%s/%s' % (name, ref) if not ref.startswith('../') else '/tools/' + ref[3:]
