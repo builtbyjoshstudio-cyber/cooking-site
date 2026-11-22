@@ -29,7 +29,7 @@
    ========================================================= */
 (function () {
   'use strict';
-  var CACHE_VERSION = 'f152ab39c682';
+  var CACHE_VERSION = '4f9718434403';
   var PAGES = 'jjk-pages-' + CACHE_VERSION;
   var ASSETS = 'jjk-assets-' + CACHE_VERSION;
 
@@ -61,7 +61,7 @@
       "/css/tool-parts.css?v=ba7a255de3",
       "/css/base.css?v=5a6e1b4cbb",
       "/css/components.css?v=a04d1c5175",
-      "/css/site.css?v=da9a9943e6",
+      "/css/site.css?v=86791c872e",
       "/css/studio/tokens.css?v=f58e0d92c0",
       "/css/studio/components.css?v=09a4d9f402",
       "/css/studio/tools.css?v=76acb59400",

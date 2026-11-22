@@ -167,6 +167,8 @@
 .cookbook-page .breadcrumb { margin-bottom: 0; }
 .cookbook-page .page-head h1 { font-size: clamp(2.2rem, 6vw, var(--text-hero)); }
 .cookbook-page .page-head .lede { max-width: 66ch; margin: 0; }
+/* centred page heads (/blog/, /tools/): the intro keeps a reading width like the other pages' and wraps in balanced lines */
+.page-head--center .lede { max-width: 62ch; margin-inline: auto; text-wrap: balance; }
 .chips { list-style: none; margin: var(--space-2) 0 0; padding: 0; }
 .chips .badge strong { font-family: var(--font-numeric); }
 .cover-frame img { width: 100%; height: auto; display: block; }
