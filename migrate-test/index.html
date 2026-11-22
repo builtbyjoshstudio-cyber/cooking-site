@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Data bridge test: step 2</title>
+<style>
+  body { font: 16px/1.5 system-ui, sans-serif; max-width: 34rem; margin: 2rem auto; padding: 0 16px; color: #1a1a1a; background: #fff; }
+  code { font-size: 1.2em; font-weight: 700; }
+  button { font: inherit; padding: .5rem 1rem; margin: .25rem 0; }
+</style>
+</head>
+<body>
+<!-- TEMPORARY hand-test page for the data bridge (tools.builtbyjoshstudio.com/migrate.html). Not linked, not in the
+     sitemap, no analytics. Remove after testing. -->
+<h1>Data bridge test, step 2 (cooking site)</h1>
+<p>Do step 1 first in this same browser: <a href="https://tools.builtbyjoshstudio.com/migrate-test.html">tools.builtbyjoshstudio.com/migrate-test.html</a>. Note the test value it shows.</p>
+<p><button type="button" id="frame">A. Read it through the hidden frame</button><br>Result: <code id="a">not run</code></p>
+<p><button type="button" id="popup">B. Read it through a small window</button><br>Result: <code id="b">not run</code></p>
+<p>Both results should show the same value as step 1. "Timed out" means this browser blocked that route.</p>
+<script>
+(function () {
+  var OLD = 'https://tools.builtbyjoshstudio.com', BRIDGE = OLD + '/migrate.html', KEY = 'bbj-migrate-test';
+  function ask(getWin, timeout, cb) {
+    var id = Math.random().toString(36).slice(2), settled = false, timer;
+    function done(r) { if (settled) return; settled = true; clearTimeout(timer); removeEventListener('message', on); cb(r); }
+    function on(e) {
+      if (e.origin !== OLD || e.source !== getWin() || !e.data) return;
+      if (e.data.type === 'bbj-migrate-ready') getWin().postMessage({ type: 'bbj-migrate-request', id: id, keys: [KEY] }, OLD);
+      else if (e.data.type === 'bbj-migrate-data' && e.data.id === id) done(e.data.data[KEY] || 'nothing found');
+    }
+    addEventListener('message', on);
+    timer = setTimeout(function () { done('timed out'); }, timeout);
+  }
+  document.getElementById('frame').addEventListener('click', function () {
+    var out = document.getElementById('a'); out.textContent = 'checking…';
+    var f = document.createElement('iframe'); f.src = BRIDGE; f.style.cssText = 'position:absolute;width:0;height:0;border:0;visibility:hidden';
+    document.body.appendChild(f);
+    ask(function () { return f.contentWindow; }, 3000, function (r) { out.textContent = r; f.remove(); });
+  });
+  document.getElementById('popup').addEventListener('click', function () {
+    var out = document.getElementById('b'); var w = window.open(BRIDGE, 'bbj-migrate', 'popup,width=420,height=240');
+    if (!w) { out.textContent = 'window blocked'; return; }
+    out.textContent = 'checking…';
+    ask(function () { return w; }, 15000, function (r) { out.textContent = r; try { w.close(); } catch (e) {} });
+  });
+})();
+</script>
+</body>
+</html>
