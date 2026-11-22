@@ -29,7 +29,7 @@
    ========================================================= */
 (function () {
   'use strict';
-  var CACHE_VERSION = '4bcd047ac7df';
+  var CACHE_VERSION = 'f88ac1184bcd';
   var PAGES = 'jjk-pages-' + CACHE_VERSION;
   var ASSETS = 'jjk-assets-' + CACHE_VERSION;
 
@@ -78,6 +78,7 @@
       "/tools/cookware-pan-guide/script.js?v=58772035ba",
       "/tools/cost-per-serving-calculator/styles.css?v=711502ca09",
       "/tools/cost-per-serving-calculator/script.js?v=bd8b1af951",
+      "/js/migrate-import.js?v=c9d27191a1",
       "/tools/dough-hydration-calculator/styles.css?v=44957dba1d",
       "/tools/dough-hydration-calculator/script.js?v=31d420837e",
       "/tools/meat-thawing-planner/styles.css?v=16b9158a18",
@@ -87,7 +88,7 @@
       "/tools/perfect-roast-pull-temp-calculator/styles.css?v=b31def8444",
       "/tools/perfect-roast-pull-temp-calculator/script.js?v=cdd5318a79",
       "/tools/recipe-nutrition-calculator/styles.css?v=11414e44c6",
-      "/tools/recipe-nutrition-calculator/script.js?v=5f27058bd4",
+      "/tools/recipe-nutrition-calculator/script.js?v=77425639b5",
       "/tools/reverse-roasting-calculator/styles.css?v=cd19599f9f",
       "/tools/reverse-roasting-calculator/script.js?v=c2d0fc5439",
       "/tools/universal-recipe-scaler/styles.css?v=50dcb7a287",

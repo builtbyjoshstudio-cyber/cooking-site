@@ -528,6 +528,11 @@ document.addEventListener('DOMContentLoaded', () => {
         calculateNutrition();
     });
 
+    // Custom ingredients are stored data: escape every field before it goes into markup
+    function esc(v) {
+        return String(v).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+    }
+
     function renderCustomIngredients() {
         customActiveList.innerHTML = '';
         if (customIngredients.length === 0) {
@@ -543,10 +548,10 @@ document.addEventListener('DOMContentLoaded', () => {
             const modeSuffix = item.mode === 'per-100g' ? ' /100g' : ' total';
             row.innerHTML = `
                 <div>
-                    <span class="name">${item.name}</span> <span style="font-size:11px;color:var(--accent);font-weight:600;text-transform:uppercase;">[Custom]</span>
-                    <div class="details">${item.weight}g &middot; ${Math.round(item.cal)} kcal${modeSuffix} &middot; P: ${item.protein}g &middot; C: ${item.carbs}g &middot; F: ${item.fat}g</div>
+                    <span class="name">${esc(item.name)}</span> <span style="font-size:11px;color:var(--accent);font-weight:600;text-transform:uppercase;">[Custom]</span>
+                    <div class="details">${esc(item.weight)}g &middot; ${esc(Math.round(item.cal))} kcal${modeSuffix} &middot; P: ${esc(item.protein)}g &middot; C: ${esc(item.carbs)}g &middot; F: ${esc(item.fat)}g</div>
                 </div>
-                <button type="button" class="remove-btn" aria-label="Remove" data-id="${item.id}">&times;</button>
+                <button type="button" class="remove-btn" aria-label="Remove" data-id="${esc(item.id)}">&times;</button>
             `;
 
             row.querySelector('.remove-btn').addEventListener('click', (e) => {
