@@ -6,3 +6,7 @@
 *.webmanifest text eol=lf
 *.py text eol=lf
 .githooks/* text eol=lf
+# Repo tooling, not part of the published site (the deploy workflow publishes `git archive` output).
+.github export-ignore
+.githooks export-ignore
+.gitattributes export-ignore

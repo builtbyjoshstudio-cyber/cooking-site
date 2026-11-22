@@ -285,7 +285,7 @@ if __name__ == '__main__':
         stale, info = check(args[1] if len(args) > 1 else None)
         if stale:
             print('build_sw: OUT OF DATE (%d file%s): %s' % (len(stale), '' if len(stale) == 1 else 's', ', '.join(stale[:12]) + (' ...' if len(stale) > 12 else '')))
-            print('build_sw: run  python3 .github/build_sw.py  then  git add -A  and commit again.')
+            print('build_sw: run  python3 .github/build_sw.py  (Windows: py -3 .github/build_sw.py)  then  git add -A  and commit again.')
             sys.exit(1)
         print('build_sw: version tags and sw.js are up to date (service worker %s).' % info['version'])
     else:
