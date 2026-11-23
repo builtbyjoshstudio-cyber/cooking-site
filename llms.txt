@@ -1,15 +1,15 @@
 # Josh & Jordan's Kitchen
 
-> Everything from Josh & Jordan's Kitchen in one place: cook-along videos, the Nước Mắm cookbook, kitchen essays, and twelve free kitchen calculators.
+> Everything from Josh & Jordan's Kitchen in one place: cook-along videos, the Nước Mắm cookbook, kitchen essays, and free kitchen calculators.
 
 Josh & Jordan's Kitchen is published by Built by Josh Studio LLC (https://builtbyjoshstudio.com/llms.txt). Contact: support@builtbyjoshstudio.com. Fuller file for this site: https://cooking.builtbyjoshstudio.com/llms-full.txt.
 
 ## Main pages
 
-- [Cooking — Real-Time Cook Videos, Kitchen Tools & Recipes](https://cooking.builtbyjoshstudio.com/): Everything from Josh & Jordan's Kitchen in one place: cook-along videos, the Nước Mắm cookbook, kitchen essays, and twelve free kitchen calculators.
+- [Cooking — Real-Time Cook Videos, Kitchen Tools & Recipes](https://cooking.builtbyjoshstudio.com/): Everything from Josh & Jordan's Kitchen in one place: cook-along videos, the Nước Mắm cookbook, kitchen essays, and free kitchen calculators.
 - [Blog · Josh & Jordan's Kitchen](https://cooking.builtbyjoshstudio.com/blog/): Cooking essays and kitchen-tool posts from Josh & Jordan's Kitchen.
 - [Nước Mắm — A Vietnamese Family Cookbook by Josh Tran](https://cooking.builtbyjoshstudio.com/cookbook/): 56 pages of simple, home-style Vietnamese cooking — summer rolls, bún bowls, bánh mì, and a twelve-hour phở. Balanced by tasting, not measuring. $3.99 ebook.
-- [Free Kitchen Calculators & Cooking Tools · Josh & Jordan's Kitchen](https://cooking.builtbyjoshstudio.com/tools/): Twelve free, ad-free kitchen calculators — recipe scaling, air fryer conversion, cost per serving, brining, dough hydration, roasting timelines, and more. No signup, runs in your browser.
+- [Free Kitchen Calculators & Cooking Tools · Josh & Jordan's Kitchen](https://cooking.builtbyjoshstudio.com/tools/): Free, ad-free kitchen calculators — recipe scaling, air fryer conversion, cost per serving, brining, dough hydration, roasting timelines, and more. No signup, runs in your browser.
 - [Cooking Videos — Real-Time Cooks, Short Cuts & Kitchen Basics](https://cooking.builtbyjoshstudio.com/videos/): Cook-along videos two ways: a short cut that gets you to dinner, or the full real-time cook, nothing sped up. Plus kitchen basics like board care.
 
 ## Kitchen tools

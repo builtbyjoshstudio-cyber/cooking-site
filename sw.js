@@ -29,7 +29,7 @@
    ========================================================= */
 (function () {
   'use strict';
-  var CACHE_VERSION = '0f0b1cc1899f';
+  var CACHE_VERSION = 'a92f7b918a2c';
   var PAGES = 'jjk-pages-' + CACHE_VERSION;
   var ASSETS = 'jjk-assets-' + CACHE_VERSION;
 
