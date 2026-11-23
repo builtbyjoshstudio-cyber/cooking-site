@@ -4,7 +4,8 @@
    How: if this page's own keys are missing here (or the nutrition recipe is still the untouched example), load
    tools.builtbyjoshstudio.com/migrate.html in a hidden frame and ask it for the old values. It answers only this
    origin, by exact origin. Give up after about 2 seconds; the tool has already started and never waits.
-   Reload once if this page's own keys changed (whoever wrote them), so the tool shows the data.
+   Reload once if one of this page's own keys took the old site's data (in this tab or another), so the tool shows
+   it. A change the visitor made meanwhile never causes a reload.
 
    Never overwrites a visitor's own data here:
    - most keys are written only when missing here;
@@ -56,7 +57,24 @@
     return mine.some(function (k) { var v = get(k); return v === null || isExample(k, v); });
   }
   function snapshot() { var s = {}; mine.forEach(function (k) { s[k] = get(k); }); return s; }
-  function changedSince(snap) { return mine.some(function (k) { return get(k) !== snap[k]; }); }
+  // True when one of this page's keys took the old site's data since the snapshot (here, or in another tab):
+  // a plain key now holds the old value; the custom ingredients now include an old name they lacked before.
+  // A change the visitor made meanwhile matches neither, so it never causes a reload.
+  function namesOf(raw) {
+    var out = Object.create(null), list;
+    try { list = raw ? JSON.parse(raw) : []; } catch (e) { return out; }
+    if (Array.isArray(list)) list.forEach(function (x) { if (x && typeof x.name === 'string') out[x.name.trim().toLowerCase()] = true; });
+    return out;
+  }
+  function imported(snap, data) {
+    return mine.some(function (k) {
+      var v = get(k);
+      if (v === snap[k] || typeof data[k] !== 'string') return false;
+      if (k !== 'savedCustomIngredients') return v === data[k];
+      var before = namesOf(snap[k]), now = namesOf(v), old = namesOf(data[k]);
+      return Object.keys(old).some(function (n) { return now[n] && !before[n]; });
+    });
+  }
 
   // A clean, typed copy of an old custom ingredient (the nutrition tool renders these fields)
   function cleanCustom(x) {
@@ -105,10 +123,10 @@
     return changed;
   }
 
-  // Record the answer; reload once if this page's own keys changed. Returns true when reloading.
-  function settle(snap) {
+  // Record the answer; reload once if this page's own keys took the old site's data. Returns true when reloading.
+  function settle(snap, data) {
     set(DONE, String(Date.now()));
-    if (!changedSince(snap)) return false;
+    if (!imported(snap, data)) return false;
     var reloaded = null;
     try { reloaded = sessionStorage.getItem(RELOADED); sessionStorage.setItem(RELOADED, '1'); }
     catch (e) { reloaded = null; }              // sessionStorage blocked: reload anyway; DONE stops a second ask
@@ -167,7 +185,7 @@
         if (data === null) { say("Couldn't reach the old tools site. Please try again."); return; }
         var found = ALL_KEYS.some(function (k) { return typeof data[k] === 'string'; });
         var wrote = apply(data);
-        if (settle(snap)) return;               // reloading to show the data
+        if (settle(snap, data)) return;         // reloading to show the data
         if (!found) say('No saved data from the old tools site in this browser.', true);
         else if (wrote) say('Your data was brought over. Reload the page to see it.', true);
         else say('Nothing new to bring over.', true);
@@ -191,7 +209,7 @@
       frame.remove();
       if (data === null) { offerButton(); return; }      // blocked or slow: the tool carries on; offer the button
       apply(data);
-      settle(snap);
+      settle(snap, data);
     });
   }
 

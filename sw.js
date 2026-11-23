@@ -29,7 +29,7 @@
    ========================================================= */
 (function () {
   'use strict';
-  var CACHE_VERSION = 'f88ac1184bcd';
+  var CACHE_VERSION = '0f0b1cc1899f';
   var PAGES = 'jjk-pages-' + CACHE_VERSION;
   var ASSETS = 'jjk-assets-' + CACHE_VERSION;
 
@@ -78,7 +78,7 @@
       "/tools/cookware-pan-guide/script.js?v=58772035ba",
       "/tools/cost-per-serving-calculator/styles.css?v=711502ca09",
       "/tools/cost-per-serving-calculator/script.js?v=bd8b1af951",
-      "/js/migrate-import.js?v=c9d27191a1",
+      "/js/migrate-import.js?v=86a620170f",
       "/tools/dough-hydration-calculator/styles.css?v=44957dba1d",
       "/tools/dough-hydration-calculator/script.js?v=31d420837e",
       "/tools/meat-thawing-planner/styles.css?v=16b9158a18",
