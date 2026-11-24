@@ -118,6 +118,9 @@
 [data-theme="cast-iron"] .studio-tool .gear-item:hover .affiliate-btn {
   background: var(--primary); border-color: var(--primary);
 }
+/* the network cards' "button" is a span (a button inside a link is invalid HTML): give it the
+   box a <button> had, so tools.css:145's width: 100% and padding apply as before */
+.studio-tool span.affiliate-btn { display: block; line-height: normal; }
 
 /* form fields: the studio has no field tokens (inputs read --surface, --ink, --line-2) */
 .studio-tool :is(.form-input, .input-group input, .input-group select, textarea) {
