@@ -29,7 +29,7 @@
    ========================================================= */
 (function () {
   'use strict';
-  var CACHE_VERSION = '89a0f7cabb80';
+  var CACHE_VERSION = '9445ac91c94f';
   var PAGES = 'jjk-pages-' + CACHE_VERSION;
   var ASSETS = 'jjk-assets-' + CACHE_VERSION;
 
@@ -57,7 +57,7 @@
       "/fonts/fonts-vietnamese.css?v=96e6ae2194",
       "/css/tokens.css?v=e6976ee263",
       "/css/chrome.css?v=04f9a9fc23",
-      "/css/tool-bridge.css?v=6bfe8d2938",
+      "/css/tool-bridge.css?v=cb83419ca4",
       "/css/tool-parts.css?v=ba7a255de3",
       "/css/base.css?v=5a6e1b4cbb",
       "/css/components.css?v=a04d1c5175",
