@@ -4,6 +4,13 @@
 
 Josh & Jordan's Kitchen is published by Built by Josh Studio LLC (https://builtbyjoshstudio.com/llms.txt). Contact: support@builtbyjoshstudio.com. Fuller file for this site: https://cooking.builtbyjoshstudio.com/llms-full.txt.
 
+## About & Authority
+
+- **Josh & Jordan's Kitchen** is a home cooking and baking channel on YouTube (https://www.youtube.com/@joshandjordanskitchen) and this site: no-talking home cooking and scratch baking, filmed two ways — a tight method cut, or a minimally cut full-process session at normal speed.
+- **Josh Tran** cooks the savory side, and the Vietnamese classics, by feel with no measuring cups. He learned by watching his dad cook most nights, and wrote Nước Mắm — A Vietnamese Family Cookbook (https://cooking.builtbyjoshstudio.com/cookbook/). He also builds the free kitchen tools on this site.
+- **Jordan** bakes: the breads, sweets, and pastries come out of Jordan's oven. Josh cooks, Jordan bakes.
+- **The free kitchen calculators** (https://cooking.builtbyjoshstudio.com/tools/) are free and ad-free with no signup. They run entirely in your browser: nothing you type is uploaded or collected.
+
 ## Main pages
 
 - [Josh & Jordan's Kitchen — Full-Process Cook Videos, Kitchen Tools & Recipes](https://cooking.builtbyjoshstudio.com/): No-talking home cooking and scratch baking from Josh & Jordan's Kitchen. Josh cooks savory meals by feel with no measuring cups; Jordan runs the oven. Tight method cuts, minimally cut full-process sessions, kitchen tools, and recipes.
@@ -23,7 +30,7 @@ Josh & Jordan's Kitchen is published by Built by Josh Studio LLC (https://builtb
 - [Baking Pan Conversion Calculator | Swap Cake Pan Sizes, Free](https://cooking.builtbyjoshstudio.com/tools/pan-swap-calculator/): Swap one baking pan for another: round, square, rectangular, muffin, or Bundt. Get the ingredient multiplier and a bake-time warning. Free and ad-free.
 - [Perfect Roast Pull Temp Calculator | Carryover Cooking Math](https://cooking.builtbyjoshstudio.com/tools/perfect-roast-pull-temp-calculator/): Calculate the exact temperature to pull your roast, steak, or turkey from the oven to account for carryover cooking. A free, ad-free culinary utility.
 - [Recipe Nutrition Calculator | Calories & Macros Per Serving](https://cooking.builtbyjoshstudio.com/tools/recipe-nutrition-calculator/): Paste a recipe's ingredients and get calories, protein, carbs, and fat per serving, plus an estimated Nutrition Facts label. Free, no ads, no signup.
-- [Roast Cooking Timeline Calculator | Reverse Timeline, Free](https://cooking.builtbyjoshstudio.com/tools/reverse-roasting-calculator/): Pork roast cooking time, worked backward from dinner — enter a pork loin, shoulder, ham, turkey, or beef roast and serve time for an exact oven timeline. Free.
+- [Roast Cooking Timeline Calculator | Free](https://cooking.builtbyjoshstudio.com/tools/reverse-roasting-calculator/): Work backward from serving time to plan your roast — covering turkey, chicken, beef, pork, lamb, and ham with rest and prep buffers.
 - [Universal Recipe Scaler | Ad-Free Ingredient Converter](https://cooking.builtbyjoshstudio.com/tools/universal-recipe-scaler/): Instantly scale, multiply, or divide cooking and baking recipes. A free, local-first utility to convert portions and metric measurements with zero ads.
 - [Yeast Converter | Active Dry, Instant, & Fresh Yeast Ratios](https://cooking.builtbyjoshstudio.com/tools/yeast-converter/): Convert yeast measurements between Active Dry, Instant, and Fresh yeast. Convert grams, ounces, teaspoons, and packets with automatic weight guards. Free, ad-free.
 

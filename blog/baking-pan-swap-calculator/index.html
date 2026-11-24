@@ -262,6 +262,46 @@
   ]
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do I convert a recipe to a different pan size?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Compare the two pans by volume, footprint times depth, and scale the batter by the ratio. A round pan's footprint is π times the radius squared; square, rectangular and loaf pans are length times width. An 8×8 pan (64 sq in) to a 9×13 (117 sq in) at the same depth takes 1.83 times the batter."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are a 9-inch round pan and an 8×8 pan interchangeable?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Essentially, yes. A 9-inch round pan has a 4.5-inch radius, so its footprint is about 63.6 square inches, against 64 for an 8×8 square. The multiplier comes out to about 1.0, which is why those two pans are famously swapped for each other without changing the recipe at all."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why doesn't a loaf recipe scale by area?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Loaf pans are 2.5 to 3 inches deep, while standard 8×8 and 9×13 pans are 2 inches. Scale a 9×5 loaf recipe by footprint and you'd make 2.6 times the batter, enough to fill a 9×13 to the rim. By volume it's about 1.7 times, which fills the new pan to the same level."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does the bake time change when I swap pans?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Often, yes. A shallower pan bakes faster and a deeper one slower. When a swap puts the batter noticeably deeper, lower the oven by about 25°F and add 15 to 20 minutes, then check the center with a toothpick. Treat the original bake time as a starting point and watch the pan, not the clock."
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -327,7 +367,7 @@
 
       <h2>Converting to a Muffin Tin or a Bundt Pan</h2>
       <p>Square and round swaps are simple enough, but muffin tins and Bundt pans are where basic area converters stop working. A 12-cup muffin tin is twelve separate wells; a 10-cup Bundt is a ring with sloped sides and a center tube. There's no simple length × width to type in, so most charts leave them out — which makes it easy to overfill the cups or drown the bottom of a Bundt.</p>
-      <p>The clean way around that is a volume-to-area equivalent: measure the pan's cup capacity and translate it to the footprint of a flat pan. Nobody wants to do that math with flour on their hands, so the 12-cup muffin tin and 10-cup Bundt already carry their flat-area equivalents in the tool — a 12-cup muffin tin behaves like roughly a 64 sq in pan, a 10-cup Bundt like about 117 sq in. You pick the pan from the dropdown and get a usable multiplier right away without touching volume formulas.</p>
+      <p>The clean way around that is a volume-to-area equivalent: measure the pan's cup capacity and translate it to the footprint of a flat pan. Nobody wants to do that math with flour on their hands, so the 12-cup muffin tin and 10-cup Bundt already carry their capacities in the tool — 6 cups brim-full for the muffin tin and 10 cups for the Bundt, each raised 13% to match how flat pans are measured. You pick the pan from the dropdown and get a usable multiplier right away without touching volume formulas.</p>
       <p>All of that math stays out of the way in the interface. The best kitchen tools hide the complexity behind one click so you can get on with the bake.</p>
 
       <h2>The Depth Warning</h2>
@@ -342,8 +382,8 @@
         <li><strong>8×8-inch square:</strong> ~8 cups (1.9 L)</li>
         <li><strong>9-inch round cake:</strong> ~8 cups (1.9 L)</li>
         <li><strong>Standard loaf pan (8.5×4.5):</strong> ~6 cups (1.4 L)</li>
-        <li><strong>Standard 12-cup muffin tin:</strong> ~4 cups (1.0 L) total</li>
-        <li><strong>10-inch Bundt:</strong> ~12 cups (2.8 L)</li>
+        <li><strong>Standard 12-cup muffin tin:</strong> 6 cups (1.4 L) brim-full, about ½ cup per well</li>
+        <li><strong>10-cup Bundt:</strong> 10 cups (2.4 L)</li>
       </ul>
       <p>Closed by default so it doesn't crowd the main result; one click opens it when you need to sanity-check whether your batter is actually going to fit.</p>
 
@@ -361,6 +401,30 @@
         <p>Free, instant, no signup. Pick the recipe's pan, pick yours, get the exact multiplier and a bake-time warning.</p>
         <a href="/tools/pan-swap-calculator/" class="btn-inline btn">Open the Calculator →</a>
       </div>
+
+      <h2>Quick reference</h2>
+      <div class="table-wrap">
+        <table class="table table--compact">
+          <caption>Batter multipliers for common swaps, by pan volume (footprint × depth). When two pans share a depth, as standard 2-inch 8×8 and 9×13 pans do, that's the same as matching their footprints.</caption>
+          <thead><tr><th scope="col">Swap</th><th scope="col">Multiply by</th><th scope="col">Why</th></tr></thead>
+          <tbody>
+          <tr><td>8×8 → 9×13</td><td>1.83×</td><td>64 → 117&nbsp;sq in</td></tr>
+          <tr><td>9-inch round → 8×8</td><td>about 1.0×</td><td>63.6 → 64&nbsp;sq in</td></tr>
+          <tr><td>8-inch round → 9-inch round</td><td>1.27×</td><td>Same depth</td></tr>
+          <tr><td>9×5 loaf → 9×13</td><td>about 1.7×</td><td>Not 2.6×: the loaf pan is deeper</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Frequently Asked Questions</h2>
+        <h3>How do I convert a recipe to a different pan size?</h3>
+        <p>Compare the two pans by volume, footprint times depth, and scale the batter by the ratio. A round pan's footprint is π times the radius squared; square, rectangular and loaf pans are length times width. An 8×8 pan (64 sq in) to a 9×13 (117 sq in) at the same depth takes 1.83 times the batter.</p>
+        <h3>Are a 9-inch round pan and an 8×8 pan interchangeable?</h3>
+        <p>Essentially, yes. A 9-inch round pan has a 4.5-inch radius, so its footprint is about 63.6 square inches, against 64 for an 8×8 square. The multiplier comes out to about 1.0, which is why those two pans are famously swapped for each other without changing the recipe at all.</p>
+        <h3>Why doesn't a loaf recipe scale by area?</h3>
+        <p>Loaf pans are 2.5 to 3 inches deep, while standard 8×8 and 9×13 pans are 2 inches. Scale a 9×5 loaf recipe by footprint and you'd make 2.6 times the batter, enough to fill a 9×13 to the rim. By volume it's about 1.7 times, which fills the new pan to the same level.</p>
+        <h3>Does the bake time change when I swap pans?</h3>
+        <p>Often, yes. A shallower pan bakes faster and a deeper one slower. When a swap puts the batter noticeably deeper, lower the oven by about 25°F and add 15 to 20 minutes, then check the center with a toothpick. Treat the original bake time as a starting point and watch the pan, not the clock.</p>
 
       <div class="related-posts">
         <h2 class="related-posts-label">Related Reading</h2>

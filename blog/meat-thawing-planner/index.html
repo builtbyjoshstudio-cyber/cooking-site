@@ -198,6 +198,46 @@
   ]
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How long does it take to thaw a turkey in the fridge?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "About one day for every 4 pounds, so 3 days for a 12-pound turkey, 4 days for 16 pounds and 5 days for 20. Count back from the day you cook: a 16-pound turkey for Thursday goes into the refrigerator on Sunday. Fridge thawing is safest because the bird stays below 40°F throughout."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does cold-water thawing take?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "About 30 minutes per pound for most cuts, 36 for a whole turkey and 18 for fish, in a leak-proof bag, fully submerged, with the water changed every 30 minutes. Cook it right away. Once the math runs past 6 hours, the calculator sends you back to the refrigerator, because the surface warms before the center thaws."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I thaw meat on the counter?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. At room temperature the outer surface sits in the bacterial danger zone of 40°F to 140°F while the inside is still frozen. Thaw in the refrigerator, in cold water, or in the microwave if you're cooking it right away. And open vacuum-sealed fish and seafood before you thaw them."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does fish thaw so much faster than a turkey?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Fish is high in water, lacks dense structural collagen, and usually comes as thin fillets with far more surface area for its weight. A whole turkey has a hollow cavity that insulates its deepest tissue. So the calculator uses 8 pounds per 24 hours for seafood in the fridge, almost double a turkey's 4."
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -274,7 +314,7 @@
       <h2>The Other Food Safety Guardrails</h2>
       <p>Two more automated intercepts the calculator runs, because the situations they catch are the next most common failure modes.</p>
       <p><strong>The 6-Hour Danger Zone Intercept.</strong> Cold water thawing is fast, but it's only food-safe if the meat stays out of the "danger zone" — the temperature range between 40°F and 140°F where bacteria can double every twenty minutes on the outer layers of the meat. For small proteins, cold water thawing finishes well under that window. For large ones, it doesn't. If you put a 14-pound turkey in cold water, by the time the center is thawed, the outer surface has been in the danger zone for hours.</p>
-      <p>If you input any protein over 12 pounds and select cold water thawing, the calculator triggers a high-visibility warning telling you to use the refrigerator instead. It doesn't just refuse to give you the number — it gives you the number <em>and</em> tells you why following that timeline would be unsafe. The warning is mandatory, not dismissible. That is the exact check you need when someone tries to thaw a big bird on the morning of dinner.</p>
+      <p>If cold water thawing would run past 6 hours for the protein and weight you enter, the calculator triggers a high-visibility warning telling you to use the refrigerator instead. It doesn't just refuse to give you the number — it gives you the number <em>and</em> tells you why following that timeline would be unsafe. The warning is mandatory, not dismissible. That is the exact check you need when someone tries to thaw a big bird on the morning of dinner.</p>
       <p><strong>The Drip Pan Prompt.</strong> For large roasts and whole poultry going into the fridge, the calculator displays a reminder to use a tray or pan with adequate rim depth underneath the protein. Thawing meat releases raw liquid, and that liquid will pool wherever gravity takes it. A turkey thawing on a flat sheet pan in a fridge full of other food is a cross-contamination event waiting to happen — the runoff hits the bottom shelf, drips onto produce, and the next thing you know your salad has raw turkey juice on it. The calculator tells you what rim depth to use and why. Small detail, real difference.</p>
 
       <h2>Where This Tool Sits in the Workflow</h2>
@@ -309,6 +349,31 @@
       <p>Checking the planner a couple of days ahead keeps a holiday meal from turning into a morning-of scramble, because you already know what day the bird needs to move to the fridge. It also flags things people rarely think about—like opening vacuum-sealed salmon before thawing so <em>Clostridium botulinum</em> can't become an issue in an airless pouch.</p>
       <p>It's free. It will stay free. It's the last tool the roasting kit was missing, and now the kit is closed. Bookmark it for the next holiday, hand it to the friend hosting their first Thanksgiving, save it for the next time you forget about a frozen brisket until forty-eight hours before the smoke.</p>
       <p>The math gets the timing right. The warnings keep your guests safe. Both matter, and both are now one click away.</p>
+
+      <h2>Quick reference</h2>
+      <div class="table-wrap">
+        <table class="table table--compact">
+          <caption>Rates the Meat Thawing Planner uses. Fridge minimums: a full day for poultry, roasts, game and ground meat; 12 hours for steaks, chops and fish. Past 6 hours in cold water, it sends you to the fridge.</caption>
+          <thead><tr><th scope="col">Protein</th><th scope="col">Fridge</th><th scope="col">Cold water</th></tr></thead>
+          <tbody>
+          <tr><td>Whole turkey, duck</td><td>4&nbsp;lb a day</td><td>36&nbsp;min per lb</td></tr>
+          <tr><td>Chicken</td><td>5&nbsp;lb a day</td><td>30&nbsp;min per lb</td></tr>
+          <tr><td>Large roasts</td><td>5&nbsp;lb a day</td><td>30&nbsp;min per lb</td></tr>
+          <tr><td>Lean game</td><td>5.5&nbsp;lb a day</td><td>27&nbsp;min per lb</td></tr>
+          <tr><td>Fish and seafood</td><td>8&nbsp;lb a day</td><td>18&nbsp;min per lb</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Frequently Asked Questions</h2>
+        <h3>How long does it take to thaw a turkey in the fridge?</h3>
+        <p>About one day for every 4 pounds, so 3 days for a 12-pound turkey, 4 days for 16 pounds and 5 days for 20. Count back from the day you cook: a 16-pound turkey for Thursday goes into the refrigerator on Sunday. Fridge thawing is safest because the bird stays below 40°F throughout.</p>
+        <h3>How long does cold-water thawing take?</h3>
+        <p>About 30 minutes per pound for most cuts, 36 for a whole turkey and 18 for fish, in a leak-proof bag, fully submerged, with the water changed every 30 minutes. Cook it right away. Once the math runs past 6 hours, the calculator sends you back to the refrigerator, because the surface warms before the center thaws.</p>
+        <h3>Can I thaw meat on the counter?</h3>
+        <p>No. At room temperature the outer surface sits in the bacterial danger zone of 40°F to 140°F while the inside is still frozen. Thaw in the refrigerator, in cold water, or in the microwave if you're cooking it right away. And open vacuum-sealed fish and seafood before you thaw them.</p>
+        <h3>Why does fish thaw so much faster than a turkey?</h3>
+        <p>Fish is high in water, lacks dense structural collagen, and usually comes as thin fillets with far more surface area for its weight. A whole turkey has a hollow cavity that insulates its deepest tissue. So the calculator uses 8 pounds per 24 hours for seafood in the fridge, almost double a turkey's 4.</p>
 
       <div class="related-posts">
         <h2 class="related-posts-label">Related Reading</h2>

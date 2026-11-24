@@ -198,6 +198,46 @@
   ]
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What's the difference between a wet brine and a dry brine?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A wet brine dissolves salt in water and submerges the meat; a dry brine rubs salt onto the surface and lets it reabsorb. Dry brining is less messy and crisps skin better, so it suits poultry and steaks rested uncovered in the fridge. Wet brining adds the most moisture, which suits lean turkey breast and pork chops."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much salt do I need to brine a turkey?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For a 10-pound turkey in a standard wet brine, about 300 g of coarse kosher salt in 6 liters of water, brined for about 10 hours. A 12-pound bird takes about 7.2 liters and 360 g. Salt brands differ a lot by the spoonful, so weigh the salt or pick your salt type in the calculator."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long should I brine meat?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In a wet brine, about an hour per pound for whole birds, chicken pieces and roasts, never under 30 minutes, with chicken capped at 4 hours and turkey at 24. Steaks and chops take 30 minutes to an hour, and fish and seafood 15 to 30 minutes. A dry brine runs 1 to 2 hours per pound."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is an equilibrium brine?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "One that uses exactly the salt you want to end up in the food, so it can't over-salt however long it soaks. The calculator sets it at 1.5% of the meat and water combined, which suits long cooks like brisket and pork shoulder. The limit is the fridge, not the salt: raw poultry keeps only 1 to 2 days."
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -236,14 +276,7 @@
     <div class="article__meta"><span>May 14, 2026</span><span>·</span><span>7 min read</span><span>·</span><span>Built by Josh Studio LLC</span></div>
   </header>
   <div class="prose post__body">
-<div class="post-summary">
-        <strong>Key Takeaways</strong>
-        <ul>
-          <li>Brine ratios aren't one-size-fits-all: salt density varies wildly by type — a tablespoon of flaky kosher salt carries far less actual salt than a tablespoon of table salt — so any recipe that says “one tablespoon per pound” without naming the salt is leaving the result to chance.</li>
-          <li>A wet brine submerges the meat in a salt-water solution; a dry brine rubs salt on the surface and lets it reabsorb overnight. Both work — what matters is matching salt quantity, water volume, and time window to the protein and its weight.</li>
-          <li>The free Brine Calculator does the salt-density and weight math for you — wet or dry, eleven protein types, four salt types, optional sugar, with a brining-time recommendation and a built-in timer. Local-first and free: no signup, no ads, nothing uploaded.</li>
-        </ul>
-      </div>
+<div class="post-summary short"><span class="short__label">The Short Version</span><p>Brine ratios aren't one-size-fits-all: salt density varies wildly by type, so a tablespoon of flaky kosher salt carries far less actual salt than a tablespoon of table salt. A wet brine submerges the meat in a salt-water solution; a dry brine rubs salt on the surface and lets it reabsorb overnight. The free Brine Calculator does the salt-density and weight math for you — wet or dry, four salt types, optional sugar, with a brining-time recommendation and a built-in timer.</p></div>
 
       <h2>The Third Tool in the Kit</h2>
       <p>This is the third free utility I've shipped under Built by Josh Studio LLC. The <a href="/tools/universal-recipe-scaler/">Universal Recipe Scaler</a> handles ingredient scaling and unit conversion. The <a href="/tools/reverse-roasting-calculator/">Reverse Roasting Timeline Calculator</a> handles the backward time math for getting a roast on the table at the right moment. The <a href="/tools/brine-calculator/">Brine Calculator</a> handles the salt-and-water math for the step that happens before either of those.</p>
@@ -258,7 +291,7 @@
       <ul>
         <li><strong>Salt density varies by salt type.</strong> A tablespoon of fine table salt contains far more actual salt than a tablespoon of flaky kosher salt, because the flakes have more air space between them. A recipe that calls for "one tablespoon of salt per pound" will produce wildly different results depending on which salt you grabbed from the cupboard. Most brine recipes either pretend this doesn't matter or recommend one specific salt and hope you have it.</li>
         <li><strong>Protein weight scales the math, but not linearly for all proteins.</strong> A whole turkey doesn't brine the same as a turkey breast at the same weight. The geometry matters — surface area to volume ratio determines how fast the brine penetrates.</li>
-        <li><strong>Brine strength is a real choice, not a fixed number.</strong> A standard brine is around 6% salt by weight relative to the water. A stronger brine can go up to 8-10% for shorter brining times. A weaker brine is gentler for delicate proteins. The math has to flex.</li>
+        <li><strong>Brine strength is a real choice, not a fixed number.</strong> A standard brine is 5% salt by weight relative to the water. A strong brine goes up to 6% for shorter brining times. A light brine, at 4%, is gentler for delicate proteins. The math has to flex.</li>
         <li><strong>Sugar is optional, but if you're adding it, the ratio needs to scale with the salt.</strong> Sugar balances the saltiness of the finished meat, but adding too much produces an overly sweet result.</li>
       </ul>
       <p>Most brining content on the internet collapses all of those variables into a single hardcoded ratio and tells you to use that. The brine calculator does the actual math instead.</p>
@@ -317,6 +350,29 @@
         <p>Free, instant, no signup. Pick wet or dry, your protein and weight, your salt type, and your brine strength — get the exact grams.</p>
         <a href="/tools/brine-calculator/" class="btn-inline btn">Open the Calculator →</a>
       </div>
+
+      <h2>Quick reference</h2>
+      <div class="table-wrap">
+        <table class="table table--compact">
+          <caption>The three ratios behind every number the Brine Calculator returns. Weigh the salt: coarse flaky kosher salt is about 8 g per tablespoon and table salt about 18 g.</caption>
+          <thead><tr><th scope="col">Method</th><th scope="col">Salt</th><th scope="col">Notes</th></tr></thead>
+          <tbody>
+          <tr><td>Wet, standard</td><td>5% of the water</td><td>4% light, 6% strong; 0.6&nbsp;L water per lb (2&nbsp;L minimum)</td></tr>
+          <tr><td>Equilibrium</td><td>1.5% of meat and water</td><td>Hard to over-salt; up to 2 days</td></tr>
+          <tr><td>Dry</td><td>1% of the meat</td><td>0.75% light, 1.25% strong; about 4.5&nbsp;g per lb</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Frequently Asked Questions</h2>
+        <h3>What's the difference between a wet brine and a dry brine?</h3>
+        <p>A wet brine dissolves salt in water and submerges the meat; a dry brine rubs salt onto the surface and lets it reabsorb. Dry brining is less messy and crisps skin better, so it suits poultry and steaks rested uncovered in the fridge. Wet brining adds the most moisture, which suits lean turkey breast and pork chops.</p>
+        <h3>How much salt do I need to brine a turkey?</h3>
+        <p>For a 10-pound turkey in a standard wet brine, about 300 g of coarse kosher salt in 6 liters of water, brined for about 10 hours. A 12-pound bird takes about 7.2 liters and 360 g. Salt brands differ a lot by the spoonful, so weigh the salt or pick your salt type in the calculator.</p>
+        <h3>How long should I brine meat?</h3>
+        <p>In a wet brine, about an hour per pound for whole birds, chicken pieces and roasts, never under 30 minutes, with chicken capped at 4 hours and turkey at 24. Steaks and chops take 30 minutes to an hour, and fish and seafood 15 to 30 minutes. A dry brine runs 1 to 2 hours per pound.</p>
+        <h3>What is an equilibrium brine?</h3>
+        <p>One that uses exactly the salt you want to end up in the food, so it can't over-salt however long it soaks. The calculator sets it at 1.5% of the meat and water combined, which suits long cooks like brisket and pork shoulder. The limit is the fridge, not the salt: raw poultry keeps only 1 to 2 days.</p>
 
       <div class="related-posts">
         <h2 class="related-posts-label">Related Reading</h2>
