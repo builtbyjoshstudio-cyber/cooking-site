@@ -2,6 +2,7 @@
 #
 # Josh & Jordan's Kitchen: cooking videos, the cookbook, the kitchen blog and the
 # free kitchen tools. All content is public and meant to be indexed and cited.
+# llms.txt: https://cooking.builtbyjoshstudio.com/llms.txt
 
 User-agent: *
 Allow: /

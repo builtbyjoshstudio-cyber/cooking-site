@@ -198,6 +198,46 @@
   ]
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is dough hydration?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hydration is the weight of the water as a percentage of the flour, not of the whole dough. Flour is always the 100% baseline, and every other ingredient is measured against it. A dough with 1,000 g of flour and 720 g of water is at 72% hydration; higher hydration generally means a more open, airy crumb."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I work out the flour from a target dough weight?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Add up the percentages and divide. Flour equals the target dough weight times 100, divided by 100 plus the hydration, salt and yeast percentages. For 1,000 g of sourdough at 72% with 2% salt and 1% yeast, the total is 175, which gives 571 g flour, 411 g water, 11 g salt and 6 g yeast."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much water can my flour take?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Every flour has a practical ceiling. Tipo 00 pizza flour works at roughly 55% to 62%, and all-purpose handles 60% to 65% well before it turns slack and sticky. Noodle doughs stay deliberately stiff, often under 48%, so they can be rolled and cut. The calculator flags a target outside your flour's workable range."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What hydration is fresh pasta dough?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Much lower than bread. Pick semolina or egg pasta flour and the calculator sets hydration to 45%, leaves out the yeast, and warns once you push past about 48%, where the dough gets too soft to roll thin. For egg pasta it also converts the liquid into whole large eggs at about 50 g (1.8 oz) each."
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -309,6 +349,33 @@
       <h2>The Honest Closing</h2>
       <p>I built this tool for bakers I'm not. The math problem was interesting. The four edge-case checks built into it are interesting. The fact that I've never personally baked a loaf of bread doesn't make the tool less useful — if anything, building it gave me a much deeper respect for what real bakers actually deal with when they're scaling a recipe, and a clear sense of why most online hydration calculators fall short.</p>
       <p>Maybe one day I'll actually use it for my own first loaf. Until then, it's there for the people who do this work every weekend, every week, every day. Bookmark it. Share it with the home baker in your life. The math is yours.</p>
+
+      <h2>Quick reference</h2>
+      <div class="table-wrap">
+        <table class="table table--compact">
+          <caption>The calculator's starting points, shown for 1,000 g of flour. Salt is 2% of the flour (20 g) in every case; leavened doughs add yeast at 1%.</caption>
+          <thead><tr><th scope="col">Style</th><th scope="col">Hydration</th><th scope="col">Water</th></tr></thead>
+          <tbody>
+          <tr><td>Tokyo ramen noodles</td><td>35%</td><td>350&nbsp;g</td></tr>
+          <tr><td>Soba noodles</td><td>40%</td><td>400&nbsp;g</td></tr>
+          <tr><td>Egg pasta (semolina)</td><td>45%</td><td>450&nbsp;g</td></tr>
+          <tr><td>Neapolitan pizza</td><td>60%</td><td>600&nbsp;g</td></tr>
+          <tr><td>French baguette</td><td>65%</td><td>650&nbsp;g</td></tr>
+          <tr><td>Sourdough boule</td><td>72%</td><td>720&nbsp;g</td></tr>
+          <tr><td>Italian ciabatta</td><td>82%</td><td>820&nbsp;g</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Frequently Asked Questions</h2>
+        <h3>What is dough hydration?</h3>
+        <p>Hydration is the weight of the water as a percentage of the flour, not of the whole dough. Flour is always the 100% baseline, and every other ingredient is measured against it. A dough with 1,000 g of flour and 720 g of water is at 72% hydration; higher hydration generally means a more open, airy crumb.</p>
+        <h3>How do I work out the flour from a target dough weight?</h3>
+        <p>Add up the percentages and divide. Flour equals the target dough weight times 100, divided by 100 plus the hydration, salt and yeast percentages. For 1,000 g of sourdough at 72% with 2% salt and 1% yeast, the total is 175, which gives 571 g flour, 411 g water, 11 g salt and 6 g yeast.</p>
+        <h3>How much water can my flour take?</h3>
+        <p>Every flour has a practical ceiling. Tipo 00 pizza flour works at roughly 55% to 62%, and all-purpose handles 60% to 65% well before it turns slack and sticky. Noodle doughs stay deliberately stiff, often under 48%, so they can be rolled and cut. The calculator flags a target outside your flour's workable range.</p>
+        <h3>What hydration is fresh pasta dough?</h3>
+        <p>Much lower than bread. Pick semolina or egg pasta flour and the calculator sets hydration to 45%, leaves out the yeast, and warns once you push past about 48%, where the dough gets too soft to roll thin. For egg pasta it also converts the liquid into whole large eggs at about 50 g (1.8 oz) each.</p>
 
       <div class="related-posts">
         <h2 class="related-posts-label">Related Reading</h2>
