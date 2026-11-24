@@ -152,6 +152,12 @@
 /* kit v2.4: badge text on a thumbnail reads --on-overlay on an opaque ground, whatever the image (review finding 4) */
 .yt-facade-dur { position: absolute; right: .6rem; bottom: .6rem; padding: .3em .55em; border-radius: 4px; background: linear-gradient(var(--overlay), var(--overlay)), var(--overlay-ground); color: var(--on-overlay); font: 600 var(--text-xs)/1 var(--font-numeric); font-variant-numeric: var(--numeric-features); }
 
+/* embedded videos inside blog posts (16:9 default, 9:16 centered for Shorts) */
+.post-video { margin: 1.75em 0; }
+.post-video--short { width: 100%; max-width: 360px; margin-inline: auto; }
+.post-video--short .yt-facade { aspect-ratio: 9 / 16; }
+.post-video__caption { margin: var(--space-2) 0 0; text-align: center; font: 400 var(--text-xs)/1.5 var(--font-sans); color: var(--text-muted); }
+
 /* "From the same kitchen" */
 .series { margin-top: clamp(3rem, 8vw, 5rem); padding: clamp(2rem, 5vw, 3rem); display: grid; gap: var(--space-4); justify-items: center; text-align: center; border-radius: var(--radius-lg); background: var(--surface); box-shadow: var(--shadow-card); }
 .series .accent-rule { width: 56px; height: 2px; background: var(--accent); }
