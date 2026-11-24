@@ -65,7 +65,7 @@
   "mainEntityOfPage": "https://cooking.builtbyjoshstudio.com/blog/baking-pan-swap-calculator/",
   "image": "https://builtbyjoshstudio.com/images/products/pan-swap-calculator.webp",
   "datePublished": "2026-05-18T00:00:00Z",
-  "dateModified": "2026-05-18T00:00:00Z"
+  "dateModified": "2026-11-24T00:00:00Z"
 }
 </script>
 <script type="application/ld+json">
@@ -281,12 +281,12 @@
     <div class="article__meta"><span>May 18, 2026</span><span>·</span><span>7 min read</span><span>·</span><span>Built by Josh Studio LLC</span></div>
   </header>
   <div class="prose post__body">
-<div class="post-summary short"><span class="short__label">The Short Version</span><p>Twenty years in kitchens taught me the recipe is rarely the problem — the pan is. This is a free, ad-free, local-first utility: pick the pan a recipe calls for, pick the pan you actually own, get the exact ingredient multiplier in one tap. It earns its keep on the conversions home bakers genuinely dread — convert a cake recipe to a muffin tin, or pull a clean bundt pan conversion multiplier — with zero 3D volume math on your end. A dynamic bake-time warning rides along when the swap changes batter depth.</p></div>
+<div class="post-summary short"><span class="short__label">The Short Version</span><p>When a bake goes sideways between pan sizes, the recipe is rarely the problem — the pan geometry is. This is a free, ad-free, local-first utility: pick the pan a recipe calls for, pick the pan you actually own, and get the exact ingredient multiplier in one click. It covers cake-to-muffin-tin and Bundt conversions without doing 3D volume math by hand, plus a bake-time warning when the swap changes batter depth.</p></div>
 
       <h2>The Wall Every Baker Hits</h2>
-      <p>In twenty-plus years of cooking, I've watched every home baker I know hit the exact same wall. You find a perfect recipe — and it calls for an 8×8 square pan. You own a 9×13 rectangle, a 9-inch round, or a muffin tin. Now what?</p>
-      <p>Most people guess. Guessing the math leads to one of three bad endings: batter that overflows the pan, edges that burn while the center is raw, or a sad sunken middle because the batter was spread too thin. None of those are recipe failures. They're geometry failures.</p>
-      <p>I wanted to delete the guesswork entirely. You shouldn't have to scroll past a 2,000-word life story and four auto-playing banner ads on some recipe site just to find a conversion chart that doesn't even list your pan. So I built a clean, instant utility: you input the original pan the recipe calls for, select the pan you actually have, and it returns the exact scaling multiplier you need to adjust the ingredients — for example, 1.50X. No sign-up, no loading screen, no ads, ever. It runs entirely in your browser and it stays free.</p>
+      <p>If you bake at home, you hit this wall pretty quickly: you find a good recipe, and it calls for an 8×8 square pan when what you have in the cabinet is a 9×13 rectangle, a 9-inch round, or a muffin tin.</p>
+      <p>Most people guess. Guessing the math leads to one of three bad endings: batter that overflows the pan, edges that burn while the center is raw, or a flat, sunken middle because the batter was spread too thin. None of those are recipe failures. They're geometry failures.</p>
+      <p>I built this tool to take the guesswork out without sending you through pop-ups or conversion charts that leave out the pan you own. Pick the original pan the recipe calls for, select the pan you actually have, and get the exact scaling multiplier right away — for example, 1.50×. No sign-up, no loading screen, no ads. It runs in your browser and stays free.</p>
 
       <h2>What It Does</h2>
       <p>The flow is deliberately short, because nobody wants to fill out a form mid-bake:</p>
@@ -295,7 +295,7 @@
         <li>Pick the pan <em>you actually own</em>.</li>
         <li>Read the multiplier. Multiply your ingredient quantities by it. Done.</li>
       </ol>
-      <p>If the recipe makes a 2-cup batter for an 8×8 and you're moving to a 9×13, the tool tells you to make 1.46× the batter so the depth stays right. One number. No mental math, no half-remembered ratios, and no scrolling past a wall of pop-ups to find a conversion table that doesn't list your pan anyway.</p>
+      <p>If the recipe makes a 2-cup batter for an 8×8 and you're moving to a 9×13, the tool tells you to make 1.83× the batter so the depth stays right. One number, no mental math, and no digging around for a conversion table that doesn't list your pan anyway.</p>
 
       <h2>The Area Engine</h2>
       <p>Baking math is geometry, and the core of the tool is an area engine. The batter in a pan is, functionally, a volume spread across a surface. If you keep the depth roughly constant, the amount of batter you need scales with the <em>surface area</em> of the pan.</p>
@@ -306,10 +306,10 @@
       </ul>
       <p>Divide the target area by the original area and you get the multiplier. An 8×8 (64 sq in) to a 9×13 (117 sq in) is 117 ÷ 64 ≈ 1.83 — but a 9-inch round (63.6 sq in) to an 8×8 (64 sq in) is essentially 1.0, which is why those two pans are famously interchangeable. The tool just makes that instant instead of something you look up and second-guess.</p>
 
-      <h2>The Star Feature: Convert a Cake Recipe to a Muffin Tin — or a Bundt — Without 3D Math</h2>
-      <p>This is the feature I'm proudest of, and honestly the reason the whole thing exists. Muffin tins and Bundt pans are exactly where every other converter quietly gives up. A 12-cup muffin tin is twelve little wells; a 10-cup Bundt is a ring with a hole and sloped, fluted sides. There's no honest "length × width" to type in, so most charts just don't cover them — which is precisely the moment a cake batter ends up overflowing twelve cups or drowning the bottom of a Bundt.</p>
-      <p>The technically-correct fix is a full volume-to-area conversion: measure your pan's cup capacity, run the numbers, translate it to a flat-area equivalent. Nobody is doing that mid-recipe with flour on their hands. So I did it once, for everyone. The standard 12-cup muffin tin and the 10-cup Bundt have their real <em>flat-area equivalents</em> hardcoded into the tool — a 12-cup muffin tin behaves like roughly a 64 sq in pan, a 10-cup Bundt like about 117 sq in. That means you can convert a cake recipe to a muffin tin, or get an exact bundt pan conversion multiplier, by choosing one option from a dropdown. No volume formula, no second-guessing, no 3D math — ever.</p>
-      <p>That decision never appears in the interface, and that is the entire point. The hard part is absorbed so the home baker just selects "muffin tin (12-cup)" or "Bundt (10-cup)" and gets a real, trustworthy number back. Twenty years of cooking taught me the best kitchen tools hide their complexity — this one buries a volumetric conversion behind a single click so converting a cake recipe to a muffin tin stops being the frustrating part of the bake.</p>
+      <h2>Converting to a Muffin Tin or a Bundt Pan</h2>
+      <p>Square and round swaps are simple enough, but muffin tins and Bundt pans are where basic area converters stop working. A 12-cup muffin tin is twelve separate wells; a 10-cup Bundt is a ring with sloped sides and a center tube. There's no simple length × width to type in, so most charts leave them out — which makes it easy to overfill the cups or drown the bottom of a Bundt.</p>
+      <p>The clean way around that is a volume-to-area equivalent: measure the pan's cup capacity and translate it to the footprint of a flat pan. Nobody wants to do that math with flour on their hands, so the 12-cup muffin tin and 10-cup Bundt already carry their flat-area equivalents in the tool — a 12-cup muffin tin behaves like roughly a 64 sq in pan, a 10-cup Bundt like about 117 sq in. You pick the pan from the dropdown and get a usable multiplier right away without touching volume formulas.</p>
+      <p>All of that math stays out of the way in the interface. The best kitchen tools hide the complexity behind one click so you can get on with the bake.</p>
 
       <h2>The Depth Warning</h2>
       <p>A multiplier alone is a half-answer, and a half-answer in baking is how you get a raw center.</p>
@@ -331,10 +331,9 @@
       <h2>An Ad-Free Pan Converter That Actually Speaks Metric</h2>
       <p>Baking is international; recipe blogs mostly aren't. Half the best recipes online run in grams and centimeters, and the usual move is to bounce to a second site — more ads, more pop-ups, more cookie banners — just to convert your numbers. This is an ad-free baking pan converter with metric built straight in: one Imperial/Metric toggle instantly shifts every input and output between inches and centimeters. Flip it once and the whole tool follows. Converting units is the tool's job, not yours — and it happens in the same clean panel, with nothing trying to sell you anything.</p>
 
-      <h2>The Stack and the Design System</h2>
-      <p>Same philosophy as the rest of the kit, and it's a deliberate rebuke of how recipe math usually gets served: vanilla HTML, CSS, and JavaScript. No framework, no backend, no loading screen, no forced sign-up, and — the part I care about most as both a cook and the person who builds these — no ads. It runs entirely locally in the browser and it's hosted as a single static page on GitHub Pages. A JSON-LD <code>WebApplication</code> schema is injected so search engines and AI assistants understand exactly what it is: a free, ad-free software utility published by Built by Josh Studio LLC.</p>
-      <p>The one thing that's genuinely new under the hood: this tool was built on the <strong>Tynkr Glass design system</strong> — a newly centralized CSS architecture. Instead of every utility carrying its own hand-written styles, this one inherits everything from a master design system. That means 100% brand cohesion across the toolset and a lot less CSS bloat to maintain. The earlier tools were each their own island; this is the first one that's properly part of a system.</p>
-      <p>The original version leaned into a moody glassmorphism: the calculator sat as a blurred, semi-transparent frosted-glass panel over a dark, atmospheric culinary background, and it booted in dark mode. And because the whole point is speed, there's a one-click "Copy to Clipboard" button that grabs the exact multiplier and the bake warning together, so you can paste it straight next to the recipe.</p>
+      <h2>Simple Build, Same Layout</h2>
+      <p>Same approach as the rest of the tools on the site: plain HTML, CSS, and JavaScript. No framework, no backend, no loading screen, no forced sign-up, and no ads. It runs locally in your browser on GitHub Pages with a JSON-LD <code>WebApplication</code> schema identifying Built by Josh Studio LLC as the publisher.</p>
+      <p>It shares the same clean layout and theme switcher as the rest of Josh &amp; Jordan's Kitchen, so it stays easy to read in the kitchen in whichever look you prefer. There's also a one-click "Copy to Clipboard" button that grabs the exact multiplier and bake warning together so you can paste them straight next to the recipe.</p>
 
       <!-- INLINE CTA -->
       <div class="inline-cta panel">
@@ -387,8 +386,8 @@
 
       <div class="author-bio panel panel--inset">
         <strong>About the Author</strong>
-        <p>Josh is the founder of Built by Josh Studio and Tynkr Tools &amp; Co — a one-person creative operation based in Kansas building Notion templates, spreadsheets, zodiac digital art, and the occasional vanilla-JS side project. He's also the author of <em>Overlayed Echoes</em>.</p>
-        <a href="https://builtbyjoshstudio.com/about.html">Learn more →</a>
+        <p>Josh Tran is the home cook behind Josh &amp; Jordan's Kitchen, the author of <a href="/cookbook/"><em>Nước Mắm: A Vietnamese Family Cookbook</em></a>, and the builder behind Built by Josh Studio's <a href="/tools/">free kitchen calculators and tools</a>.</p>
+        <a href="/">Explore Josh &amp; Jordan's Kitchen →</a>
       </div>
   </div>
   <aside class="post-aside" aria-label="Sidebar">

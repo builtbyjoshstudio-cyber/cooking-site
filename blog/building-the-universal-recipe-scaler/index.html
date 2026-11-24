@@ -13,18 +13,18 @@
 </script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Building the Universal Recipe Scaler — Local-First, Ad-Free</title>
-<meta name="description" content="How I built a free, instant recipe scaler — vanilla HTML/CSS/JS, no backend, localStorage, JSON-LD — the regex problem, scale-lock logic, and the glass UI.">
+<meta name="description" content="How I built a free, instant recipe scaler — vanilla HTML/CSS/JS, no backend, localStorage, JSON-LD — the regex problem, scale-lock logic, and a clean, fast interface with an interactive prep checklist.">
 <meta name="robots" content="max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 <link rel="canonical" href="https://cooking.builtbyjoshstudio.com/blog/building-the-universal-recipe-scaler/">
 <meta property="og:title" content="Building the Universal Recipe Scaler — Local-First, Ad-Free">
-<meta property="og:description" content="How I built a free, instant recipe scaler — vanilla HTML/CSS/JS, no backend, localStorage, JSON-LD — the regex problem, scale-lock logic, and the glass UI.">
+<meta property="og:description" content="How I built a free, instant recipe scaler — vanilla HTML/CSS/JS, no backend, localStorage, JSON-LD — the regex problem, scale-lock logic, and a clean, fast interface with an interactive prep checklist.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://cooking.builtbyjoshstudio.com/blog/building-the-universal-recipe-scaler/">
 <meta property="og:image" content="https://cooking.builtbyjoshstudio.com/images/products/universal-recipe-scaler.webp">
 <meta property="og:site_name" content="Josh &amp; Jordan&#x27;s Kitchen">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Building the Universal Recipe Scaler — Local-First, Ad-Free">
-<meta name="twitter:description" content="How I built a free, instant recipe scaler — vanilla HTML/CSS/JS, no backend, localStorage, JSON-LD — the regex problem, scale-lock logic, and the glass UI.">
+<meta name="twitter:description" content="How I built a free, instant recipe scaler — vanilla HTML/CSS/JS, no backend, localStorage, JSON-LD — the regex problem, scale-lock logic, and a clean, fast interface with an interactive prep checklist.">
 <meta name="twitter:image" content="https://cooking.builtbyjoshstudio.com/images/products/universal-recipe-scaler.webp">
 <link rel="alternate" type="application/rss+xml" title="Josh &amp; Jordan&#x27;s Kitchen — Blog" href="https://cooking.builtbyjoshstudio.com/feed.xml">
 <link rel="icon" href="/icons/favicon.ico" sizes="16x16 32x32 48x48">
@@ -49,7 +49,7 @@
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": "Building the Universal Recipe Scaler: A Local-First, Ad-Free Kitchen Utility",
-  "description": "How I built a free, instant recipe scaler — vanilla HTML/CSS/JS, no backend, browser localStorage, JSON-LD schema. The regex problem, the scale-lock logic, and the glassmorphism UI.",
+  "description": "How I built a free, instant recipe scaler — vanilla HTML/CSS/JS, no backend, browser localStorage, JSON-LD schema. The regex problem, the scale-lock logic, and a clean, fast interface with an interactive prep checklist.",
   "author": {
     "@type": "Person",
     "@id": "https://builtbyjoshstudio.com/about.html#josh",
@@ -65,7 +65,7 @@
   "mainEntityOfPage": "https://cooking.builtbyjoshstudio.com/blog/building-the-universal-recipe-scaler/",
   "image": "https://builtbyjoshstudio.com/images/products/universal-recipe-scaler.webp",
   "datePublished": "2026-05-13",
-  "dateModified": "2026-05-13"
+  "dateModified": "2026-11-24"
 }
 </script>
 <script type="application/ld+json">
@@ -346,7 +346,7 @@
     <div class="article__meta"><span>May 13, 2026</span><span>·</span><span>7 min read</span><span>·</span><span>Built by Josh Studio LLC</span></div>
   </header>
   <div class="prose post__body">
-<div class="post-summary short"><span class="short__label">The Short Version</span><p>A frustration-driven side project: vanilla HTML/CSS/JS, browser localStorage, no backend, no ads, no signup. Scales ingredient quantities and converts US imperial to metric. The regex problem nobody mentions, the scale-lock logic that ignores temperatures, and the glassmorphism UI that makes it feel like a tool worth using.</p></div>
+<div class="post-summary short"><span class="short__label">The Short Version</span><p>A frustration-driven side project: vanilla HTML/CSS/JS, browser localStorage, no backend, no ads, no signup. Scales ingredient quantities and converts US imperial to metric. The regex problem nobody mentions, the scale-lock logic that ignores temperatures, and a clean, fast interface with an interactive prep checklist.</p></div>
         <h2>Why I Built This (And Why Most Recipe Tools Are Broken)</h2>
         <p>Recipe blogs in 2026 are a tax on home cooks.</p>
         <p>You arrive looking for ratios. You leave with three popups, a video ad that follows you down the page, two newsletter prompts, an autoplay TikTok, and 2,400 words of life story before the actual recipe. Then the recipe is in cups and Fahrenheit and you need to scale it down for two servings instead of six.</p>
@@ -384,13 +384,12 @@
         <p>Both Chef's Notes appear inline below the scaled recipe — only when they're relevant — and disappear when the input doesn't trigger them.</p>
         <h2>Quick-Scale Buttons (and Custom Servings)</h2>
         <p>For the most common cases there are four one-tap scale buttons across the top of the tool — <strong>0.5× / 1× / 2× / 3×</strong> — so you don't have to type anything if you're just halving or doubling. For everything else, a small "Original Servings → Target Servings" pair lets you derive the multiplier directly: a recipe written for 4, cooking for 6, gets a clean 1.5× without manual math. Whichever route you take, the live multiplier display in the top corner of the scaled output tells you exactly what factor is being applied.</p>
-        <h2>Glassmorphism Over Culinary Warmth</h2>
-        <p>The visual design is a frosted-glass card layered over a warm food-photo background. The look sits somewhere between premium iOS app and modern recipe magazine.</p>
-        <p>The point isn't aesthetics for their own sake. A recipe scaler that looks like a free 2008 utility is a recipe scaler that gets used once and abandoned. Looking like a tool you'd pay for makes it a tool you'll come back to.</p>
-        <p>The interactive prep list closes the loop. Once your recipe is scaled, each ingredient becomes clickable — tap to cross it out as you measure. One-click <strong>Copy to Clipboard</strong> and <strong>Print Recipe</strong> buttons handle the handoff to your actual cooking surface — phone propped on the counter, printout next to the cutting board.</p>
-        <p>Three details that turn "math utility" into "kitchen tool I'll actually use."</p>
+        <h2>Clean Interface, Useful Countertop Details</h2>
+        <p>The layout stays clean and easy to read on a phone propped up next to a cutting board — high contrast, clear numbers, and nothing getting in the way of the ingredient list.</p>
+        <p>The interactive prep list closes the loop. Once your recipe is scaled, each ingredient becomes clickable — tap to cross it out as you measure. One-click <strong>Copy to Clipboard</strong> and <strong>Print Recipe</strong> buttons handle the handoff to your kitchen counter — phone on the stand or a printout next to the cutting board.</p>
+        <p>Small details, and they make a difference when your hands are busy cooking.</p>
         <h2>Try It</h2>
-        <p>The Universal Recipe Scaler is live at <a href="/tools/universal-recipe-scaler/">tools.builtbyjoshstudio.com/universal-recipe-scaler</a>. Free. No signup. No email gate. Runs entirely in your browser — your data never leaves your device.</p>
+        <p>The Universal Recipe Scaler is live at <a href="/tools/universal-recipe-scaler/">cooking.builtbyjoshstudio.com/tools/universal-recipe-scaler/</a>. Free. No signup. No email gate. Runs entirely in your browser — your data never leaves your device.</p>
         <p>Drop in your next holiday recipe and scale it for the number you actually have at the table. Or shrink a favorite cookie dough to a single-batch Tuesday-night quantity. That's what it's built for.</p>
         <p>If you build something cool with it, or hit a recipe format the parser can't handle, send it to me. The dictionary keeps expanding.</p>
 
@@ -421,21 +420,21 @@
       <div class="related-posts">
         <h2 class="related-posts-label">Related Reading</h2>
         <div class="related-posts-grid grid">
-        <a href="https://builtbyjoshstudio.com/blog/what-lite-actually-means.html" class="related-post-card card">
-          <h3>What "Lite" Actually Means: Why Free Should Stay Free</h3>
-          <p>The four kinds of "free" — trial, demo, crippleware, lite — and why only one earns the name.</p>
+        <a href="/blog/how-i-learned-to-cook/" class="related-post-card card">
+          <h3>How I Learned to Cook</h3>
+          <p>Growing up in a Vietnamese-American kitchen, the first dish I made on my own, why gỏi cuốn on weeknights and phở when it matters.</p>
           <span class="related-link">Read the post ↗</span>
         </a>
 
-        <a href="https://builtbyjoshstudio.com/blog/30-minute-solopreneur-setup-free-system.html" class="related-post-card card">
-          <h3>The 30-Minute Solopreneur Setup (Free, No Subscriptions)</h3>
-          <p>A working solopreneur tracking system in thirty minutes — three free Lite templates, no SaaS lock-in.</p>
+        <a href="/blog/baking-pan-swap-calculator/" class="related-post-card card">
+          <h3>The Baking Pan Swap Calculator</h3>
+          <p>Pick the pan a recipe calls for, pick the pan you own, get the exact ingredient multiplier and a batter-depth warning.</p>
           <span class="related-link">Read the post ↗</span>
         </a>
 
-        <a href="https://builtbyjoshstudio.com/blog/how-to-launch-digital-product-without-audience.html" class="related-post-card card">
-          <h3>How to Launch a Digital Product With Zero Audience</h3>
-          <p>Why every launch playbook assumes you have an audience — and how to launch without one.</p>
+        <a href="/blog/reverse-roasting-timeline-calculator/" class="related-post-card card">
+          <h3>The Reverse Roasting Timeline Calculator</h3>
+          <p>Input your target dinner time and get the full backward roasting schedule — preheat, in, out, and rest.</p>
           <span class="related-link">Read the post ↗</span>
         </a>
 
@@ -461,8 +460,8 @@
 
       <div class="author-bio panel panel--inset">
         <strong>About the Author</strong>
-        <p>Josh is the founder of Built by Josh Studio and Tynkr Tools &amp; Co — a one-person creative operation based in Kansas building Notion templates, spreadsheets, zodiac digital art, and the occasional vanilla-JS side project. He's also the author of <em>Overlayed Echoes</em>.</p>
-        <a href="https://builtbyjoshstudio.com/about.html">Learn more →</a>
+        <p>Josh Tran is the home cook behind Josh &amp; Jordan's Kitchen, the author of <a href="/cookbook/"><em>Nước Mắm: A Vietnamese Family Cookbook</em></a>, and the builder behind Built by Josh Studio's <a href="/tools/">free kitchen calculators and tools</a>.</p>
+        <a href="/">Explore Josh &amp; Jordan's Kitchen →</a>
       </div>
   </div>
   <aside class="post-aside" aria-label="Sidebar">

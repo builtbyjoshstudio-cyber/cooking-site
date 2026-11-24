@@ -159,7 +159,7 @@
     <pubDate>Wed, 13 May 2026 00:00:00 +0000</pubDate>
     <dc:creator>Josh</dc:creator>
     <category>Kitchen &amp; Cooking</category>
-    <description>How I built a free, instant recipe scaler — vanilla HTML/CSS/JS, no backend, localStorage, JSON-LD — the regex problem, scale-lock logic, and the glass UI.</description>
+    <description>How I built a free, instant recipe scaler — vanilla HTML/CSS/JS, no backend, localStorage, JSON-LD — the regex problem, scale-lock logic, and a clean, fast interface with an interactive prep checklist.</description>
   </item>
 </channel>
 </rss>
