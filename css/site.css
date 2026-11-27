@@ -437,6 +437,12 @@
 .recipe-section { margin: var(--space-10) 0; }
 .recipe-section h2 { font-size: var(--text-2xl); margin-bottom: var(--space-5); }
 
+.recipe-board__note {
+  margin: calc(-1 * var(--space-3)) 0 var(--space-4);
+  font: 400 var(--text-sm)/1.5 var(--font-sans);
+  color: var(--text-muted);
+}
+
 .recipe-board {
   padding: clamp(1.25rem, 3vw, 2rem);
   border: 1px solid var(--border);
@@ -574,6 +580,7 @@
   .recipe-spec-bar { padding: .45rem .65rem; gap: .6rem; margin-top: .25rem; }
   .recipe-section { margin: .85rem 0; }
   .recipe-section h2 { font-size: 13pt; margin-bottom: .4rem; }
+  .recipe-board__note { margin: 0 0 .35rem; font-size: 9pt; color: CanvasText !important; }
   .recipe-board { padding: .65rem .8rem; }
   .recipe-board__groups { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .65rem 1.25rem; }
   .recipe-board__group { break-inside: avoid; }
