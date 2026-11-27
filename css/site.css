@@ -187,6 +187,34 @@
 .buy-alts .btn-kindle:hover { color: var(--primary-hover); }
 /* kit v2.4: in cast iron, links keep --primary on hover and the underline thickens */
 [data-theme="cast-iron"] .buy-alts .btn-kindle:hover { color: var(--primary); text-decoration-thickness: 2px; }
+.buy-alts--inline {
+  display: grid;
+  gap: var(--space-2);
+  padding: var(--space-4) 0 var(--space-2);
+  border-top: 1px solid var(--hairline);
+}
+.buy-alts__label {
+  font: 600 var(--text-xs)/1.3 var(--font-sans);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+.buy-alts__links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2) var(--space-3);
+  font: 500 var(--text-sm)/1.5 var(--font-sans);
+  color: var(--text-muted);
+}
+.buy-alts__links a {
+  color: var(--primary);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: .2em;
+}
+.buy-alts__links a:hover { color: var(--primary-hover); }
+[data-theme="cast-iron"] .buy-alts__links a:hover { color: var(--primary); text-decoration-thickness: 2px; }
 .buy-card .spec-list .lbl { color: var(--text-muted); }
 .buy-card .spec-list li > span:last-child { text-align: right; }
 .cookbook-page .section-eyebrow { font: 700 var(--text-xs)/1 var(--font-sans); letter-spacing: var(--tracking-eyebrow); text-transform: uppercase; color: var(--primary); margin-bottom: var(--space-3); }
@@ -216,6 +244,20 @@
 .home-hero .lede { max-width: 62ch; margin: 0; }
 .home-hero__sub { max-width: 62ch; margin: 0; font: 400 var(--text-base)/1.6 var(--font-serif); color: var(--text-muted); }
 .home-hero__actions { justify-content: center; }
+.home-hero__meta { margin: 0; font: 500 var(--text-sm)/1.5 var(--font-sans); color: var(--text-muted); }
+.home-recipes {
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  display: grid;
+  gap: var(--space-4);
+  justify-items: center;
+  text-align: center;
+}
+.home-recipes h2 { font-size: var(--text-2xl); }
+.home-recipes p:not(.eyebrow) { margin: 0; max-width: 62ch; font: 400 var(--text-base)/1.6 var(--font-serif); color: var(--text-serif); }
+.home-yt-pitch { margin: var(--space-4) auto 0; max-width: 62ch; text-align: center; font: 400 var(--text-sm)/1.55 var(--font-serif); color: var(--text-muted); }
 .section-intro { max-width: 62ch; margin: 0; font: 400 var(--text-base)/1.6 var(--font-serif); color: var(--text-serif); }
 .home-more { justify-content: center; margin-top: var(--space-8); }
 .video-link { display: grid; color: var(--text); text-decoration: none; }
@@ -240,6 +282,13 @@
 .home-book__inner img { width: 100%; max-width: 220px; height: auto; border-radius: var(--radius-sm); box-shadow: var(--shadow-card); justify-self: center; }
 .home-book__text { display: grid; gap: var(--space-4); justify-items: start; }
 .home-book__text p:not(.eyebrow) { margin: 0; font: 400 var(--text-base)/1.65 var(--font-serif); color: var(--text-serif); max-width: 62ch; }
+.home-book__text p.home-book__meta {
+  margin: 0;
+  font: 600 var(--text-xs)/1.5 var(--font-sans);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
 /* the kit template colours this eyebrow with --accent (ornament): 3.96:1 on rust, so it keeps the normal eyebrow colour */
 .ck-cols { display: grid; gap: var(--space-8); grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); }
 .ck-sublabel { margin: 0 0 var(--space-3); font: 700 var(--text-xs)/1 var(--font-sans); letter-spacing: var(--tracking-eyebrow); text-transform: uppercase; color: var(--primary); }
@@ -551,10 +600,23 @@
 .recipe-page .related-post-card p { margin: 0; font: 400 var(--text-sm)/1.5 var(--font-serif); color: var(--text-serif); }
 .recipe-page .author-bio p { margin: .4em 0; font-size: var(--text-sm); }
 
+.recipe-bridge {
+  margin: var(--space-10) 0;
+  padding: clamp(1.25rem, 3vw, 2rem);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--primary);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  display: grid;
+  gap: var(--space-4);
+}
+.recipe-bridge h2 { font-size: var(--text-xl); margin: 0; }
+.recipe-bridge p { margin: 0; font: 400 var(--text-base)/1.6 var(--font-serif); color: var(--text-serif); }
+
 @media print {
   .site-header, .site-footer, .skip-link, .breadcrumb,
   .recipe-actions, .recipe-video, .recipe-gear,
-  .related-posts, .author-bio, .cta-band {
+  .recipe-bridge, .related-posts, .author-bio, .cta-band {
     display: none !important;
   }
   body {
@@ -596,7 +658,7 @@
    PANELS (kit v2.3) — the site's own cards and panels read the --panel-*
    tokens like the kit's .card / .results / .buy-box. Only rust differs.
    ========================================================================== */
-:is(.article-sidebar-sticky, .inline-cta, .cta-band, .series, .part-card, .recipe-spec-bar, .recipe-board, .recipe-cues, .recipe-gear) {
+:is(.article-sidebar-sticky, .inline-cta, .cta-band, .series, .part-card, .home-recipes, .recipe-spec-bar, .recipe-board, .recipe-cues, .recipe-gear, .recipe-bridge) {
   --bg: var(--panel-bg);
   --surface: var(--panel-surface);
   --surface-2: var(--panel-surface-2);

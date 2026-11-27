@@ -25,8 +25,7 @@
   'use strict';
 
   var STORAGE_KEY = 'jjk-theme';
-  var DEFAULT_LIGHT = 'cream';
-  var DEFAULT_DARK = 'cast-iron';          // used when no stored choice and OS prefers dark
+  var DEFAULT_THEME = 'cast-iron';       // first-time visitors land on cast-iron
   var THEMES = [
     { id: 'cream',     label: 'Cream' },
     { id: 'mint',      label: 'Mint' },
@@ -45,17 +44,14 @@
   function store(id) {
     try { if (id) localStorage.setItem(STORAGE_KEY, id); else localStorage.removeItem(STORAGE_KEY); } catch (e) { /* private mode etc. */ }
   }
-  function systemPrefersDark() {
-    try { return window.matchMedia('(prefers-color-scheme: dark)').matches; } catch (e) { return false; }
-  }
   function resolveInitial() {
     var s = stored(); if (s) return s;
-    var attr = root.getAttribute('data-theme'); if (valid(attr)) return attr;   // server-rendered default
-    return systemPrefersDark() ? DEFAULT_DARK : DEFAULT_LIGHT;
+    var attr = root.getAttribute('data-theme'); if (valid(attr)) return attr;
+    return DEFAULT_THEME;
   }
 
   function apply(id, opts) {
-    if (!valid(id)) id = DEFAULT_LIGHT;
+    if (!valid(id)) id = DEFAULT_THEME;
     var prev = root.getAttribute('data-theme');
     root.setAttribute('data-theme', id);
 
@@ -92,13 +88,6 @@
   // ---- apply immediately (before paint) ----
   apply(resolveInitial(), { persist: false });
 
-  // follow the OS only while the user hasn't chosen
-  try {
-    var mq = window.matchMedia('(prefers-color-scheme: dark)');
-    var onMq = function (e) { if (!stored()) apply(e.matches ? DEFAULT_DARK : DEFAULT_LIGHT, { persist: false }); };
-    if (mq.addEventListener) mq.addEventListener('change', onMq); else if (mq.addListener) mq.addListener(onMq);
-  } catch (e) {}
-
   // cross-tab sync
   window.addEventListener('storage', function (e) {
     if (e.key === STORAGE_KEY && valid(e.newValue)) apply(e.newValue, { persist: false });
@@ -121,7 +110,7 @@
     get: function () { return root.getAttribute('data-theme'); },
     set: function (id) { return apply(id); },
     cycle: function () { var i = IDS.indexOf(api.get()); return apply(IDS[(i + 1) % IDS.length]); },
-    reset: function () { store(null); return apply(systemPrefersDark() ? DEFAULT_DARK : DEFAULT_LIGHT, { persist: false }); },
+    reset: function () { store(null); return apply(DEFAULT_THEME, { persist: false }); },
     onChange: function (fn) { listeners.push(fn); return function () { var i = listeners.indexOf(fn); if (i > -1) listeners.splice(i, 1); }; }
   };
   window.JJKTheme = api;

@@ -29,7 +29,7 @@
    ========================================================= */
 (function () {
   'use strict';
-  var CACHE_VERSION = '5e6c3147deed';
+  var CACHE_VERSION = 'c331fa344c52';
   var PAGES = 'jjk-pages-' + CACHE_VERSION;
   var ASSETS = 'jjk-assets-' + CACHE_VERSION;
 
@@ -61,11 +61,11 @@
       "/css/tool-parts.css?v=ba7a255de3",
       "/css/base.css?v=5a6e1b4cbb",
       "/css/components.css?v=a04d1c5175",
-      "/css/site.css?v=fd1134fe90",
+      "/css/site.css?v=1b2365a6ad",
       "/css/studio/tokens.css?v=f58e0d92c0",
       "/css/studio/components.css?v=09a4d9f402",
       "/css/studio/tools.css?v=76acb59400",
-      "/js/theme.js?v=dc84991f4a",
+      "/js/theme.js?v=3421720062",
       "/js/nav.js?v=a16bc0e1ce",
       "/tools/kinetic.js?v=f935f39fab",
       "/tools/ingredients-db.js?v=dd06fee0fc",
