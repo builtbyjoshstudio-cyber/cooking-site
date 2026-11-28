@@ -164,6 +164,11 @@
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-card);
 }
+.article .prose .post-photo--portrait,
+.post-photo--portrait {
+  max-width: 400px;
+  margin-inline: auto;
+}
 
 /* "From the same kitchen" */
 .series { margin-top: clamp(3rem, 8vw, 5rem); padding: clamp(2rem, 5vw, 3rem); display: grid; gap: var(--space-4); justify-items: center; text-align: center; border-radius: var(--radius-lg); background: var(--surface); box-shadow: var(--shadow-card); }
