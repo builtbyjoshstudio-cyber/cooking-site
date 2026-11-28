@@ -17,7 +17,7 @@ Josh & Jordan's Kitchen is published by Built by Josh Studio LLC (https://builtb
 - [Blog · Josh & Jordan's Kitchen](https://cooking.builtbyjoshstudio.com/blog/): Cooking essays and kitchen-tool posts from Josh & Jordan's Kitchen.
 - [Nước Mắm — A Vietnamese Family Cookbook by Josh Tran](https://cooking.builtbyjoshstudio.com/cookbook/): 56 pages of simple, home-style Vietnamese cooking — summer rolls, bún bowls, bánh mì, and a twelve-hour phở. Balanced by tasting, not measuring. $3.49 ebook.
 - [Free Kitchen Calculators & Cooking Tools · Josh & Jordan's Kitchen](https://cooking.builtbyjoshstudio.com/tools/): Free, ad-free kitchen calculators — recipe scaling, air fryer conversion, cost per serving, brining, dough hydration, roasting timelines, and more. No signup, runs in your browser.
-- [Recipes — By-Feel Savory Playbooks & Scratch Baking | Josh & Jordan's Kitchen](https://cooking.builtbyjoshstudio.com/recipes/): Josh's savory by-feel playbooks (ingredients, pan order, kitchen cues, no measuring cups) and scratch baking cards coming next.
+- [Recipes — By-Feel Savory Playbooks & Scratch Baking | Josh & Jordan's Kitchen](https://cooking.builtbyjoshstudio.com/recipes/): Josh's savory by-feel playbooks (ingredients, pan order, kitchen cues, no measuring cups) and Jordan's exact-measurement scratch baking recipes.
 - [Cooking Videos — Full-Process Cooks, Short Cuts & Kitchen Basics](https://cooking.builtbyjoshstudio.com/videos/): No-talking home cooking and scratch baking videos two ways: a tight method cut, or a minimally cut full-process session at normal speed. Plus kitchen basics like board care.
 
 ## Cookbook: Nước Mắm — A Vietnamese Family Cookbook
@@ -67,7 +67,7 @@ Every video is on https://cooking.builtbyjoshstudio.com/videos/ and the YouTube 
 
 ## Recipes
 
-Josh's savory dishes are documented as by-feel playbooks on https://cooking.builtbyjoshstudio.com/recipes/ — ingredients, pan order, what to look and taste for, and no measuring cups. Jordan's exact-measurement scratch baking cards are next.
+Josh's savory dishes are documented as by-feel playbooks and Jordan's bakes as exact-measurement recipes on https://cooking.builtbyjoshstudio.com/recipes/ — with counter mode, 1-page print sheets, and both video cuts.
 
 - [Weeknight Ground Beef Bulgogi](https://cooking.builtbyjoshstudio.com/recipes/ground-beef-bulgogi/) (One-Pan Dinners; Stainless skillet & rice cooker). Bulgogi without the thin-sliced ribeye and without the restaurant bill. Ground beef, a marinade of serranos, garlic, soy, honey and ginger — and one thing you're not expecting in it: fresh grapefruit juice. The beef browns and comes out so the vegetables fry in its fat, then everything goes back in and the sauce reduces down to a finish of cold butter.
   - Ingredients: Jasmine rice, 1 lb ground beef, ~1 cup low-sodium soy sauce, ~½ cup honey, Juice of 1 whole grapefruit, 2 serrano peppers, 6 cloves garlic, ~1 tsp ground ginger (or equal parts fresh ginger to garlic), Black pepper (by feel), 1 big shallot (thin-sliced), 7 mini sweet peppers (stripped), 8 cloves garlic, Cold butter (a couple pats, by feel).
@@ -89,6 +89,10 @@ Josh's savory dishes are documented as by-feel playbooks on https://cooking.buil
   - Ingredients: 2 avocados, Small handful cherry tomatoes (quartered), 1 shallot (diced fine), 3 serrano peppers, Juice of 2 limes, Salt (by feel), Black pepper (by feel), Red pepper flakes (by feel).
   - Pan order: 1. Halve the avocados, pop the pits, score the flesh into clean cubes inside the skin, and scoop into a mixing bowl. Do not mash. 2. Quarter the cherry tomatoes, finely dice the shallot, and mince the serrano. 3. Add fresh lime juice, salt, black pepper, and red pepper flakes. 4. Fold everything together with a light hand so the avocado cubes stay distinct and chunky rather than breaking down into a smooth puree. Taste and adjust salt, lime, and heat.
   - Video: tight method cut https://www.youtube.com/watch?v=xp9sr28cHhs (3:50); full-process session (minimally cut at normal speed, 10 min) https://youtu.be/nXyCGLQLA3M.
+- [Scratch Chocolate Chip Cookie Dough](https://cooking.builtbyjoshstudio.com/recipes/chocolate-chip-cookie-dough/) (Scratch Baking; Stand mixer & mixing bowl). Yield: 3 dozen cookies. Chocolate chip cookie dough, start to finish in two and a half minutes. White sugar, brown sugar and a lot of butter creamed in the stand mixer — then vanilla and eggs, the dry mix a little at a time, and mini semi-sweet chips folded in last. No talking, just the mixer and the music.
+  - Ingredients: 1 cup unsalted butter (softened to room temperature), 1 cup white sugar, 1 cup brown sugar, 2 teaspoons vanilla extract, 2 eggs, 3 cups all-purpose flour, 1 teaspoon baking soda, ½ teaspoon baking powder, 1 teaspoon sea salt, 2 cups chocolate chips (but really, measure with your heart).
+  - Instructions: 1. Combine the white sugar, brown sugar, and butter together in a stand mixer. 2. Add the eggs and vanilla, and then beat on medium-high speed. 3. In a separate bowl, mix flour, baking soda, baking powder, and salt. 4. Slowly add the dry ingredients to the dough in the stand mixer. 5. Stir in the chocolate chips.
+  - Video: 2:31 cut https://www.youtube.com/watch?v=BvA6dtVpQYw; complete bake (every step at normal speed, 8:58) https://youtu.be/gQTFDBsCJaI.
 
 ## Kitchen tools
 

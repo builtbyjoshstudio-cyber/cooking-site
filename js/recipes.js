@@ -27,8 +27,10 @@
           countEl.textContent = 'Showing ' + shown + (shown === 1 ? ' One-Pan Dinner' : ' One-Pan Dinners');
         } else if (filter === 'dips-and-sides') {
           countEl.textContent = 'Showing ' + shown + (shown === 1 ? ' Dip & Side' : ' Dips & Sides');
+        } else if (filter === 'scratch-baking') {
+          countEl.textContent = 'Showing ' + shown + (shown === 1 ? ' Scratch Baking recipe' : ' Scratch Baking recipes');
         } else {
-          countEl.textContent = 'Showing ' + shown + (shown === 1 ? ' playbook' : ' playbooks');
+          countEl.textContent = 'Showing ' + shown + (shown === 1 ? ' recipe' : ' recipes');
         }
       }
     };
